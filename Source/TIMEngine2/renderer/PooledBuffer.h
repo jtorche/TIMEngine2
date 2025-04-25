@@ -9,7 +9,7 @@ namespace tim
     using namespace core;
 namespace renderer
 {
-    class PooledBuffer : boost::noncopyable
+    class PooledBuffer : NonCopyable
     {
     public:
         PooledBuffer(TextureBufferPool*);

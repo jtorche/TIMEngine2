@@ -11,7 +11,7 @@ namespace tim
     using namespace core;
 namespace scene
 {
-    class Transformable : boost::noncopyable
+    class Transformable : NonCopyable
     {
         friend class BasicScene<Transformable>;
 

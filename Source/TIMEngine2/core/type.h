@@ -1,12 +1,10 @@
 #ifndef TYPE_H_INCLUDED
 #define TYPE_H_INCLUDED
 
-#include <boost/container/map.hpp>
-#include <boost/container/set.hpp>
-#include <boost/container/vector.hpp>
-#include <boost/container/list.hpp>
-#include <boost/lockfree/queue.hpp>
-#include <boost/timer/timer.hpp>
+#include <map>
+#include <set>
+#include <vector>
+#include <list>
 #include <queue>
 
 namespace tim

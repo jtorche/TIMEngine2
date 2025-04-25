@@ -4,6 +4,7 @@
 #include "GL/glew.h"
 
 #include <queue>
+#include <functional>
 
 #include "core/core.h"
 #include "core/Singleton.h"
@@ -28,7 +29,7 @@ namespace renderer
     static const size_t MAX_IMAGE_UNIT=16;
     static const size_t MAX_BUFFER_ATTACHEMENT = 8;
 
-    class GLState : public Singleton<GLState>, boost::noncopyable
+    class GLState : public Singleton<GLState>, NonCopyable
     {
         friend class Singleton<GLState>;
 
@@ -202,7 +203,7 @@ namespace renderer
 
         static void glSet(uint, bool);
 
-        boost::mutex _glTaskAccess;
+        std::mutex _glTaskAccess;
         std::queue<std::function<void()>> _glTask;
     };
 
@@ -215,13 +216,13 @@ namespace renderer
 
     inline void GLState::pushGLTask(const std::function<void()> & f)
     {
-        boost::lock_guard<boost::mutex> guard(_glTaskAccess);
+        std::lock_guard<std::mutex> guard(_glTaskAccess);
         _glTask.push(f);
     }
 
     inline void GLState::execAllGLTask()
     {
-        boost::lock_guard<boost::mutex> guard(_glTaskAccess);
+        std::lock_guard<std::mutex> guard(_glTaskAccess);
         while(!_glTask.empty())
         {
             _glTask.front()();
@@ -231,7 +232,7 @@ namespace renderer
 
     inline size_t GLState::execOneGLTask()
     {
-        boost::lock_guard<boost::mutex> guard(_glTaskAccess);
+        std::lock_guard<std::mutex> guard(_glTaskAccess);
         if(_glTask.empty())
             return _glTask.size();
 
@@ -244,7 +245,7 @@ namespace renderer
     template <class F>
     void GLState::execGLTaskWhile(const F& f)
     {
-        boost::lock_guard<boost::mutex> guard(_glTaskAccess);
+        std::lock_guard<std::mutex> guard(_glTaskAccess);
         while(!_glTask.empty() && f())
         {
             _glTask.front()();

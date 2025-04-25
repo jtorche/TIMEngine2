@@ -9,7 +9,7 @@ namespace tim
     using namespace core;
 namespace renderer
 {
-    class VAO : public boost::noncopyable
+    class VAO : public NonCopyable
     {
     public:
 

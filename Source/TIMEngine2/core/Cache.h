@@ -93,7 +93,7 @@ namespace core
         int getState(uint index) const { return std::get<2>(_data[index]); }
 
     private:
-        mutable std::tuple<Key, Data, int, boost::mutex> _data[NB_SLOTS]; // key, data, state { 0:free 1:uptodate 2:changed }, lock
+        mutable std::tuple<Key, Data, int, std::mutex> _data[NB_SLOTS]; // key, data, state { 0:free 1:uptodate 2:changed }, lock
     };
 }
 }

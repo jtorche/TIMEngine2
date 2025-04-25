@@ -43,9 +43,7 @@ namespace core
 
         const T& value() const
         {
-            if(!_hasValue)
-                throw BadOptionAccess(typeid(T).name());
-
+            TIM_ASSERT(_hasValue);
              return _val;
         }
 

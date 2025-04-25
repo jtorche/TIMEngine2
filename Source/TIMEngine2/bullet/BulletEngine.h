@@ -1,6 +1,7 @@
 #ifndef BULLETENGINE_H_INCLUDED
 #define BULLETENGINE_H_INCLUDED
 
+#include <functional>
 #include "core.h"
 #include <btBulletDynamicsCommon.h>
 

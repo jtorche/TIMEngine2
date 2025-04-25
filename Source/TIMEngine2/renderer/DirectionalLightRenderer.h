@@ -11,7 +11,7 @@ namespace tim
 namespace renderer
 {
 
-    class DirectionalLightRenderer : boost::noncopyable
+    class DirectionalLightRenderer : NonCopyable
     {
     public:
 

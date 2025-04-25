@@ -192,7 +192,7 @@ namespace renderer
             unsigned blendEqu      : 4;
             unsigned blendFunc1    : 4;
             unsigned blendFunc2    : 4;
-        }__attribute__((packed));
+        };
 
         union
         {

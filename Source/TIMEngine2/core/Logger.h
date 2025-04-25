@@ -4,6 +4,7 @@
 #include <fstream>
 #include <string>
 #include <mutex>
+#include "Common.h"
 #include "Exception.h"
 #include "Singleton.h"
 
@@ -18,7 +19,7 @@ namespace core
     public:
         Logger(const std::string& name = "Log.txt") : _file(name, std::ios_base::out | std::ios_base::trunc)
         {
-            if(!_file.is_open()) throw Exception("Unuable to open log file: "+name);
+            TIM_ASSERT(_file.is_open());
         }
 
         ~Logger() = default;
@@ -53,7 +54,7 @@ namespace core
             std::ofstream _file;
             bool _endl_mode = true;
             std::string _src_file;
-            int _line;
+            int _line = 0;
             std::mutex _mutex;
 
             template< class Arg , class...Args >

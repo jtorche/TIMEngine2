@@ -11,7 +11,7 @@ namespace tim
 {
 namespace interface
 {
-    struct FullPipeline : boost::noncopyable
+    struct FullPipeline : NonCopyable
     {
         static const int NB_CHANEL = 32;
         ~FullPipeline();

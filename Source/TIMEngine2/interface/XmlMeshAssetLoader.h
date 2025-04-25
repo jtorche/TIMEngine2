@@ -42,13 +42,13 @@ namespace interface
 
         static interface::Mesh constructMesh(const vector<MeshElementModel>&, const renderer::Texture::GenTexParam&, bool keepData=true);
 
-        const boost::container::map<std::string, vector<MeshElementModel>>& allAssets() const { return _models; }
+        const std::map<std::string, vector<MeshElementModel>>& allAssets() const { return _models; }
 
         static vector<MeshElementModel> parseMeshAssetElement(TiXmlElement*, std::string& name);
 
     protected:
 
-        boost::container::map<std::string, vector<MeshElementModel>> _models;
+        std::map<std::string, vector<MeshElementModel>> _models;
 
         static vec3 toColor(std::string);
     };

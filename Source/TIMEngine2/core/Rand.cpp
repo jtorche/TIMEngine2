@@ -5,7 +5,7 @@ namespace tim
 {
 namespace core
 {
-    boost::random::taus88 Rand::generator;
-    boost::random::uniform_01<> Rand::frand_range;
+    std::default_random_engine Rand::s_generator;
+    std::uniform_real<float> Rand::frand_range;
 }
 }

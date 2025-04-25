@@ -1,7 +1,6 @@
 #ifndef RANGEALLOCATOR
 #define RANGEALLOCATOR
 
-#include <boost/pool/object_pool.hpp>
 #include <type.h>
 #include "Timath.h"
 #include <mutex>
@@ -22,7 +21,7 @@ namespace core
         BuddyBlocksAllocator(size_t maxSize) : _maxSize(le_power2(maxSize))
         {
             _remainingMemory = _maxSize;
-            _root = _pool.construct();
+            _root = new Node; // use object pool
             _root->startAddr = 0;
             _root->parent = nullptr;
             _root->magnitude = magnitudeFromSize(_maxSize);
@@ -41,6 +40,7 @@ namespace core
             {
                 Node* curSmallest = nullptr;
                 Node* n = searchFreeNode(_root, m, &curSmallest);
+                TIM_ASSERT(curSmallest);
                 if(n)
                 {
                     n->state = ALLOCATED;
@@ -51,14 +51,9 @@ namespace core
 
                     return n->startAddr;
                 }
-                else if(curSmallest == nullptr) // no block available
-                    throw AllocationFailedException();
                 else
                 {
-                    #ifdef TIM_DEBUG
-                    if(curSmallest->magnitude == 0 || curSmallest->state != FREE)
-                        throw Exception("Runtime error, allocation failed in alloc(), RangeAllocator.h, im so fucking bad");
-                    #endif
+                    TIM_ASSERT(curSmallest->magnitude != 0 && curSmallest->state == FREE);
                     for(int i=0 ; i<2 ; ++i)
                     {
                         curSmallest->child[i] = _pool.construct();
@@ -102,9 +97,9 @@ namespace core
             _allocatedAddr.erase(it);
         }
 
-        size_t maxSize() const { return _maxSize; }
-        size_t remainingMemory() const { return _remainingMemory; }
-        size_t allocatedMemory() const { return _allocatedMemory; }
+        uint maxSize() const { return _maxSize; }
+        uint remainingMemory() const { return _remainingMemory; }
+        uint allocatedMemory() const { return _allocatedMemory; }
 
     private:
         enum NodeState : int { FREE, ALLOCATED, SPLIT };
@@ -113,17 +108,16 @@ namespace core
             addr startAddr;
             uint magnitude;
             Node* parent;
-            size_t allocatedSize = 0;
+            uint allocatedSize = 0;
             Node* child[2] = {nullptr};
             NodeState state = FREE;
         };
 
-        size_t _maxSize;
-        boost::object_pool<Node> _pool;
+        uint _maxSize;
         Node* _root;
         MutexType _mutex;
 
-        boost::container::map<addr, Node*> _allocatedAddr;
+        std::map<addr, Node*> _allocatedAddr;
 
         // debug info
         size_t _remainingMemory, _allocatedMemory=0;
@@ -165,7 +159,7 @@ namespace core
     public:
         using addr = unsigned long int;
 
-        FixedSizeBlocksAllocator(size_t maxSize) : _maxSize(maxSize - maxSize%BLOCK_SIZE)
+        FixedSizeBlocksAllocator(uint maxSize) : _maxSize(maxSize - maxSize%BLOCK_SIZE)
         {
             _remainingMemory = _maxSize;
             _freeChunks.insert({0, _maxSize / BLOCK_SIZE});
@@ -173,10 +167,10 @@ namespace core
 
         ~FixedSizeBlocksAllocator() = default;
 
-        addr alloc(size_t size)
+        addr alloc(uint size)
         {
             std::lock_guard<MutexType> guard(_mutex);
-            size_t nbBlocks = 1 + (size-1) / BLOCK_SIZE;
+            uint nbBlocks = 1 + (size-1) / BLOCK_SIZE;
 
             for(auto it=_freeChunks.begin() ; it != _freeChunks.end() ; ++it)
             {
@@ -190,13 +184,14 @@ namespace core
                     _remainingMemory -= nbBlocks*BLOCK_SIZE;
                     _allocatedMemory += size;
 
-                    size_t minBlocksChunkAddr = chunk.firstBlock*BLOCK_SIZE;
+                    uint minBlocksChunkAddr = chunk.firstBlock*BLOCK_SIZE;
 
                     _allocatedAddr[minBlocksChunkAddr] = {nbBlocks, size};
                     return minBlocksChunkAddr;
                 }
             }
-            throw AllocationFailedException();
+            TIM_ASSERT(false);
+            return 0;
         }
 
         void dealloc(addr ptr)
@@ -207,8 +202,8 @@ namespace core
             if(it_allocated == _allocatedAddr.end())
                 return;
 
-            size_t firstBlock = ptr / BLOCK_SIZE;
-            size_t nbBlocks = it_allocated->second.nbBlocks;
+            uint firstBlock = ptr / BLOCK_SIZE;
+            uint nbBlocks = it_allocated->second.nbBlocks;
 
             EmptyChunck chunk = {firstBlock, nbBlocks};
 
@@ -235,14 +230,14 @@ namespace core
             _allocatedAddr.erase(it_allocated);
         }
 
-        size_t maxAllocation() const { std::lock_guard<MutexType> guard(_mutex); return _freeChunks.rbegin()->nbBlocks * BLOCK_SIZE; }
+        uint maxAllocation() const { std::lock_guard<MutexType> guard(_mutex); return _freeChunks.rbegin()->nbBlocks * BLOCK_SIZE; }
 
-        size_t maxSize() const { return _maxSize; }
-        size_t remainingMemory() const { return _remainingMemory; }
-        size_t allocatedMemory() const { return _allocatedMemory; }
+        uint maxSize() const { return _maxSize; }
+        uint remainingMemory() const { return _remainingMemory; }
+        uint allocatedMemory() const { return _allocatedMemory; }
 
     private:
-        size_t _maxSize;
+        uint _maxSize;
         mutable MutexType _mutex;
 
         struct EmptyChunck { uint firstBlock; uint nbBlocks; };
@@ -250,13 +245,13 @@ namespace core
         { bool operator()(const EmptyChunck& c1, const EmptyChunck& c2) const  { return c1.nbBlocks==c2.nbBlocks ?
                           c1.firstBlock < c2.firstBlock : c1.nbBlocks < c2.nbBlocks; } };
 
-        boost::container::set<EmptyChunck, CompareEmptyChunk> _freeChunks;
+        std::set<EmptyChunck, CompareEmptyChunk> _freeChunks;
 
-        struct Allocation { uint nbBlocks; size_t nbMem; };
-        boost::container::map<addr, Allocation> _allocatedAddr;
+        struct Allocation { uint nbBlocks; uint nbMem; };
+        std::map<addr, Allocation> _allocatedAddr;
 
         // debug info
-        size_t _remainingMemory, _allocatedMemory=0;
+        uint _remainingMemory, _allocatedMemory=0;
     };
 }
 }

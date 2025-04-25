@@ -95,7 +95,7 @@ namespace scene
 
     protected:
         vector<Contained*> _container;
-        boost::unordered_map<std::type_index, vector<Contained*>> _typeContainer;
+        std::unordered_map<std::type_index, vector<Contained*>> _typeContainer;
     };
 
 }

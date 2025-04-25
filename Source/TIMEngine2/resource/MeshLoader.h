@@ -1,11 +1,10 @@
 #ifndef MESHLOADER_H
 #define MESHLOADER_H
 
-#include "Vector.h"
+#include "core/Vector.h"
 #include "renderer/VertexFormat.h"
 #include "renderer/MeshBuffers.h"
 #include "renderer/renderer.h"
-#include <boost/unordered_map.hpp>
 
 #include "MemoryLoggerOn.h"
 namespace tim
@@ -58,14 +57,14 @@ namespace resource
         public:
             std::size_t operator()(const uivec3& v) const
             {
-                boost::hash<uint> hasher;
+                std::hash<uint> hasher;
 
                 return hasher(v[0]) + hasher(v[1]) + hasher(v[2]);
             }
         };
 
-        using VNC_Map = boost::unordered_map<uivec3, size_t, hash_uivec3>;
-        //using VNC_Map = boost::container::map<uivec3, size_t>;
+        using VNC_Map = std::unordered_map<uivec3, size_t, hash_uivec3>;
+        //using VNC_Map = std::map<uivec3, size_t>;
 
         static bool loadObjData(const std::string&, ObjBuffer&);
         static size_t computeObjVertexMap(ObjBuffer&, renderer::MeshData&, VNC_Map&);

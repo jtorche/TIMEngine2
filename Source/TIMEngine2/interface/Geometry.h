@@ -59,13 +59,13 @@ namespace interface
                                                            renderer::indexBufferPool->alloc(nbI==0?nbV:nbI)))
         {
             nbI = nbI==0?nbV:nbI;
-            boost::shared_array<uint> idat(new uint[nbI]);
+            std::shared_ptr<uint[]> idat(new uint[nbI]);
             for(uint i=0 ; i<nbI ; ++i) idat[i] = i;
 
             setIData(idat, 0, nbI);
         }
 
-        using TypeVData = boost::shared_array<const renderer::VertexType>;
+        using TypeVData = std::shared_ptr<const renderer::VertexType[]>;
         void setVData(TypeVData data, size_t begin, size_t nb)
         {
             if(renderer::getThreadId() == renderer::openGL.getContextId())
@@ -82,7 +82,7 @@ namespace interface
             //_volume = Sphere::computeSphere(reinterpret_cast<const real*>(data.get()), nb, sizeof(renderer::VertexType) / sizeof(float));
         }
 
-        using TypeIData = boost::shared_array<const renderer::IBuffer::Type>;
+        using TypeIData = std::shared_ptr<const renderer::IBuffer::Type[]>;
         void setIData(TypeIData data, size_t begin, size_t nb)
         {
             if(renderer::getThreadId() == renderer::openGL.getContextId())

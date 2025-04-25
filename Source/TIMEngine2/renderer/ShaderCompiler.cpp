@@ -39,10 +39,10 @@ void ShaderCompiler::setSource(const std::string& str)
 
 Option<core::uint> ShaderCompiler::compile(std::initializer_list<std::string> flags)
 {
-    return compile(boost::container::set<std::string>(flags.begin(), flags.end()));
+    return compile(std::set<std::string>(flags.begin(), flags.end()));
 }
 
-Option<core::uint> ShaderCompiler::compile(const boost::container::set<std::string>& flags)
+Option<core::uint> ShaderCompiler::compile(const std::set<std::string>& flags)
 {
     auto it = _shader.find(flags);
     if(it != _shader.end())

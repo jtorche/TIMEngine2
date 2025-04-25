@@ -12,7 +12,7 @@ namespace tim
 namespace renderer
 {
 
-   class IndirectLightRenderer : boost::noncopyable
+   class IndirectLightRenderer : NonCopyable
    {
    public:
        struct Light

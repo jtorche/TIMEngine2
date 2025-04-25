@@ -3,7 +3,8 @@
 
 #include "core.h"
 
-#include "btBulletCollisionCommon.h"
+#include <btBulletCollisionCommon.h>
+#include <BulletCollision/CollisionShapes/btHeightfieldTerrainShape.h>
 #include "ImageAlgorithm.h"
 
 namespace tim

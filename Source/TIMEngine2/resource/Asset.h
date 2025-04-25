@@ -2,7 +2,6 @@
 #define ASSET_H_INCLUDED
 
 #include "core/core.h"
-#include <boost/smart_ptr.hpp>
 
 namespace tim
 {
@@ -28,7 +27,7 @@ namespace resource
         bool isNull() const { return _ptr.get() == nullptr; }
 
     protected:
-        boost::shared_ptr<AssetType> _ptr;
+        std::shared_ptr<AssetType> _ptr;
     };
 }
 }

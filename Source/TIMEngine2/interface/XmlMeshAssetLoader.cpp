@@ -199,7 +199,7 @@ vec3 XmlMeshAssetLoader::toColor(std::string str)
     vector<std::string> v = StringUtils(str).splitWord(',');
     vec3 res;
 
-    for(uint i=0 ; i<std::min(v.size(), 3u) ; ++i)
+    for(uint i=0 ; i<std::min<uint>(v.size(), 3u) ; ++i)
         res[i] = StringUtils(v[i]).toFloat() / 255;
 
     return res;

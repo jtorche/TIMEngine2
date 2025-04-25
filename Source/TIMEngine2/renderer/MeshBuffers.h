@@ -35,7 +35,7 @@ namespace renderer
         }
     };
 
-    class MeshBuffers : boost::noncopyable
+    class MeshBuffers : NonCopyable
     {
     public:
         MeshBuffers(VBuffer* vb, IBuffer* ib, const Sphere& s = Sphere(), MeshData* cpuData=nullptr)

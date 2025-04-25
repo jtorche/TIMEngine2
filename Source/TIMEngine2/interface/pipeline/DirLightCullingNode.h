@@ -23,7 +23,7 @@ namespace pipeline
         void setShadowLightRange(const vector<float>& v)
         {
             _orthoRange = std::vector<float>(v.begin(), v.end());
-            _orthoRange.resize(std::min(v.size(), renderer::MAX_SHADOW_MAP_LVL));
+            _orthoRange.resize(std::min<uint>(v.size(), renderer::MAX_SHADOW_MAP_LVL));
         }
 
         void setDepthMapResolution(uint res) { _depthMapResolution = res; }

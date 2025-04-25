@@ -13,7 +13,7 @@ namespace tim
 namespace renderer
 {
 
-    class AbstractRenderer : boost::noncopyable
+    class AbstractRenderer : NonCopyable
     {
     public:
         AbstractRenderer(const uivec2& res, const FrameParameter& param) : _frameState(param), _resolution(res), _buffer(renderer::texBufferPool) {}

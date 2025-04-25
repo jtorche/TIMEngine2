@@ -32,7 +32,7 @@ namespace renderer
         void setSource(const std::string&);
 
         Option<core::uint> compile(std::initializer_list<std::string>);
-        Option<core::uint> compile(const boost::container::set<std::string>&);
+        Option<core::uint> compile(const std::set<std::string>&);
 
         const std::string& error() const;
 
@@ -40,7 +40,7 @@ namespace renderer
         ShaderType _shaderType;
         std::string _source;
         std::string _lastError;
-        boost::container::map<boost::container::set<std::string>, core::uint> _shader;
+        std::map<std::set<std::string>, core::uint> _shader;
 
         void logError(core::uint);
         static std::string getBuiltInDefine();

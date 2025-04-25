@@ -2,7 +2,7 @@
 #define BULLETTERRAINSHAPE_H
 
 #include "core/core.h"
-#include "BulletObject.h"
+#include "bullet/BulletObject.h"
 #include <BulletCollision/CollisionShapes/btHeightfieldTerrainShape.h>
 
 namespace tim

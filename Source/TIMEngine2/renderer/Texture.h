@@ -9,7 +9,7 @@ namespace tim
     using namespace core;
 namespace renderer
 {
-    class Texture : public boost::noncopyable
+    class Texture : public NonCopyable
     {
     public:
         enum Type

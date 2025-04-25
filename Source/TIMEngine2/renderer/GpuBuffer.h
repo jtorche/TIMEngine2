@@ -16,7 +16,7 @@ namespace renderer
         typename T,
         class BufferPolicy
     >
-    class GpuBuffer : boost::noncopyable
+    class GpuBuffer : NonCopyable
     {
     public:
         using Type = T;

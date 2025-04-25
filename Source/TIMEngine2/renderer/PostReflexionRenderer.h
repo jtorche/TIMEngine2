@@ -11,7 +11,7 @@ namespace tim
 namespace renderer
 {
 
-    class PostReflexionRenderer : boost::noncopyable
+    class PostReflexionRenderer : NonCopyable
     {
     public:
         PostReflexionRenderer(LightContextRenderer&);

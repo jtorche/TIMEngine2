@@ -26,7 +26,7 @@ namespace interface
         renderer::Shader* get(std::string) const;
 
     private:
-        boost::container::map<std::string, renderer::Shader*> _shaders;
+        std::map<std::string, renderer::Shader*> _shaders;
     };
 }
 }

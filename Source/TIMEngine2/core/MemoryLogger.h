@@ -2,8 +2,8 @@
 #define MEMORYLOGGER_H_INCLUDED
 
 #include <cstdlib>
+#include <mutex>
 #include "type.h"
-#include <boost/thread.hpp>
 
 #include "Exception.h"
 
@@ -27,8 +27,8 @@ namespace core
         static MemoryLogger& instance();
         static void freeInstance();
 
-		void* alloc(size_t, size_t, const std::string&, bool) throw(std::bad_alloc);
-		void dealloc(void*, bool) throw(BadDealloc);
+		void* alloc(size_t, size_t, const std::string&, bool);
+		void dealloc(void*, bool);
         void nextDealloc(size_t, const std::string&);
 
         bool exist(void*) const;
@@ -43,7 +43,7 @@ namespace core
         std::map<void*, MemoryAlloc> _allocatedMemorys;
         size_t _lastDeallocLine;
         std::string _lastDeallocFile;
-        mutable boost::recursive_mutex _mutex;
+        mutable std::recursive_mutex _mutex;
 
         static MemoryLogger* _instance;
 
@@ -59,8 +59,10 @@ namespace core
 #ifdef TIM_DEBUG
 void* operator new(size_t size, size_t line, const std::string& file);
 void* operator new[](size_t size, size_t line, const std::string& file);
-void operator delete(void* ptr) throw();
-void operator delete[](void* ptr) throw();
+void operator delete(void* ptr);
+void operator delete[](void* ptr);
+void operator delete(void* ptr, size_t line, const std::string& file);
+void operator delete[](void* ptr, size_t line, const std::string& file);
 #endif
 
 #endif // MEMORYLOGGER_H_INCLUDED

@@ -2,7 +2,6 @@
 #define SCENECONT_H_INCLUDED
 
 #include <typeindex>
-#include <boost/unordered_map.hpp>
 #include <algorithm>
 #include <iterator>
 
@@ -34,7 +33,7 @@ namespace scene
             vector<Contained*>& cvec = _typeContainer[std::type_index(typeid(SuperType))];
             cvec.push_back(obj);
 
-            _container.back()->_containerInfo = {this, _container.size()-1, cvec.size()-1 };
+            _container.back()->_containerInfo = { this, (uint)_container.size() - 1, (uint)cvec.size() - 1};
 
             return *obj;
         }
@@ -95,7 +94,7 @@ namespace scene
 
     protected:
         vector<Contained*> _container;
-        boost::unordered_map<std::type_index, vector<Contained*>> _typeContainer;
+        std::unordered_map<std::type_index, vector<Contained*>> _typeContainer;
     };
 
 }

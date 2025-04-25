@@ -74,7 +74,7 @@ int MeshRenderer::draw(const vector<MeshBuffers*>& meshs, const vector<mat4>& mo
     IndirectDrawParmeter drawParam[_maxUboMat4];
     for(uint i=0 ; i<nbLoop ; ++i)
     {
-        uint innerLoop = std::min(_maxUboMat4,models.size() - i*_maxUboMat4);
+        uint innerLoop = std::min<uint>(_maxUboMat4, models.size() - i*_maxUboMat4);
         _modelBuffer.flush(&models[_maxUboMat4*i], 0, innerLoop);
 
         if(!materials.empty())

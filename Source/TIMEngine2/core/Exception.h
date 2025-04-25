@@ -9,6 +9,7 @@ namespace tim
 {
 namespace core
 {
+#if 0
     class Exception : public std::exception
     {
     public:
@@ -53,6 +54,7 @@ namespace core
     public:
         AllocationFailedException() : Exception("Failed to alloc the requested memory, probably not enough space.") {}
     };
+#endif
 }
 }
 #include "MemoryLoggerOff.h"

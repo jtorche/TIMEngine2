@@ -28,7 +28,7 @@ namespace core
             }
         }
 
-#ifndef USE_VCPP
+
         template <class First, class... Rest>
         explicit Vector(First first, Rest... rest)
         {
@@ -36,7 +36,8 @@ namespace core
                     _val[i]=T();
                 construct<0, First, Rest... >(first, rest... );
         }
-#else
+
+#if 0
 		explicit Vector(const T& x, const T& y) : Vector()
 		{ static_assert(N >= 2, "To much data in constructor"); _val[0] = x; _val[1] = y; }
 		explicit Vector(const T& x, const T& y, const T& z) : Vector()
@@ -273,26 +274,26 @@ namespace core
 
     typedef Vector4<float> vec4;
     typedef Vector4<int> ivec4;
-    typedef Vector4<size_t> uivec4;
+    typedef Vector4<unsigned int> uivec4;
     typedef Vector4<double> dvec4;
     typedef Vector4<ubyte> ubvec4;
     typedef Vector4<bool> bvec4;
 
     typedef Vector3<float> vec3;
     typedef Vector3<int> ivec3;
-    typedef Vector3<size_t> uivec3;
+    typedef Vector3<unsigned int> uivec3;
     typedef Vector3<double> dvec3;
     typedef Vector3<ubyte> ubvec3;
 
     typedef Vector2<float> vec2;
     typedef Vector2<int> ivec2;
-    typedef Vector2<size_t> uivec2;
+    typedef Vector2<unsigned int> uivec2;
     typedef Vector2<double> dvec2;
     typedef Vector2<ubyte> ubvec2;
 
     typedef Vector<float,1> vec1;
     typedef Vector<int,1> ivec1;
-    typedef Vector<size_t,1> uivec1;
+    typedef Vector<unsigned int,1> uivec1;
     typedef Vector<double,1> dvec1;
     typedef Vector<ubyte,1> ubvec1;
 

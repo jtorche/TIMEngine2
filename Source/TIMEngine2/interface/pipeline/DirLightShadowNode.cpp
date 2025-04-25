@@ -49,7 +49,7 @@ void DirLightShadowNode::release(int)
 
 void DirLightShadowNode::setShadowLightRange(const vector<float>& r)
 {
-    for(uint i=0 ; i<std::min(renderer::MAX_SHADOW_MAP_LVL, r.size()) ; ++i)
+    for(uint i=0 ; i<std::min<uint>(renderer::MAX_SHADOW_MAP_LVL, (uint)r.size()) ; ++i)
     {
         _sizeOrtho[i] = vec3(r[i], r[i], 1000);
         _orthoMatrix[i] = mat4::Ortho(-_sizeOrtho[i].x(), _sizeOrtho[i].x(),
@@ -57,10 +57,10 @@ void DirLightShadowNode::setShadowLightRange(const vector<float>& r)
                                       -_sizeOrtho[i].z(), _sizeOrtho[i].z());
     }
 
-    if(_resolution.z() != std::min(renderer::MAX_SHADOW_MAP_LVL, r.size()))
+    if(_resolution.z() != std::min<uint>(renderer::MAX_SHADOW_MAP_LVL, (uint)r.size()))
     {
         _needUpdate = true;
-        _resolution.z() = std::min(renderer::MAX_SHADOW_MAP_LVL, r.size());
+        _resolution.z() = std::min<uint>(renderer::MAX_SHADOW_MAP_LVL, (uint)r.size());
     }
 }
 

@@ -33,21 +33,19 @@ MemoryLogger::~MemoryLogger()
     }
 }
 
-void* MemoryLogger::alloc(size_t size, size_t line, const std::string& file, bool isArray) throw(std::bad_alloc)
+void* MemoryLogger::alloc(size_t size, size_t line, const std::string& file, bool isArray)
 {
     void* ptr = malloc(size);
-    if(ptr == nullptr)
-        throw std::bad_alloc();
 
-    boost::lock_guard<boost::recursive_mutex> guard(_mutex);
+    std::lock_guard guard(_mutex);
     _allocatedMemorys[ptr] = {ptr, size, line, file, isArray};
 
     return (void*)ptr;
 }
 
-void MemoryLogger::dealloc(void* ptr, bool isArray) throw(BadDealloc)
+void MemoryLogger::dealloc(void* ptr, bool isArray)
 {
-    boost::lock_guard<boost::recursive_mutex> guard(_mutex);
+    std::lock_guard guard(_mutex);
     auto it = _allocatedMemorys.find(ptr);
     if(it != _allocatedMemorys.end())
     {
@@ -57,15 +55,13 @@ void MemoryLogger::dealloc(void* ptr, bool isArray) throw(BadDealloc)
             {
                 DLOG("BadDealloc, use delete instead of delete[] at line " +
                                  StringUtils(_lastDeallocLine).str() + " in " + _lastDeallocFile + "\n");
-                throw BadDealloc("BadDealloc, use delete instead of delete[] at line " +
-                                 StringUtils(_lastDeallocLine).str() + " in " + _lastDeallocFile);
+                TIM_ASSERT(false);
             }
             else
             {
                 DLOG("BadDealloc, use delete[] instead of delete at line " +
                                  StringUtils(_lastDeallocLine).str() + " in " + _lastDeallocFile + "\n");
-                throw BadDealloc("BadDealloc, use delete[] instead of delete at line " +
-                                 StringUtils(_lastDeallocLine).str() + " in " + _lastDeallocFile);
+                TIM_ASSERT(false);
             }
         }
         else
@@ -83,7 +79,7 @@ void MemoryLogger::dealloc(void* ptr, bool isArray) throw(BadDealloc)
 
 void MemoryLogger::nextDealloc(size_t line, const std::string& file)
 {
-    boost::lock_guard<boost::recursive_mutex> guard(_mutex);
+    std::lock_guard guard(_mutex);
     _lastDeallocLine = line;
     _lastDeallocFile = file;
 }
@@ -92,7 +88,7 @@ void MemoryLogger::printLeak() const
 {
     DLOG("\nLeaks detected:\n");
 
-    boost::lock_guard<boost::recursive_mutex> guard(_mutex);
+    std::lock_guard guard(_mutex);
     for(auto it = _allocatedMemorys.begin() ; it != _allocatedMemorys.end() ; ++it)
     {
         DLOG("Leak of size " + StringUtils(it->second.size).str() + " in " +
@@ -103,7 +99,7 @@ void MemoryLogger::printLeak() const
 
 bool MemoryLogger::exist(void* ptr) const
 {
-    boost::lock_guard<boost::recursive_mutex> guard(_mutex);
+    std::lock_guard guard(_mutex);
     if(_allocatedMemorys.find(ptr) != _allocatedMemorys.end())
         return true;
     else
@@ -121,12 +117,19 @@ void* operator new[](size_t size, size_t line, const std::string& file)
     return MemoryLogger::instance().alloc(size, line, file, true);
 }
 
-void operator delete(void* ptr) throw()
+void operator delete(void* ptr)
 {
     MemoryLogger::instance().dealloc(ptr, false);
 }
-
-void operator delete[](void* ptr) throw()
+void operator delete[](void* ptr)
+{
+    MemoryLogger::instance().dealloc(ptr, true);
+}
+void operator delete(void* ptr, size_t line, const std::string& file)
+{
+    MemoryLogger::instance().dealloc(ptr, false);
+}
+void operator delete[](void* ptr, size_t line, const std::string& file)
 {
     MemoryLogger::instance().dealloc(ptr, true);
 }

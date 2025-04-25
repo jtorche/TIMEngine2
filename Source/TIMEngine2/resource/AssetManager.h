@@ -7,9 +7,6 @@
 #include "SpinLock.h"
 #include "AddYourLoader.h"
 
-#include <boost/tuple/tuple.hpp>
-#include <boost/tuple/tuple_comparison.hpp>
-
 namespace tim
 {
     using namespace core;
@@ -66,7 +63,7 @@ namespace resource
 
         void addLoaders(GenericLoader* l)
         {
-            boost::lock_guard<SpinLock> guard(_lock);
+            std::lock_guard<SpinLock> guard(_lock);
             _loaders.push_back(l);
         }
 
@@ -79,28 +76,28 @@ namespace resource
 
             Option<T> get(Args... args) const
             {
-                boost::lock_guard<SpinLock> guard(_lock);
-                auto it = _assets.find(boost::make_tuple(args...));
+                std::lock_guard<SpinLock> guard(_lock);
+                auto it = _assets.find(std::make_tuple(args...));
                 if(it == _assets.end()) return Option<T>();
                 else return Option<T>(it->second);
             }
 
             void add(Args... args, const T& asset)
             {
-                boost::lock_guard<SpinLock> guard(_lock);
-                _assets[boost::make_tuple(args...)] = asset;
+                std::lock_guard<SpinLock> guard(_lock);
+                _assets[std::make_tuple(args...)] = asset;
             }
 
             void clear() override
             {
-                 boost::lock_guard<SpinLock> guard(_lock);
+                 std::lock_guard<SpinLock> guard(_lock);
                 _assets.clear();
             }
 
-            //typename boost::container::map<boost::tuple<Args...>, T>::const_iterator begin() const { return _assets.begin(); }
-            //typename boost::container::map<boost::tuple<Args...>, T>::const_iterator end() const { return _assets.end(); }
+            //typename std::map<std::tuple<Args...>, T>::const_iterator begin() const { return _assets.begin(); }
+            //typename std::map<std::tuple<Args...>, T>::const_iterator end() const { return _assets.end(); }
 
-            boost::container::map<boost::tuple<Args...>, T> _assets;
+            std::map<std::tuple<Args...>, T> _assets;
             mutable SpinLock _lock;
         };
 

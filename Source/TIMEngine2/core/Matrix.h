@@ -446,11 +446,7 @@ namespace core
 
         static Matrix4 constructTransformation(const Matrix3<T>& rot, const Vector3<T>& tr, const Vector3<T>& sc)
         {
-        #ifndef USE_VCPP
-            Matrix4 trans = rot.template to<4>() * Matrix4::Scale(sc);
-        #else
             Matrix4 trans = rot.to<4>() * Matrix4::Scale(sc);
-        #endif
             trans.setTranslation(tr);
             return trans;
         }

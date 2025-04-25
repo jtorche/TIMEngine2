@@ -1,7 +1,7 @@
 #ifndef SPINLOCK_H_INCLUDED
 #define SPINLOCK_H_INCLUDED
 
-#include <boost/atomic.hpp>
+#include <atomic>
 
 namespace tim
 {
@@ -14,17 +14,17 @@ namespace core
 
         void lock()
         {
-            while (_state.exchange(Locked, boost::memory_order_acquire) == Locked);
+            while (_state.exchange(Locked, std::memory_order_acquire) == Locked);
         }
 
         void unlock()
         {
-            _state.store(Unlocked, boost::memory_order_release);
+            _state.store(Unlocked, std::memory_order_release);
         }
 
     private:
         typedef enum {Locked, Unlocked} LockState;
-        boost::atomic<LockState> _state;
+        std::atomic<LockState> _state;
     };
 }
 }

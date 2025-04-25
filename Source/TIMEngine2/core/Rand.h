@@ -1,12 +1,8 @@
 #ifndef RAND_H_INCLUDED
 #define RAND_H_INCLUDED
 
-#include <boost/random/taus88.hpp>
-#include <boost/random/mersenne_twister.hpp>
-#include <boost/random/uniform_01.hpp>
-#include <boost/random/uniform_int_distribution.hpp>
-#include <boost/random/uniform_real_distribution.hpp>
 #include "Vector.h"
+#include <random>
 
 #include "MemoryLoggerOn.h"
 namespace tim
@@ -26,7 +22,7 @@ namespace core
             if(range.x() >= range.y())
                 return range.x();
 
-            boost::random::uniform_real_distribution<> dis(range.x(), range.y());
+            std::uniform_real_distribution<float> dis(range.x(), range.y());
             return float(dis(_generator));
         }
 
@@ -34,32 +30,32 @@ namespace core
         void setSeed(uint seed) { _generator.seed(seed); }
 
         /* Static */
-        static float frand() { return float(frand_range(generator)); }
+        static float frand() { return float(frand_range(s_generator)); }
 
         static float frand(const vec2& range)
         {
             if(range.x() >= range.y())
                 return range.x();
 
-            boost::random::uniform_real_distribution<> dis(range.x(), range.y());
-            return float(dis(generator));
+            std::uniform_real_distribution<float> dis(range.x(), range.y());
+            return float(dis(s_generator));
         }
 
-        static size_t rand() { return generator(); }
+        static size_t rand() { return s_generator(); }
 
         static int rand(const ivec2& range)
         {
-            boost::random::uniform_int_distribution<> dis(range.x(), range.y());
-            return dis(generator);
+            std::uniform_int_distribution<> dis(range.x(), range.y());
+            return dis(s_generator);
         }
 
-        static void seed(uint seed) { generator.seed(seed); }
+        static void seed(uint seed) { s_generator.seed(seed); }
 
     private:
-        boost::random::mt11213b _generator;
+        std::default_random_engine  _generator;
 
-        static boost::random::taus88 generator;
-        static boost::random::uniform_01<> frand_range;
+        static std::default_random_engine s_generator;
+        static std::uniform_real<float> frand_range;
     };
 
 }

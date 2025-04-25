@@ -18,7 +18,7 @@ uint textureSampler[static_cast<uint>(TextureMode::Last)];
 ThreadPool globalThreadPool(4);
 TextureBufferPool* texBufferPool = nullptr;
 
-static void WINAPI debugOut(unsigned int, unsigned int, unsigned int, unsigned int severity, int, const char* msg, const void*)
+static void debugOut(unsigned int, unsigned int, unsigned int, unsigned int severity, int, const char* msg, const void*)
 {
     if(severity == GL_DEBUG_SEVERITY_HIGH)
     {

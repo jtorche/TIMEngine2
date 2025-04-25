@@ -52,7 +52,7 @@ DirectionalLightRenderer::~DirectionalLightRenderer()
 
 void DirectionalLightRenderer::draw(const vector<Light>& lights) const
 {
-    _context.frameBuffer().bind();
+    _context.frameBuffer()->bind();
     _state.bind();
 
     int nbLight = static_cast<int>(lights.size());

@@ -1,7 +1,6 @@
 #ifndef PIPELINE_H
 #define PIPELINE_H
 
-#include <boost/thread/locks.hpp>
 #include "SpinLock.h"
 #include "core.h"
 #include "Camera.h"
@@ -13,7 +12,6 @@
 #include "renderer/PostReflexionRenderer.h"
 #include "MeshInstance.h"
 #include "LightInstance.h"
-#include <boost/tuple/tuple_comparison.hpp>
 
 #include "MemoryLoggerOn.h"
 namespace tim
@@ -40,7 +38,7 @@ namespace interface
         };
 
         template<class SceneType>
-        struct SceneEntity : boost::noncopyable
+        struct SceneEntity : NonCopyable
         {
             SceneType scene;
             GlobalLight globalLight;
@@ -112,7 +110,7 @@ namespace interface
 
             bool tryPrepare() const
             {
-                boost::lock_guard<SpinLock> guard(_preparedLock);
+                std::lock_guard<SpinLock> guard(_preparedLock);
                 if(_alreadyPrepared) return false;
                 else
                 {
@@ -143,7 +141,7 @@ namespace interface
 
             bool tryRender() const
             {
-                boost::lock_guard<SpinLock> guard(_renderedlock);
+                std::lock_guard<SpinLock> guard(_renderedlock);
                 if(_alreadyRendered) return false;
                 else
                 {
@@ -347,7 +345,7 @@ namespace interface
     private:
         renderer::MeshRenderer _meshRenderer;
 
-        boost::container::map<boost::tuple<uivec2,bool,bool,int>, std::unique_ptr<DeferredRendererEntity>> _deferredRendererEntity;
+        std::map<std::tuple<uivec2,bool,bool,int>, std::unique_ptr<DeferredRendererEntity>> _deferredRendererEntity;
 
         vector<ProcessNode*> _allProcessNodes;
         TerminalNode* _outputNode = nullptr;

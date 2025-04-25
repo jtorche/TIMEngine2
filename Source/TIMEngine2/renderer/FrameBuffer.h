@@ -10,7 +10,7 @@ namespace tim
     using namespace core;
 namespace renderer
 {
-    class FrameBuffer : boost::noncopyable
+    class FrameBuffer : NonCopyable
     {
     public:
         const static uint MAX_COLOR_ATTACHMENT = 8;

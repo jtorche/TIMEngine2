@@ -19,7 +19,7 @@ namespace renderer
         using InternBufferType = typename BufferType::Type;
         using AllocatorType = FixedSizeBlocksAllocator<SIZE_BLOCK>;
 
-        class Instance : public boost::noncopyable
+        class Instance : public NonCopyable
         {
             friend class BufferPool;
 

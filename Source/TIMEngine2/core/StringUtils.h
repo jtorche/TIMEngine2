@@ -61,7 +61,9 @@ namespace core
 
 
 /** Inline implementation */
+#include "MemoryLoggerOff.h"
 #include <locale>
+#include "MemoryLoggerOn.h"
 
 using namespace tim::core;
 
