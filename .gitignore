@@ -1,5 +1,5 @@
 /build/
-/Lib/
+/Libs/
 *.pro.user*
 /A_Portal_Adventure/
 /build-Editor-Desktop_Qt_5_5_1_MinGW_32bit-Debug/
