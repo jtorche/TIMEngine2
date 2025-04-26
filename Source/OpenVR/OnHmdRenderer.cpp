@@ -103,20 +103,20 @@ namespace tim
 
             if(!_invertEyes)
             {
-                vr::Texture_t leftEyeTexture = { (void*)_textureBuffer[VR_Device::LEFT]->id(), vr::API_OpenGL, vr::ColorSpace_Linear };
+                vr::Texture_t leftEyeTexture = { (void*)(std::uintptr_t)_textureBuffer[VR_Device::LEFT]->id(), vr::TextureType_OpenGL, vr::ColorSpace_Linear };
                 vr::VRCompositor()->Submit(vr::Eye_Left, &leftEyeTexture);
 
                 //vr::Texture_t rightEyeTexture = { (void*)_input[VR_Device::RIGHT]->buffer()->id(), vr::API_OpenGL, vr::ColorSpace_Linear };
-                vr::Texture_t rightEyeTexture = { (void*)_textureBuffer[VR_Device::RIGHT]->id(), vr::API_OpenGL, vr::ColorSpace_Linear };
+                vr::Texture_t rightEyeTexture = { (void*)(std::uintptr_t)_textureBuffer[VR_Device::RIGHT]->id(), vr::TextureType_OpenGL, vr::ColorSpace_Linear };
                 vr::VRCompositor()->Submit(vr::Eye_Right, &rightEyeTexture);
             }
             else
             {
-                vr::Texture_t leftEyeTexture = { (void*)_textureBuffer[VR_Device::RIGHT]->id(), vr::API_OpenGL, vr::ColorSpace_Linear };
+                vr::Texture_t leftEyeTexture = { (void*)(std::uintptr_t)_textureBuffer[VR_Device::RIGHT]->id(), vr::TextureType_OpenGL, vr::ColorSpace_Linear };
                 vr::VRCompositor()->Submit(vr::Eye_Left, &leftEyeTexture);
 
                 //vr::Texture_t rightEyeTexture = { (void*)_input[VR_Device::RIGHT]->buffer()->id(), vr::API_OpenGL, vr::ColorSpace_Linear };
-                vr::Texture_t rightEyeTexture = { (void*)_textureBuffer[VR_Device::LEFT]->id(), vr::API_OpenGL, vr::ColorSpace_Linear };
+                vr::Texture_t rightEyeTexture = { (void*)(std::uintptr_t)_textureBuffer[VR_Device::LEFT]->id(), vr::TextureType_OpenGL, vr::ColorSpace_Linear };
                 vr::VRCompositor()->Submit(vr::Eye_Right, &rightEyeTexture);
             }
 

@@ -2,8 +2,8 @@
 #define HMD_SCENEVIEW_H
 
 #include "interface/pipeline/pipeline.h"
-#include "OpenVR/VR_Device.h"
-#include "OpenVR/VRDebugCamera.h"
+#include "VR_Device.h"
+#include "VRDebugCamera.h"
 
 namespace tim {
     struct HmdSceneView
@@ -28,7 +28,7 @@ namespace tim {
 
         void update(const Camera&)
         {
-            throw Exception("update(const Camera&) from HmdSceneView not implemented");
+            TIM_ASSERT(false);
         }
 
         const mat4& transform() const { return _transform; }

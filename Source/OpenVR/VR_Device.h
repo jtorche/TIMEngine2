@@ -1,7 +1,7 @@
 #ifndef VR_DEVICE_H__
 #define VR_DEVICE_H__
 
-#include <openvr_mingw.hpp>
+#include <openvr.h>
 #include "core/Matrix.h"
 
 #include "renderer/FrameBuffer.h"

@@ -78,8 +78,8 @@ VR_Device::VR_Device(vec2 zdist)
 
 	LOG("openvr initialized on ", strTrackingSystem, " by ", strManufacturer, "\n");
 
-	_hmdCamera._projection[LEFT] = convertToMat4(_hmd->GetProjectionMatrix(vr::Eye_Left, zdist.x(), zdist.y(), vr::API_OpenGL));
-	_hmdCamera._projection[RIGHT] = convertToMat4(_hmd->GetProjectionMatrix(vr::Eye_Right, zdist.x(), zdist.y(), vr::API_OpenGL));
+	_hmdCamera._projection[LEFT] = convertToMat4(_hmd->GetProjectionMatrix(vr::Eye_Left, zdist.x(), zdist.y()));
+	_hmdCamera._projection[RIGHT] = convertToMat4(_hmd->GetProjectionMatrix(vr::Eye_Right, zdist.x(), zdist.y()));
 
 	_hmdCamera._hmdToEye[RIGHT] = convertToMat4(_hmd->GetEyeToHeadTransform(vr::Eye_Left));
 	_hmdCamera._hmdToEye[LEFT] = convertToMat4(_hmd->GetEyeToHeadTransform(vr::Eye_Right));

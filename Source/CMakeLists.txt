@@ -4,6 +4,7 @@ project(TIMEngine2Solution DESCRIPTION "TIMEngine2Solution" LANGUAGES CXX)
 
 add_definitions(-DUSE_VCPP)
 add_definitions(-DNO_OGG_VORBIS)
+# SET(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /DTIM_DEBUG")
 
 # Only do these if this is the main project, and not if it is included through
 # add_subdirectory
@@ -19,9 +20,10 @@ if (CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
     set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 endif()
 
-# SET(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /DTIM_DEBUG")
+option(ENABLE_VR "Check it to add support for VR headset (OpenVR)." OFF)
 
 # Libraries code
 add_subdirectory(TIMEngine2)
+add_subdirectory(OpenVR)
 add_subdirectory(External/tinyxml)
 add_subdirectory(Tests)
