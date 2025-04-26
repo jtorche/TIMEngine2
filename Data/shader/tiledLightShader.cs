@@ -40,7 +40,7 @@ uniform int nbLight;
 
 #define MAX_LIGHT_TILE 128
 shared uint lightsTile[MAX_LIGHT_TILE];
-shared uint lightsTileSize = 0;
+shared uint lightsTileSize;
 
 vec3 computeFragPosWorldOrigin(float depth, vec2 texCoord)
 {
@@ -108,6 +108,9 @@ vec3 parallaxCorrection(vec3 position, vec3 dir, vec3 center, float radius);
 
 void main()
 {
+	lightsTileSize = 0;
+	barrier();
+	
 	ivec2 texSize = textureSize(texture0,0);
 	if(gl_GlobalInvocationID.x >= texSize.x || gl_GlobalInvocationID.y >= texSize.y)
 		return;
