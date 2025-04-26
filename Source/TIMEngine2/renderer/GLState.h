@@ -1,7 +1,7 @@
 #ifndef GLSTATE_H_INCLUDED
 #define GLSTATE_H_INCLUDED
 
-#include "GL/glew.h"
+#include <GL/glew.h>
 
 #include <queue>
 #include <functional>

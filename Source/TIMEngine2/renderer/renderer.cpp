@@ -1,6 +1,6 @@
 #include "renderer.h"
 
-#include "GL/glew.h"
+#include <GL/glew.h>
 #include "Logger.h"
 #include "Texture.h"
 #include "ShaderCompiler.h"
