@@ -15,15 +15,15 @@ namespace core
     class ThreadPool : NonCopyable
     {
     public:
-        ThreadPool() { _pool = new ThreadPoolExt(std::thread::hardware_concurrency()); }
-        ThreadPool(size_t poolSize) { _pool = new ThreadPoolExt(poolSize); }
-        ~ThreadPool() { delete _pool; }
+        ThreadPool() : _pool(std::thread::hardware_concurrency()) {}
+        ThreadPool(size_t poolSize) : _pool(poolSize) {}
+        ~ThreadPool() = default;
 
         template <class T>
         ThreadPool& schedule(const T& task)
         {
             std::lock_guard guard(_mutex);
-            _pool->enqueue(task);
+            _pool.enqueue(task);
             return *this;
         }
 
@@ -32,7 +32,7 @@ namespace core
         {
             std::lock_guard(_mutex);
             std::shared_ptr<std::promise<decltype((*((TaskType*)nullptr))())>> prom(new std::promise<decltype((*((TaskType*)nullptr))())>());
-            _pool->schedule([=](){prom->set_value(task());});
+            _pool.schedule([=](){prom->set_value(task());});
             return prom->get_future();
 
         }
@@ -44,7 +44,7 @@ namespace core
         // void wait(size_t threshold=0) const;
 
     private:
-        ThreadPoolExt* _pool;
+        ThreadPoolExt _pool;
         mutable std::mutex _mutex;
     };
 

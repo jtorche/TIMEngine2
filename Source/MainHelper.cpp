@@ -1,14 +1,15 @@
 #include "MainHelper.h"
 #include "renderer/GLState.h"
+#include "interface/ShaderPool.h"
 #include <SDL_image.h>
 
 #undef interface
 using namespace tim;
 
-SDL_Window *pWindow;
-SDL_GLContext contexteOpenGL;
+SDL_Window *g_pWindow;
+SDL_GLContext g_contexteOpenGL;
 
-void initContextSDL()
+void initContextSDL(uint x, uint y)
 {
 	/* Initialisation simple */
 	if (SDL_Init(SDL_INIT_VIDEO) != 0)
@@ -22,36 +23,36 @@ void initContextSDL()
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 3);
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
 
-	pWindow = SDL_CreateWindow("SDL2", SDL_WINDOWPOS_UNDEFINED,
+	g_pWindow = SDL_CreateWindow("SDL2", SDL_WINDOWPOS_UNDEFINED,
 		SDL_WINDOWPOS_UNDEFINED,
-		WIN_RES_X, WIN_RES_Y,
+		x, y,
 		SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL /* | SDL_WINDOW_FULLSCREEN*/);
-	contexteOpenGL = SDL_GL_CreateContext(pWindow);
+	g_contexteOpenGL = SDL_GL_CreateContext(g_pWindow);
 
 	//SDL_ShowCursor(SDL_DISABLE);
-    SDL_SetWindowGrab(pWindow, SDL_TRUE);
+    SDL_SetWindowGrab(g_pWindow, SDL_TRUE);
     SDL_SetRelativeMouseMode(SDL_TRUE);
 
-	if (contexteOpenGL == 0)
+	if (g_contexteOpenGL == 0)
 	{
 		LOG(SDL_GetError(), "\n");
 		system("pause");
 		return;
 	}
-    renderer::openGL.setViewPort({ 0,0 }, { WIN_RES_X, WIN_RES_Y });
+    renderer::openGL.setViewPort({ 0,0 }, { x, y });
 
 	IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG);
 }
 
 void swapBuffer()
 {
-    SDL_GL_SwapWindow(pWindow);
+    SDL_GL_SwapWindow(g_pWindow);
 }
 
 void delContextSDL()
 {
 	IMG_Quit();
-	SDL_GL_DeleteContext(contexteOpenGL);
-	SDL_DestroyWindow(pWindow);
+	SDL_GL_DeleteContext(g_contexteOpenGL);
+	SDL_DestroyWindow(g_pWindow);
 	SDL_Quit();
 }

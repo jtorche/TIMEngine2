@@ -59,8 +59,6 @@ namespace core
 #ifdef TIM_DEBUG
 void* operator new(size_t size, size_t line, const std::string& file);
 void* operator new[](size_t size, size_t line, const std::string& file);
-void operator delete(void* ptr);
-void operator delete[](void* ptr);
 void operator delete(void* ptr, size_t line, const std::string& file);
 void operator delete[](void* ptr, size_t line, const std::string& file);
 #endif

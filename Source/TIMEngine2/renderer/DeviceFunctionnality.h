@@ -1,29 +1,17 @@
 #ifndef DEVICEFUN_H_INCLUDED
 #define DEVICEFUN_H_INCLUDED
 
-#ifdef USE_SDL
-#include <SDL.h>
-#endif
+#include <thread>
 
 namespace tim
 {
 namespace renderer
 {
-
-#ifdef USE_SDL
-    using ThreadID = SDL_threadID;
-#else
-    using ThreadID = int;
-#endif
+    using ThreadID = std::thread::id;
 
     inline ThreadID getThreadId()
     {
-    #ifdef USE_SDL
-        return SDL_ThreadID();
-    #else
-        TIM_ASSERT(false);
-        return 0;
-    #endif
+        return std::this_thread::get_id();
     }
 }
 }

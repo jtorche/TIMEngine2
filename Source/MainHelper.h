@@ -7,16 +7,11 @@
 
 #include "MemoryLoggerOn.h"
 
-static const uint WIN_RES_X = 1800;
-static const uint WIN_RES_Y = 1000;
-
-//static const uint WIN_RES_X = 900;
-//static const uint WIN_RES_Y = 1000;
-
-
-void initContextSDL();
+void initContextSDL(uint x, uint y);
 void delContextSDL();
 void swapBuffer();
+extern SDL_Window* g_pWindow;
+extern SDL_GLContext g_contexteOpenGL;
 
 template <int I, int N = 100>
 float countTime(float time)

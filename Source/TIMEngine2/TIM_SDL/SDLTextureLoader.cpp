@@ -18,7 +18,7 @@ ubyte* SDLTextureLoader::loadImage(const std::string& file, ImageFormat& format)
     SDL_LockSurface(img);
 
     format.nbComponent = 4;
-    format.size = { (size_t)img->w, (size_t)img->h };
+    format.size = { (uint)img->w, (uint)img->h };
 
     SDL_Surface* converted = SDL_ConvertSurfaceFormat(img, SDL_BYTEORDER == SDL_BIG_ENDIAN ? SDL_PIXELFORMAT_RGBA8888 : SDL_PIXELFORMAT_ABGR8888, 0);
 

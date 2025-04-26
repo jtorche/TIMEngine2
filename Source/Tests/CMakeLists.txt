@@ -4,11 +4,10 @@ project(TIMEngine2_Tests DESCRIPTION "Console application to easily test TIMEngi
 
 file(GLOB_RECURSE tests_sources *.cpp *.h)
 
-add_executable(${PROJECT_NAME} ${tests_sources})
+add_executable(${PROJECT_NAME} ${tests_sources} ${CMAKE_CURRENT_SOURCE_DIR}/../MainHelper.h ${CMAKE_CURRENT_SOURCE_DIR}/../MainHelper.cpp)
 
 # Linked libraries
 target_link_libraries(${PROJECT_NAME} PRIVATE TIMEngine2)
-target_include_directories(${PROJECT_NAME} PRIVATE "../")
 
 # For nicer IDE views
 set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "executable")

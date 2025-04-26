@@ -117,14 +117,6 @@ void* operator new[](size_t size, size_t line, const std::string& file)
     return MemoryLogger::instance().alloc(size, line, file, true);
 }
 
-void operator delete(void* ptr)
-{
-    MemoryLogger::instance().dealloc(ptr, false);
-}
-void operator delete[](void* ptr)
-{
-    MemoryLogger::instance().dealloc(ptr, true);
-}
 void operator delete(void* ptr, size_t line, const std::string& file)
 {
     MemoryLogger::instance().dealloc(ptr, false);
