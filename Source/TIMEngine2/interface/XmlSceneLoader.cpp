@@ -11,8 +11,10 @@ bool XmlSceneLoader::loadScene(std::string file, interface::Scene& scene, vector
 {
     TiXmlDocument doc(file);
 
-    if(!doc.LoadFile())
+    if (!doc.LoadFile()) {
+        LOG("Fail to load scene ", file);
         return false;
+    }
 
     TiXmlElement* root=doc.FirstChildElement();
     TiXmlElement* elem = root;

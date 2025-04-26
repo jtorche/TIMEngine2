@@ -18,8 +18,10 @@ bool XmlMeshAssetLoader::load(std::string filename)
 {
     TiXmlDocument doc(filename);
 
-    if(!doc.LoadFile())
+    if (!doc.LoadFile()) {
+        LOG("Fail to load xml file ", filename);
         return false;
+    }
 
     TiXmlElement* elem=doc.FirstChildElement();
 

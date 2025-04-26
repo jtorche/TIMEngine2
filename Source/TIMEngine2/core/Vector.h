@@ -227,7 +227,7 @@ namespace core
         friend std::ostream& operator<< (std::ostream& stream, const Vector& t) { stream << t.str(); return stream;}
 
     protected:
-        T _val[N];
+        T _val[N] = {};
 
         /* Variadic constructor helper */
         template<class TT>

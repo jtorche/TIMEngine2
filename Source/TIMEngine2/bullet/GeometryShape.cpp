@@ -53,7 +53,7 @@ btBvhTriangleMeshShape* GeometryShape::genStaticGeometryShape(const vector<MeshI
 }
 
 //btBvhTriangleMeshShape* GeometryShape::genStaticGeometryShape(const resource::assimpMeshLoader& loader,
-//                                                              const boost::container::set<std::string>& ignore)
+//                                                              const std::set<std::string>& ignore)
 //{
 //    vector<MeshInstance> geom;
 //    for(uint i=0 ; i<loader.nodes().size() ; ++i)

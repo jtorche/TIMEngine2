@@ -9,7 +9,7 @@ namespace renderer
 
 
 MeshRenderer::MeshRenderer()
-#ifndef USE_VCPP
+#if !defined(USE_VCPP)
     : _maxUboMat4(openGL.hardward(GLState::Hardward::MAX_UNIFORM_BLOCK_SIZE) / (16*4))
 #endif
 {

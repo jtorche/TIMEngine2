@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.28)
 
 if (ENABLE_VR)
 	project(TIM_VR DESCRIPTION "VR module for TIM_Engine2" LANGUAGES CXX)

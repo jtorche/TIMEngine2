@@ -9,7 +9,7 @@
 
 namespace tim
 {
-
+#if 0
 template<int UNSUDED=0>
 static btHeightfieldTerrainShape* createHeightFieldShape(vec3 size, const ImageAlgorithm<float>& img)
 {
@@ -23,7 +23,7 @@ static btHeightfieldTerrainShape* createHeightFieldShape(vec3 size, const ImageA
     shape->setLocalScaling(btVector3(size.x(), size.y(), size.z()));
     return shape;
 }
-
+#endif
 }
 
 #endif // HEIGHTFIELDSHAPE_H

@@ -56,7 +56,7 @@ namespace core
                     TIM_ASSERT(curSmallest->magnitude != 0 && curSmallest->state == FREE);
                     for(int i=0 ; i<2 ; ++i)
                     {
-                        curSmallest->child[i] = _pool.construct();
+                        curSmallest->child[i] = new Node; // _pool.construct();
                         curSmallest->child[i]->state = FREE;
                         curSmallest->child[i]->parent = curSmallest;
                         curSmallest->child[i]->magnitude = curSmallest->magnitude - 1;
@@ -87,7 +87,8 @@ namespace core
                     n->state = FREE;
                     for(int i=0 ; i<2 ; i++)
                     {
-                        _pool.destroy(n->child[i]);
+                        delete n->child[i];
+                        // _pool.destroy(n->child[i]);
                         n->child[i] = nullptr;
                     }
                 }

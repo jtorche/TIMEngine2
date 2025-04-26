@@ -1,7 +1,7 @@
 #ifndef THREADPOOL_H_INCLUDED
 #define THREADPOOL_H_INCLUDED
 
-#include "ThreadPoolExt.h"
+#include "thread_pool/thread_pool.h"
 #include "Singleton.h"
 #include "NonCopyable.h"
 #include <mutex>
@@ -28,11 +28,11 @@ namespace core
         }
 
         template <class TaskType>
-        std::future<decltype((*((TaskType*)nullptr))())> schedule_trace(const TaskType& task)
+        std::future<decltype((*((TaskType*)nullptr))())> schedule_trace(const TaskType& task) // TODO
         {
-            std::lock_guard(_mutex);
+            std::lock_guard guard(_mutex);
             std::shared_ptr<std::promise<decltype((*((TaskType*)nullptr))())>> prom(new std::promise<decltype((*((TaskType*)nullptr))())>());
-            _pool.schedule([=](){prom->set_value(task());});
+            _pool.enqueue([=](){prom->set_value(task());});
             return prom->get_future();
 
         }
@@ -41,18 +41,16 @@ namespace core
         // size_t pending() const;
         // size_t active() const;
         // 
-        // void wait(size_t threshold=0) const;
+        void wait() { std::lock_guard guard(_mutex); _pool.wait_for_tasks(); }
 
     private:
-        ThreadPoolExt _pool;
+        dp::thread_pool<> _pool;
         mutable std::mutex _mutex;
     };
 
     // inline bool ThreadPool::empty() const { std::lock_guard(_mutex); return _pool->empty(); }
     // inline size_t ThreadPool::pending() const { std::lock_guard(_mutex); return _pool->pending(); }
     // inline size_t ThreadPool::active() const { std::lock_guard(_mutex); return _pool->active(); }
-
-    // inline void ThreadPool::wait(size_t threshold) const { std::lock_guard(_mutex); _pool->wait(threshold); }
 }
 }
 #include "MemoryLoggerOff.h"

@@ -31,7 +31,7 @@ namespace renderer
 
     private:
 
-#ifdef USE_VCPP
+#if defined(USE_VCPP)
         static const uint _maxUboMat4 = 1024;
 #else
         const uint _maxUboMat4;

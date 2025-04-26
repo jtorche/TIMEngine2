@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.28)
 
 project(TIMEngine2 DESCRIPTION "TIMEngine2 library" LANGUAGES CXX)
 
@@ -37,13 +37,13 @@ target_link_libraries(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/../Libs/openal/
 
 # Bullet
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/../Libs/bullet3/include/bullet/)
-# target_link_libraries(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/../Libs/bullet3/LinearMath.lib)
-# target_link_libraries(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/../Libs/bullet3/BulletCollision.lib)
-# target_link_libraries(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/../Libs/bullet3/BulletDynamics.lib)
+target_link_libraries(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/../Libs/bullet3/LinearMath.lib)
+target_link_libraries(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/../Libs/bullet3/BulletCollision.lib)
+target_link_libraries(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/../Libs/bullet3/BulletDynamics.lib)
 
 # Tiny XML
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/External/tinyxml/)
-target_link_libraries(${PROJECT_NAME} PUBLIC tinyxmlstatic)
+target_link_libraries(${PROJECT_NAME} PUBLIC tinyxml)
 
 # SDL2
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/../Libs/SDL2/include/)
