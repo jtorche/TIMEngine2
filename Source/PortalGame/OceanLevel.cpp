@@ -240,7 +240,7 @@ void OceanLevel::manageBoat(float time)
 
     if(_levelState == 1) // move the first boat
     {
-        moveBoat(time, indexObject("boat"), indexObject("boatArrival"), nullptr);
+        moveBoat(time, indexObject("boat"), indexObject("boatArrival"), false);
     }
     else if(_levelState == 2) // reset some variables
     {
@@ -261,7 +261,7 @@ void OceanLevel::manageBoat(float time)
     }
     else if(_levelState == 4) // move the boat2
     {
-        moveBoat(time, indexObject("boat2"), indexObject("boatArrival2"), _syncBoat->boatOcean);
+        moveBoat(time, indexObject("boat2"), indexObject("boatArrival2"), true);
     }
 }
 

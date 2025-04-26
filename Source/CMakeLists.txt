@@ -1,6 +1,7 @@
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.28)
 
 project(TIMEngine2Solution DESCRIPTION "TIMEngine2Solution" LANGUAGES CXX)
+set(CMAKE_SUPPRESS_REGENERATION true)
 
 add_definitions(-DUSE_VCPP)
 add_definitions(-DNO_OGG_VORBIS)
@@ -10,7 +11,7 @@ add_definitions(-DNO_OGG_VORBIS)
 # add_subdirectory
 if (CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
     # C++ Standard
-    set(CMAKE_CXX_STANDARD 17)
+    set(CMAKE_CXX_STANDARD 20)
     set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
     # Ensure -std=c++xx instead of -std=g++xx
@@ -27,3 +28,4 @@ add_subdirectory(TIMEngine2)
 add_subdirectory(OpenVR)
 add_subdirectory(External/tinyxml)
 add_subdirectory(Tests)
+add_subdirectory(PortalGame)

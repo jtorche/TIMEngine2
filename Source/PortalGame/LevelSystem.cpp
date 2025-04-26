@@ -160,7 +160,7 @@ void LevelSystem::update(float time)
 
                 if(scene_portal.second && std::find(x.forbiddenPortals.begin(), x.forbiddenPortals.end(), scene_portal.second) != x.forbiddenPortals.end())
                 {
-                    #warning CHANGE_FORBIDEN_PORTAL_REACTION
+                    // TODO CHANGE_FORBIDEN_PORTAL_REACTION
                     vec3 v = x.instIn->volume().center() - scene_portal.second->volume().center();
                     v.z() = 0;
                     v.resize(5);

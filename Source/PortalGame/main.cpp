@@ -19,30 +19,7 @@ int main(int argc, char* argv[])
 {
     uint RES_X = 1512;
     uint RES_Y = 1680;
-
-//    ConnectFourIA iaTest(true, 9);
-//    do
-//    {
-//        iaTest.printGrid();
-//        std::cout << "Score for you:" << iaTest.computeScore(true) << std::endl;
-//        std::cout << "Index col (1-7):";
-//        int in=0;
-//        std::cin >> in;
-
-//        iaTest.humanPlay(in-1);
-
-//        if(iaTest.checkWinner() != ConnectFourIA::EMPTY)
-//            break;
-
-//        iaTest.computerPlay();
-//        std::cout << std::endl;
-//    }
-//    while(iaTest.checkWinner() == ConnectFourIA::EMPTY);
-
-//    iaTest.printGrid();
-//    std::cout << "Winner is " << iaTest.checkWinner() << std::endl;
-//    getchar();
-//    exit(8);
+    const uivec2 WIN_RES = { 1600, 900 };
 
     std::cout << "Enter the size of the room in meters (between 2 and 3) :";
     float meters=3; std::cin >> meters; std::cin.clear();
@@ -56,7 +33,7 @@ int main(int argc, char* argv[])
 
 	tim::core::init();
 	{
-		initContextSDL();
+		initContextSDL(WIN_RES.x(), WIN_RES.y());
 		tim::renderer::init();
 		resource::textureLoader = new SDLTextureLoader;
 
@@ -99,7 +76,7 @@ int main(int argc, char* argv[])
             OnHmdRenderer* hmdNode = new OnHmdRenderer;
             hmdNode->setDrawOnScreen(2);
             float ratio = float(RES_X)/RES_Y;
-            hmdNode->setScreenResolution({WIN_RES_X, WIN_RES_Y});
+            hmdNode->setScreenResolution({ WIN_RES.x(), WIN_RES.y() });
             hmdNode->setShader(ShaderPool::instance().get("feedbackStereo"));
 
             pipeline.createStereoExtensible(*hmdNode, {RES_X,RES_Y}, pipelineParam);

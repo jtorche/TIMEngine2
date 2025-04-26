@@ -4,7 +4,7 @@
 
 Level1::Level1(int index, LevelSystem* system) : LevelInterface(index, system)
 {
-
+    _indexPortal = 0;
 }
 
 void Level1::init()

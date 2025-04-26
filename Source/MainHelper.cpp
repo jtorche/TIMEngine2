@@ -46,6 +46,7 @@ void initContextSDL(uint x, uint y)
 
 void swapBuffer()
 {
+	SDL_GL_SetSwapInterval(0);
     SDL_GL_SwapWindow(g_pWindow);
 }
 

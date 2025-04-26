@@ -8,7 +8,7 @@ using namespace resource;
 
 PortalGame::PortalGame(BulletEngine& phys, MultipleSceneHelper& multiscene, HmdSceneView& hmdCam, VR_Device& vrdevice, int startLevel)
     : _physEngine(phys), _multiSceneHelper(multiscene), _hmdCamera(hmdCam), _vrDevice(vrdevice),
-      _multiScene("configScene.txt", _multiSceneHelper, startLevel), _vrControllers(phys), _levels(phys, _listener, _vrControllers, _hmdCamera, _gameAssets)
+      _multiScene("scene/configScene.txt", _multiSceneHelper, startLevel), _vrControllers(phys), _levels(phys, _listener, _vrControllers, _hmdCamera, _gameAssets)
 {
     _multiScene.instancePhysic(_physEngine);
 
@@ -26,7 +26,7 @@ PortalGame::PortalGame(BulletEngine& phys, MultipleSceneHelper& multiscene, HmdS
     _soundEffects[SoundEffects::ROCK1] = AssetManager<SoundAsset>::instance().load<false>("soundBank/rock1.wav", false, Sampler::NONE).value();
 
     const auto TEXTURE_CONFIG = interface::Texture::genParam(true,true,true, 4);
-    _gameAssets.load("gameAssets.xml");
+    _gameAssets.load("scene/gameAssets.xml");
     _vrControllers.setControllerMesh(_gameAssets.getMesh("controller", TEXTURE_CONFIG));
     _vrControllers.setControllerOffset(mat4::RotationX(toRad(-86.1672))*mat4::Translation({0, 0.121448f*0.6f, -0.020856f*0.6f}));
     _vrControllers.buildForScene(*_multiSceneHelper.curScene(), _multiScene.getSceneIndex(_multiSceneHelper.curScene()));

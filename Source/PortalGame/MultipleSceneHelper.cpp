@@ -163,7 +163,7 @@ void MultipleSceneHelper::extendPipeline(int size)
         _extraStereoCameras[1].push_back(nullptr);
     }
 
-    assert(NB_MAX_PIPELINE >= _nbExtraPipeline);
+    TIM_ASSERT(NB_MAX_PIPELINE >= _nbExtraPipeline);
 }
 
 bool MultipleSceneHelper::update(interface::Scene*& sceneCrossed, mat4* offset_in)
@@ -233,12 +233,12 @@ bool MultipleSceneHelper::update(interface::Scene*& sceneCrossed, mat4* offset_i
     for(auto& e : curEdges)
         e.finalDrawDecision = false;
 
-    assert((int)curEdges.size() == _curNbEdge);
+    TIM_ASSERT((int)curEdges.size() == _curNbEdge);
 
-    vector<boost::tuple<float, int>> optimizePortalLimit;
+    vector<std::tuple<float, int>> optimizePortalLimit;
     for(int i=0 ; i<_curNbEdge ; ++i)
     {
-        assert(_extraCameras[i] != nullptr);
+        TIM_ASSERT(_extraCameras[i] != nullptr);
 
         if(!curEdges[i].enabled)
             continue;
@@ -246,20 +246,20 @@ bool MultipleSceneHelper::update(interface::Scene*& sceneCrossed, mat4* offset_i
         if(!optimizeExtraSceneRendering(curEdges[i]))
             continue;
 
-        optimizePortalLimit.push_back(boost::make_tuple((curEdges[i].edge.portal->volume().center()-_curCamera->camera.pos).length2(), i));
+        optimizePortalLimit.push_back(std::make_tuple((curEdges[i].edge.portal->volume().center()-_curCamera->camera.pos).length2(), i));
     }
 
     if((int)optimizePortalLimit.size() > _portalLimit)
     {
         std::sort(optimizePortalLimit.begin(), optimizePortalLimit.end(),
-            [](boost::tuple<float, int> const& a, boost::tuple<float, int> const& b) {
-                return a.get<0>() < b.get<0>();
+            [](std::tuple<float, int> const& a, std::tuple<float, int> const& b) {
+                return std::get<0>(a) < std::get<0>(b);
         });
         optimizePortalLimit.resize(_portalLimit);
     }
 
     for(auto d_index : optimizePortalLimit)
-        curEdges[d_index.get<1>()].finalDrawDecision = true;
+        curEdges[std::get<1>(d_index)].finalDrawDecision = true;
 
     setupDecidedPortals(curEdges);
 

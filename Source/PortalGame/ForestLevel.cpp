@@ -146,12 +146,12 @@ void ForestLevel2::init()
         _sunStone[0] = level().objects[index].meshInstance;
 
     vector<int> sts = indexObjects("sunStone2");
-    for(size_t i=0 ; i<std::max(sts.size(), 4u) ; ++i)
+    for(size_t i=0 ; i<std::max((uint)sts.size(), 4u) ; ++i)
         if(sts[i] >= 0)
             _sunStone[i+1] = level().objects[sts[i]].meshInstance;
 
     sts = indexObjects("sunStone3");
-    for(size_t i=0 ; i<std::max(sts.size(), 2u) ; ++i)
+    for(size_t i=0 ; i<std::max((uint)sts.size(), 2u) ; ++i)
         if(sts[i] >= 0)
             _sunStone[i+5] = level().objects[sts[i]].meshInstance;
 

@@ -1,7 +1,6 @@
 #include "MultiSceneManager.h"
 #include "resource/AssetManager.h"
 #include "PortalGame/CollisionMask.h"
-#include <boost/timer/timer.hpp>
 
 using namespace interface;
 
@@ -44,9 +43,10 @@ MultiSceneManager::MultiSceneManager(std::string file, MultipleSceneHelper& mult
         interface::Scene* scene = new interface::Scene;
         vector<XmlSceneLoader::ObjectLoaded> objInScene;
 
-        bool b;
+        bool b = !sceneFile.empty() && sceneFile[0] != '-';
+        if (b)
         {
-            boost::timer::auto_cpu_timer t;std::cout << "Loading " << sceneFile << ":";
+            std::cout << "Loading " << sceneFile << std::endl;
             b = XmlSceneLoader::loadScene(sceneFile, *scene, objInScene);
         }
 
@@ -214,7 +214,7 @@ void MultiSceneManager::instancePhysic(BulletEngine& bulletEngine)
                     if(obj.asset.empty()) break;
 
                     Box finalBox;
-                    for(size_t k=0 ; k<std::min(1u,obj.asset.size()) ; ++k)
+                    for(size_t k=0 ; k<std::min(1u, (uint)obj.asset.size()) ; ++k)
                     {
                         Geometry geom = resource::AssetManager<Geometry>::instance().load<false>(obj.asset[k].geometry, true).value();
                         Box b = Box::computeBox(reinterpret_cast<const real*>(geom.meshData()->vData),
@@ -245,7 +245,7 @@ void MultiSceneManager::instancePhysic(BulletEngine& bulletEngine)
                     if(obj.asset.empty()) break;
 
                     Sphere finalSphere;
-                    for(size_t k=0 ; k<std::min(1u,obj.asset.size()) ; ++k)
+                    for(size_t k=0 ; k<std::min(1u, (uint)obj.asset.size()) ; ++k)
                     {
                         Geometry geom = resource::AssetManager<Geometry>::instance().load<false>(obj.asset[k].geometry, true).value();
                         Sphere s = Sphere::computeSphere(reinterpret_cast<const real*>(geom.meshData()->vData),

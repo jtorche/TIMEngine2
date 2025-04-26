@@ -79,11 +79,11 @@ private:
     interface::View* _curCamera = nullptr;
     interface::View* _curStereoCamera[2] = {nullptr, nullptr};
     vec3 _lastCameraPos;
-    boost::container::map<interface::Scene*, vector<InternalEdge>> _graph;
+    std::map<interface::Scene*, vector<InternalEdge>> _graph;
     vector<interface::View*> _extraCameras;
     vector<interface::View*> _extraStereoCameras[2];
 
-    boost::container::map<interface::Scene*, interface::View*> _dirLightView;
+    std::map<interface::Scene*, interface::View*> _dirLightView;
 
     void freeCamera();
     void constructEdge(const InternalEdge&);
