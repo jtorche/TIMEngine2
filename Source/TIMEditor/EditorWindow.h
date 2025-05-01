@@ -65,6 +65,8 @@ private slots:
     void on_actionRemove_last_Spec_Probe_triggered();
     void on_actionRegenerate_Spec_Probe_triggered();
 
+    void on_actionShow_Spec_Probes_triggered();
+
     void addAssetToScene(QString);
     void addGeometryToScene(QString, QString);
 

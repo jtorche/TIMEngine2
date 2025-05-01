@@ -34,6 +34,6 @@ RendererWindow::~RendererWindow()
 void RendererWindow::resizeEvent(QResizeEvent* ev)
 {
 	if (_renderer) {
-		_renderer->updateSize({ (uint)ev->size().width(), (uint)ev->size().height() });
+		_renderer->updateSize({ (uint)ev->size().width() + 16, (uint)ev->size().height() + 40 });
 	}
 }

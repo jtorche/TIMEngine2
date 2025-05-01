@@ -108,6 +108,15 @@ void MainRenderer::initRendering()
 
         _lineMesh[2] = Mesh(Mesh::Element(Geometry(new MeshBuffers(tmpVB, tmpIB, Sphere(vec3(), lineLength)))));
 
+        auto optSpecProbeMesh = resource::AssetManager<Geometry>::instance().load<false>("specProbe.obj", false);
+        _specProbeMesh = optSpecProbeMesh.hasValue() ? Mesh(optSpecProbeMesh.value()) : Mesh();
+        _specProbeMesh.element(0).setColor(vec4(1, 1 ,0.1, 1));
+        _specProbeMesh.element(0).setSpecular(0);
+        _specProbeMesh.element(0).setRoughness(1);
+        _specProbeMesh.element(0).setEmissive(0.3);
+        _specProbeMesh.element(0).drawState().setShader(ShaderPool::instance().get("gPass"));
+        _specProbeMesh.element(0).drawState().setPrimitive(DrawState::LINE_STRIP);
+
         for (int i = 0; i < 3; ++i)
         {
             vec4 col; col[i] = 1;

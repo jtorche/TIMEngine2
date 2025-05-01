@@ -56,6 +56,7 @@ public:
     void setDirectionalLight(uint sceneIndex, const tim::interface::Pipeline::DirectionalLight&);
 
     const tim::interface::Mesh& lineMesh(uint index) const { return _lineMesh[index]; }
+    const tim::interface::Mesh& specProbePreviewMesh() const { return _specProbeMesh; }
 
     renderer::Texture* renderCubemap(vec3 pos, uint resolution, uint sceneId, int mode=0, float farDist = 1000);
     void exportSkybox(renderer::Texture*, std::string filepath);
@@ -91,6 +92,7 @@ private:
 
     /* gui elements */
     tim::interface::Mesh _lineMesh[3];
+    tim::interface::Mesh _specProbeMesh;
 
     void resize();
     void updateCamera_SceneEditor();

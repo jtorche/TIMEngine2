@@ -35,6 +35,7 @@ EditorWindow::EditorWindow(QWidget *parent) :
     restoreState(winState);
 
     ui->meshEditorWidget->setMainRenderer(_mainRenderer);
+
     ui->meshEditorWidget->setResourceWidget(ui->resourceWidget);
 
     ui->sceneEditorWidget->setMainRenderer(_mainRenderer);
@@ -502,4 +503,14 @@ void EditorWindow::on_actionRemove_last_Spec_Probe_triggered()
 void EditorWindow::on_actionRegenerate_Spec_Probe_triggered()
 {
     ui->sceneEditorWidget->regenAllLightProb();
+}
+
+void EditorWindow::on_actionShow_Spec_Probes_triggered()
+{
+    ui->sceneEditorWidget->setShowSPecProbePreview(ui->actionShow_Spec_Probes->isChecked());
+    if (ui->actionShow_Spec_Probes->isChecked()) {
+        ui->sceneEditorWidget->createSpecProbePreview();
+    } else {
+        ui->sceneEditorWidget->removeSpecProbePreview();
+    }
 }

@@ -111,6 +111,9 @@ protected:
     tim::interface::MeshInstance* _translateLine[3] = {nullptr};
 
     vector<LightProbeUtils> _allSpecProbe[NB_SCENE];
+    tim::interface::Mesh _specProbPreviewMesh;
+    vector<tim::interface::MeshInstance*> _specProbeMeshInstances[NB_SCENE];
+    bool _showSpecProbePreview = false;
 
     ObjectInstancingDialog _instancingDialog;
     QList<int> _lastAddedInstancing;
@@ -122,7 +125,6 @@ protected:
     vec3 copy_translate = {0,0,0};
     bool somethingCopied = false;
 
-    void addSceneObject(bool lock, QString name, QString model, const QList<MeshElement>&, const mat3&, const vec3&, const vec3&);
     void addSceneObject(int scene, bool lock, QString name, QString model, const QList<MeshElement>&, const mat3&, const vec3&, const vec3&);
     void addSceneObject(int scene, bool lock, SceneObject);
 
@@ -192,6 +194,9 @@ public slots:
     void removeAllLightProbe();
     void removeLastLightProbe();
     void regenAllLightProb();
+    void createSpecProbePreview();
+    void removeSpecProbePreview();
+    void setShowSPecProbePreview(bool show) { _showSpecProbePreview = show; }
 
 signals:
     void editTransformation(int);

@@ -1206,8 +1206,9 @@ QList<QString> SceneEditorWidget::parseSkyboxXmlElement(TiXmlElement* elem)
 
 void SceneEditorWidget::importScene(QString file, int sceneIndex)
 {
-    if(_curSceneIndex == sceneIndex)
+    if (_curSceneIndex == sceneIndex) {
         removeAllLightProbe();
+    }
 
     clearScene(sceneIndex);
 
@@ -1325,11 +1326,16 @@ void SceneEditorWidget::importScene(QString file, int sceneIndex)
     }
 
     _renderer->unlock();
+
     _renderer->waitNoEvent();
+
+    if (_showSpecProbePreview)
+        createSpecProbePreview();
 }
 
 void SceneEditorWidget::clearScene(int index)
 {
+    removeAllLightProbe();
     cancelSelection();
 
     _renderer->waitNoEvent();
@@ -1380,6 +1386,8 @@ void SceneEditorWidget::renderSpecularProbe()
     if(!paramRendering.isRenderClicked())
         return;
 
+    removeSpecProbePreview();
+
     vec3 pos;
     if(paramRendering.centerOnSlection() && _selections.size() > 0)
         pos = _objects[_curSceneIndex][_selections[0].index].translate;
@@ -1401,11 +1409,15 @@ void SceneEditorWidget::renderSpecularProbe()
     _renderer->addEvent( [=](){
         internalRenderLightProb(pos, radius, farDist, iterations, res, pathRD, pathSkybox, addToScene, exportAsRawData, exportAsSkybox);
     });
+
+    if (_showSpecProbePreview)
+        createSpecProbePreview();
 }
 
 void SceneEditorWidget::regenAllLightProb()
 {
     cancelSelection();
+    removeSpecProbePreview();
 
     vector<LightProbeUtils> tmpVec = _allSpecProbe[_curSceneIndex];
 
@@ -1438,6 +1450,9 @@ void SceneEditorWidget::regenAllLightProb()
     });
 
     _renderer->waitNoEvent();
+
+    if (_showSpecProbePreview)
+        createSpecProbePreview();
 }
 
 void SceneEditorWidget::internalRenderLightProb(vec3 pos, float radius, float farDist, int iterations, int res,
@@ -1496,6 +1511,8 @@ void SceneEditorWidget::internalRenderLightProb(vec3 pos, float radius, float fa
 
 void SceneEditorWidget::removeAllLightProbe()
 {
+    removeSpecProbePreview();
+
     _renderer->addEvent( [=](){
         for(auto lprobe : _allSpecProbe[_curSceneIndex])
         {
@@ -1511,6 +1528,8 @@ void SceneEditorWidget::removeAllLightProbe()
 
 void SceneEditorWidget::removeLastLightProbe()
 {
+    removeSpecProbePreview();
+
     if(!_allSpecProbe[_curSceneIndex].empty())
     {
         auto lprobe = _allSpecProbe[_curSceneIndex].back();
@@ -1521,6 +1540,9 @@ void SceneEditorWidget::removeLastLightProbe()
         });
         _allSpecProbe[_curSceneIndex].pop_back();
     }
+
+    if (_showSpecProbePreview)
+        createSpecProbePreview();
 }
 
 void SceneEditorWidget::remove_n_first_lightProb(size_t n)
@@ -1533,6 +1555,27 @@ void SceneEditorWidget::remove_n_first_lightProb(size_t n)
     }
 
    _allSpecProbe[_curSceneIndex].erase(_allSpecProbe[_curSceneIndex].begin(), _allSpecProbe[_curSceneIndex].begin() + std::min(n, _allSpecProbe[_curSceneIndex].size()));
+}
+
+void SceneEditorWidget::createSpecProbePreview()
+{
+    _renderer->lock();
+    for (size_t i = 0; i < _allSpecProbe[_curSceneIndex].size(); ++i) {
+        mat4 trans = mat4::constructTransformation(mat3::IDENTITY(), _allSpecProbe[_curSceneIndex][i].pos, vec3::construct(_allSpecProbe[_curSceneIndex][i].radius));
+        _specProbeMeshInstances[_curSceneIndex].push_back(&_renderer->getScene(_curSceneIndex+1).scene.add<MeshInstance>(_renderer->specProbePreviewMesh(), trans));
+    }
+    _renderer->unlock();
+}
+
+void SceneEditorWidget::removeSpecProbePreview()
+{
+    _renderer->lock();
+    for (uint scene = 0; scene < NB_SCENE; ++scene) {
+        for (size_t i = 0; i < _specProbeMeshInstances[scene].size(); ++i) {
+            _renderer->getScene(scene+1).scene.remove(*_specProbeMeshInstances[scene][i]);
+        }
+    }
+    _renderer->unlock();
 }
 
 void SceneEditorWidget::removeSceneObject(const SceneObject& obj, int sceneIndex)
