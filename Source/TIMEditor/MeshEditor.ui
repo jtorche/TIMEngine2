@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>304</width>
-    <height>620</height>
+    <height>724</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -94,7 +94,7 @@
         <string/>
        </property>
        <property name="icon">
-        <iconset resource="../../EditorResources.qrc">
+        <iconset resource="EditorResources.qrc">
          <normaloff>:/icons/Icons/save.png</normaloff>:/icons/Icons/save.png</iconset>
        </property>
       </widget>
@@ -130,7 +130,7 @@
         <string/>
        </property>
        <property name="icon">
-        <iconset resource="../../EditorResources.qrc">
+        <iconset resource="EditorResources.qrc">
          <normaloff>:/icons/Icons/plus-icon.png</normaloff>:/icons/Icons/plus-icon.png</iconset>
        </property>
       </widget>
@@ -147,7 +147,7 @@
         <string/>
        </property>
        <property name="icon">
-        <iconset resource="../../EditorResources.qrc">
+        <iconset resource="EditorResources.qrc">
          <normaloff>:/icons/Icons/minus-icon.png</normaloff>:/icons/Icons/minus-icon.png</iconset>
        </property>
       </widget>
@@ -673,7 +673,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../../EditorResources.qrc"/>
+  <include location="EditorResources.qrc"/>
  </resources>
  <connections>
   <connection>
