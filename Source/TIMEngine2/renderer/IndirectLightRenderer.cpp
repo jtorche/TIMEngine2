@@ -52,6 +52,7 @@ IndirectLightRenderer::IndirectLightRenderer(LightContextRenderer& context) : _c
     if(!inDat)
     {
         LOG("shader/brdf_256.dat does not exist.");
+        TIM_ASSERT(false);
         exit(-1);
     }
 

@@ -157,7 +157,7 @@ void MeshEditorWidget::addUiElement(const MeshElement& elem)
                                                 QFileInfo(elem.geometry).fileName() + ")");
     item->setSizeHint(QSize(0, 40));
     item->setFont(QFont("Franklin Gothic Medium", 16));
-    item->setBackgroundColor(elem.color);
+    item->setBackground(elem.color);
 
     ui->meshPartView->addItem(item);
     item->setSelected(true);

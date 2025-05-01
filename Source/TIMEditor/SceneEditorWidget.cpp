@@ -5,7 +5,6 @@
 #include "ConfigSpecProbe.h"
 
 #include "MeshEditorWidget.h"
-#include "RendererWidget.h"
 #include "core/Matrix.h"
 #include "core/Rand.h"
 #include <iterator>
@@ -598,7 +597,7 @@ void SceneEditorWidget::selectSceneObject(vec3 pos, vec3 dir, bool shiftPressed)
         }
     }
 
-    #warning Manage_unselection_1253154
+    // TODO Manage_unselection_1253154
     if(shiftPressed)
     {
         for(int i=0 ; i<_selections.size() ; ++i)
@@ -693,7 +692,7 @@ void SceneEditorWidget::translateMouse(float x, float y, int mode)
 
     QString feedbackTrans;
 
-    if(mode == RendererWidget::TRANSLATE_MODE)
+    if(mode == EditMode::TRANSLATE_MODE)
     {
         for(int i=0 ; i<_selections.size() ; ++i)
         {
@@ -701,7 +700,7 @@ void SceneEditorWidget::translateMouse(float x, float y, int mode)
             _objects[_curSceneIndex][_selections[i].index].translate += y_dir * y * (hsize/cam.ratio);
         }
     }
-    else if(mode == RendererWidget::TRANSLATE_X_MODE)
+    else if(mode == EditMode::TRANSLATE_X_MODE)
     {
         if(x_dir.x() > 0) x *= -1;
         if(y_dir.x() < 0) y *= -1;
@@ -716,7 +715,7 @@ void SceneEditorWidget::translateMouse(float x, float y, int mode)
         _accumulator += combine(x,y) * hsize;
         feedbackTrans = "TranslationX : " + QString::number(_accumulator-1);
     }
-    else if(mode == RendererWidget::TRANSLATE_Y_MODE)
+    else if(mode == EditMode::TRANSLATE_Y_MODE)
     {
         if(x_dir.y() > 0) x *= -1;
         if(y_dir.y() < 0) y *= -1;
@@ -731,7 +730,7 @@ void SceneEditorWidget::translateMouse(float x, float y, int mode)
         _accumulator += combine(x,y) * hsize;
         feedbackTrans = "TranslationY : " + QString::number(_accumulator-1);
     }
-    else if(mode == RendererWidget::TRANSLATE_Z_MODE)
+    else if(mode == EditMode::TRANSLATE_Z_MODE)
     {
         if(x_dir.z() > 0) x *= -1;
         if(y_dir.z() < 0) y *= -1;
@@ -747,7 +746,7 @@ void SceneEditorWidget::translateMouse(float x, float y, int mode)
         feedbackTrans = "TranslationZ : " + QString::number(_accumulator-1);
     }
 
-    else if(mode == RendererWidget::SCALE_MODE)
+    else if(mode == EditMode::SCALE_MODE)
     {
         float s = (1.f + combine(x,y)*SCALE_FACTOR);
         for(int i=0 ; i<_selections.size() ; ++i)
@@ -759,7 +758,7 @@ void SceneEditorWidget::translateMouse(float x, float y, int mode)
         _accumulator *= (1.f + combine(x,y)*SCALE_FACTOR);
         feedbackTrans = "Scale : " + QString::number(_accumulator);
     }
-    else if(mode == RendererWidget::SCALE_X_MODE)
+    else if(mode == EditMode::SCALE_X_MODE)
     {
         for(int i=0 ; i<_selections.size() ; ++i)
             _objects[_curSceneIndex][_selections[i].index].scale.x() *= (1.f + combine(x,y)*SCALE_FACTOR);
@@ -767,7 +766,7 @@ void SceneEditorWidget::translateMouse(float x, float y, int mode)
         _accumulator *= (1.f + combine(x,y)*SCALE_FACTOR);
         feedbackTrans = "ScaleX : " + QString::number(_accumulator);
     }
-    else if(mode == RendererWidget::SCALE_Y_MODE)
+    else if(mode == EditMode::SCALE_Y_MODE)
     {
         for(int i=0 ; i<_selections.size() ; ++i)
             _objects[_curSceneIndex][_selections[i].index].scale.y() *= (1.f + combine(x,y)*SCALE_FACTOR);
@@ -775,7 +774,7 @@ void SceneEditorWidget::translateMouse(float x, float y, int mode)
         _accumulator *= (1.f + combine(x,y)*SCALE_FACTOR);
         feedbackTrans = "ScaleY : " + QString::number(_accumulator);
     }
-    else if(mode == RendererWidget::SCALE_Z_MODE)
+    else if(mode == EditMode::SCALE_Z_MODE)
     {
         for(int i=0 ; i<_selections.size() ; ++i)
             _objects[_curSceneIndex][_selections[i].index].scale.z() *= (1.f + combine(x,y)*SCALE_FACTOR);
@@ -784,7 +783,7 @@ void SceneEditorWidget::translateMouse(float x, float y, int mode)
         feedbackTrans = "ScaleZ : " + QString::number(_accumulator);
     }
 
-    else if(mode == RendererWidget::ROTATE_MODE)
+    else if(mode == EditMode::ROTATE_MODE)
     {
         QMatrix3x3 m = QQuaternion::fromAxisAndAngle(QVector3D(forward[0], forward[1], forward[2]).normalized(),
                                                      toDeg(combine(x,y)*ROTATE_FACTOR)).toRotationMatrix();
@@ -794,21 +793,21 @@ void SceneEditorWidget::translateMouse(float x, float y, int mode)
         _accumulator += toDeg(combine(x,y)*ROTATE_FACTOR);
         feedbackTrans = "Rotation : " + QString::number(_accumulator-1);
     }
-    else if(mode == RendererWidget::ROTATE_X_MODE)
+    else if(mode == EditMode::ROTATE_X_MODE)
     {   
         applyRelRot(mat3::RotationX(combine(x,y)*ROTATE_FACTOR), _localRotation->isChecked());
 
         _accumulator += toDeg(combine(x,y)*ROTATE_FACTOR);
         feedbackTrans = "RotationX : " + QString::number(_accumulator-1);
     }
-    else if(mode == RendererWidget::ROTATE_Y_MODE)
+    else if(mode == EditMode::ROTATE_Y_MODE)
     {
         applyRelRot(mat3::RotationY(combine(x,y)*ROTATE_FACTOR), _localRotation->isChecked());
 
         _accumulator += toDeg(combine(x,y)*ROTATE_FACTOR);
         feedbackTrans = "RotationY : " + QString::number(_accumulator-1);
     }
-    else if(mode == RendererWidget::ROTATE_Z_MODE)
+    else if(mode == EditMode::ROTATE_Z_MODE)
     {
         applyRelRot(mat3::RotationZ(combine(x,y)*ROTATE_FACTOR), _localRotation->isChecked());
 
@@ -883,12 +882,12 @@ void SceneEditorWidget::flushUiAccordingState(int state)
             _translateLine[i]->setEnable(false);
     }
 
-    if(state >= RendererWidget::TRANSLATE_X_MODE && state <= RendererWidget::TRANSLATE_Z_MODE)
+    if(state >= EditMode::TRANSLATE_X_MODE && state <= EditMode::TRANSLATE_Z_MODE)
     {
         if(!hasCurrentSelection())
             return;
 
-        int index = state - static_cast<int>(RendererWidget::TRANSLATE_X_MODE);
+        int index = state - static_cast<int>(EditMode::TRANSLATE_X_MODE);
 
         if(_translateLine[index] == nullptr)
         {
@@ -904,12 +903,12 @@ void SceneEditorWidget::flushUiAccordingState(int state)
         _translateLine[index]->setMatrix(m);
         _translateLine[index]->setEnable(true);
     }
-    else if(state >= RendererWidget::SCALE_X_MODE && state <= RendererWidget::SCALE_Z_MODE)
+    else if(state >= EditMode::SCALE_X_MODE && state <= EditMode::SCALE_Z_MODE)
     {
         if(!hasCurrentSelection())
             return;
 
-        int index = state - static_cast<int>(RendererWidget::SCALE_X_MODE);
+        int index = state - static_cast<int>(EditMode::SCALE_X_MODE);
 
         if(_translateLine[index] == nullptr)
         {
@@ -922,12 +921,12 @@ void SceneEditorWidget::flushUiAccordingState(int state)
         _translateLine[index]->setEnable(true);
 
     }
-    else if(state >= RendererWidget::ROTATE_X_MODE && state <= RendererWidget::ROTATE_Z_MODE)
+    else if(state >= EditMode::ROTATE_X_MODE && state <= EditMode::ROTATE_Z_MODE)
     {
         if(!hasCurrentSelection())
             return;
 
-        int index = state - static_cast<int>(RendererWidget::ROTATE_X_MODE);
+        int index = state - static_cast<int>(EditMode::ROTATE_X_MODE);
 
         if(_translateLine[index] == nullptr)
         {
@@ -945,7 +944,7 @@ void SceneEditorWidget::flushUiAccordingState(int state)
 
     }
 
-    if(state >= RendererWidget::TRANSLATE_MODE && state <= RendererWidget::ROTATE_Z_MODE)
+    if(state >= EditMode::TRANSLATE_MODE && state <= EditMode::ROTATE_Z_MODE)
     {
         for(int i=0 ; i<_selections.size() ; ++i)
         {
@@ -966,7 +965,7 @@ void SceneEditorWidget::flushUiAccordingState(int state)
         }
     }
 
-    if(state == RendererWidget::NO_INTERACTION)
+    if(state == EditMode::NO_INTERACTION)
         emit feedbackTransformation("");
 }
 
@@ -1327,10 +1326,10 @@ void SceneEditorWidget::importScene(QString file, int sceneIndex)
 
     if(skybox.size() == 6)
     {
-        setSkybox(sceneIndex, skybox);
-        _renderer->addEvent([=](){
-            _renderer->setSkybox(sceneIndex+1, skybox);
-        });
+        // setSkybox(sceneIndex, skybox);
+        // _renderer->addEvent([=](){
+        //     _renderer->setSkybox(sceneIndex+1, skybox);
+        // });
     }
 
     if(file.size() > 4)

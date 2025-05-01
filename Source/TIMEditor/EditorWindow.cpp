@@ -1,6 +1,5 @@
 #include "EditorWindow.h"
 #include "ui_EditorWindow.h"
-#include "QGLWidget"
 #include <QDateTime>
 #include <QFile>
 #include <QTextStream>
@@ -8,7 +7,7 @@
 #include <QMessageBox>
 #include <QFileDialog>
 #include "SelectSkyboxDialog.h"
-#include "AssimpLoader.h"
+// #include "AssimpLoader.h"
 
 using namespace tim;
 
@@ -19,6 +18,8 @@ EditorWindow::EditorWindow(QWidget *parent) :
     ui->setupUi(this);
     this->setCentralWidget(nullptr);
 
+    _mainRenderer = ui->glViewContainer->getRendererWindow()->getRenderer();
+
     this->tabifyDockWidget(ui->assetDockWidget, ui->resourceDockWidget);
     this->tabifyDockWidget(ui->sceneDockWidget, ui->meshDockWidget);
 
@@ -27,18 +28,10 @@ EditorWindow::EditorWindow(QWidget *parent) :
     ui->resourceWidget->viewport()->setAcceptDrops(true);
     ui->sceneEditorWidget->setLocalCB(ui->localRot, ui->localTrans);
 
-    _rendererThread = new RendererThread(ui->glWidget);
-    _rendererThread->start();
-
-    while(!_rendererThread->isInitialized()) {
-        qApp->processEvents();
-    }
-
-    ui->glWidget->setMainRenderer(_rendererThread->mainRenderer());
-    ui->meshEditorWidget->setMainRenderer(_rendererThread->mainRenderer());
+    ui->meshEditorWidget->setMainRenderer(_mainRenderer);
     ui->meshEditorWidget->setResourceWidget(ui->resourceWidget);
 
-    ui->sceneEditorWidget->setMainRenderer(_rendererThread->mainRenderer());
+    ui->sceneEditorWidget->setMainRenderer(_mainRenderer);
     ui->sceneEditorWidget->setMeshEditor(ui->meshEditorWidget);
 
     ui->assetViewWidget->setMeshEditorWidget(ui->meshEditorWidget);
@@ -47,30 +40,30 @@ EditorWindow::EditorWindow(QWidget *parent) :
 
     ui->statusBar->showMessage("Welcome !", 10000);
 
-    connect(ui->glWidget, SIGNAL(F11_pressed()), ui->viewDockWidget, SLOT(switchFullScreen()));
-    connect(ui->glWidget, SIGNAL(pressedMouseMoved(int,int)), ui->meshEditorWidget, SLOT(rotateEditedMesh(int,int)));
-    connect(ui->glWidget, SIGNAL(clickInEditor(vec3,vec3,bool)), ui->sceneEditorWidget, SLOT(selectSceneObject(vec3,vec3,bool)));
-    connect(ui->glWidget, SIGNAL(translateMouse(float,float,int)), ui->sceneEditorWidget, SLOT(translateMouse(float,float,int)));
-    connect(ui->glWidget, SIGNAL(escapePressed()), ui->sceneEditorWidget, SLOT(cancelSelection()));
-    connect(ui->glWidget, SIGNAL(deleteCurrent()), ui->sceneEditorWidget, SLOT(deleteCurrentObjects()));
+    connect(ui->glViewContainer, SIGNAL(F11_pressed()), ui->viewDockWidget, SLOT(switchFullScreen()));
+    connect(ui->glViewContainer, SIGNAL(pressedMouseMoved(int,int)), ui->meshEditorWidget, SLOT(rotateEditedMesh(int,int)));
+    connect(ui->glViewContainer, SIGNAL(clickInEditor(vec3,vec3,bool)), ui->sceneEditorWidget, SLOT(selectSceneObject(vec3,vec3,bool)));
+    connect(ui->glViewContainer, SIGNAL(translateMouse(float,float,int)), ui->sceneEditorWidget, SLOT(translateMouse(float,float,int)));
+    connect(ui->glViewContainer, SIGNAL(escapePressed()), ui->sceneEditorWidget, SLOT(cancelSelection()));
+    connect(ui->glViewContainer, SIGNAL(deleteCurrent()), ui->sceneEditorWidget, SLOT(deleteCurrentObjects()));
 
     connect(ui->meshEditorWidget, SIGNAL(saveMeshClicked()), this, SLOT(addMeshToAsset()));
     connect(ui->meshEditorWidget, SIGNAL(changeCurBaseModelName(QString)), ui->sceneEditorWidget, SLOT(changeBaseModelName(QString)));
 
-    connect(ui->glWidget, SIGNAL(addAssetToScene(QString)), this, SLOT(addAssetToScene(QString)));
-    connect(ui->glWidget, SIGNAL(addGeometryToScene(QString,QString)), this, SLOT(addGeometryToScene(QString,QString)));
+    connect(ui->glViewContainer, SIGNAL(addAssetToScene(QString)), this, SLOT(addAssetToScene(QString)));
+    connect(ui->glViewContainer, SIGNAL(addGeometryToScene(QString,QString)), this, SLOT(addGeometryToScene(QString,QString)));
 
-    connect(ui->glWidget, SIGNAL(startEdit()), ui->sceneEditorWidget, SLOT(saveCurMeshTrans()));
-    connect(ui->glWidget, SIGNAL(cancelEdit()), ui->sceneEditorWidget, SLOT(restoreCurMeshTrans()));
-    connect(ui->glWidget, SIGNAL(stateChanged(int)), ui->sceneEditorWidget, SLOT(flushUiAccordingState(int)));
+    connect(ui->glViewContainer, SIGNAL(startEdit()), ui->sceneEditorWidget, SLOT(saveCurMeshTrans()));
+    connect(ui->glViewContainer, SIGNAL(cancelEdit()), ui->sceneEditorWidget, SLOT(restoreCurMeshTrans()));
+    connect(ui->glViewContainer, SIGNAL(stateChanged(int)), ui->sceneEditorWidget, SLOT(flushUiAccordingState(int)));
     connect(ui->sceneEditorWidget, SIGNAL(feedbackTransformation(QString)), this, SLOT(flushFeedbackTrans(QString)));
 
     connect(ui->actionGenerate_Specular_Probe, SIGNAL(triggered()), ui->sceneEditorWidget, SLOT(renderSpecularProbe()));
 
-    _copySC = new QShortcut(QKeySequence("Ctrl+C"), ui->glWidget);
+    _copySC = new QShortcut(QKeySequence("Ctrl+C"), ui->glViewContainer);
     connect(_copySC, SIGNAL(activated()), ui->sceneEditorWidget, SLOT(copyObject()));
 
-    connect(ui->sceneEditorWidget, SIGNAL(editTransformation(int)), ui->glWidget, SLOT(enableTransformationMode(int)));
+    connect(ui->sceneEditorWidget, SIGNAL(editTransformation(int)), ui->glViewContainer, SLOT(enableTransformationMode(int)));
 
     loadParameter("editorParameter.txt");
 }
@@ -79,6 +72,11 @@ EditorWindow::~EditorWindow()
 {
     delete ui;
     delete _copySC;
+}
+
+void EditorWindow::closeEvent(QCloseEvent* event)
+{
+
 }
 
 void EditorWindow::loadParameter(QString filename)
@@ -101,7 +99,7 @@ void EditorWindow::loadParameter(QString filename)
                 if(sens <= 0)
                     sens = 1;
 
-                ui->glWidget->setMouseSensitivity(sens);
+                ui->glViewContainer->setMouseSensitivity(sens);
             }
         }
     }
@@ -143,7 +141,7 @@ void EditorWindow::addResourceFolderRec()
 
 void EditorWindow::on_actionClose_Context_triggered()
 {
-    ui->glWidget->closeContext();
+    ui->glViewContainer->closeContext();
 }
 
 void EditorWindow::on_actionAdd_folder_triggered()
@@ -158,12 +156,12 @@ void EditorWindow::on_actionAdd_folder_recursively_triggered()
 
 void EditorWindow::on_actionSunDirection_triggered()
 {
-    int sceneIndex = _rendererThread->mainRenderer()->getCurSceneIndex();
-    if(!_rendererThread->mainRenderer()->getScene(sceneIndex).globalLight.dirLights.empty())
+    int sceneIndex = _mainRenderer->getCurSceneIndex();
+    if(!_mainRenderer->getScene(sceneIndex).globalLight.dirLights.empty())
     {
-        interface::Pipeline::DirectionalLight l = _rendererThread->mainRenderer()->getScene(sceneIndex).globalLight.dirLights[0];
-        l.direction = _rendererThread->mainRenderer()->getSceneView(sceneIndex).camera.dir - _rendererThread->mainRenderer()->getSceneView(sceneIndex).camera.pos;
-        _rendererThread->mainRenderer()->setDirectionalLight(sceneIndex, l);
+        interface::Pipeline::DirectionalLight l = _mainRenderer->getScene(sceneIndex).globalLight.dirLights[0];
+        l.direction = _mainRenderer->getSceneView(sceneIndex).camera.dir - _mainRenderer->getSceneView(sceneIndex).camera.pos;
+        _mainRenderer->setDirectionalLight(sceneIndex, l);
 
         if(sceneIndex > 0)
             ui->sceneEditorWidget->setSunDirection(sceneIndex-1, l.direction);
@@ -180,12 +178,12 @@ void EditorWindow::on_actionSet_skybox_triggered()
 
     if(list.empty()) return;
 
-    _rendererThread->mainRenderer()->addEvent([=](){
-        _rendererThread->mainRenderer()->setSkybox(_rendererThread->mainRenderer()->getCurSceneIndex(), list);
+    _mainRenderer->addEvent([=](){
+        _mainRenderer->setSkybox(_mainRenderer->getCurSceneIndex(), list);
     });
 
-    if(_rendererThread->mainRenderer()->getCurSceneIndex() > 0)
-        ui->sceneEditorWidget->setSkybox(_rendererThread->mainRenderer()->getCurSceneIndex()-1, list);
+    if(_mainRenderer->getCurSceneIndex() > 0)
+        ui->sceneEditorWidget->setSkybox(_mainRenderer->getCurSceneIndex()-1, list);
 }
 
 interface::XmlMeshAssetLoader::MeshElementModel convertEditorModel(MeshElement model)
@@ -276,20 +274,20 @@ void EditorWindow::on_actionMesh_assets_import_triggered()
 
 void EditorWindow::on_action_selectAE_triggered()
 {
-    _rendererThread->mainRenderer()->lock();
-    _rendererThread->mainRenderer()->setCurSceneIndex(0);
-    ui->glWidget->setEditMode(RendererWidget::MESH_EDITOR);
-    _rendererThread->mainRenderer()->unlock();
+    _mainRenderer->lock();
+    _mainRenderer->setCurSceneIndex(0);
+    ui->glViewContainer->setEditMode(GLViewContainer::MESH_EDITOR);
+    _mainRenderer->unlock();
 
     ui->meshEditorWidget->activeEditMode();
 }
 
 void EditorWindow::on_actionScene_1_triggered()
 {
-    _rendererThread->mainRenderer()->lock();
-    _rendererThread->mainRenderer()->setCurSceneIndex(1);
-    ui->glWidget->setEditMode(RendererWidget::SCENE_EDITOR);
-    _rendererThread->mainRenderer()->unlock();
+    _mainRenderer->lock();
+    _mainRenderer->setCurSceneIndex(1);
+    ui->glViewContainer->setEditMode(GLViewContainer::SCENE_EDITOR);
+    _mainRenderer->unlock();
 
     ui->meshEditorWidget->setEditedMesh(nullptr, nullptr, nullptr, "");
     ui->sceneEditorWidget->switchScene(0);
@@ -299,10 +297,10 @@ void EditorWindow::on_actionScene_1_triggered()
 
 void EditorWindow::on_actionScene_2_triggered()
 {
-    _rendererThread->mainRenderer()->lock();
-    _rendererThread->mainRenderer()->setCurSceneIndex(2);
-    ui->glWidget->setEditMode(RendererWidget::SCENE_EDITOR);
-    _rendererThread->mainRenderer()->unlock();
+    _mainRenderer->lock();
+    _mainRenderer->setCurSceneIndex(2);
+    ui->glViewContainer->setEditMode(GLViewContainer::SCENE_EDITOR);
+    _mainRenderer->unlock();
 
     ui->meshEditorWidget->setEditedMesh(nullptr, nullptr, nullptr, "");
     ui->sceneEditorWidget->switchScene(1);
@@ -312,10 +310,10 @@ void EditorWindow::on_actionScene_2_triggered()
 
 void EditorWindow::on_actionScene_3_triggered()
 {
-    _rendererThread->mainRenderer()->lock();
-    _rendererThread->mainRenderer()->setCurSceneIndex(3);
-    ui->glWidget->setEditMode(RendererWidget::SCENE_EDITOR);
-    _rendererThread->mainRenderer()->unlock();
+    _mainRenderer->lock();
+    _mainRenderer->setCurSceneIndex(3);
+    ui->glViewContainer->setEditMode(GLViewContainer::SCENE_EDITOR);
+    _mainRenderer->unlock();
 
     ui->meshEditorWidget->setEditedMesh(nullptr, nullptr, nullptr, "");
     ui->sceneEditorWidget->switchScene(2);
@@ -325,10 +323,10 @@ void EditorWindow::on_actionScene_3_triggered()
 
 void EditorWindow::on_actionScene_4_triggered()
 {
-    _rendererThread->mainRenderer()->lock();
-    _rendererThread->mainRenderer()->setCurSceneIndex(4);
-    ui->glWidget->setEditMode(RendererWidget::SCENE_EDITOR);
-    _rendererThread->mainRenderer()->unlock();
+    _mainRenderer->lock();
+    _mainRenderer->setCurSceneIndex(4);
+    ui->glViewContainer->setEditMode(GLViewContainer::SCENE_EDITOR);
+    _mainRenderer->unlock();
 
     ui->meshEditorWidget->setEditedMesh(nullptr, nullptr, nullptr, "");
     ui->sceneEditorWidget->switchScene(3);
@@ -339,6 +337,7 @@ void EditorWindow::on_actionScene_4_triggered()
 
 void EditorWindow::on_actionLoad_collada_triggered()
 {
+#if 0
     QString file = QFileDialog::getOpenFileName(this, "Import mesh assets", ".", "Collada files (*.dae)");
     if(file.isEmpty())
         return;
@@ -369,6 +368,7 @@ void EditorWindow::on_actionLoad_collada_triggered()
     }
 
     ui->statusBar->showMessage("Collada scene loaded", 1000 * 60 * 10);
+#endif
 }
 
 void EditorWindow::on_actionSave_triggered()
@@ -389,7 +389,7 @@ void EditorWindow::on_actionLoad_triggered()
     if(file.isEmpty())
         return;
 
-    if(_rendererThread->mainRenderer()->getCurSceneIndex() == 0)
+    if(_mainRenderer->getCurSceneIndex() == 0)
     {
         switch(ui->sceneEditorWidget->activeScene())
         {
@@ -438,8 +438,8 @@ void EditorWindow::addAssetToScene(QString assetName)
     AssetViewWidget::Element asset;
     if(ui->assetViewWidget->getElement(assetName, &asset))
     {
-        vec3 camPos = _rendererThread->mainRenderer()->getSceneView(_rendererThread->mainRenderer()->getCurSceneIndex()).camera.pos;
-        vec3 camDir = _rendererThread->mainRenderer()->getSceneView(_rendererThread->mainRenderer()->getCurSceneIndex()).camera.dir;
+        vec3 camPos = _mainRenderer->getSceneView(_mainRenderer->getCurSceneIndex()).camera.pos;
+        vec3 camDir = _mainRenderer->getSceneView(_mainRenderer->getCurSceneIndex()).camera.dir;
         ui->sceneEditorWidget->addSceneObject("", assetName, asset.materials, mat3::IDENTITY(), camPos + (camDir-camPos).resize(2), vec3(1,1,1));
 
         ui->sceneEditorWidget->activateLastAdded();
@@ -455,8 +455,8 @@ void EditorWindow::addGeometryToScene(QString geomPath, QString name)
     elem.geometry = geomPath;
     asset.materials += elem;
 
-    vec3 camPos = _rendererThread->mainRenderer()->getSceneView(_rendererThread->mainRenderer()->getCurSceneIndex()).camera.pos;
-    vec3 camDir = _rendererThread->mainRenderer()->getSceneView(_rendererThread->mainRenderer()->getCurSceneIndex()).camera.dir;
+    vec3 camPos = _mainRenderer->getSceneView(_mainRenderer->getCurSceneIndex()).camera.pos;
+    vec3 camDir = _mainRenderer->getSceneView(_mainRenderer->getCurSceneIndex()).camera.dir;
     ui->sceneEditorWidget->addSceneObject("", name, asset.materials, mat3::IDENTITY(), camPos + (camDir-camPos).resize(2), vec3(1,1,1));
 
     ui->sceneEditorWidget->activateLastAdded();
@@ -468,10 +468,9 @@ void EditorWindow::on_actionRaw_Data_triggered()
     if(file.isEmpty())
         return;
 
-    vec3 camPos = _rendererThread->mainRenderer()->getSceneView(_rendererThread->mainRenderer()->getCurSceneIndex()).camera.pos;
-    MainRenderer* mr = _rendererThread->mainRenderer();
-    mr->addEvent( [=](){
-        auto tex = mr->renderCubemap(camPos, 1024, _rendererThread->mainRenderer()->getCurSceneIndex(), 1);
+    vec3 camPos = _mainRenderer->getSceneView(_mainRenderer->getCurSceneIndex()).camera.pos;
+    _mainRenderer->addEvent( [=](){
+        auto tex = _mainRenderer->renderCubemap(camPos, 1024, _mainRenderer->getCurSceneIndex(), 1);
         auto ptex = renderer::IndirectLightRenderer::processSkybox(tex, interface::ShaderPool::instance().get("processSpecularCubeMap"));
         renderer::Texture::exportTexture(ptex, file.toStdString(), 7);
         delete tex; delete ptex;

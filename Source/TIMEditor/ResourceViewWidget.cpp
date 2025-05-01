@@ -198,7 +198,7 @@ void ResourceViewWidget::mouseMoveEvent(QMouseEvent *event)
     mimeData->setUrls(list);
 
     drag->setMimeData(mimeData);
-    drag->start(Qt::CopyAction | Qt::MoveAction);
+    drag->exec(Qt::CopyAction | Qt::MoveAction);
 }
 
 void ResourceViewWidget::showContextMenu(const QPoint& pos)

@@ -8,7 +8,6 @@ add_executable(${PROJECT_NAME} ${tests_sources} ${CMAKE_CURRENT_SOURCE_DIR}/../M
 set_property(TARGET ${PROJECT_NAME} PROPERTY VS_DEBUGGER_WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}/../Data/")
 
 target_link_libraries(${PROJECT_NAME} PRIVATE TIMEngine2)
-target_link_libraries(${PROJECT_NAME} PRIVATE TIM_VR)
 
 # For nicer IDE views
 set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "executable")

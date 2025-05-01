@@ -5,6 +5,7 @@
 #include <QFileInfo>
 #include <QDrag>
 #include <QMimeData>
+#include <QMouseEvent>
 
 AssetViewWidget::AssetViewWidget(QWidget* parent) : QListWidget(parent), _meshIcon(":/icons/Icons/mesh.png")
 {
@@ -154,6 +155,6 @@ void AssetViewWidget::mouseMoveEvent(QMouseEvent *event)
     mimeData->setObjectName("AssetViewWidget");
     drag->setMimeData(mimeData);
 
-    drag->start(Qt::CopyAction | Qt::MoveAction);
+    drag->exec(Qt::CopyAction | Qt::MoveAction);
 }
 

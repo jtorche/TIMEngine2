@@ -3,7 +3,6 @@
 
 #include <QMainWindow>
 #include <QShortcut>
-#include "RendererThread.h"
 #include "interface/XmlMeshAssetLoader.h"
 #include "MeshElement.h"
 #include "SceneEditorWidget.h"
@@ -20,11 +19,13 @@ public:
     explicit EditorWindow(QWidget *parent = 0);
     ~EditorWindow();
 
+    void closeEvent(QCloseEvent* event) override;
+
 protected:
 
 private:
     Ui::EditorWindow *ui;
-    RendererThread* _rendererThread;
+    MainRenderer* _mainRenderer = nullptr;
     tim::interface::XmlMeshAssetLoader _assetLoader;
 
     QShortcut* _copySC;

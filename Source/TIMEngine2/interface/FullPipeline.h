@@ -37,7 +37,7 @@ namespace interface
 
         const std::set<Pipeline::DeferredRendererEntity*>& rendererEntities() const { return _deferredEntities; }
 
-        template <class OutNodeType = pipeline::OnScreenRenderer> OutNodeType& create(uivec2, const Parameter&);
+        template <class OutNodeType = pipeline::FrameBufferRenderer> OutNodeType& create(uivec2, const Parameter&);
 
         void createTwoScene(uivec2, const Parameter&, const Parameter&);
         void createExtensible(uivec2, const Parameter&);

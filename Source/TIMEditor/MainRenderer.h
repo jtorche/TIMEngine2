@@ -6,28 +6,31 @@
 #include "resource/MeshLoader.h"
 #include "resource/AssetManager.h"
 #include "interface/pipeline/pipeline.h"
-#include "MultipleSceneHelper.h"
 
 #include <QMutex>
 #include <QQueue>
 #include <functional>
 #include <QWaitCondition>
+#include <QSurface>
 
-#include "RendererWidget.h"
 #undef interface
 #include "MemoryLoggerOn.h"
 namespace tim{
 class MainRenderer
 {
 public:
-    MainRenderer(RendererWidget*);
-    void main();
+    MainRenderer(uivec2 res, QOpenGLContext*, bool useRenderThread);
+    ~MainRenderer();
+
+    void initRendering();
+    void update(uint targetFbo);
+    void close();
+
     float elapsedTime() const { return _time; }
 
     interface::FullPipeline& pipeline() { return _pipeline; }
-    void lock() const { _mutex.lock(); }
-    void unlock() const { _mutex.unlock(); }
-    void stop() { _running=false; }
+    void lock() const { if (m_useRenderThread) _mutex.lock(); }
+    void unlock() const { if (m_useRenderThread) _mutex.unlock(); }
     void waitNoEvent();
 
     void updateSize(uivec2);
@@ -38,8 +41,6 @@ public:
     tim::interface::View& getSceneView(int index) { return _view[index]; }
 
     tim::interface::Scene& getScene(int index) { return _scene[index]; }
-
-    //MultipleSceneHelper* portalsManager() const { return _scenePortalsManager; }
 
     void setupScene(int, tim::interface::View&);
 
@@ -60,15 +61,17 @@ public:
     void exportSkybox(renderer::Texture*, std::string filepath);
 
 private:
-    RendererWidget* _parent;far
-    bool _running;
+    QOpenGLContext* _glContext;
+    const bool m_useRenderThread;
     float _time = 0;
+    float _totalTime = 0;
 
     bool _newSize=false;
     uivec2 _currentSize;
 
     interface::FullPipeline::Parameter _renderingParameter;
     interface::FullPipeline _pipeline;
+    interface::pipeline::FrameBufferRenderer* _frameBufferRenderer = nullptr;
     mutable QMutex _mutex;
 
     /* Shared state */
@@ -76,7 +79,6 @@ private:
     tim::interface::View _view[NB_SCENE];
     tim::interface::View _dirLightView[NB_SCENE];
     tim::interface::Scene _scene[NB_SCENE];
-    //MultipleSceneHelper* _scenePortalsManager = nullptr;
 
     int _curScene=0;
     bool _enableMove = false;

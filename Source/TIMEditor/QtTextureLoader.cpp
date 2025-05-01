@@ -1,6 +1,5 @@
 #include "QtTextureLoader.h"
 #include <QImage>
-#include <QGLWidget>
 
 #include "MemoryLoggerOn.h"
 namespace tim
@@ -13,7 +12,7 @@ ubyte* QtTextureLoader::loadImage(const std::string& file, ImageFormat& format) 
     if(textureImg.isNull())
         return nullptr;
 
-    QImage glImg = QGLWidget::convertToGLFormat(textureImg);
+    QImage& glImg = textureImg;//QOpenGLWidgets::convertToGLFormat(textureImg);
 
     if(glImg.isNull())
     {
@@ -24,8 +23,8 @@ ubyte* QtTextureLoader::loadImage(const std::string& file, ImageFormat& format) 
     }
 
     try{
-        ubyte* b = new ubyte[glImg.byteCount()];
-        memcpy(b, glImg.bits(), glImg.byteCount());
+        ubyte* b = new ubyte[glImg.sizeInBytes()];
+        memcpy(b, glImg.bits(), glImg.sizeInBytes());
         format.size.x() = glImg.size().width();
         format.size.y() = glImg.size().height();
         format.nbComponent = 4;
@@ -33,7 +32,7 @@ ubyte* QtTextureLoader::loadImage(const std::string& file, ImageFormat& format) 
     }
     catch(const std::bad_alloc&)
     {
-        LOG("Not enough memory to alloc ", file, " (", glImg.byteCount(), " bytes)");
+        LOG("Not enough memory to alloc ", file, " (", glImg.sizeInBytes(), " bytes)");
     }
 
     return nullptr;

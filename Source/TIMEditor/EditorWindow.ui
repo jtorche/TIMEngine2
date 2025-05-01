@@ -154,7 +154,7 @@
    <property name="minimumSize">
     <size>
      <width>166</width>
-     <height>95</height>
+     <height>106</height>
     </size>
    </property>
    <property name="features">
@@ -192,7 +192,14 @@
         <number>0</number>
        </property>
        <item>
-        <widget class="RendererWidget" name="glWidget" native="true">
+        <widget class="Line" name="line">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="GLViewContainer" name="glViewContainer" native="true">
          <property name="enabled">
           <bool>true</bool>
          </property>
@@ -710,12 +717,6 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>RendererWidget</class>
-   <extends>QWidget</extends>
-   <header>TIMEditor/rendererwidget.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>ResourceViewWidget</class>
    <extends>QListWidget</extends>
    <header>TIMEditor/ResourceViewWidget.h</header>
@@ -744,6 +745,12 @@
    <class>SceneEditorWidget</class>
    <extends>QWidget</extends>
    <header location="global">TIMEditor/SceneEditorWidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>GLViewContainer</class>
+   <extends>QWidget</extends>
+   <header>GLViewContainer.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

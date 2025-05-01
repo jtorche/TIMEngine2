@@ -5,18 +5,18 @@
 #include "renderer/renderer.h"
 #include "resource/TextureLoader.h"
 #include "MainRenderer.h"
+#include "RendererWindow.h"
 
 #include <QThread>
-#include <QGLContext>
 #include <QMutex>
-
-class EditorWindow;
 
 class RendererThread : public QThread {
     Q_OBJECT
 public:
-    explicit RendererThread(RendererWidget* editor);
+    explicit RendererThread(RendererWindow* rendererWidget);
     bool isInitialized() const;
+
+    void stop() { _running = false; }
 
     tim::MainRenderer* mainRenderer() { return _main; }
 
@@ -24,9 +24,10 @@ protected:
     virtual void run();
 
 private:
-    RendererWidget* _renderer;
-    QGLWidget* _contextCreator;
+    RendererWindow* _rendererWindow;
+    QOpenGLContext* _glContext;
     bool _init;
+    bool _running;
 
     tim::MainRenderer* _main = nullptr;
 

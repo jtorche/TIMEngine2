@@ -1,5 +1,5 @@
 
-#include "OnScreenRenderer.h"
+#include "FrameBufferRenderer.h"
 
 #include "MemoryLoggerOn.h"
 namespace tim
@@ -10,15 +10,16 @@ namespace interface
 namespace pipeline
 {
 
-OnScreenRenderer::OnScreenRenderer() : Pipeline::TerminalNode()
+FrameBufferRenderer::FrameBufferRenderer(uint fbo) : Pipeline::TerminalNode()
 {
     _stateDrawQuad.setCullFace(false);
     _stateDrawQuad.setDepthTest(false);
     _stateDrawQuad.setWriteDepth(false);
     _stateDrawQuad.setShader(renderer::drawQuadShader);
+    _fbo = fbo;
 }
 
-void OnScreenRenderer::prepare()
+void FrameBufferRenderer::prepare()
 {
     if(!tryPrepare()) return;
 
@@ -29,7 +30,7 @@ void OnScreenRenderer::prepare()
     }
 }
 
-void OnScreenRenderer::render()
+void FrameBufferRenderer::render()
 {
     if(!tryRender()) return;
 
@@ -42,7 +43,7 @@ void OnScreenRenderer::render()
         }
     }
 
-    renderer::openGL.bindFrameBuffer(0);
+    renderer::openGL.bindFrameBuffer(_fbo);
 
     _stateDrawQuad.bind();
 

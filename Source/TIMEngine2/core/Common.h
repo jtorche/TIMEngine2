@@ -5,8 +5,12 @@
 #define TIM_ASSERT(cond) \
     do { if(!(cond)) { handleAssert(__LINE__, __FILE__, ""); } }while(0) 
 
+#define TIM_ASSERT_MSG(cond, msg) \
+    do { if(!(cond)) { handleAssert(__LINE__, __FILE__, msg); } }while(0) 
+
 #else
 #define TIM_ASSERT(cond)
+#define TIM_ASSERT_MSG(cond)
 #endif
 
 namespace tim

@@ -134,7 +134,7 @@ void FullPipeline::createExtensible(uivec2 res, const Parameter& param)
     _pipeline = new interface::Pipeline;
     _stereoscopy = false;
 
-    pipeline::OnScreenRenderer& onScreen = _pipeline->createNode<pipeline::OnScreenRenderer>();
+    pipeline::FrameBufferRenderer& onScreen = _pipeline->createNode<pipeline::FrameBufferRenderer>();
 
     pipeline::SimpleFilter& copyNode = _pipeline->createNode<pipeline::SimpleFilter>();
     copyNode.setShader(renderer::drawQuadShader);

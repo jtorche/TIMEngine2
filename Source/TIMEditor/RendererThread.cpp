@@ -1,34 +1,24 @@
-#include "TIMEditor/QtTextureLoader.h"
 #include "RendererThread.h"
+#include "QtTextureLoader.h"
+#include <QOpenglContext.h>
 
-#undef interface
 using namespace tim;
-using namespace core;
-using namespace interface;
 
-class GLContextWidget : public QGLWidget
-{
-    public:
-        GLContextWidget(const QGLFormat &format) : QGLWidget(format) {
-            setAutoBufferSwap(false);
-        }
+RendererThread::RendererThread(RendererWindow* rendererWindow) : _rendererWindow(rendererWindow), _init(false), _running(false) {
 
-    protected:
-        virtual void glInit() override {}
-        virtual void glDraw() override {}
+    _glContext = new QOpenGLContext();
+    
+    QSurfaceFormat format = rendererWindow->format();
+    format.setProfile(QSurfaceFormat::CoreProfile);
+#if defined(TIM_DEBUG)
+    format.setOption(QSurfaceFormat::DebugContext);
+#endif
+    _glContext->setFormat(format);
+    TIM_ASSERT(_glContext->create());
 
-        virtual void initializeGL() override {}
-        virtual void resizeGL(int, int) override {}
-        virtual void paintGL() override {}
-
-        virtual void paintEvent(QPaintEvent *) override {}
-        virtual void resizeEvent(QResizeEvent *) override {}
-};
-
-RendererThread::RendererThread(RendererWidget* renderer) : _renderer(renderer), _init(false) {
-    _contextCreator = new GLContextWidget(QGLFormat());
-    _contextCreator->doneCurrent();
-    _contextCreator->context()->moveToThread(this);
+    // _glContext = _rendererWindow->context();
+    _glContext->doneCurrent();
+    _glContext->moveToThread(this);
 }
 
 bool RendererThread::isInitialized() const {
@@ -37,34 +27,24 @@ bool RendererThread::isInitialized() const {
 
 void RendererThread::run()
 {
+    _running = true;
     initContext();
-    SDL_Delay(100);
-    _main->main();
 
+    while (_running) {
+        _main->update(0);
+        _glContext->swapBuffers(_rendererWindow);
+    }
+
+    _main->close();
     delete _main;
-    resource::AssetManager<Geometry>::freeInstance();
-    resource::AssetManager<Texture>::freeInstance();
-    ShaderPool::freeInstance();
-    renderer::openGL.execAllGLTask();
-
-    delete resource::textureLoader;
-    renderer::close();
-    core::quit();
 }
 
 void RendererThread::initContext()
 {
-    QGLContext* glContext = new QGLContext(QGLFormat());
+    using namespace tim;
+    TIM_ASSERT(_glContext->makeCurrent(_rendererWindow));
 
-    if(_contextCreator) {
-        glContext->create(_contextCreator->context());
-    }
-    _renderer->setContext(glContext);
-    _renderer->makeCurrent();
-
-    core::init();
-    renderer::init();
-    resource::textureLoader = new tim::QtTextureLoader;
-    _main = new MainRenderer(_renderer);
+	_main = new MainRenderer({200u, 200u}, _glContext, true);
+    _main->initRendering();
     _init = true;
 }

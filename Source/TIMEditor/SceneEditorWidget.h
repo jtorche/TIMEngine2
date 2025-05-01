@@ -4,9 +4,12 @@
 #include <QWidget>
 #include <QListWidgetItem>
 #include <QTimer>
+#include <QCheckBox>
+
 #include "MainRenderer.h"
 #include "MeshElement.h"
 #include "MeshEditorWidget.h"
+#include "GLViewContainer.h"
 #include "interface/XmlMeshAssetLoader.h"
 
 #include "ObjectInstancingDialog.h"
@@ -25,6 +28,8 @@ class SceneEditorWidget : public QWidget
     Q_OBJECT
 
 public:
+    using EditMode = GLViewContainer::EditMode;
+
     SceneEditorWidget(QWidget* parent = nullptr);
 
     void setMainRenderer(tim::MainRenderer* r);
@@ -112,7 +117,7 @@ protected:
     int _indexSceneLastInstancing = 0;
 
     /* copy past trans */
-    vec3 copy_scale     = {1,1,1};far
+    vec3 copy_scale     = {1,1,1};
     mat3 copy_rotate    = mat3::IDENTITY();
     vec3 copy_translate = {0,0,0};
     bool somethingCopied = false;
@@ -149,7 +154,7 @@ public slots:
     void on_copyTransButton_clicked();
     void on_pastTransButton_clicked();
     void on_instancing_clicked();
-    void on_apply_clicked();
+    // void on_apply_clicked();
 
     void on_meshc_isStatic_clicked(bool);
     void on_meshc_isPhysic_clicked(bool);

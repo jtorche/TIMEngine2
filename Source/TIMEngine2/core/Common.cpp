@@ -7,7 +7,7 @@ namespace tim
 {
     void handleAssert(int _line, const char* _file, const char* _msg)
     {
-        char buffer[128];
+        char buffer[1024];
         if (_msg)
             sprintf_s(buffer, "%s(%d): Assertion failed: %s\n", _file, _line, _msg);
         else

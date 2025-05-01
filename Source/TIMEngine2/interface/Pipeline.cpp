@@ -56,8 +56,6 @@ void Pipeline::prepare()
 
 void Pipeline::render()
 {
-    renderer::openGL.bindFrameBuffer(0);
-
     if(_outputNode)
         _outputNode->render();
 

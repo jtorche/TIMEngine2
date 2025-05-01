@@ -1,10 +1,15 @@
 #include "MainRenderer.h"
+#include "QtTextureLoader.h"
 #include "Rand.h"
+
+#include "interface/XmlSceneLoader.h"
+
 #include <QThread>
 #include <QModelIndex>
 #include <QElapsedTimer>
 #include <QWaitCondition>
 #include <QImage>
+#include <QOpenGLContext>
 
 #include "MemoryLoggerOn.h"
 namespace tim{
@@ -16,39 +21,50 @@ using namespace renderer;
 using namespace resource;
 using namespace interface;
 
-MainRenderer::MainRenderer(RendererWidget* parent) : _parent(parent)
+MainRenderer::MainRenderer(uivec2 res, QOpenGLContext* glContext, bool useRenderThread)
+    : _glContext(glContext), m_useRenderThread(useRenderThread)
 {
     _renderingParameter.useShadow = true;
     _renderingParameter.shadowCascad = {4,15,50};
     _renderingParameter.shadowResolution = 2048;
     _renderingParameter.usePointLight = true;
     _renderingParameter.useSSReflexion = false;
-    _currentSize = {200,200};
+    _currentSize = res;
     _newSize = true;
 
-    _running = true;
-
     _view[0].camera.ratio = 1;
-    _view[0].camera.clipDist = {.01,100};
+    _view[0].camera.clipDist = {.1,100};
     _view[0].camera.pos = {0,-3,0};
     _view[0].camera.dir = {0,0,0};
 
     for(int i=0 ; i<NB_SCENE-1 ; ++i)
     {
         _view[i+1].camera.ratio = 1;
-        _view[i+1].camera.clipDist = {.01,500};
+        _view[i+1].camera.clipDist = {.1,500};
         _view[i+1].camera.fov = 110;
     }
+
+    core::init();
 }
 
-void MainRenderer::main()
+MainRenderer::~MainRenderer()
 {
+    core::quit();
+}
+
+void MainRenderer::initRendering()
+{
+    bool ok = renderer::init();
+    TIM_ASSERT(ok);
+
+    resource::textureLoader = new tim::QtTextureLoader;
+
     lock();
 
     ShaderPool::instance().add("gPass", "shader/gBufferPass.vert", "shader/gBufferPass.frag").value();
-    ShaderPool::instance().add("gPassAlphaTest", "shader/gBufferPass.vert", "shader/gBufferPass.frag", "", {"ALPHA_TEST"}).value();
-    ShaderPool::instance().add("water", "shader/gBufferPass.vert", "shader/gBufferPass.frag", "", {"WATER_SHADER"}).value();
-    ShaderPool::instance().add("portalShader", "shader/gBufferPass.vert", "shader/gBufferPass.frag", "", {"PORTAL_SHADER"}).value();
+    ShaderPool::instance().add("gPassAlphaTest", "shader/gBufferPass.vert", "shader/gBufferPass.frag", "", { "ALPHA_TEST" }).value();
+    ShaderPool::instance().add("water", "shader/gBufferPass.vert", "shader/gBufferPass.frag", "", { "WATER_SHADER" }).value();
+    ShaderPool::instance().add("portalShader", "shader/gBufferPass.vert", "shader/gBufferPass.frag", "", { "PORTAL_SHADER" }).value();
     ShaderPool::instance().add("highlighted", "shader/overlayObject.vert", "shader/overlayObject.frag").value();
     ShaderPool::instance().add("highlightedMoving", "shader/overlayObject.vert", "shader/overlayObject2.frag").value();
     ShaderPool::instance().add("fxaa", "shader/fxaa.vert", "shader/fxaa.frag").value();
@@ -56,60 +72,53 @@ void MainRenderer::main()
     ShaderPool::instance().add("processSpecularCubeMap", "shader/processCubemap.vert", "shader/processCubemap.frag").value();
 
     {
-    const float lineLength = 1000;
-    VNCT_Vertex vDataX[3] = {{vec3(-lineLength,0,0),vec3(),vec2(),vec3()},
-                             {vec3(0    ,0,0),vec3(),vec2(),vec3()},
-                             {vec3(lineLength ,0,0),vec3(),vec2(),vec3()}};
+        const float lineLength = 1000;
+        VNCT_Vertex vDataX[3] = { {vec3(-lineLength,0,0),vec3(),vec2(),vec3()},
+                                 {vec3(0    ,0,0),vec3(),vec2(),vec3()},
+                                 {vec3(lineLength ,0,0),vec3(),vec2(),vec3()} };
 
-    VNCT_Vertex vDataY[3] = {{vec3(0,-lineLength,0),vec3(),vec2(),vec3()},
-                             {vec3(0,0    ,0),vec3(),vec2(),vec3()},
-                             {vec3(0,lineLength ,0),vec3(),vec2(),vec3()}};
+        VNCT_Vertex vDataY[3] = { {vec3(0,-lineLength,0),vec3(),vec2(),vec3()},
+                                 {vec3(0,0    ,0),vec3(),vec2(),vec3()},
+                                 {vec3(0,lineLength ,0),vec3(),vec2(),vec3()} };
 
-    VNCT_Vertex vDataZ[3] = {{vec3(0,0,-lineLength),vec3(),vec2(),vec3()},
-                             {vec3(0,0,0    ),vec3(),vec2(),vec3()},
-                             {vec3(0,0,lineLength ),vec3(),vec2(),vec3()}};
+        VNCT_Vertex vDataZ[3] = { {vec3(0,0,-lineLength),vec3(),vec2(),vec3()},
+                                 {vec3(0,0,0),vec3(),vec2(),vec3()},
+                                 {vec3(0,0,lineLength),vec3(),vec2(),vec3()} };
 
-    uint iData[6] = {0,1,2};
+        uint iData[6] = { 0,1,2 };
 
-    VBuffer* tmpVB = renderer::vertexBufferPool->alloc(3);
-    IBuffer* tmpIB = renderer::indexBufferPool->alloc(3);
-    tmpVB->flush(reinterpret_cast<float*>(vDataX),0,3);
-    tmpIB->flush(iData,0,3);
+        VBuffer* tmpVB = renderer::vertexBufferPool->alloc(3);
+        IBuffer* tmpIB = renderer::indexBufferPool->alloc(3);
+        tmpVB->flush(reinterpret_cast<float*>(vDataX), 0, 3);
+        tmpIB->flush(iData, 0, 3);
 
-    _lineMesh[0] = Mesh(Mesh::Element(Geometry(new MeshBuffers(tmpVB,tmpIB, Sphere(vec3(), lineLength)))));
+        _lineMesh[0] = Mesh(Mesh::Element(Geometry(new MeshBuffers(tmpVB, tmpIB, Sphere(vec3(), lineLength)))));
 
-    tmpVB = renderer::vertexBufferPool->alloc(3);
-    tmpIB = renderer::indexBufferPool->alloc(3);
-    tmpVB->flush(reinterpret_cast<float*>(vDataY),0,3);
-    tmpIB->flush(iData,0,3);
+        tmpVB = renderer::vertexBufferPool->alloc(3);
+        tmpIB = renderer::indexBufferPool->alloc(3);
+        tmpVB->flush(reinterpret_cast<float*>(vDataY), 0, 3);
+        tmpIB->flush(iData, 0, 3);
 
-    _lineMesh[1] = Mesh(Mesh::Element(Geometry(new MeshBuffers(tmpVB,tmpIB,Sphere(vec3(), lineLength)))));
+        _lineMesh[1] = Mesh(Mesh::Element(Geometry(new MeshBuffers(tmpVB, tmpIB, Sphere(vec3(), lineLength)))));
 
-    tmpVB = renderer::vertexBufferPool->alloc(3);
-    tmpIB = renderer::indexBufferPool->alloc(3);
-    tmpVB->flush(reinterpret_cast<float*>(vDataZ),0,3);
-    tmpIB->flush(iData,0,3);
+        tmpVB = renderer::vertexBufferPool->alloc(3);
+        tmpIB = renderer::indexBufferPool->alloc(3);
+        tmpVB->flush(reinterpret_cast<float*>(vDataZ), 0, 3);
+        tmpIB->flush(iData, 0, 3);
 
-    _lineMesh[2] = Mesh(Mesh::Element(Geometry(new MeshBuffers(tmpVB,tmpIB,Sphere(vec3(), lineLength)))));
+        _lineMesh[2] = Mesh(Mesh::Element(Geometry(new MeshBuffers(tmpVB, tmpIB, Sphere(vec3(), lineLength)))));
 
-    for(int i=0 ; i<3 ; ++i)
-    {
-        vec4 col; col[i] = 1;
-        _lineMesh[i].element(0).setColor(col);
-        _lineMesh[i].element(0).setSpecular(0);
-        _lineMesh[i].element(0).setRoughness(1);
-        _lineMesh[i].element(0).setEmissive(0.2);
-        _lineMesh[i].element(0).drawState().setShader(ShaderPool::instance().get("gPass"));
-        _lineMesh[i].element(0).drawState().setPrimitive(DrawState::LINE_STRIP);
+        for (int i = 0; i < 3; ++i)
+        {
+            vec4 col; col[i] = 1;
+            _lineMesh[i].element(0).setColor(col);
+            _lineMesh[i].element(0).setSpecular(0);
+            _lineMesh[i].element(0).setRoughness(1);
+            _lineMesh[i].element(0).setEmissive(0.2);
+            _lineMesh[i].element(0).drawState().setShader(ShaderPool::instance().get("gPass"));
+            _lineMesh[i].element(0).drawState().setPrimitive(DrawState::LINE_STRIP);
+        }
     }
-    }
-
-    //_scenePortalsManager = new MultipleSceneHelper(_renderingParameter, _pipeline);
-
-//    for(int i=0 ; i<NB_SCENE-1 ; ++i)
-//    {
-//        _scenePortalsManager->registerDirLightView(&_scene[i+1], &_dirLightView[i+1]);
-//    }
 
     resize();
 
@@ -121,92 +130,94 @@ void MainRenderer::main()
     skybox += "skybox/simple4/z.png";
     skybox += "skybox/simple4/nz.png";
 
-    setSkybox(0, skybox);
+    //setSkybox(0, skybox);
     //setSkybox(1, skybox);
 
     unlock();
-    float totalTime=0;
-    while(_running)
+}
+
+void MainRenderer::update(uint targetFbo)
+{
+    lock();
+
+    QElapsedTimer timer;
+    timer.start();
+
+    _eventMutex.lock();
+    while (!_events.empty())
+        _events.dequeue()();
+
+    _waitNoEvent.wakeAll();
+    _eventMutex.unlock();
+
+    updateCamera_SceneEditor();
+
+    if (_pipeline.pipeline())
     {
-        lock();
+        _frameBufferRenderer->setTargetFrameBuffer(targetFbo);
+        setupScene(_curScene, _view[_curScene]);
 
-        QElapsedTimer timer;
-        timer.start();
-
-        _eventMutex.lock();
-        while(!_events.empty())
-            _events.dequeue()();
-
-        _waitNoEvent.wakeAll();
-        _eventMutex.unlock();
-
-        updateCamera_SceneEditor();
-
-        if(_pipeline.pipeline())
-        {
-//            _scenePortalsManager->setCurScene(_scene[_curScene]);
-//            _scenePortalsManager->setView(_view[_curScene]);
-
-//            interface::Scene* sceneCrossed = nullptr;
-//            if(_scenePortalsManager->update(sceneCrossed, ))
-//            {
-//                for(int i=0 ; i<NB_SCENE ; ++i)
-//                {
-//                    if(&_scene[i] == sceneCrossed)
-//                    {
-//                        _view[i] = _view[_curScene];
-//                        _curScene = i;
-//                        break;
-//                    }
-//                }
-//            }
-
-            setupScene(_curScene, _view[_curScene]);
-
-            _pipeline.pipeline()->prepare();
-            _pipeline.pipeline()->render();
-        }
-
-        resize();
-
-        GL_ASSERT();
-        _parent->swapBuffers();
-
-        float idealFPS = 1.f / 90.f;
-        float realTime = float(std::max(timer.elapsed(), qint64(1))) / 1000;
-        _time = std::max(realTime, idealFPS);
-        totalTime += _time;
-
-        _pipeline.pipeline()->meshRenderer().frameState().setTime(totalTime, _time);
-        unlock();
-
-        if(realTime < idealFPS)
-            QThread::msleep(static_cast<unsigned long>((idealFPS - realTime) * 1000));
+        _pipeline.pipeline()->prepare();
+        _pipeline.pipeline()->render();
     }
+
+    resize();
+
+    GL_ASSERT();
+
+    float idealFPS = 1.f / 90.f;
+    float realTime = float(std::max(timer.elapsed(), qint64(1))) / 1000;
+    _time = std::max(realTime, idealFPS);
+    _totalTime += _time;
+
+    _pipeline.pipeline()->meshRenderer().frameState().setTime(_totalTime, _time);
+    unlock();
+
+    if (realTime < idealFPS)
+        QThread::msleep(static_cast<unsigned long>((idealFPS - realTime) * 1000));
+}
+
+void MainRenderer::close()
+{
+    resource::AssetManager<Geometry>::freeInstance();
+    resource::AssetManager<renderer::Texture>::freeInstance();
+    ShaderPool::freeInstance();
+    renderer::openGL.execAllGLTask();
+
+    delete resource::textureLoader;
+    renderer::close();
 }
 
 void MainRenderer::setupScene(int index, tim::interface::View& v)
 {
     _pipeline.setScene(_scene[index], v, 0);
 
-    for(int i=0 ; i<NB_SCENE ; ++i)
+    if (_scene[index].globalLight.dirLights.size() > 0)
     {
-        if(_scene[i].globalLight.dirLights.size() > 0 && _scene[i].globalLight.dirLights[0].projectShadow)
+        for (int i = 0; i < NB_SCENE; ++i)
         {
-            _dirLightView[i].dirLightView.camPos = v.camera.pos;
-            _dirLightView[i].dirLightView.lightDir = _scene[index].globalLight.dirLights[0].direction;
+            if (_scene[i].globalLight.dirLights.size() > 0 && _scene[i].globalLight.dirLights[0].projectShadow)
+            {
+                _dirLightView[i].dirLightView.camPos = v.camera.pos;
+                _dirLightView[i].dirLightView.lightDir = _scene[index].globalLight.dirLights[0].direction;
 
-            if(i == index)
-                _pipeline.setDirLightView(_dirLightView[index], 0);
+                if (i == index)
+                    _pipeline.setDirLightView(_dirLightView[index], 0);
+            }
         }
     }
 }
 
 void MainRenderer::waitNoEvent()
 {
-    _eventMutex.lock();
-    _waitNoEvent.wait(&_eventMutex);
-    _eventMutex.unlock();
+    if (m_useRenderThread) {
+        _eventMutex.lock();
+        _waitNoEvent.wait(&_eventMutex);
+        _eventMutex.unlock();
+    } else {
+        while (!_events.empty())
+            _events.dequeue()();
+    }
 }
 
 void MainRenderer::updateSize(uivec2 s)
@@ -228,7 +239,7 @@ void MainRenderer::resize()
     {
         openGL.resetStates();
         openGL.applyAll();
-        _pipeline.create(_currentSize, _renderingParameter);
+        _frameBufferRenderer = &_pipeline.create<pipeline::FrameBufferRenderer>(_currentSize, _renderingParameter);
 
 //        _scenePortalsManager->setResolution(_currentSize);
 //        _scenePortalsManager->rebuild(_scene[_curScene]);

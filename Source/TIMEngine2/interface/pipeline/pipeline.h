@@ -5,7 +5,7 @@
 #include "interface/pipeline/DirLightShadowNode.h"
 #include "interface/pipeline/SceneCullingNode.h"
 #include "interface/pipeline/DirLightCullingNode.h"
-#include "interface/pipeline/OnScreenRenderer.h"
+#include "interface/pipeline/FrameBufferRenderer.h"
 #include "interface/pipeline/InBufferRenderer.h"
 #include "interface/pipeline/SimpleFilter.h"
 

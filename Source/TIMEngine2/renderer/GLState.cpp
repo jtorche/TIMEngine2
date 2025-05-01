@@ -26,8 +26,10 @@ namespace renderer
             LOG("Assertion failed, ", file, " at line ", line, " -> glGetError():", glErrorToString(glerror), "\n");
         }
 
-        if(!e)
+        if (!e) {
+            TIM_ASSERT(false);
             exit(-1);
+        }
 
         return e;
     }
