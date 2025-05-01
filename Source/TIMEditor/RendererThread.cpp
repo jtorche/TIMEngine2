@@ -44,7 +44,7 @@ void RendererThread::initContext()
     using namespace tim;
     TIM_ASSERT(_glContext->makeCurrent(_rendererWindow));
 
-	_main = new MainRenderer({200u, 200u}, _glContext, true);
+	_main = new MainRenderer({ (uint)_rendererWindow->width(), (uint)_rendererWindow->height() }, _glContext, true);
     _main->initRendering();
     _init = true;
 }

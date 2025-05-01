@@ -12,7 +12,7 @@ ubyte* QtTextureLoader::loadImage(const std::string& file, ImageFormat& format) 
     if(textureImg.isNull())
         return nullptr;
 
-    QImage& glImg = textureImg;//QOpenGLWidgets::convertToGLFormat(textureImg);
+    QImage glImg = textureImg.flipped().convertToFormat(QImage::Format_RGBA8888);
 
     if(glImg.isNull())
     {

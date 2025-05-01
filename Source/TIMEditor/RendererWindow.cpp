@@ -30,3 +30,10 @@ RendererWindow::~RendererWindow()
 	delete _renderThread;
 	_renderThread = nullptr;
 }
+
+void RendererWindow::resizeEvent(QResizeEvent* ev)
+{
+	if (_renderer) {
+		_renderer->updateSize({ (uint)ev->size().width(), (uint)ev->size().height() });
+	}
+}

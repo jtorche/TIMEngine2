@@ -18,7 +18,7 @@ GLViewContainer::GLViewContainer(QWidget* parent) : QWidget(parent)
     _rendererWindow->installEventFilter(this);
     QWidget* container = QWidget::createWindowContainer(_rendererWindow, this);
 
-    QBoxLayout* layout = new QBoxLayout(QBoxLayout::Down);
+    QBoxLayout* layout = new QBoxLayout(QBoxLayout::BottomToTop);
     layout->addWidget(container);
     setLayout(layout);
 }
@@ -52,19 +52,24 @@ bool GLViewContainer::eventFilter(QObject* obj, QEvent* event)
     switch (event->type()) {
         case QEvent::MouseButtonPress:
         case QEvent::MouseButtonRelease:
+        case QEvent::MouseMove:
         case QEvent::KeyPress:
         case QEvent::KeyRelease:
         case QEvent::Wheel:
-        case QEvent::Move:
         case QEvent::Enter:
         case QEvent::Leave:
-        case QEvent::DragEnter:
-        case QEvent::DragMove:
-        case QEvent::DragLeave:
-        case QEvent::Drop:
-        case QEvent::DragResponse:
             QApplication::sendEvent(this, event);
             return true;
+        case QEvent::DragEnter:
+            dragEnterEvent((QDragEnterEvent*)event);
+            return true;
+        case QEvent::DragMove:
+            dragMoveEvent((QDragMoveEvent*)event);
+            return true;
+        case QEvent::Drop:
+            dropEvent((QDropEvent*)event);
+            return true;
+            
         default:
             return false;
     };

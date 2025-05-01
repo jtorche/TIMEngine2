@@ -24,6 +24,8 @@ public:
 
     tim::MainRenderer* getRenderer() const { return _renderer; }
 
+    virtual void resizeEvent(QResizeEvent* ev) override;
+
 protected:
     RendererThread* _renderThread = nullptr;
     tim::MainRenderer* _renderer = nullptr;

@@ -5,10 +5,10 @@ if (ENABLE_QT)
 	
 	find_package(Qt6 REQUIRED COMPONENTS Core Gui Widgets OpenGLWidgets)
 	qt_standard_project_setup()
-	
 	file(GLOB_RECURSE timeditor_sources *.cpp *.h)
+	qt6_add_resources(timeditor_resources EditorResources.qrc)
 	
-	add_executable(${PROJECT_NAME} ${timeditor_sources})
+	add_executable(${PROJECT_NAME} ${timeditor_sources} ${timeditor_resources})
 	set_property(TARGET ${PROJECT_NAME} PROPERTY VS_DEBUGGER_WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}/../Data/")
 	
 	# Linked libraries

@@ -1308,7 +1308,7 @@ void SceneEditorWidget::importScene(QString file, int sceneIndex)
         else if(elem->ValueStr() == std::string("DirLight"))
         {
             int shadow=0;
-            vec3 color = {1,1,1};
+            vec3 color = {1,1,1}; 
             vec3 dir={0,0,-1};
 
             elem->QueryIntAttribute("shadows", &shadow);
@@ -1326,10 +1326,10 @@ void SceneEditorWidget::importScene(QString file, int sceneIndex)
 
     if(skybox.size() == 6)
     {
-        // setSkybox(sceneIndex, skybox);
-        // _renderer->addEvent([=](){
-        //     _renderer->setSkybox(sceneIndex+1, skybox);
-        // });
+        setSkybox(sceneIndex, skybox);
+        _renderer->addEvent([=](){
+            _renderer->setSkybox(sceneIndex+1, skybox);
+        });
     }
 
     if(file.size() > 4)
