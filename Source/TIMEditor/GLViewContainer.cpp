@@ -363,6 +363,9 @@ void GLViewContainer::dropEvent(QDropEvent* event)
     event->acceptProposedAction();
     event->accept();
 
+    if (_renderer->getCurSceneIndex() == 0)
+        return;
+
     if (mimeData->hasUrls())
     {
         QList<QUrl> urlList = event->mimeData()->urls();

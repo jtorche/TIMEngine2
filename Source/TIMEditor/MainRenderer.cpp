@@ -120,18 +120,17 @@ void MainRenderer::initRendering()
         }
     }
 
-    resize();
+    addEvent([this]() {
+        QList<QString> skybox;
+        skybox += "skybox/simple4/x.png";
+        skybox += "skybox/simple4/nx.png";
+        skybox += "skybox/simple4/y.png";
+        skybox += "skybox/simple4/ny.png";
+        skybox += "skybox/simple4/z.png";
+        skybox += "skybox/simple4/nz.png";
 
-    QList<QString> skybox;
-    skybox += "skybox/simple4/x.png";
-    skybox += "skybox/simple4/nx.png";
-    skybox += "skybox/simple4/y.png";
-    skybox += "skybox/simple4/ny.png";
-    skybox += "skybox/simple4/z.png";
-    skybox += "skybox/simple4/nz.png";
-
-    //setSkybox(0, skybox);
-    //setSkybox(1, skybox);
+        setSkybox(0, skybox);
+    });
 
     unlock();
 }

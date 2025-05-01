@@ -23,8 +23,6 @@ EditorWindow::EditorWindow(QWidget *parent) :
     this->tabifyDockWidget(ui->assetDockWidget, ui->resourceDockWidget);
     this->tabifyDockWidget(ui->sceneDockWidget, ui->meshDockWidget);
 
-    this->setWindowTitle("TIMEditor - Scene 1");
-
     ui->resourceWidget->viewport()->setAcceptDrops(true);
     ui->sceneEditorWidget->setLocalCB(ui->localRot, ui->localTrans);
 
@@ -280,6 +278,8 @@ void EditorWindow::on_action_selectAE_triggered()
     _mainRenderer->unlock();
 
     ui->meshEditorWidget->activeEditMode();
+
+    setWindowTitle("Asset Editor");
 }
 
 void EditorWindow::on_actionScene_1_triggered()

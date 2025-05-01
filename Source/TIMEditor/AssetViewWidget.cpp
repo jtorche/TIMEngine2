@@ -117,19 +117,6 @@ void AssetViewWidget::onItemDoubleClicked(QListWidgetItem* item)
             QList<Material> meshEditorElem;
             for(Material m : elem.elem.materials)
             {
-//                Material subMesh;
-//                subMesh.color = m.color;
-//                subMesh.geometry = m.geometry;
-//                subMesh.material = m.material;
-
-//                for(int i=0 ; i<MeshElement::NB_TEXTURES ; ++i)
-//                {
-//                    subMesh.textures[i] = m.textures[i];
-//                    subMesh.texturesIcon[i] = m.texturesIcon[i];
-//                }
-
-//                subMesh.textureScale = m.textureScale;
-
                 meshEditorElem.push_back(m);
             }
             _meshEditor->setMesh(elem.elem.name, meshEditorElem);
