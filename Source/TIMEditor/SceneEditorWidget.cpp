@@ -118,21 +118,6 @@ void SceneEditorWidget::addSceneObject(int sceneIndex, bool lock, SceneObject ob
         for(int i=0 ; i<obj.materials.size() ; ++i)
             m.addElement(MeshEditorWidget::constructMeshElement(obj.materials[i]));
 
-//        if(modelName == "portal" && sceneIndex < 2)
-//        {
-//            int sceneTo = sceneIndex==0 ? 1:0;
-//            std::cout << "Portal detected\n";
-//            MultipleSceneHelper::Edge edge;
-//            edge.sceneFrom = &_renderer->getScene(sceneIndex+1);
-//            edge.sceneTo = &_renderer->getScene(sceneTo+1);
-//            edge.portal = obj.node;
-//            edge.portalGeom = m.element(0).geometry();
-
-//            _renderer->portalsManager()->addEdge(edge);
-//            m.element(0).drawState().setCullBackFace(true);
-//            m.element(0).drawState().setShader(ShaderPool::instance().get("portalShader"));
-//        }
-
         obj.node->setMesh(m);
     });
 }

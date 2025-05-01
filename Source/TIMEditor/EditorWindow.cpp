@@ -3,6 +3,7 @@
 #include <QDateTime>
 #include <QFile>
 #include <QTextStream>
+#include <QSettings>
 
 #include <QMessageBox>
 #include <QFileDialog>
@@ -25,6 +26,13 @@ EditorWindow::EditorWindow(QWidget *parent) :
 
     ui->resourceWidget->viewport()->setAcceptDrops(true);
     ui->sceneEditorWidget->setLocalCB(ui->localRot, ui->localTrans);
+
+    // Restore previous state
+    QSettings settings("TIMEngine2", "TIMEditor");
+    const QByteArray geometry = settings.value("geometry", QByteArray()).toByteArray();
+    const QByteArray winState = settings.value("windowState", QByteArray()).toByteArray();
+    restoreGeometry(geometry);
+    restoreState(winState);
 
     ui->meshEditorWidget->setMainRenderer(_mainRenderer);
     ui->meshEditorWidget->setResourceWidget(ui->resourceWidget);
@@ -74,7 +82,10 @@ EditorWindow::~EditorWindow()
 
 void EditorWindow::closeEvent(QCloseEvent* event)
 {
-
+    QSettings settings("TIMEngine2", "TIMEditor");
+    settings.setValue("geometry", saveGeometry());
+    settings.setValue("windowState", saveState());
+    QMainWindow::closeEvent(event);
 }
 
 void EditorWindow::loadParameter(QString filename)
