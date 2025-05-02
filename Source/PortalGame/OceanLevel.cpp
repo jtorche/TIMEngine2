@@ -14,20 +14,20 @@ OceanLevel::OceanLevel(int index, LevelSystem* system, BulletEngine& phys, Sync_
     _warpSound = resource::AssetManager<resource::SoundAsset>::instance().load<false>("soundBank/warp.wav", false, Sampler::NONE).value();
 
     //_ambientOcean = resource::AssetManager<resource::SoundAsset>::instance().load<false>("soundBank/ocean.ogg", true, Sampler::NONE).value();
-    _ambientOceanSource = system->listener().addSource(resource::AssetManager<resource::SoundAsset>::instance().load<false>("soundBank/ocean.ogg", true, Sampler::NONE).value());
-    _ambientOceanSource->setLooping(true);
-    _ambientOceanSource->setGain(0.05);
 
-    resource::SoundAsset ambientSound = resource::AssetManager<resource::SoundAsset>::instance().load<false>("soundBank/NoWinners.ogg", true, Sampler::NONE).value();
-    Source* src = system->listener().addSource(ambientSound);
-    src->setLooping(true);
-    src->setGain(0.1);
-    setAmbientSound(src, "NoWinners");
+    auto opt = resource::AssetManager<resource::SoundAsset>::instance().load<false>("soundBank/ocean.ogg", true, Sampler::NONE);
+    if (opt.hasValue()) {
+        _ambientOceanSource = system->listener().addSource(opt.value());
+        _ambientOceanSource->setLooping(true);
+        _ambientOceanSource->setGain(0.05);
+    }
+
 }
 
 OceanLevel::~OceanLevel()
 {
-    _ambientOceanSource->release();
+    if (_ambientOceanSource)
+        _ambientOceanSource->release();
 }
 
 void OceanLevel::init()
@@ -129,12 +129,14 @@ void OceanLevel::init()
 
 void OceanLevel::prepareEnter()
 {
-    _ambientOceanSource->play();
+    if (_ambientOceanSource)
+        _ambientOceanSource->play();
 }
 
 void OceanLevel::beforeLeave()
 {
-    _ambientOceanSource->stop();
+    if(_ambientOceanSource)
+        _ambientOceanSource->stop();
 }
 
 #define TIME_ON_SLOT 0.5f

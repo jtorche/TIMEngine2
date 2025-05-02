@@ -56,6 +56,12 @@ target_link_libraries(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/../Libs/SDL_ima
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/../Libs/openvr/)
 target_link_libraries(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/../Libs/openvr/openvr_api.lib)
 
+# vorbis
+target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/../Libs/vorbis/include/)
+target_link_libraries(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/../Libs/vorbis/vorbis.lib)
+target_link_libraries(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/../Libs/vorbis/vorbisfile.lib)
+target_link_libraries(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/../Libs/vorbis/libogg.lib)
+
 source_group(
   TREE ${CMAKE_CURRENT_SOURCE_DIR}
   FILES ${core_sources})

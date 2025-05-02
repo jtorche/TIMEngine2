@@ -14,16 +14,16 @@ PortalGame::PortalGame(BulletEngine& phys, MultipleSceneHelper& multiscene, HmdS
 
     _listener.initialize();
     _soundEffects.resize(SoundEffects::NB_EFFECTS);
-    _soundEffects[SoundEffects::WOOD1] = AssetManager<SoundAsset>::instance().load<false>("soundBank/wood1.wav", false, Sampler::NONE).value();
-    _soundEffects[SoundEffects::WOOD2] = AssetManager<SoundAsset>::instance().load<false>("soundBank/wood2.wav", false, Sampler::NONE).value();
-    _soundEffects[SoundEffects::WOOD3] = AssetManager<SoundAsset>::instance().load<false>("soundBank/wood3.wav", false, Sampler::NONE).value();
-    _soundEffects[SoundEffects::PLASTIC1] = AssetManager<SoundAsset>::instance().load<false>("soundBank/plastic1.wav", false, Sampler::NONE).value();
-    _soundEffects[SoundEffects::PLASTIC2] = AssetManager<SoundAsset>::instance().load<false>("soundBank/plastic2.wav", false, Sampler::NONE).value();
-    _soundEffects[SoundEffects::METAL1] = AssetManager<SoundAsset>::instance().load<false>("soundBank/metal1.wav", false, Sampler::NONE).value();
-    _soundEffects[SoundEffects::METAL2] = AssetManager<SoundAsset>::instance().load<false>("soundBank/metal2.wav", false, Sampler::NONE).value();
-    _soundEffects[SoundEffects::ARTIFACT1] = AssetManager<SoundAsset>::instance().load<false>("soundBank/artifact.wav", false, Sampler::NONE).value();
-    _soundEffects[SoundEffects::SOUR] = AssetManager<SoundAsset>::instance().load<false>("soundBank/sour.wav", false, Sampler::NONE).value();
-    _soundEffects[SoundEffects::ROCK1] = AssetManager<SoundAsset>::instance().load<false>("soundBank/rock1.wav", false, Sampler::NONE).value();
+    _soundEffects[SoundEffects::WOOD1] = AssetManager<SoundAsset>::instance().load<false>("soundBank/wood1.wav", false, Sampler::NONE).getOrElse();
+    _soundEffects[SoundEffects::WOOD2] = AssetManager<SoundAsset>::instance().load<false>("soundBank/wood2.wav", false, Sampler::NONE).getOrElse();
+    _soundEffects[SoundEffects::WOOD3] = AssetManager<SoundAsset>::instance().load<false>("soundBank/wood3.wav", false, Sampler::NONE).getOrElse();
+    _soundEffects[SoundEffects::PLASTIC1] = AssetManager<SoundAsset>::instance().load<false>("soundBank/plastic1.wav", false, Sampler::NONE).getOrElse();
+    _soundEffects[SoundEffects::PLASTIC2] = AssetManager<SoundAsset>::instance().load<false>("soundBank/plastic2.wav", false, Sampler::NONE).getOrElse();
+    _soundEffects[SoundEffects::METAL1] = AssetManager<SoundAsset>::instance().load<false>("soundBank/metal1.wav", false, Sampler::NONE).getOrElse();
+    _soundEffects[SoundEffects::METAL2] = AssetManager<SoundAsset>::instance().load<false>("soundBank/metal2.wav", false, Sampler::NONE).getOrElse();
+    _soundEffects[SoundEffects::ARTIFACT1] = AssetManager<SoundAsset>::instance().load<false>("soundBank/artifact.wav", false, Sampler::NONE).getOrElse();
+    _soundEffects[SoundEffects::SOUR] = AssetManager<SoundAsset>::instance().load<false>("soundBank/sour.wav", false, Sampler::NONE).getOrElse();
+    _soundEffects[SoundEffects::ROCK1] = AssetManager<SoundAsset>::instance().load<false>("soundBank/rock1.wav", false, Sampler::NONE).getOrElse();
 
     const auto TEXTURE_CONFIG = interface::Texture::genParam(true,true,true, 4);
     _gameAssets.load("scene/gameAssets.xml");
@@ -43,7 +43,7 @@ PortalGame::PortalGame(BulletEngine& phys, MultipleSceneHelper& multiscene, HmdS
         else if(_levels.getLevel(i).name == "start")
             _levels.setStrategy(new StartLevel(i, &_levels), i);
         else if(_levels.getLevel(i).name == "forest1")
-            _levels.setStrategy(new ForestLevel1(i, &_levels, _physEngine, "portalForest1_Forest2", "addressing_stars"), i);
+            _levels.setStrategy(new ForestLevel1(i, &_levels, _physEngine, "portalForest1_Forest2"), i);
         else if(_levels.getLevel(i).name == "forest2")
             _levels.setStrategy(new ForestLevel2(i, &_levels, _physEngine), i);
         else if(_levels.getLevel(i).name == "forest3")
@@ -61,9 +61,11 @@ PortalGame::PortalGame(BulletEngine& phys, MultipleSceneHelper& multiscene, HmdS
         else if(_levels.getLevel(i).name == "flyingIsland")
             _levels.setStrategy(new FlyingIslandLevel(i, &_levels, _physEngine, syncOceanFI), i);
         else if(_levels.getLevel(i).name == "forest4")
-            _levels.setStrategy(new ForestLevel1(i, &_levels, _physEngine, "portalForest4_FI4", "bensound-betterdays"), i);
-        else
+            _levels.setStrategy(new ForestLevel1(i, &_levels, _physEngine, "portalForest4_FI4"), i);
+        else {
+            LOG("Level ", _levels.getLevel(i).name, " not recognized\n");
             _levels.setStrategy(new Level1(i, &_levels), i);
+        }
     }
 
     _levels.changeLevel(startLevel);
@@ -190,14 +192,19 @@ bool PortalGame::processContactPoint(btManifoldPoint& pt, const btCollisionObjec
 
     if(f > SOUND_THRESHOLD)
     {
-        Source* s = _listener.addSource(_soundEffects[obj->getUserIndex()-100]);
-        s->setPosition(vec3(posContact.x(), posContact.y(), posContact.z()));
-        s->setGain(strength);
-        //s->setPitch(1.5f - norm_strength);
-        s->setPitch(0.6 + norm_strength*0.85);
-        _asyncSoundToPlay.push_back(s);
+        int soundIndex = obj->getUserIndex() - 100;
+        if (soundIndex >= 0 && soundIndex < (int)_soundEffects.size()) {
+            if (!_soundEffects[soundIndex].isNull()) {
+                Source* s = _listener.addSource(_soundEffects[soundIndex]);
+                s->setPosition(vec3(posContact.x(), posContact.y(), posContact.z()));
+                s->setGain(strength);
+                //s->setPitch(1.5f - norm_strength);
+                s->setPitch(0.6 + norm_strength * 0.85);
+                _asyncSoundToPlay.push_back(s);
 
-        return true;
+                return true;
+            }
+        }
     }
     return false;
 }

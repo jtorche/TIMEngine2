@@ -9,16 +9,10 @@
 #include "MemoryLoggerOn.h"
 
 
-ForestLevelBase::ForestLevelBase(int index, LevelSystem* system, BulletEngine& phys, const std::string& music) : LevelInterface(index, system), _physEngine(phys)
+ForestLevelBase::ForestLevelBase(int index, LevelSystem* system, BulletEngine& phys) : LevelInterface(index, system), _physEngine(phys)
 {
     _birds = resource::AssetManager<resource::SoundAsset>::instance().load<false>("soundBank/birds1.wav", false, Sampler::NONE).value();
     _warp = resource::AssetManager<resource::SoundAsset>::instance().load<false>("soundBank/warp.wav", false, Sampler::NONE).value();
-
-    resource::SoundAsset ambientSound = resource::AssetManager<resource::SoundAsset>::instance().load<false>("soundBank/" + music + ".ogg", true, Sampler::NONE).value();
-    Source* src = system->listener().addSource(ambientSound);
-    src->setLooping(true);
-    src->setGain(0.12);
-    setAmbientSound(src, music);
 }
 
 void ForestLevelBase::init()
@@ -67,8 +61,8 @@ void ForestLevelBase::emitSounddPortal(const vec3& p)
 }
 
 
-ForestLevel1::ForestLevel1(int index, LevelSystem* system, BulletEngine& phys, std::string namePortal, const std::string& music)
-    : ForestLevelBase(index, system, phys, music), _namePortal(namePortal)
+ForestLevel1::ForestLevel1(int index, LevelSystem* system, BulletEngine& phys, std::string namePortal)
+    : ForestLevelBase(index, system, phys), _namePortal(namePortal)
 {
     _sunTexture = resource::AssetManager<interface::Texture>::instance().load<false>("textureBank/sun2.png", LevelSystem::defaultTexParam).value();
 }
@@ -128,7 +122,7 @@ void ForestLevel1::update(float time)
 #endif
 }
 
-ForestLevel2::ForestLevel2(int index, LevelSystem* system, BulletEngine& phys) : ForestLevelBase(index, system, phys, "addressing_stars")
+ForestLevel2::ForestLevel2(int index, LevelSystem* system, BulletEngine& phys) : ForestLevelBase(index, system, phys)
 {
     _sunTexture1[0] = resource::AssetManager<interface::Texture>::instance().load<false>("textureBank/sun.png", LevelSystem::defaultTexParam).value();
     _sunTexture1[1] = resource::AssetManager<interface::Texture>::instance().load<false>("textureBank/sun2.png", LevelSystem::defaultTexParam).value();
@@ -204,7 +198,7 @@ void ForestLevel2::update(float time)
 #endif
 }
 
-ForestLevel3::ForestLevel3(int index, LevelSystem* system, BulletEngine& phys) : ForestLevelBase(index, system, phys, "addressing_stars")
+ForestLevel3::ForestLevel3(int index, LevelSystem* system, BulletEngine& phys) : ForestLevelBase(index, system, phys)
 {
 
 }
