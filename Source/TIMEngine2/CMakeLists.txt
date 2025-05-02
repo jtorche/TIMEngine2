@@ -37,9 +37,12 @@ target_link_libraries(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/../Libs/openal/
 
 # Bullet
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/../Libs/bullet3/include/bullet/)
-target_link_libraries(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/../Libs/bullet3/LinearMath.lib)
-target_link_libraries(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/../Libs/bullet3/BulletCollision.lib)
-target_link_libraries(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/../Libs/bullet3/BulletDynamics.lib)
+target_link_libraries(${PROJECT_NAME} PUBLIC optimized ${CMAKE_SOURCE_DIR}/../Libs/bullet3/LinearMath.lib)
+target_link_libraries(${PROJECT_NAME} PUBLIC optimized ${CMAKE_SOURCE_DIR}/../Libs/bullet3/BulletCollision.lib)
+target_link_libraries(${PROJECT_NAME} PUBLIC optimized ${CMAKE_SOURCE_DIR}/../Libs/bullet3/BulletDynamics.lib)
+target_link_libraries(${PROJECT_NAME} PUBLIC debug ${CMAKE_SOURCE_DIR}/../Libs/bullet3/LinearMath_Debug.lib)
+target_link_libraries(${PROJECT_NAME} PUBLIC debug ${CMAKE_SOURCE_DIR}/../Libs/bullet3/BulletCollision_Debug.lib)
+target_link_libraries(${PROJECT_NAME} PUBLIC debug ${CMAKE_SOURCE_DIR}/../Libs/bullet3/BulletDynamics_Debug.lib)
 
 # Tiny XML
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/External/tinyxml/)
