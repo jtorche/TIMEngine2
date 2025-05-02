@@ -1,18 +1,20 @@
 #include "MultiSceneManager.h"
 #include "resource/AssetManager.h"
 #include "PortalGame/CollisionMask.h"
+#include <filesystem>
 
 using namespace interface;
 
 #include "MemoryLoggerOn.h"
 
 std::map<std::string,std::string> mapStringGeometry;
-std::string mapGeometry(std::string str)
+std::string mapVisualMeshToCollisionGeometry(std::string str)
 {
     auto it = mapStringGeometry.find(str);
     if(it == mapStringGeometry.end())
         return str;
-    else return it->second;
+    else 
+        return it->second;
 }
 
 MultiSceneManager::MultiSceneManager(std::string file, MultipleSceneHelper& multipleScene, int startScene)
@@ -28,9 +30,11 @@ MultiSceneManager::MultiSceneManager(std::string file, MultipleSceneHelper& mult
         interface::Scene* scene;
     };
 
+    // TODO data driven
     mapStringGeometry["meshBank/portal5Frame.obj"] = "meshBank/portal5Frame_Pass.obj";
     mapStringGeometry["meshBank/portal5FrameR.obj"] = "meshBank/portal5FrameR_Pass.obj";
 
+    // Relplace all "roomPattern" instance with this model that contains physical walls for the physics
     interface::Geometry roomLimitGeom = resource::AssetManager<Geometry>::instance().load<false>("meshBank/roomPattern.obj", true).value();
 
     std::map<std::string, EdgeInfo> nameEdge;
@@ -52,8 +56,9 @@ MultiSceneManager::MultiSceneManager(std::string file, MultipleSceneHelper& mult
 
         if(b)
         {
-            sceneFile.resize(sceneFile.size()-4);
-            _scenes.push_back({sceneFile, scene});
+            std::string levelName = std::filesystem::path(sceneFile).stem().string();
+
+            _scenes.push_back({ levelName, scene });
             _objects.push_back(objInScene);
             _dirLightView.push_back(new interface::View());
 
@@ -86,10 +91,13 @@ MultiSceneManager::MultiSceneManager(std::string file, MultipleSceneHelper& mult
 
                         if(obj.isPhysic && obj.isStatic)
                         {
+                            // For portals we must exclude the "portal" mesh from the physics, but keep the frame of the portal. The portal mesh must be the first mesh.
                             for(size_t i=1 ; i<obj.asset.size() ; ++i)
                             {
-                                staticGeom.push_back({resource::AssetManager<Geometry>::instance().load<false>(mapGeometry(obj.asset[i].geometry), true).value(),
-                                                      obj.meshInstance->matrix()});
+                                auto asset = resource::AssetManager<Geometry>::instance().load<false>(mapVisualMeshToCollisionGeometry(obj.asset[i].geometry), true);
+                                if (asset.hasValue()) {
+                                    staticGeom.push_back({ asset.value(), obj.meshInstance->matrix() });
+                                }
                             }
                         }
                     }
@@ -102,9 +110,10 @@ MultiSceneManager::MultiSceneManager(std::string file, MultipleSceneHelper& mult
                     {
                         for(XmlMeshAssetLoader::MeshElementModel part : obj.asset)
                         {
-                            if(obj.meshInstance)
-                                staticGeom.push_back({resource::AssetManager<Geometry>::instance().load<false>(mapGeometry(part.geometry), true).value(),
-                                                      obj.meshInstance->matrix()});
+                            auto asset = resource::AssetManager<Geometry>::instance().load<false>(mapVisualMeshToCollisionGeometry(part.geometry), true);
+                            if (obj.meshInstance && asset.hasValue()) {
+                                staticGeom.push_back({ asset.value(), obj.meshInstance->matrix() });
+                            }
                         }
                     }
                 }

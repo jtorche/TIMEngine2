@@ -19,9 +19,9 @@ using namespace tim;
 
 int main(int argc, char* argv[])
 {
-    uint RES_X = 1512;
-    uint RES_Y = 1680;
-    const uivec2 WIN_RES = { 1600, 900 };
+    uint RES_X = 1000;
+    uint RES_Y = 1000;
+    const uivec2 WIN_RES = { 2000, 1000 };
 
     std::cout << "Enter the size of the room in meters (between 2 and 3) :";
     float meters=3; std::cin >> meters; std::cin.clear();
@@ -90,7 +90,7 @@ int main(int argc, char* argv[])
 
             pipeline.setStereoView(hmdCamera.cullingView(), hmdCamera.eyeView(0), hmdCamera.eyeView(1), 0);
 
-            VRDebugCamera debugCamera(&input, vec3(300,300,300));
+            VRDebugCamera debugCamera(&input, vec3(meters, meters,300));
 
             /* physic and setup */
             BulletEngine physEngine;
@@ -218,7 +218,18 @@ int main(int argc, char* argv[])
                 /*********************/
                 /******* Flush *******/
                 /*********************/
+                int sceneIndex = portalGame.curSceneIndex();
+                int nbLevel = portalGame.levelSystem().nbLevels();
 
+#if 1
+                portalGame.update(timeElapsed);
+
+                for (int i = 0; i < nbLevel; ++i)
+                    if (physEngine.dynamicsWorld[i])
+                        physEngine.dynamicsWorld[i]->stepSimulation(std::min(timeElapsed, 1.f / 60), 20, 1 / freqphys);
+
+                pipeline.pipeline()->prepare();
+#else
                 auto futur_updateGame = threadPool.schedule_trace([&]()
                 {
                     /*PROFILE("Update game")*/ portalGame.update(timeElapsed);
@@ -233,8 +244,7 @@ int main(int argc, char* argv[])
                     return true;
                 });
 
-                int sceneIndex = portalGame.curSceneIndex();
-                int nbLevel = portalGame.levelSystem().nbLevels();
+                
                 threadPool.schedule([&physEngine, timeElapsed, sceneIndex, freqphys, nbLevel, &futur_updateGame]()
                 {
                     futur_updateGame.wait();
@@ -242,13 +252,12 @@ int main(int argc, char* argv[])
                         if(physEngine.dynamicsWorld[i])
                             physEngine.dynamicsWorld[i]->stepSimulation(std::min(timeElapsed, 1.f/60), 20, 1 / freqphys);
                });
+#endif
 
                 if (hmdDevice.isInit())
-                    hmdDevice.update(true);
+                    hmdDevice.update(timeElapsed);
                 else
                     debugCamera.update(timeElapsed);
-
-                futur_prepare.wait();
 
                 if (hmdDevice.isInit())
                     hmdCamera.update(hmdDevice);
