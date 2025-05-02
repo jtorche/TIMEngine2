@@ -120,14 +120,12 @@ void DirLightShadowNode::render()
     if(!_sceneView)
         return;
 
+    renderer::openGL.polygoneOffset(2.0, 2.0); // Z bias
+
     _counter++;
+
     for(size_t i=0 ; i<_resolution.z() ; ++i)
     {
-//        if(i == 1 && _counter % 2 == 0)
-//            continue;
-//        else if(_counter % 2 != 0 && _counter % 3 > 0)
-//            continue;
-
         _buffer.fbo()->attachDepthTexture(_buffer.buffer(0), i);
         _buffer.fbo()->bind();
         renderer::openGL.clearDepth();
@@ -136,7 +134,6 @@ void DirLightShadowNode::render()
         {
             vector<mat4> accMatr;
             vector<renderer::MeshBuffers*> accMesh;
-            //vector<renderer::Material> accMate;
 
             for(uint index=0 ; index < _toDraw[i].size() ; ++index)
             {
@@ -144,7 +141,6 @@ void DirLightShadowNode::render()
                 {
                     accMatr.push_back(_toDraw[i][index].second->transposed());
                     accMesh.push_back(_toDraw[i][index].first->geometry().buffers());
-                    //accMate.push_back(_toDraw[i][curIndex].first->internalMaterial());
                 }
             }
             if(!accMesh.empty())
@@ -166,6 +162,8 @@ void DirLightShadowNode::render()
 
         _buffer.fbo()->unbind();
     }
+    
+    renderer::openGL.polygoneOffset(0.0, 0.0); // restore default
 }
 
 }

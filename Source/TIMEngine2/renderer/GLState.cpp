@@ -124,6 +124,8 @@ namespace renderer
         _colorMask={true,true,true,true};
         _scissorCoord={0,0};
         _scissorSize={100,100};
+        _polygonOffset[0] = 0;
+        _polygonOffset[1] = 0;
     }
 
     void GLState::applyAll()
@@ -170,6 +172,14 @@ namespace renderer
         glColorMask(_colorMask[0], _colorMask[1], _colorMask[2], _colorMask[3]);
         glScissor(_scissorCoord.x(), _scissorCoord.y(), _scissorSize.x(), _scissorSize.y());
         glLogicOp(_glStates[OPCODE]);
+
+        if (_polygonOffset[0] != 0.0f || _polygonOffset[1] != 0.0f) {
+            glEnable(GL_POLYGON_OFFSET_FILL);
+            glPolygonOffset(_polygonOffset[0], _polygonOffset[1]);
+        }
+        else {
+            glDisable(GL_POLYGON_OFFSET_FILL);
+        }
     }
 
     std::string GLState::strHardward() const

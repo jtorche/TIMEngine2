@@ -89,6 +89,7 @@ namespace renderer
         void logicColor(bool);
         void logicOp(uint);
         void lineWidth(float);
+        void polygoneOffset(float factor, float unit);
 
         enum Hardward
         {
@@ -166,6 +167,7 @@ namespace renderer
         Vector4<bool> _colorMask;
         uivec2 _scissorCoord, _scissorSize;
         float _lineWidth;
+        float _polygonOffset[2];
 
         uint _uboBinded[MAX_BUFFER_ATTACHEMENT];
         uint _ssboBinded[MAX_BUFFER_ATTACHEMENT];
@@ -645,6 +647,22 @@ namespace renderer
         {
             _lineWidth = w;
             glLineWidth(w);
+        }
+    }
+
+    inline void GLState::polygoneOffset(float factor, float unit)
+    {
+        if (_polygonOffset[0] != factor || _polygonOffset[1] != unit) {
+            _polygonOffset[0] = factor;
+            _polygonOffset[1] = unit;
+
+            if (factor != 0.0f || unit != 0.0f) {
+                glEnable(GL_POLYGON_OFFSET_FILL);
+                glPolygonOffset(factor, unit);
+            }
+            else {
+                glDisable(GL_POLYGON_OFFSET_FILL);
+            }
         }
     }
 
