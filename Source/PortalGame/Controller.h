@@ -3,7 +3,6 @@
 
 #include "interface/Pipeline.h"
 #include "interface/pipeline/pipeline.h"
-#include "OpenVR/VR_Device.h"
 #include "bullet/BulletEngine.h"
 
 using namespace tim;

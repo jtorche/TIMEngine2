@@ -4,7 +4,6 @@
 #include "MultiSceneManager.h"
 #include "PortalGame/Controller.h"
 #include "OpenVR/HmdSceneView.h"
-#include "OpenVR/VR_Device.h"
 
 #include "PortalGame/BetweenSceneStruct.h"
 #include "PortalGame/ForestLevel.h"
@@ -21,7 +20,7 @@ class PortalGame
 public:
     static bool contactCallBack(btManifoldPoint& cp, void* body0,void* body1);
 
-    PortalGame(BulletEngine&, MultipleSceneHelper&, HmdSceneView&, VR_Device&, int startLevel = 0);
+    PortalGame(BulletEngine&, MultipleSceneHelper&, HmdSceneView&, VR_DeviceInterface&, int startLevel = 0);
 
     void update(float time);
 
@@ -48,7 +47,7 @@ protected:
     BulletEngine& _physEngine;
     MultipleSceneHelper& _multiSceneHelper;
     HmdSceneView& _hmdCamera;
-    VR_Device& _vrDevice;
+    VR_DeviceInterface& _vrDevice;
     Listener _listener;
 
     MultiSceneManager _multiScene;

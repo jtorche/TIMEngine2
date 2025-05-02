@@ -56,18 +56,15 @@ namespace tim
             param.size = uivec3(_input[0]->buffer()->resolution(), 0);
             param.nbLevels = 1;
             param.format = renderer::Texture::Format::RGBA8;
-            _textureBuffer[VR_Device::LEFT] = renderer::Texture::genTexture2D(param);
-            _textureBuffer[VR_Device::RIGHT] = renderer::Texture::genTexture2D(param);
+            _textureBuffer[VR_DeviceInterface::LEFT] = renderer::Texture::genTexture2D(param);
+            _textureBuffer[VR_DeviceInterface::RIGHT] = renderer::Texture::genTexture2D(param);
 
-            _fboBuffer[VR_Device::LEFT].attachTexture(0, _textureBuffer[VR_Device::LEFT]);
-            _fboBuffer[VR_Device::RIGHT].attachTexture(0, _textureBuffer[VR_Device::RIGHT]);
+            _fboBuffer[VR_DeviceInterface::LEFT].attachTexture(0, _textureBuffer[VR_DeviceInterface::LEFT]);
+            _fboBuffer[VR_DeviceInterface::RIGHT].attachTexture(0, _textureBuffer[VR_DeviceInterface::RIGHT]);
 
-            _fboInput[VR_Device::LEFT].attachTexture(0, _input[VR_Device::LEFT]->buffer());
-            _fboInput[VR_Device::RIGHT].attachTexture(0, _input[VR_Device::RIGHT]->buffer());
+            _fboInput[VR_DeviceInterface::LEFT].attachTexture(0, _input[VR_DeviceInterface::LEFT]->buffer());
+            _fboInput[VR_DeviceInterface::RIGHT].attachTexture(0, _input[VR_DeviceInterface::RIGHT]->buffer());
         }
-
-//        _fboInput[VR_Device::LEFT].copyTo(_fboBuffer[VR_Device::LEFT]);
-//        _fboInput[VR_Device::RIGHT].copyTo(_fboBuffer[VR_Device::RIGHT]);
 
 		if (_drawOnScreen >= 0 && _input.size() > 0)
 		{
@@ -84,8 +81,8 @@ namespace tim
                 //renderer::openGL.bindTexture(_input[0]->buffer()->id(), GL_TEXTURE_2D, 0);
                 //renderer::openGL.bindTexture(_input[1]->buffer()->id(), GL_TEXTURE_2D, 1);
 
-                renderer::openGL.bindTexture(_textureBuffer[VR_Device::LEFT]->id(), GL_TEXTURE_2D, 0);
-                renderer::openGL.bindTexture(_textureBuffer[VR_Device::RIGHT]->id(), GL_TEXTURE_2D, 1);
+                renderer::openGL.bindTexture(_textureBuffer[VR_DeviceInterface::LEFT]->id(), GL_TEXTURE_2D, 0);
+                renderer::openGL.bindTexture(_textureBuffer[VR_DeviceInterface::RIGHT]->id(), GL_TEXTURE_2D, 1);
             }
             else
                 renderer::openGL.bindTexture(_input[std::min(_drawOnScreen, 1)]->buffer()->id(), GL_TEXTURE_2D, 0);
@@ -97,31 +94,11 @@ namespace tim
 
 		if (_device->isInit() && _input[0] && _input[1])
 		{
-            //SDLTimer timeru;
-
-            //vr::Texture_t leftEyeTexture = { (void*)_input[VR_Device::LEFT]->buffer()->id(), vr::API_OpenGL, vr::ColorSpace_Linear };
-
-            if(!_invertEyes)
-            {
-                vr::Texture_t leftEyeTexture = { (void*)(std::uintptr_t)_textureBuffer[VR_Device::LEFT]->id(), vr::TextureType_OpenGL, vr::ColorSpace_Linear };
-                vr::VRCompositor()->Submit(vr::Eye_Left, &leftEyeTexture);
-
-                //vr::Texture_t rightEyeTexture = { (void*)_input[VR_Device::RIGHT]->buffer()->id(), vr::API_OpenGL, vr::ColorSpace_Linear };
-                vr::Texture_t rightEyeTexture = { (void*)(std::uintptr_t)_textureBuffer[VR_Device::RIGHT]->id(), vr::TextureType_OpenGL, vr::ColorSpace_Linear };
-                vr::VRCompositor()->Submit(vr::Eye_Right, &rightEyeTexture);
+            if (!_invertEyes) {
+                _device->submit(_textureBuffer[VR_DeviceInterface::LEFT], _textureBuffer[VR_DeviceInterface::RIGHT]);
+            } else {
+                _device->submit(_textureBuffer[VR_DeviceInterface::RIGHT], _textureBuffer[VR_DeviceInterface::LEFT]);
             }
-            else
-            {
-                vr::Texture_t leftEyeTexture = { (void*)(std::uintptr_t)_textureBuffer[VR_Device::RIGHT]->id(), vr::TextureType_OpenGL, vr::ColorSpace_Linear };
-                vr::VRCompositor()->Submit(vr::Eye_Left, &leftEyeTexture);
-
-                //vr::Texture_t rightEyeTexture = { (void*)_input[VR_Device::RIGHT]->buffer()->id(), vr::API_OpenGL, vr::ColorSpace_Linear };
-                vr::Texture_t rightEyeTexture = { (void*)(std::uintptr_t)_textureBuffer[VR_Device::LEFT]->id(), vr::TextureType_OpenGL, vr::ColorSpace_Linear };
-                vr::VRCompositor()->Submit(vr::Eye_Right, &rightEyeTexture);
-            }
-
-            // PROFILE("Sync device:") _device->sync();
-            //std::cout << "time submit : " << timeru.elapsed() << std::endl;
         }
 
         for (uint i = 0; i<_input.size(); ++i)

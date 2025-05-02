@@ -6,7 +6,7 @@ using namespace resource;
 
 #include "MemoryLoggerOn.h"
 
-PortalGame::PortalGame(BulletEngine& phys, MultipleSceneHelper& multiscene, HmdSceneView& hmdCam, VR_Device& vrdevice, int startLevel)
+PortalGame::PortalGame(BulletEngine& phys, MultipleSceneHelper& multiscene, HmdSceneView& hmdCam, VR_DeviceInterface& vrdevice, int startLevel)
     : _physEngine(phys), _multiSceneHelper(multiscene), _hmdCamera(hmdCam), _vrDevice(vrdevice),
       _multiScene("scene/configScene.txt", _multiSceneHelper, startLevel), _vrControllers(phys), _levels(phys, _listener, _vrControllers, _hmdCamera, _gameAssets)
 {
@@ -92,8 +92,8 @@ void PortalGame::update(float time)
     /* then update controllers */
     if (_vrDevice.isInit())
     {
-        mat4 l = _vrDevice.isControllerConnected(VR_Device::LEFT) ? _vrDevice.controllerPose(VR_Device::LEFT) : _lastL;
-        mat4 r = _vrDevice.isControllerConnected(VR_Device::RIGHT) ? _vrDevice.controllerPose(VR_Device::RIGHT) : _lastR;
+        mat4 l = _vrDevice.isControllerConnected(VR_DeviceInterface::LEFT) ? _vrDevice.controllerPose(VR_DeviceInterface::LEFT) : _lastL;
+        mat4 r = _vrDevice.isControllerConnected(VR_DeviceInterface::RIGHT) ? _vrDevice.controllerPose(VR_DeviceInterface::RIGHT) : _lastR;
         l = _hmdCamera.scaleTransform(l);
         r = _hmdCamera.scaleTransform(r);
 

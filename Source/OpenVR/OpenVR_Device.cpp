@@ -1,4 +1,4 @@
-#include "VR_Device.h"
+#include "OpenVR_Device.h"
 #include "core/core.h"
 
 namespace tim
@@ -55,7 +55,7 @@ vec3 convertToVec3(const vr::HmdVector3_t &vec)
 	});
 }
 
-VR_Device::VR_Device(vec2 zdist)
+OpenVR_Device::OpenVR_Device(bool useWaitGetPoseOnUpdate, vec2 zdist) : _useWaitGetPoseOnUpdate(useWaitGetPoseOnUpdate)
 {
 	vr::EVRInitError error;
 	_hmd = vr::VR_Init(&error, vr::VRApplication_Scene);
@@ -85,12 +85,12 @@ VR_Device::VR_Device(vec2 zdist)
 	_hmdCamera._hmdToEye[LEFT] = convertToMat4(_hmd->GetEyeToHeadTransform(vr::Eye_Right));
 }
 
-VR_Device::~VR_Device()
+OpenVR_Device::~OpenVR_Device()
 {
 	vr::VR_Shutdown();
 }
 
-uivec2 VR_Device::hmdResolution() const
+uivec2 OpenVR_Device::hmdResolution() const
 {
 	if (!_hmd) return uivec2();
 
@@ -100,17 +100,26 @@ uivec2 VR_Device::hmdResolution() const
 	return uivec2(x, y);
 }
 
-void VR_Device::sync()
+void OpenVR_Device::submit(renderer::Texture* left, renderer::Texture* right)
+{
+	vr::Texture_t leftEyeTexture = { (void*)(std::uintptr_t)left->id(), vr::TextureType_OpenGL, vr::ColorSpace_Auto };
+	vr::VRCompositor()->Submit(vr::Eye_Left, &leftEyeTexture);
+
+	vr::Texture_t rightEyeTexture = { (void*)(std::uintptr_t)right->id(), vr::TextureType_OpenGL, vr::ColorSpace_Auto };
+	vr::VRCompositor()->Submit(vr::Eye_Right, &rightEyeTexture);
+}
+
+void OpenVR_Device::sync()
 {
     if(_compositor)
         _compositor->WaitGetPoses(_vrTrackedDevicePose, vr::k_unMaxTrackedDeviceCount, NULL, 0);
 }
 
-void VR_Device::update(bool useWaitgetPoses)
+void OpenVR_Device::update(float time)
 {
 	if (!_compositor) return;
 
-    if(useWaitgetPoses)
+    if(_useWaitGetPoseOnUpdate)
         _compositor->WaitGetPoses(_vrTrackedDevicePose, vr::k_unMaxTrackedDeviceCount, NULL, 0);
     else
     {         

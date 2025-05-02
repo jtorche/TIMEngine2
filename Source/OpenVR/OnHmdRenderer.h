@@ -1,7 +1,7 @@
 #ifndef ON_HMD_RENDERER_H
 #define ON_HMD_RENDERER_H
 
-#include "VR_Device.h"
+#include "VR_DeviceInterface.h"
 #include "interface/Pipeline.h"
 #undef interface
 
@@ -12,7 +12,7 @@ namespace tim {
 		OnHmdRenderer();
 		~OnHmdRenderer();
 
-		void setVRDevice(VR_Device* device) { _device = device; }
+		void setVRDevice(VR_DeviceInterface* device) { _device = device; }
 
 		void prepare() override;
 		void render() override;
@@ -23,7 +23,7 @@ namespace tim {
         void setInvertEyes(bool e) { _invertEyes = e; }
 
 	private:
-		VR_Device* _device;
+		VR_DeviceInterface* _device;
 		int _drawOnScreen = 0;
         bool _invertEyes = false;
         uivec2 _screenResolution = {1600,900};

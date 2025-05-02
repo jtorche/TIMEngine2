@@ -2,7 +2,7 @@
 #define HMD_SCENEVIEW_H
 
 #include "interface/pipeline/pipeline.h"
-#include "VR_Device.h"
+#include "VR_DeviceInterface.h"
 #include "VRDebugCamera.h"
 
 namespace tim {
@@ -23,7 +23,7 @@ namespace tim {
         const mat4& offset() const { return _offset; }
         mat4 scaleTransform(const mat4&) const;
 
-        void update(const VR_Device& hmdDevice);
+        void update(const VR_DeviceInterface& hmdDevice);
         void update(const VRDebugCamera& cam, float ratio);
 
         void update(const Camera&)

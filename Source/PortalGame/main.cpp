@@ -3,6 +3,8 @@
 #include "OpenVR/OnHmdRenderer.h"
 #include "OpenVR/HmdSceneView.h"
 #include "OpenVR/VRDebugCamera.h"
+#include "OpenVR/OpenVR_Device.h"
+#include "OpenVR/SoftVR_Device.h"
 #include "resource/AssetManager.h"
 #include "MultiPromise.h"
 
@@ -48,7 +50,7 @@ int main(int argc, char* argv[])
             ShaderPool::instance().add("feedbackStereo", "shader/combineScene.vert", "shader/combineScene.frag", "", {"STEREO_DISPLAY"}).value();
             ShaderPool::instance().add("processSpecularCubeMap", "shader/processCubemap.vert", "shader/processCubemap.frag").value();
 
-            VR_Device hmdDevice;
+            OpenVR_Device hmdDevice(true);
             SDLInputManager input;
 
 			if (hmdDevice.isInit())

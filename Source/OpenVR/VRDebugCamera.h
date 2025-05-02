@@ -14,10 +14,11 @@ namespace tim
 
         void update(float time)
         {
+            float rotSpeed = 2;
             vec3 hvec = _dir.cross(vec3(0,0,1)).normalized();
-            mat3 rotZ = mat3::RotationZ(-time * _input->mouseRel().x() * 0.5);
+            mat3 rotZ = mat3::RotationZ(-time * _input->mouseRel().x() * rotSpeed);
             _dir = rotZ * _dir;
-            _dir = mat3::AxisRotation(hvec, vec3(0,0,1), -time * _input->mouseRel().y() * 0.5) * _dir;
+            _dir = mat3::AxisRotation(hvec, vec3(0,0,1), -time * _input->mouseRel().y() * rotSpeed) * _dir;
             _dir.normalize();
 
             float boostv = 1;
