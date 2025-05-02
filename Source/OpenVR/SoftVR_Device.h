@@ -16,13 +16,14 @@ namespace tim {
 		void submit(renderer::Texture* left, renderer::Texture* right) override;
         void sync() override;
 
-        const core::mat4& controllerPose(int id) const override { return mat4::IDENTITY(); }
-        const core::vec3& controllerVel(int id) const override { return vec3(0,0,0); }
+        const core::mat4& controllerPose(int id) const override { return identityPose; }
+        const core::vec3& controllerVel(int id) const override { return nullVel; }
         bool isControllerConnected(int id) const override { return true; }
         bool isHmdConnected() const override { return true; }
 
 	private:
-
+		mat4 identityPose = mat4::IDENTITY();
+		vec3 nullVel = vec3(0, 0, 0.1);
 	};
 }
 
