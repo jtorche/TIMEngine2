@@ -4,7 +4,6 @@ project(TIMEngine2Solution DESCRIPTION "TIMEngine2Solution" LANGUAGES CXX)
 set(CMAKE_SUPPRESS_REGENERATION true)
 
 add_definitions(-DUSE_VCPP)
-add_definitions(-DNO_OGG_VORBIS)
 SET(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /DTIM_DEBUG")
 
 # Only do these if this is the main project, and not if it is included through
