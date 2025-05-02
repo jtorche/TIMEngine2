@@ -1,0 +1,78 @@
+<MeshAsset name="sacredGroveFlowers">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flower_grove1.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<cullFace>0</cullFace>
+		</Advanced>
+	</Element>
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flower_grove2.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1_yellow.png</diffuseTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<cullFace>0</cullFace>
+		</Advanced>
+	</Element>
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flower_grove3.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1_purple.png</diffuseTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<cullFace>0</cullFace>
+		</Advanced>
+	</Element>
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flower_grove4.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1_orange.png</diffuseTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<cullFace>0</cullFace>
+		</Advanced>
+	</Element>
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flower_grove5.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<cullFace>0</cullFace>
+		</Advanced>
+	</Element>
+</MeshAsset>
+

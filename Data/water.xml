@@ -1,0 +1,28 @@
+<MeshAsset name="waterAsset" index=15 >
+	<Element type=0>
+		<color>227,227,227</color>
+		<geometry>meshBank/hPlan.obj</geometry>
+		<roughness>0.26</roughness>
+		<metallic>0.64</metallic>
+		<specular>0.37</specular>
+		<emissive>0.11</emissive>
+		<textureScale>37.039</textureScale>
+		<castShadow>0</castShadow>
+		<cmAffected>1</cmAffected>
+		<diffuseTex>textureBank/white.png</diffuseTex>
+		<normalTex>textureBank/water2N.png</normalTex>
+		<Advanced>
+			<shader>water</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>1</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>

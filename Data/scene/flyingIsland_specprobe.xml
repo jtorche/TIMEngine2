@@ -1,0 +1,5 @@
+<LightProbe data="specProbe/flyingIslOut3.itim" pos="37.6756,-45.7096,0.365" radius=2.58 farDist=1000 nbIterations=2 />
+<LightProbe data="specProbe/flyingIslOut2.itim" pos="34.9681,-45.5916,0.365" radius=2.5 farDist=1000 nbIterations=2 />
+<LightProbe data="specProbe/flyingIslOut1.itim" pos="32.1883,-45.4705,0.365" radius=2.5 farDist=1000 nbIterations=2 />
+<LightProbe data="specProbe/flyingIslOut0.itim" pos="29.6115,-45.3581,0.365" radius=2.5 farDist=1000 nbIterations=2 />
+<LightProbe data="specProbe/flyingIslOut4.itim" pos="40.8629,-45.7372,0.785128" radius=2.5 farDist=50 nbIterations=2 />

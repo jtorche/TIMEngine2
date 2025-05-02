@@ -1,0 +1,223 @@
+<MeshAsset name="arbre1">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/arbre1.obj</geometry>
+		<roughness>0.75</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>textureBank/bark.png</diffuseTex>
+		<normalTex>textureBank/bark_NORM.png</normalTex>
+	</Element>
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/arbre1Leaf.obj</geometry>
+		<roughness>0.4</roughness>
+		<metallic>0</metallic>
+		<specular>0.05</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>textureBank/leaf.png</diffuseTex>
+		<normalTex>textureBank/leaf_NORM.png</normalTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+
+<MeshAsset name="arbre2">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/arbre2.obj</geometry>
+		<roughness>0.75</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>textureBank/bark.png</diffuseTex>
+		<normalTex>textureBank/bark_NORM.png</normalTex>
+	</Element>
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/arbre2Leaf.obj</geometry>
+		<roughness>0.4</roughness>
+		<metallic>0</metallic>
+		<specular>0.05</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>textureBank/leaf.png</diffuseTex>
+		<normalTex>textureBank/leaf_NORM.png</normalTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+
+<MeshAsset name="arbre3">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/arbre3.obj</geometry>
+		<roughness>0.75</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>textureBank/bark.png</diffuseTex>
+		<normalTex>textureBank/bark_NORM.png</normalTex>
+	</Element>
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/arbre3Leaf.obj</geometry>
+		<roughness>0.4</roughness>
+		<metallic>0</metallic>
+		<specular>0.05</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>textureBank/leaf2.png</diffuseTex>
+		<normalTex>textureBank/leaf_NORM.png</normalTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+
+<MeshAsset name="fence1">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/fence1.obj</geometry>
+		<roughness>0.7</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/fenceTex.png</diffuseTex>
+		<normalTex>meshBank/fenceTex_NORM.png</normalTex>
+	</Element>
+</MeshAsset>
+
+<MeshAsset name="fence2">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/fence2.obj</geometry>
+		<roughness>0.7</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/fenceTex.png</diffuseTex>
+		<normalTex>meshBank/fenceTex_NORM.png</normalTex>
+	</Element>
+</MeshAsset>
+
+<MeshAsset name="fence3">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/fence3.obj</geometry>
+		<roughness>0.7</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/fenceTex.png</diffuseTex>
+		<normalTex>meshBank/fenceTex_NORM.png</normalTex>
+	</Element>
+</MeshAsset>
+
+<MeshAsset name="fence4">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/fence4.obj</geometry>
+		<roughness>0.7</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/fenceTex.png</diffuseTex>
+		<normalTex>meshBank/fenceTex_NORM.png</normalTex>
+	</Element>
+</MeshAsset>
+
+<MeshAsset name="groundForest">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/groundForest.obj</geometry>
+		<roughness>0.76</roughness>
+		<metallic>0</metallic>
+		<specular>0.08</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/groundForest.png</diffuseTex>
+		<normalTex>meshBank/groundForest_NORM.png</normalTex>
+	</Element>
+</MeshAsset>
+
+<MeshAsset name="plant1">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/plant1.obj</geometry>
+		<roughness>0.3</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>textureBank/leaf3.png</diffuseTex>
+		<normalTex>textureBank/leaf3_NORM.png</normalTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+

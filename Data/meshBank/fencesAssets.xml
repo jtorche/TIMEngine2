@@ -1,0 +1,75 @@
+<MeshAsset name="fence0">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/fence0.obj</geometry>
+		<roughness>0.7</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/fenceTex.png</diffuseTex>
+		<normalTex>meshBank/fenceTex_NORM.png</normalTex>
+	</Element>
+</MeshAsset>
+
+<MeshAsset name="fence1">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/fence1.obj</geometry>
+		<roughness>0.7</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/fenceTex.png</diffuseTex>
+		<normalTex>meshBank/fenceTex_NORM.png</normalTex>
+	</Element>
+</MeshAsset>
+
+<MeshAsset name="fence2">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/fence2.obj</geometry>
+		<roughness>0.7</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/fenceTex.png</diffuseTex>
+		<normalTex>meshBank/fenceTex_NORM.png</normalTex>
+	</Element>
+</MeshAsset>
+
+<MeshAsset name="fence3">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/fence3.obj</geometry>
+		<roughness>0.7</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/fenceTex.png</diffuseTex>
+		<normalTex>meshBank/fenceTex_NORM.png</normalTex>
+	</Element>
+</MeshAsset>
+
+<MeshAsset name="fence4">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/fence4.obj</geometry>
+		<roughness>0.7</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/fenceTex.png</diffuseTex>
+		<normalTex>meshBank/fenceTex_NORM.png</normalTex>
+	</Element>
+</MeshAsset>
+

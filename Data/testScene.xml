@@ -1,0 +1,153 @@
+<Skybox>
+   <x>skybox/simple4/x.png</x>
+   <nx>skybox/simple4/nx.png</nx>
+   <y>skybox/simple4/y.png</y>
+   <ny>skybox/simple4/ny.png</ny>
+   <z>skybox/simple4/z.png</z>
+   <nz>skybox/simple4/nz.png</nz>
+</Skybox>
+
+<DirLight shadows=1 color="1,1,1" direction="-0.86,-0.26,-0.43" />
+
+<MeshAsset name="waterAsset" index=0 >
+	<Element type=0>
+		<color>227,227,227</color>
+		<geometry>meshBank/hPlan.obj</geometry>
+		<roughness>0.26</roughness>
+		<metallic>0.64</metallic>
+		<specular>0.37</specular>
+		<emissive>0.11</emissive>
+		<textureScale>37.039</textureScale>
+		<castShadow>0</castShadow>
+		<cmAffected>1</cmAffected>
+		<diffuseTex>textureBank/white.png</diffuseTex>
+		<normalTex>textureBank/water2N.png</normalTex>
+		<Advanced>
+			<shader>water</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>1</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="cube_uv" index=1 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>cube_uv.obj</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+	</Element>
+</MeshAsset>
+<MeshAsset name="dome" index=2 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/dome.obj</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="cube_uv" index=3 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>cube_uv.obj</geometry>
+		<roughness>0.5</roughness>
+		<metallic>1</metallic>
+		<specular>0.15</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+	</Element>
+</MeshAsset>
+<MeshAsset name="ball" index=4 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/ball.obj</geometry>
+		<roughness>0.24</roughness>
+		<metallic>1</metallic>
+		<specular>0.15</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+	</Element>
+</MeshAsset>
+
+<Object name="" model=0 isStatic=1 isPhysic=1 isVisible=1 >
+   <translate>0,2,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=1 isStatic=1 isPhysic=1 isVisible=1 >
+   <translate>-4.0815,-12.4793,0.214057</translate>
+   <scale>0.2,0.2,0.2</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=1 isStatic=1 isPhysic=1 isVisible=1 >
+   <translate>-4.25447,-11.9416,0.192917</translate>
+   <scale>0.2,0.2,0.2</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=2 isStatic=1 isPhysic=1 isVisible=1 >
+   <translate>-3.65991,-11.9983,-0.0789709</translate>
+   <scale>0.280701,0.280701,0.280701</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=1 isStatic=1 isPhysic=1 isVisible=1 >
+   <translate>-2.11476,-12.0958,0.286923</translate>
+   <scale>0.2,0.2,0.2</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=3 isStatic=1 isPhysic=1 isVisible=1 >
+   <translate>2.01643,-13.0711,0.723999</translate>
+   <scale>0.2,0.2,0.2</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=1 isStatic=1 isPhysic=1 isVisible=1 >
+   <translate>-0.717973,-11.8481,0.297112</translate>
+   <scale>0.2,0.2,0.2</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
+   <translate>-3.5837,-12.2773,0.461967</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>

@@ -1,0 +1,211 @@
+<MeshAsset name="palm1">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/palm1.obj</geometry>
+		<roughness>0.4</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<diffuseTex>meshBank/palm.png</diffuseTex>
+		<normalTex>meshBank/palm_NORM.png</normalTex>
+	</Element>
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/palm1_leaf.obj</geometry>
+		<roughness>0.66</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<diffuseTex>meshBank/palmLeaf.png</diffuseTex>
+		<Advanced>
+			<shader>gPassAlphaTest</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+
+<MeshAsset name="palm2">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/palm2.obj</geometry>
+		<roughness>0.55</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<diffuseTex>meshBank/palm.png</diffuseTex>
+		<normalTex>meshBank/palm_NORM.png</normalTex>
+	</Element>
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/palm2_leaf.obj</geometry>
+		<roughness>0.4</roughness>
+		<metallic>0</metallic>
+		<specular>0.12</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<diffuseTex>meshBank/palmLeaf.png</diffuseTex>
+		<Advanced>
+			<shader>gPassAlphaTest</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+
+<MeshAsset name="palm3">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/palm3.obj</geometry>
+		<roughness>0.51</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<diffuseTex>meshBank/palm.png</diffuseTex>
+		<normalTex>meshBank/palm_NORM.png</normalTex>
+	</Element>
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/palm3_leaf.obj</geometry>
+		<roughness>0.4</roughness>
+		<metallic>0</metallic>
+		<specular>0.12</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<diffuseTex>meshBank/palmLeaf.png</diffuseTex>
+		<Advanced>
+			<shader>gPassAlphaTest</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+
+<MeshAsset name="palm4">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/palm4.obj</geometry>
+		<roughness>0.55</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<diffuseTex>meshBank/palm.png</diffuseTex>
+		<normalTex>meshBank/palm_NORM.png</normalTex>
+	</Element>
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/palm4_leaf.obj</geometry>
+		<roughness>0.4</roughness>
+		<metallic>0</metallic>
+		<specular>0.12</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<diffuseTex>meshBank/palmLeaf.png</diffuseTex>
+		<Advanced>
+			<shader>gPassAlphaTest</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+
+<MeshAsset name="palm5">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/palm5_leaf.obj</geometry>
+		<roughness>0.4</roughness>
+		<metallic>0</metallic>
+		<specular>0.12</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<diffuseTex>meshBank/palmLeaf.png</diffuseTex>
+		<Advanced>
+			<shader>gPassAlphaTest</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+
+<MeshAsset name="palm6">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/palm6.obj</geometry>
+		<roughness>0.55</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<diffuseTex>meshBank/palm.png</diffuseTex>
+		<normalTex>meshBank/palm_NORM.png</normalTex>
+	</Element>
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/palm6_leaf.obj</geometry>
+		<roughness>0.4</roughness>
+		<metallic>0</metallic>
+		<specular>0.12</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<diffuseTex>meshBank/palmLeaf.png</diffuseTex>
+		<Advanced>
+			<shader>gPassAlphaTest</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+

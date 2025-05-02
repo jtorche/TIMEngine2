@@ -1,0 +1,39 @@
+<MeshAsset name="flower1">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flower1_1.obj</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+		</Advanced>
+	</Element>
+	<Element type=0>
+		<color>243,69,255</color>
+		<geometry>meshBank/flower1_2.obj</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+		</Advanced>
+	</Element>
+</MeshAsset>
+

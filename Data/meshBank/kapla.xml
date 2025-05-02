@@ -1,0 +1,30 @@
+<MeshAsset name="kapla1">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/kapla1.obj</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1.565</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>textureBank/wood2.png</diffuseTex>
+		<normalTex>textureBank/wood2_NORM.png</normalTex>
+	</Element>
+</MeshAsset>
+
+<MeshAsset name="kapla2">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/kapla2.obj</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1.46</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>textureBank/wood2.png</diffuseTex>
+		<normalTex>textureBank/wood2_NORM.png</normalTex>
+	</Element>
+</MeshAsset>
+

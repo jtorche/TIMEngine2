@@ -1,0 +1,13 @@
+<LightProbe data="specProbe/oceanLongTunnel.itim" pos="23.8185,-45.1957,0.365" radius=8.5 farDist=500 nbIterations=5 />
+<LightProbe data="specProbe/oceanLongTunnel5.itim" pos="16.7463,-44.8873,0.365" radius=2.5 farDist=500 nbIterations=5 />
+<LightProbe data="specProbe/oceanLongTunnel4.itim" pos="14.0968,-44.7718,0.365" radius=2.5 farDist=500 nbIterations=5 />
+<LightProbe data="specProbe/oceanLongTunnel3.itim" pos="10.3536,-44.6086,0.365" radius=2.5 farDist=500 nbIterations=5 />
+<LightProbe data="specProbe/oceanLongTunnel2.itim" pos="7.98945,-44.5055,0.365" radius=2.5 farDist=500 nbIterations=5 />
+<LightProbe data="specProbe/oceanLongTunnel1.itim" pos="5.7944,-44.4098,0.365" radius=2.5 farDist=500 nbIterations=5 />
+<LightProbe data="specProbe/oceanLongTunnel0.itim" pos="3.37446,-44.3043,0.365" radius=2.5 farDist=500 nbIterations=5 />
+<LightProbe data="specProbe/oceanTunnel1.itim" pos="-18.1955,4.86717,0.357647" radius=2.4 farDist=20 nbIterations=5 />
+<LightProbe data="specProbe/oceanTunnel2.itim" pos="-18.6162,7.14708,0.365232" radius=2.5 farDist=20 nbIterations=5 />
+<LightProbe data="specProbe/oceanTunnel3.itim" pos="-19.0511,9.50809,0.365232" radius=2.5 farDist=20 nbIterations=5 />
+<LightProbe data="specProbe/oceanTunnel4.itim" pos="-19.4862,11.8699,0.365232" radius=2.5 farDist=20 nbIterations=5 />
+<LightProbe data="specProbe/oceanTunnel5.itim" pos="-19.9222,14.2366,0.365232" radius=2.5 farDist=20 nbIterations=5 />
+<LightProbe data="specProbe/oceanTunnel6.itim" pos="-20.3894,16.7728,0.365232" radius=2.55 farDist=20 nbIterations=5 />

@@ -6,7 +6,6 @@
 *.mtl
 *.dll
 *.txt
-*.xml
 *.pdn
 *.exe
 *.db

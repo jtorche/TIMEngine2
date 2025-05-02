@@ -1,0 +1,342 @@
+<MeshAsset name="palm1">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/palm1.obj</geometry>
+		<roughness>0.4</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/palm.png</diffuseTex>
+		<normalTex>meshBank/palm_NORM.png</normalTex>
+	</Element>
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/palm1_leaf.obj</geometry>
+		<roughness>0.66</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/palmLeaf.png</diffuseTex>
+		<Advanced>
+			<shader>gPassAlphaTest</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+
+<MeshAsset name="palm2">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/palm2.obj</geometry>
+		<roughness>0.55</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/palm.png</diffuseTex>
+		<normalTex>meshBank/palm_NORM.png</normalTex>
+	</Element>
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/palm2_leaf.obj</geometry>
+		<roughness>0.4</roughness>
+		<metallic>0</metallic>
+		<specular>0.12</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/palmLeaf.png</diffuseTex>
+		<Advanced>
+			<shader>gPassAlphaTest</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+
+<MeshAsset name="palm3">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/palm3.obj</geometry>
+		<roughness>0.51</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/palm.png</diffuseTex>
+		<normalTex>meshBank/palm_NORM.png</normalTex>
+	</Element>
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/palm3_leaf.obj</geometry>
+		<roughness>0.4</roughness>
+		<metallic>0</metallic>
+		<specular>0.12</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/palmLeaf.png</diffuseTex>
+		<Advanced>
+			<shader>gPassAlphaTest</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+
+<MeshAsset name="palm4">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/palm4.obj</geometry>
+		<roughness>0.55</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/palm.png</diffuseTex>
+		<normalTex>meshBank/palm_NORM.png</normalTex>
+	</Element>
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/palm4_leaf.obj</geometry>
+		<roughness>0.4</roughness>
+		<metallic>0</metallic>
+		<specular>0.12</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/palmLeaf.png</diffuseTex>
+		<Advanced>
+			<shader>gPassAlphaTest</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+
+<MeshAsset name="palm5">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/palm5_leaf.obj</geometry>
+		<roughness>0.4</roughness>
+		<metallic>0</metallic>
+		<specular>0.12</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/palmLeaf.png</diffuseTex>
+		<Advanced>
+			<shader>gPassAlphaTest</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+
+<MeshAsset name="palm6">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/palm6.obj</geometry>
+		<roughness>0.55</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/palm.png</diffuseTex>
+		<normalTex>meshBank/palm_NORM.png</normalTex>
+	</Element>
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/palm6_leaf.obj</geometry>
+		<roughness>0.4</roughness>
+		<metallic>0</metallic>
+		<specular>0.12</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/palmLeaf.png</diffuseTex>
+		<Advanced>
+			<shader>gPassAlphaTest</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+
+<MeshAsset name="monolith2">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/monolith2.obj</geometry>
+		<roughness>0.3</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>2.027</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>textureBank/rock1.png</diffuseTex>
+		<normalTex>textureBank/rock1_NORM_r.png</normalTex>
+	</Element>
+</MeshAsset>
+
+<MeshAsset name="monolith3">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/monolith3.obj</geometry>
+		<roughness>0.3</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1.565</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>textureBank/rock1.png</diffuseTex>
+		<normalTex>textureBank/rock1_NORM.png</normalTex>
+	</Element>
+</MeshAsset>
+
+<MeshAsset name="rock1">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/rock1.obj</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0</emissive>
+		<textureScale>1.46</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>textureBank/rock4.png</diffuseTex>
+		<normalTex>textureBank/rock4_NORM.png</normalTex>
+	</Element>
+</MeshAsset>
+
+<MeshAsset name="monolith4">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/monolith4.obj</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1.746</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>textureBank/rock5.png</diffuseTex>
+		<normalTex>textureBank/rock5_NORM.png</normalTex>
+	</Element>
+</MeshAsset>
+
+<MeshAsset name="rock5">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/rock5.obj</geometry>
+		<roughness>0.35</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>2.027</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>textureBank/rock1.png</diffuseTex>
+		<normalTex>textureBank/rock1_NORM.png</normalTex>
+	</Element>
+</MeshAsset>
+
+<MeshAsset name="monolith1">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/monolith1.obj</geometry>
+		<roughness>0.3</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1.872</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>textureBank/rock1.png</diffuseTex>
+		<normalTex>textureBank/rock1_NORM.png</normalTex>
+	</Element>
+</MeshAsset>
+
+<MeshAsset name="rock3_low">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/rock3_low.obj</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>6.056</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>textureBank/rock5.png</diffuseTex>
+		<normalTex>textureBank/rock5_NORM.png</normalTex>
+	</Element>
+</MeshAsset>
+
+<MeshAsset name="rock6">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/rock6.obj</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1.948</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>textureBank/rock5.png</diffuseTex>
+		<normalTex>textureBank/rock5_NORM.png</normalTex>
+	</Element>
+</MeshAsset>
+

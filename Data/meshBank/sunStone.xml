@@ -1,0 +1,33 @@
+<MeshAsset name="sunStone">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/sunStone.obj</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+		<diffuseTex>textureBank/sun.png</diffuseTex>
+		<normalTex>textureBank/sun_NORM.png</normalTex>
+	</Element>
+</MeshAsset>
+
+<MeshAsset name="sunStone2">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/sunStone.obj</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.25</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+		<diffuseTex>textureBank/sun2.png</diffuseTex>
+		<normalTex>textureBank/sun_NORM.png</normalTex>
+		<materialTex>textureBank/sun2_mat.png</materialTex>
+	</Element>
+</MeshAsset>
+

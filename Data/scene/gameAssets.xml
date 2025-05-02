@@ -1,0 +1,185 @@
+<MeshAsset name="caisse">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/box.obj</geometry>
+		<roughness>0.7</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>textureBank/box.png</diffuseTex>
+		<normalTex>textureBank/box_NORM.png</normalTex>
+	</Element>
+</MeshAsset>
+
+<MeshAsset name="controller">
+	<Element type=0>
+		<color>255,255,0</color>
+		<geometry>meshBank/raquette.obj</geometry>
+		<roughness>0.4</roughness>
+		<metallic>1</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+	</Element>
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/raquetteIn.obj</geometry>
+		<roughness>0.46</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+	</Element>
+</MeshAsset>
+
+<MeshAsset name="island1">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/island/island1.obj</geometry>
+		<roughness>0.35</roughness>
+		<metallic>0</metallic>
+		<specular>0.07</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>textureBank/rock2_r.png</diffuseTex>
+		<normalTex>textureBank/rock2_NORM_r.png</normalTex>
+	</Element>
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/island/island1_top.obj</geometry>
+		<roughness>0.66</roughness>
+		<metallic>0</metallic>
+		<specular>0.07</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>textureBank/grass1_2.png</diffuseTex>
+		<normalTex>textureBank/grass1_NORM.png</normalTex>
+	</Element>
+</MeshAsset>
+
+<MeshAsset name="island2">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/island/island2.obj</geometry>
+		<roughness>0.35</roughness>
+		<metallic>0</metallic>
+		<specular>0.07</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>textureBank/rock2_r.png</diffuseTex>
+		<normalTex>textureBank/rock2_NORM_r.png</normalTex>
+	</Element>
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/island/island2_top.obj</geometry>
+		<roughness>0.66</roughness>
+		<metallic>0</metallic>
+		<specular>0.07</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>textureBank/grass1_2.png</diffuseTex>
+		<normalTex>textureBank/grass1_NORM.png</normalTex>
+	</Element>
+</MeshAsset>
+
+<MeshAsset name="island3">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/island/island3.obj</geometry>
+		<roughness>0.35</roughness>
+		<metallic>0</metallic>
+		<specular>0.07</specular>
+		<emissive>0</emissive>
+		<textureScale>1.127</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>textureBank/rock2_r.png</diffuseTex>
+		<normalTex>textureBank/rock2_NORM_r.png</normalTex>
+	</Element>
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/island/island3_top.obj</geometry>
+		<roughness>0.66</roughness>
+		<metallic>0</metallic>
+		<specular>0.07</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>textureBank/grass1_2.png</diffuseTex>
+		<normalTex>textureBank/grass1_NORM.png</normalTex>
+	</Element>
+</MeshAsset>
+
+<MeshAsset name="island4">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/island/island4.obj</geometry>
+		<roughness>0.6</roughness>
+		<metallic>0</metallic>
+		<specular>0.07</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>textureBank/rock3.png</diffuseTex>
+		<normalTex>textureBank/rock3_NORM.png</normalTex>
+	</Element>
+</MeshAsset>
+
+<MeshAsset name="roomPattern">
+	<Element type=0>
+		<color>198,198,198</color>
+		<geometry>meshBank/room.obj</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+	</Element>
+</MeshAsset>
+
+<MeshAsset name="sphereArtifact">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/sphereArtifact1.obj</geometry>
+		<roughness>0.1</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+	</Element>
+	<Element type=0>
+		<color>255,238,0</color>
+		<geometry>meshBank/sphereArtifact2.obj</geometry>
+		<roughness>0.05</roughness>
+		<metallic>0</metallic>
+		<specular>0.08</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+	</Element>
+</MeshAsset>
+
+<MeshAsset name="flyingObject">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/box.obj</geometry>
+		<roughness>0.7</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>textureBank/box.png</diffuseTex>
+		<normalTex>textureBank/box_NORM.png</normalTex>
+	</Element>
+</MeshAsset>
+
