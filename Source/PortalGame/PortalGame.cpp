@@ -182,7 +182,7 @@ bool PortalGame::processContactPoint(btManifoldPoint& pt, const btCollisionObjec
     const float SOUND_THRESHOLD = 0.3;
     const float MAX_STRENGTH = 1.3;
     float f = pt.getAppliedImpulse();
-    const btRigidBody* b = dynamic_cast<const btRigidBody*>(obj);
+    const btRigidBody* b = static_cast<const btRigidBody*>(obj);
     if(b) f *= b->getInvMass();
 
     float strength = std::min(MAX_STRENGTH, f);
@@ -205,6 +205,7 @@ bool PortalGame::processContactPoint(btManifoldPoint& pt, const btCollisionObjec
 void PortalGame::registerSoundCallBack()
 {
 for(int index=0 ; index < _levels.nbLevels() ; ++index)
+
     _physEngine.addInnerPhysicTask([this, index](float, BulletEngine*){        
         btDiscreteDynamicsWorld* world = _physEngine.dynamicsWorld[index];
 
