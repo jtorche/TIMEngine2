@@ -29,6 +29,15 @@ void ForestLevelBase::init()
             bindSound(level().physObjects[i], PortalGame::SoundEffects::WOOD1);
         }
     }
+
+    interface::XmlMeshAssetLoader assets;
+    if (assets.load("meshBank/sunStone.xml")) {
+        _sunStoneMesh[0] = assets.getMesh("sunStone_dark", interface::Texture::sDefaultConfig);
+        _sunStoneMesh[1] = assets.getMesh("sunStone_light", interface::Texture::sDefaultConfig);
+        _sunStoneRockMesh[0] = assets.getMesh("sunStoneRock_dark", interface::Texture::sDefaultConfig);
+        _sunStoneRockMesh[1] = assets.getMesh("sunStoneRock_light", interface::Texture::sDefaultConfig);
+    }
+
 }
 
 void ForestLevelBase::update(float time)
@@ -64,7 +73,6 @@ void ForestLevelBase::emitSounddPortal(const vec3& p)
 ForestLevel1::ForestLevel1(int index, LevelSystem* system, BulletEngine& phys, std::string namePortal)
     : ForestLevelBase(index, system, phys), _namePortal(namePortal)
 {
-    _sunTexture = resource::AssetManager<interface::Texture>::instance().load<false>("textureBank/sun2.png", LevelSystem::defaultTexParam).value();
 }
 
 void ForestLevel1::init()
@@ -104,9 +112,7 @@ void ForestLevel1::update(float time)
         if(index >= 0)
         {
             interface::MeshInstance* inst = level().objects[index].meshInstance;
-            interface::Mesh m = inst->mesh();
-            m.element(0).setTexture(_sunTexture, 0);
-            inst->setMesh(m);
+            inst->setMesh(_sunStoneMesh[1]);
         }
 
         _first = false;
@@ -124,11 +130,7 @@ void ForestLevel1::update(float time)
 
 ForestLevel2::ForestLevel2(int index, LevelSystem* system, BulletEngine& phys) : ForestLevelBase(index, system, phys)
 {
-    _sunTexture1[0] = resource::AssetManager<interface::Texture>::instance().load<false>("textureBank/sun.png", LevelSystem::defaultTexParam).value();
-    _sunTexture1[1] = resource::AssetManager<interface::Texture>::instance().load<false>("textureBank/sun2.png", LevelSystem::defaultTexParam).value();
 
-    _sunTexture2[0] = resource::AssetManager<interface::Texture>::instance().load<false>("meshBank/rock6_st2.png", LevelSystem::defaultTexParam).value();
-    _sunTexture2[1] = resource::AssetManager<interface::Texture>::instance().load<false>("meshBank/rock6_st1.png", LevelSystem::defaultTexParam).value();
 }
 
 void ForestLevel2::init()
@@ -174,12 +176,10 @@ void ForestLevel2::update(float time)
         state[i] = BulletObject::rayCastFirst(p, p - level().levelScene->globalLight.dirLights[0].direction * 30,
                                               p_tmp, *_physEngine.dynamicsWorld[index()]);
 
-        interface::Mesh m = _sunStone[i]->mesh();
         if(i == 0)
-            m.element(0).setTexture(_sunTexture1[state[i] ? 0:1], 0);
+            _sunStone[i]->setMesh(_sunStoneMesh[state[i] ? 0:1]);
         else
-            m.element(0).setTexture(_sunTexture2[state[i] ? 0:1], 0);
-        _sunStone[i]->setMesh(m);
+            _sunStone[i]->setMesh(_sunStoneRockMesh[state[i] ? 0:1]);
     }
 
     if(state[0] && !state[1] && !state[2] && !state[3] && !state[4] && state[5] && state[6])

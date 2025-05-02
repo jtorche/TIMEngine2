@@ -13,6 +13,8 @@ public:
 
 protected:
     BulletEngine& _physEngine;
+    interface::Mesh _sunStoneMesh[2];
+    interface::Mesh _sunStoneRockMesh[2];
     resource::SoundAsset _birds;
     resource::SoundAsset _warp;
 
@@ -30,13 +32,11 @@ public:
 
 private:
     std::string _namePortal;
-    int _indexPortal;
-    int _indexPortalOut;
-    interface::MeshInstance* _instSunStone;
+    int _indexPortal = 0;
+    int _indexPortalOut = 0;
+    interface::MeshInstance* _instSunStone = nullptr;
 
     bool _first = true;
-
-    interface::Texture _sunTexture;
 };
 
 class ForestLevel2 : public ForestLevelBase
@@ -50,8 +50,6 @@ public:
 
 private:
     int _indexPortal;
-    interface::Texture _sunTexture1[2];
-    interface::Texture _sunTexture2[2];
 
     interface::MeshInstance* _sunStone[7] = {nullptr}; // 1 2 2 2 2 3 3
 

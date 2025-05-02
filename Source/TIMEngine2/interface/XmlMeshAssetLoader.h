@@ -47,7 +47,7 @@ namespace interface
         static vector<MeshElementModel> parseMeshAssetElement(TiXmlElement*, std::string& name);
 
     protected:
-
+        std::string _xmlFile;
         std::map<std::string, vector<MeshElementModel>> _models;
 
         static vec3 toColor(std::string);

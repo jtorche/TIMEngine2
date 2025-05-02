@@ -1,20 +1,55 @@
-<MeshAsset name="sunStone">
+<MeshAsset name="sunStoneRock_dark">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/rock6_st.obj</geometry>
+		<roughness>0.7</roughness>
+		<metallic>0</metallic>
+		<specular>0.08</specular>
+		<emissive>0.1</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+		<diffuseTex>meshBank/rock6_st2.png</diffuseTex>
+		<normalTex>meshBank/rock6_st_NRM.png</normalTex>
+		<materialTex>meshBank/rock6_st1_MAT.png</materialTex>
+	</Element>
+</MeshAsset>
+
+<MeshAsset name="sunStoneRock_light">
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/rock6_st.obj</geometry>
+		<roughness>0.7</roughness>
+		<metallic>0</metallic>
+		<specular>0.08</specular>
+		<emissive>0.25</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+		<diffuseTex>meshBank/rock6_st1.png</diffuseTex>
+		<normalTex>meshBank/rock6_st_NRM.png</normalTex>
+		<materialTex>meshBank/rock6_st1_MAT.png</materialTex>
+	</Element>
+</MeshAsset>
+
+<MeshAsset name="sunStone_dark">
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/sunStone.obj</geometry>
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.08</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
 		<diffuseTex>textureBank/sun.png</diffuseTex>
 		<normalTex>textureBank/sun_NORM.png</normalTex>
+		<materialTex>textureBank/sun2_mat.png</materialTex>
 	</Element>
 </MeshAsset>
 
-<MeshAsset name="sunStone2">
+<MeshAsset name="sunStone_light">
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/sunStone.obj</geometry>

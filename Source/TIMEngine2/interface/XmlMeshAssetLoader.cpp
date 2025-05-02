@@ -17,6 +17,7 @@ XmlMeshAssetLoader::XmlMeshAssetLoader()
 bool XmlMeshAssetLoader::load(std::string filename)
 {
     TiXmlDocument doc(filename);
+    _xmlFile = filename;
 
     if (!doc.LoadFile()) {
         LOG("Fail to load xml file ", filename);
@@ -48,8 +49,10 @@ void XmlMeshAssetLoader::addModel(std::string name, const vector<MeshElementMode
 Mesh XmlMeshAssetLoader::getMesh(std::string name, const renderer::Texture::GenTexParam& texParam) const
 {
     auto it = _models.find(name);
-    if(it == _models.end())
+    if (it == _models.end()) {
+        LOG("Couldnt find the Mesh asset ", name, "in file ", _xmlFile, "\n");
         return interface::Mesh();
+    }
 
     vector<MeshElementModel> model = it->second;
 

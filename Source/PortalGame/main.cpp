@@ -52,6 +52,7 @@ int main(int argc, char* argv[])
 
             OpenVR_Device hmdDevice(true);
             SDLInputManager input;
+            float debugCameraRoomSpace = 3.f;
 
 			if (hmdDevice.isInit())
 			{
@@ -62,6 +63,9 @@ int main(int argc, char* argv[])
             else
             {
                 std::cout << "HMD not detected !\n";
+
+                std::cout << std::endl << "Enter Debug camera room space :";
+                std::cin >> debugCameraRoomSpace;
             }
 
 			/* Pipeline entity */
@@ -90,7 +94,7 @@ int main(int argc, char* argv[])
 
             pipeline.setStereoView(hmdCamera.cullingView(), hmdCamera.eyeView(0), hmdCamera.eyeView(1), 0);
 
-            VRDebugCamera debugCamera(&input, vec3(meters, meters,300));
+            VRDebugCamera debugCamera(&input, vec3(debugCameraRoomSpace, debugCameraRoomSpace, 300));
 
             /* physic and setup */
             BulletEngine physEngine;

@@ -42,6 +42,8 @@ namespace interface
             return param;
         }
 
+        inline static const renderer::Texture::GenTexParam sDefaultConfig = Texture::genParam(true, true, true, 4);
+
         uint64_t handle() const { return _ptr->handle(); }
 
     protected:
