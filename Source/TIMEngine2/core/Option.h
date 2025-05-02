@@ -47,6 +47,10 @@ namespace core
              return _val;
         }
 
+        const T& getOrElse(const T& elseValue = {}) const {
+            return _hasValue ? _val : elseValue;
+        }
+
     private:
         union { T _val; };
         bool _hasValue;
