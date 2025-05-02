@@ -85,8 +85,8 @@ protected:
 
     const renderer::Texture::GenTexParam TEXTURE_CONFIG = interface::Texture::genParam(true,true,true, 4);
 
-    std::string _curSoundName;
     Source* _curAmbientSound = nullptr;
+    std::string _curAmbientMusicId;
 
     int _curLevel = -1;
     MultipleSceneHelper* _portalsHelper = nullptr;
@@ -126,7 +126,7 @@ class LevelInterface
 {
     friend class LevelSystem;
 public:
-    LevelInterface(int index, LevelSystem* system) : _index(index), _system(system) {}
+    LevelInterface(int index, LevelSystem* system);
     virtual ~LevelInterface() {}
 
     virtual void init() {}
@@ -150,8 +150,6 @@ public:
 
     bool collidePaddles(BulletObject*);
 
-    void setAmbientSound(Source* src, std::string name) { _ambientSound = src; _soundName = name; }
-
     static void bindSound(BulletObject*, int);
     void emitSound(const vec3&, const resource::SoundAsset&);
 
@@ -160,8 +158,8 @@ public:
 private:
     int _index;
     LevelSystem* _system;
-    Source* _ambientSound = nullptr;
-    std::string _soundName;
+    std::string _ambientMusicId;
+    Source* _ambientMusic = nullptr;
 };
 
 #endif // LEVELSYSTEM_H

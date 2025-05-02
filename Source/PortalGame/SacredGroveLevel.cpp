@@ -11,11 +11,7 @@
 
 SacredGroveBase::SacredGroveBase(int index, LevelSystem* system, BulletEngine& phys) : LevelInterface(index, system), _physEngine(phys)
 {
-    resource::SoundAsset ambientSound = resource::AssetManager<resource::SoundAsset>::instance().load<false>("soundBank/sacred_grove.ogg", true, Sampler::NONE).value();
-    Source* src = system->listener().addSource(ambientSound);
-    src->setLooping(true);
-    src->setGain(0.15);
-    setAmbientSound(src, "sacred_grove");
+
 }
 
 bool SacredGroveBase::updateArtifact(const LevelSystem::GameObject& obj, int indexSlot, float height, float time)

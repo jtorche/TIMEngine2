@@ -4,6 +4,7 @@
 #include "MultiSceneManager.h"
 #include "PortalGame/Controller.h"
 #include "OpenVR/HmdSceneView.h"
+#include "OpenVR/VR_DeviceInterface.h"
 
 #include "PortalGame/BetweenSceneStruct.h"
 #include "PortalGame/ForestLevel.h"

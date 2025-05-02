@@ -122,15 +122,15 @@ void LevelSystem::changeLevel(int index)
     {
         _levelStrategy[index]->prepareEnter();
 
-        if(_curSoundName != _levelStrategy[index]->_soundName)
+        if(_curAmbientMusicId != _levelStrategy[index]->_ambientMusicId)
         {
             if(_curAmbientSound)
                 _curAmbientSound->stop();
 
-            if(_levelStrategy[index]->_ambientSound)
-                _levelStrategy[index]->_ambientSound->play();
-            _curSoundName = _levelStrategy[index]->_soundName;
-            _curAmbientSound = _levelStrategy[index]->_ambientSound;
+            if(_levelStrategy[index]->_ambientMusic)
+                _levelStrategy[index]->_ambientMusic->play();
+            _curAmbientMusicId = _levelStrategy[index]->_ambientMusicId;
+            _curAmbientSound = _levelStrategy[index]->_ambientMusic;
         }
     }
 }
@@ -632,3 +632,33 @@ bool LevelInterface::collidePaddles(BulletObject* obj)
            levelSystem().controller().controllerInfo().rightHandPhys->collideWith(obj->body()).size() > 0;
 }
 
+LevelInterface::LevelInterface(int index, LevelSystem* system) : _index(index), _system(system)
+{
+    std::string name = system->getLevel(index).name;
+    std::string levelFileDescriptor = std::string("scene/") + name + "_parameters.xml";
+
+    TiXmlDocument doc(levelFileDescriptor);
+
+    if (doc.LoadFile()) {
+        TiXmlElement* elem = doc.FirstChildElement();
+        while (elem) {
+            if (elem->ValueStr() == std::string("AmbientMusic")) {
+
+                Option<resource::SoundAsset> ambientSound = resource::AssetManager<resource::SoundAsset>::instance().load<false>(elem->Attribute("file"), true, Sampler::NONE);
+                const char* musicId = elem->Attribute("name");
+                if (musicId && ambientSound.hasValue()) {
+                    const char* gainStr = elem->Attribute("gain");
+                    float gain = gainStr ? std::stof(gainStr) : 0.1f;
+
+                    Source* src = system->listener().addSource(ambientSound.value());
+                    src->setLooping(true);
+                    src->setGain(gain);
+
+                    _ambientMusic = src;
+                    _ambientMusicId = musicId;
+                }
+            }
+            elem = elem->NextSiblingElement();
+        }
+    }
+}

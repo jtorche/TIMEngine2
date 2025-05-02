@@ -14,12 +14,6 @@ FlyingIslandLevel::FlyingIslandLevel(int index, LevelSystem* system, BulletEngin
     _connectFourSound = resource::AssetManager<resource::SoundAsset>::instance().load<false>("soundBank/plastic2.wav", false, Sampler::NONE).value();
 
     _ringShape = new btSphereShape(0.325*1.6);
-
-    resource::SoundAsset ambientSound = resource::AssetManager<resource::SoundAsset>::instance().load<false>("soundBank/bensound-betterdays.ogg", true, Sampler::NONE).value();
-    Source* src = system->listener().addSource(ambientSound);
-    src->setLooping(true);
-    src->setGain(0.12);
-    setAmbientSound(src, "bensound-betterdays");
 }
 
 FlyingIslandLevel::~FlyingIslandLevel()

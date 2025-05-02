@@ -38,8 +38,7 @@ protected:
 
     resource::SoundAsset _warpSound;
     resource::SoundAsset _buttonSound;
-    //resource::SoundAsset _ambientOcean;
-    Source* _ambientOceanSource;
+    Source* _ambientOceanSource = nullptr;
 
     float _timerButtonSound = 0;
 
