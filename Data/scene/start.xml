@@ -9,20 +9,7 @@
 
 <DirLight shadows=1 color="1,1,1" direction="-1,1,-1" />
 
-<MeshAsset name="cube_uv" index=0 >
-	<Element type=0>
-		<color>157,0,0</color>
-		<geometry>cube_uv.obj</geometry>
-		<roughness>0.5</roughness>
-		<metallic>0</metallic>
-		<specular>0.15</specular>
-		<emissive>0</emissive>
-		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
-	</Element>
-</MeshAsset>
-<MeshAsset name="room1Small" index=1 >
+<MeshAsset name="room1Small" index=0 >
 	<Element type=0>
 		<color>254,239,255</color>
 		<geometry>meshBank/room1Small.obj</geometry>
@@ -46,6 +33,19 @@
 		<castShadow>0</castShadow>
 		<cmAffected>0</cmAffected>
 		<diffuseTex>meshBank/smallRoom1_AO.png</diffuseTex>
+	</Element>
+</MeshAsset>
+<MeshAsset name="cube_uv" index=1 >
+	<Element type=0>
+		<color>157,0,0</color>
+		<geometry>cube_uv.obj</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
 	</Element>
 </MeshAsset>
 <MeshAsset name="box" index=2 >
@@ -178,13 +178,13 @@
 	</Element>
 </MeshAsset>
 
-<Object name="" model=1 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=0 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>-0.000216903,-1.41033e-05,-0.000439313</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=0 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=1 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>0,0,-0.0348299</translate>
    <scale>3,3,0.00680519</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
