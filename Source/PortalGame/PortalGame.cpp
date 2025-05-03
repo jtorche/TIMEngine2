@@ -54,7 +54,7 @@ PortalGame::PortalGame(BulletEngine& phys, MultipleSceneHelper& multiscene, HmdS
             _levels.setStrategy(new SacredGroveAux(i, &_levels, _physEngine, "blue"), i);
         else if(_levels.getLevel(i).name == "sacredGrove_white")
             _levels.setStrategy(new SacredGroveAux(i, &_levels, _physEngine, "white"), i);
-        else if(_levels.getLevel(i).name == "sacredGrove" || _levels.getLevel(i).name == "sacredGrove_final")
+        else if(_levels.getLevel(i).name == "sacredGrove_final")
             _levels.setStrategy(new SacredGroveMain(i, &_levels, _physEngine), i);
         else if(_levels.getLevel(i).name == "ocean")
             _levels.setStrategy(new OceanLevel(i, &_levels, _physEngine, syncOceanFI), i);
