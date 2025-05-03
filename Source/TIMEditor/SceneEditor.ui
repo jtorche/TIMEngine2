@@ -574,8 +574,14 @@
            </item>
            <item row="1" column="1">
             <widget class="QDoubleSpinBox" name="mc_friction">
+             <property name="decimals">
+              <number>3</number>
+             </property>
+             <property name="maximum">
+              <double>9.000000000000000</double>
+             </property>
              <property name="singleStep">
-              <double>0.500000000000000</double>
+              <double>1.000000000000000</double>
              </property>
              <property name="value">
               <double>0.750000000000000</double>
@@ -604,8 +610,14 @@
            </item>
            <item row="1" column="3">
             <widget class="QDoubleSpinBox" name="mc_rfriction">
+             <property name="decimals">
+              <number>4</number>
+             </property>
+             <property name="maximum">
+              <double>9.000000000000000</double>
+             </property>
              <property name="singleStep">
-              <double>0.500000000000000</double>
+              <double>0.100000000000000</double>
              </property>
              <property name="value">
               <double>0.100000000000000</double>
