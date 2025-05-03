@@ -27,7 +27,8 @@ SceneEditorWidget::SceneEditorWidget(QWidget* parent) : QWidget(parent), ui(new 
     ui->setupUi(this);
     setMinimumWidth(320);
 
-    connect(ui->listSceneObject, SIGNAL(itemActivated(QListWidgetItem*)), this, SLOT(sceneItemActivated(QListWidgetItem*)));
+    // connect(ui->listSceneObject, SIGNAL(itemClicked(QListWidgetItem*)), this, SLOT(sceneItemActivated(QListWidgetItem*)));
+    connect(ui->listSceneObject, SIGNAL(itemSelectionChanged()), this, SLOT(onItemSelectionChanged()));
     connect(&_flushState, SIGNAL(timeout()), this, SLOT(flushState()));
     _flushState.setInterval(100);
 }
@@ -153,8 +154,12 @@ void SceneEditorWidget::activateObject(int index, bool addSelection, bool lock)
     }
 }
 
-void SceneEditorWidget::cancelSelection()
+void SceneEditorWidget::cancelSelection(bool cancelQtListItemWidgetSelection)
 {
+    if (cancelQtListItemWidgetSelection) {
+        ui->listSceneObject->clearSelection();
+    }
+
     flushItemUi(-1);
 
     int sceneIndex = _curSceneIndex+1;
@@ -282,6 +287,39 @@ void SceneEditorWidget::sceneItemActivated(QListWidgetItem* item)
         {
             activateObject(i, false, true);
             return;
+        }
+    }
+}
+
+void SceneEditorWidget::onItemSelectionChanged()
+{
+    cancelSelection(false);
+
+    _renderer->lock();
+
+    QList<QListWidgetItem*> selections = ui->listSceneObject->selectedItems();
+    for (int i = 0; i < _objects[_curSceneIndex].size(); ++i) {
+        if (QListWidgetItem* qtItem = _objects[_curSceneIndex][i].listItem) {
+            int qtItemIndex = selections.indexOf(qtItem);
+            if (qtItemIndex >= 0) {
+                Selection selection;
+                selection.index = i;
+                selection.highlightedMeshInstance = &_renderer->getScene(_renderer->getCurSceneIndex()).scene.add<MeshInstance>(_objects[_curSceneIndex][i].node->matrix());
+                selection.highlightedMeshInstance->setMesh(MeshEditorWidget::highlightMesh(_objects[_curSceneIndex][i].node->mesh()));
+                _selections += selection;
+            }
+        }
+    }
+
+    _renderer->unlock();
+
+    if (_selections.size() > 0)
+    {
+        int index = _selections[0].index;
+        flushItemUi(index);
+        if (_selections.size() == 1) {
+            _meshEditor->setEditedMesh(_objects[_curSceneIndex][index].node, _selections[0].highlightedMeshInstance,
+                &_objects[_curSceneIndex][index].materials, _objects[_curSceneIndex][index].baseModel);
         }
     }
 }

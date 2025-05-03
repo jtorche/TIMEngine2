@@ -144,6 +144,7 @@ protected:
 
 public slots:
     void sceneItemActivated(QListWidgetItem*);
+    void onItemSelectionChanged();
 
     void on_translate_x_editingFinished();
     void on_translate_y_editingFinished();
@@ -175,7 +176,7 @@ public slots:
     void restoreCurMeshTrans();
     void flushUiAccordingState(int);
     void flushState();
-    void cancelSelection();
+    void cancelSelection(bool cancelQtListItemWidgetSelection = true);
 
     void resetRotation();
     void deleteCurrentObjects();

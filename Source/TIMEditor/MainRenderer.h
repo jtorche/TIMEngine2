@@ -73,7 +73,7 @@ private:
     interface::FullPipeline::Parameter _renderingParameter;
     interface::FullPipeline _pipeline;
     interface::pipeline::FrameBufferRenderer* _frameBufferRenderer = nullptr;
-    mutable QMutex _mutex;
+    mutable QRecursiveMutex _mutex;
 
     /* Shared state */
     static const int NB_SCENE=5;
