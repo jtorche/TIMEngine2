@@ -54,7 +54,8 @@ int main(int argc, char* argv[])
             ShaderPool::instance().add("feedbackStereo", "shader/combineScene.vert", "shader/combineScene.frag", "", {"STEREO_DISPLAY"}).value();
             ShaderPool::instance().add("processSpecularCubeMap", "shader/processCubemap.vert", "shader/processCubemap.frag").value();
 
-            OpenVR_Device hmdDevice(true);
+            //OpenVR_Device hmdDevice(true);
+            SoftVR_Device hmdDevice;
             SDLInputManager input;
             float debugCameraRoomSpace = 3.f;
 
@@ -280,10 +281,9 @@ int main(int argc, char* argv[])
                 /******* Draw *******/
                 /********************/
 
-                /*PROFILE("Pipeline render")*/ pipeline.pipeline()->render();
-                /*PROFILE("Swapbuffer")*/ swapBuffer();
-
-                /*PROFILE("GL_Assert")*/ GL_ASSERT();
+                pipeline.pipeline()->render();
+                swapBuffer();
+                GL_ASSERT();
 
                 if(input.keyState(SDLK_p).firstPress)
                     std::cout << "Cam pos:" << hmdCamera.cullingView().camera.pos << std::endl;
