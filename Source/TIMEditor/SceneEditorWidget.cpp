@@ -27,6 +27,8 @@ SceneEditorWidget::SceneEditorWidget(QWidget* parent) : QWidget(parent), ui(new 
     ui->setupUi(this);
     setMinimumWidth(320);
 
+    installEventFilter(ui->listSceneObject);
+
     // connect(ui->listSceneObject, SIGNAL(itemClicked(QListWidgetItem*)), this, SLOT(sceneItemActivated(QListWidgetItem*)));
     connect(ui->listSceneObject, SIGNAL(itemSelectionChanged()), this, SLOT(onItemSelectionChanged()));
     connect(&_flushState, SIGNAL(timeout()), this, SLOT(flushState()));
@@ -109,7 +111,7 @@ void SceneEditorWidget::addSceneObject(int sceneIndex, bool lock, SceneObject ob
     else n = obj.name + " (" + obj.baseModel + ")";
 
     obj.listItem = new QListWidgetItem(n, ui->listSceneObject);
-    if(sceneIndex == _renderer->getCurSceneIndex()-1)
+    if(sceneIndex == _curSceneIndex)
         ui->listSceneObject->addItem(obj.listItem);
 
     _objects[sceneIndex] += obj;
@@ -172,6 +174,18 @@ void SceneEditorWidget::cancelSelection(bool cancelQtListItemWidgetSelection)
 
     _selections.clear();
     _meshEditor->setEditedMesh(nullptr, nullptr, nullptr, "");
+}
+
+bool SceneEditorWidget::eventFilter(QObject* object, QEvent* event)
+{
+    if (object == ui->listSceneObject && event->type() == QEvent::KeyPress) {
+        QKeyEvent* pressEvent = (QKeyEvent*)event;
+        if (pressEvent->key() == Qt::Key_Delete) {
+            deleteCurrentObjects();
+            return true;
+        }
+    }
+    return false;
 }
 
 void SceneEditorWidget::flushItemUi(int index)
@@ -530,7 +544,11 @@ void SceneEditorWidget::on_instancing_clicked()
                     tmp += _objects[_curSceneIndex][i];
                 else
                 {
-                    removeSceneObject(_objects[_curSceneIndex][i], _indexSceneLastInstancing);
+                    SceneObject& obj = _objects[_curSceneIndex][i];
+
+                    if(obj.node)
+                        _renderer->getScene(_indexSceneLastInstancing).scene.remove(*obj.node);
+                    delete obj.listItem;
                 }
             }
             _renderer->unlock();
@@ -1011,28 +1029,42 @@ void SceneEditorWidget::deleteCurrentObjects()
     if(!hasCurrentSelection())
         return;
 
+    // First update the 3D scene
     _renderer->lock();
     for(int i=0 ; i<_selections.size() ; ++i)
     {
-        removeSceneObject(_objects[_curSceneIndex][_selections[i].index], _renderer->getCurSceneIndex());
+        SceneObject& sceneObject = _objects[_curSceneIndex][_selections[i].index];
+        if (sceneObject.node)
+            _renderer->getScene(_curSceneIndex+1).scene.remove(*sceneObject.node);
     }
     _renderer->unlock();
 
+    // Then reconstruct the SceneEditorWidget object list
+    QList<QListWidgetItem*> qtItemToDelete;
     QList<SceneObject> tmp;
     for(int i=0 ; i<_objects[_curSceneIndex].size() ; ++i)
     {
         bool isInSelection = false;
         for(int j=0 ; j<_selections.size() ; ++j)
         {
-            if(_selections[j].index == i)
-                isInSelection  = true;
+            if (_selections[j].index == i) {
+                isInSelection = true;
                 break;
+            }
         }
 
-        if(!isInSelection)
+        if (!isInSelection)
             tmp += _objects[_curSceneIndex][i];
+        else
+            qtItemToDelete += _objects[_curSceneIndex][i].listItem;
     }
     _objects[_curSceneIndex] = tmp;
+
+    // Finally make sure to flush the UI
+    ui->listSceneObject->blockSignals(true);
+    for (QListWidgetItem* listItem : qtItemToDelete)
+        delete listItem;
+    ui->listSceneObject->blockSignals(false);
 
     cancelSelection();
 }
@@ -1614,12 +1646,4 @@ void SceneEditorWidget::removeSpecProbePreview()
         }
     }
     _renderer->unlock();
-}
-
-void SceneEditorWidget::removeSceneObject(const SceneObject& obj, int sceneIndex)
-{
-    if(obj.node)
-        _renderer->getScene(sceneIndex).scene.remove(*obj.node);
-
-    delete obj.listItem;
 }

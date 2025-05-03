@@ -289,6 +289,7 @@ void EditorWindow::on_action_selectAE_triggered()
     ui->glViewContainer->setEditMode(GLViewContainer::MESH_EDITOR);
     _mainRenderer->unlock();
 
+    ui->sceneEditorWidget->cancelSelection();
     ui->meshEditorWidget->activeEditMode();
 
     setWindowTitle("Asset Editor");

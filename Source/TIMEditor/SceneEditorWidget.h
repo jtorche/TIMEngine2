@@ -140,7 +140,6 @@ protected:
     QTimer _flushState;
 
     void remove_n_first_lightProb(size_t n);
-    void removeSceneObject(const SceneObject&, int);
 
 public slots:
     void sceneItemActivated(QListWidgetItem*);
@@ -205,6 +204,7 @@ signals:
 
 private:
     void internalRenderLightProb(vec3 pos, float radius, float farDist, int iterations, int res, std::string pathRD, std::string pathSkybox, bool addToScene, bool exportAsRawData, bool exportAsSkybox);
+    bool eventFilter(QObject* object, QEvent* event) override;
 };
 
 inline bool SceneEditorWidget::hasCurrentSelection() const
