@@ -9,7 +9,59 @@
 
 <DirLight shadows=1 color="1,1,1" direction="-1,1,-1" />
 
-<MeshAsset name="planUV" index=0 >
+<MeshAsset name="sphere" index=0 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>shape/sphere.obj</geometry>
+		<roughness>1</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+	</Element>
+</MeshAsset>
+<MeshAsset name="cube_uv" index=1 >
+	<Element type=0>
+		<color>157,0,0</color>
+		<geometry>cube_uv.obj</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+	</Element>
+</MeshAsset>
+<MeshAsset name="cube_uv" index=2 >
+	<Element type=0>
+		<color>208,223,212</color>
+		<geometry>cube_uv.obj</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+	</Element>
+</MeshAsset>
+<MeshAsset name="cube_uv" index=3 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>cube_uv.obj</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+	</Element>
+</MeshAsset>
+<MeshAsset name="planUV" index=4 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>shape/planUV.obj</geometry>
@@ -34,58 +86,6 @@
 			<depthFunc>LESS</depthFunc>
 			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
 		</Advanced>
-	</Element>
-</MeshAsset>
-<MeshAsset name="sphere" index=1 >
-	<Element type=0>
-		<color>255,255,255</color>
-		<geometry>shape/sphere.obj</geometry>
-		<roughness>1</roughness>
-		<metallic>0</metallic>
-		<specular>0.15</specular>
-		<emissive>0.17</emissive>
-		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
-	</Element>
-</MeshAsset>
-<MeshAsset name="cube_uv" index=2 >
-	<Element type=0>
-		<color>157,0,0</color>
-		<geometry>cube_uv.obj</geometry>
-		<roughness>0.5</roughness>
-		<metallic>0</metallic>
-		<specular>0.15</specular>
-		<emissive>0</emissive>
-		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
-	</Element>
-</MeshAsset>
-<MeshAsset name="cube_uv" index=3 >
-	<Element type=0>
-		<color>208,223,212</color>
-		<geometry>cube_uv.obj</geometry>
-		<roughness>0.5</roughness>
-		<metallic>0</metallic>
-		<specular>0.15</specular>
-		<emissive>0</emissive>
-		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
-	</Element>
-</MeshAsset>
-<MeshAsset name="cube_uv" index=4 >
-	<Element type=0>
-		<color>255,255,255</color>
-		<geometry>cube_uv.obj</geometry>
-		<roughness>0.5</roughness>
-		<metallic>0</metallic>
-		<specular>0.15</specular>
-		<emissive>0</emissive>
-		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 	</Element>
 </MeshAsset>
 <MeshAsset name="planUV" index=5 >
@@ -189,20 +189,7 @@
 		<diffuseTex>meshBank/room1_AO.png</diffuseTex>
 	</Element>
 </MeshAsset>
-<MeshAsset name="cube_uv" index=10 >
-	<Element type=0>
-		<color>242,228,243</color>
-		<geometry>cube_uv.obj</geometry>
-		<roughness>0.5</roughness>
-		<metallic>0</metallic>
-		<specular>0.15</specular>
-		<emissive>0</emissive>
-		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
-	</Element>
-</MeshAsset>
-<MeshAsset name="spaceCube" index=11 >
+<MeshAsset name="spaceCube" index=10 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>cube_uv.obj</geometry>
@@ -218,47 +205,253 @@
 		<materialTex>textureBank/testSpace.png</materialTex>
 	</Element>
 </MeshAsset>
+<MeshAsset name="cube_uv" index=11 >
+	<Element type=0>
+		<color>242,228,243</color>
+		<geometry>cube_uv.obj</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+	</Element>
+</MeshAsset>
+<MeshAsset name="cube" index=12 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/cube.obj</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+	</Element>
+</MeshAsset>
 
-<Object name="" model=1 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=0 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>2.20523,-2.03053,2.87288</translate>
    <scale>0.36845,0.36845,0.36845</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=1 rollingFriction=1/>
 </Object>
-<Object name="" model=2 isStatic=1 isPhysic=1 isVisible=0 >
+<Object name="" model=1 isStatic=1 isPhysic=1 isVisible=0 >
    <translate>-4.07904,-0.590153,-0.166164</translate>
    <scale>3,3,0.1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=3 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=2 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>-4.18936,0.962036,-0.332729</translate>
    <scale>3.73131,0.0976097,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=2 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=1 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>0,0,-0.14975</translate>
    <scale>3,3,0.1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=4 isStatic=0 isPhysic=1 isVisible=1 >
+<Object name="" model=3 isStatic=0 isPhysic=1 isVisible=1 >
    <translate>-5.30121,3.01396,0.309227</translate>
    <scale>0.200401,0.200401,0.200401</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
 </Object>
-<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=3 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>-0.555464,-0.840118,0.375577</translate>
    <scale>0.0885517,0.0721998,1.22485</scale>
    <rotate>-0.771506,-0.636219,0,0.636219,-0.771506,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=0 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>-0.530947,-0.810388,1.47295</translate>
    <scale>1,1,1</scale>
    <rotate>-0.771506,-0.636219,0,0.636219,-0.771506,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="cubeOnGround" model=12 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>-1.36853,1.35545,-0.138672</translate>
+   <scale>0.147307,0.147307,0.147307</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="cubeOnGround_1" model=12 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>-1.36853,0.744107,-0.138672</translate>
+   <scale>0.147307,0.147307,0.147307</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="cubeOnGround_1" model=12 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>-0.797702,1.35545,-0.138672</translate>
+   <scale>0.147307,0.147307,0.147307</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="cubeOnGround_10" model=12 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>1.52276,-1.11224,-0.138672</translate>
+   <scale>0.147307,0.147307,0.147307</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="cubeOnGround_2" model=12 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>-0.797702,0.744107,-0.138672</translate>
+   <scale>0.147307,0.147307,0.147307</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="cubeOnGround_2" model=12 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>-1.36853,0.121741,-0.138672</translate>
+   <scale>0.147307,0.147307,0.147307</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="cubeOnGround_2" model=12 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>-0.189104,1.35545,-0.138672</translate>
+   <scale>0.147307,0.147307,0.147307</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="cubeOnGround_3" model=12 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>-0.797702,0.121741,-0.138672</translate>
+   <scale>0.147307,0.147307,0.147307</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="cubeOnGround_3" model=12 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>-0.189104,0.744107,-0.138672</translate>
+   <scale>0.147307,0.147307,0.147307</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="cubeOnGround_3" model=12 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0.407501,1.35545,-0.138672</translate>
+   <scale>0.147307,0.147307,0.147307</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="cubeOnGround_3" model=12 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>-1.36853,-0.497927,-0.138672</translate>
+   <scale>0.147307,0.147307,0.147307</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="cubeOnGround_4" model=12 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0.982201,1.35545,-0.138672</translate>
+   <scale>0.147307,0.147307,0.147307</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="cubeOnGround_4" model=12 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>-0.189104,0.121741,-0.138672</translate>
+   <scale>0.147307,0.147307,0.147307</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="cubeOnGround_4" model=12 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>-0.797702,-0.497927,-0.138672</translate>
+   <scale>0.147307,0.147307,0.147307</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="cubeOnGround_4" model=12 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0.407501,0.744107,-0.138672</translate>
+   <scale>0.147307,0.147307,0.147307</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="cubeOnGround_5" model=12 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0.413358,0.121741,-0.138672</translate>
+   <scale>0.147307,0.147307,0.147307</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="cubeOnGround_5" model=12 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>-0.797702,-1.11224,-0.138672</translate>
+   <scale>0.147307,0.147307,0.147307</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="cubeOnGround_5" model=12 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>-0.189104,-0.497927,-0.138672</translate>
+   <scale>0.147307,0.147307,0.147307</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="cubeOnGround_5" model=12 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>1.52276,1.35545,-0.138672</translate>
+   <scale>0.147307,0.147307,0.147307</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="cubeOnGround_5" model=12 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0.982201,0.744107,-0.138672</translate>
+   <scale>0.147307,0.147307,0.147307</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="cubeOnGround_6" model=12 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0.982201,0.121741,-0.138672</translate>
+   <scale>0.147307,0.147307,0.147307</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="cubeOnGround_6" model=12 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>-1.36141,-1.11224,-0.138672</translate>
+   <scale>0.147307,0.147307,0.147307</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="cubeOnGround_6" model=12 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>1.52276,0.744107,-0.138672</translate>
+   <scale>0.147307,0.147307,0.147307</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="cubeOnGround_6" model=12 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0.407501,-0.497927,-0.138672</translate>
+   <scale>0.147307,0.147307,0.147307</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="cubeOnGround_7" model=12 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>-0.189104,-1.11224,-0.138672</translate>
+   <scale>0.147307,0.147307,0.147307</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="cubeOnGround_7" model=12 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0.982201,-0.497927,-0.138672</translate>
+   <scale>0.147307,0.147307,0.147307</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="cubeOnGround_7" model=12 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>1.52276,0.121741,-0.138672</translate>
+   <scale>0.147307,0.147307,0.147307</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="cubeOnGround_8" model=12 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>1.51892,-0.497927,-0.138672</translate>
+   <scale>0.147307,0.147307,0.147307</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="cubeOnGround_8" model=12 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0.407501,-1.11224,-0.138672</translate>
+   <scale>0.147307,0.147307,0.147307</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="cubeOnGround_9" model=12 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0.982201,-1.11224,-0.138672</translate>
+   <scale>0.147307,0.147307,0.147307</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
 <Object name="indication" model=5 isStatic=1 isPhysic=1 isVisible=1 >
@@ -267,7 +460,7 @@
    <rotate>-6.84643e-05,-1,0,1,-6.84643e-05,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="pancart" model=4 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="pancart" model=3 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>-0.555464,-0.840118,1.47295</translate>
    <scale>1.0718,0.0721998,1.01016</scale>
    <rotate>-0.771506,-0.636219,0,0.636219,-0.771506,0,0,0,1</rotate>
@@ -321,338 +514,338 @@
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=1 rollingFriction=1/>
 </Object>
-<Object name="smallCube" model=4 isStatic=0 isPhysic=1 isVisible=1 >
+<Object name="smallCube" model=3 isStatic=0 isPhysic=1 isVisible=1 >
    <translate>-2.86427,3.01396,0.309227</translate>
    <scale>0.200401,0.200401,0.200401</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
 </Object>
-<Object name="smallCube" model=4 isStatic=0 isPhysic=1 isVisible=1 >
+<Object name="smallCube" model=3 isStatic=0 isPhysic=1 isVisible=1 >
    <translate>-2.86683,3.01313,2.11912</translate>
    <scale>0.200401,0.200401,0.200401</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
 </Object>
-<Object name="smallCube" model=4 isStatic=0 isPhysic=1 isVisible=1 >
+<Object name="smallCube" model=3 isStatic=0 isPhysic=1 isVisible=1 >
    <translate>-4.02224,3.01313,2.5209</translate>
    <scale>0.200401,0.200401,0.200401</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
 </Object>
-<Object name="smallCube" model=4 isStatic=0 isPhysic=1 isVisible=1 >
+<Object name="smallCube" model=3 isStatic=0 isPhysic=1 isVisible=1 >
    <translate>-5.30121,3.01396,0.912588</translate>
    <scale>0.200401,0.200401,0.200401</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
 </Object>
-<Object name="smallCube" model=4 isStatic=0 isPhysic=1 isVisible=1 >
+<Object name="smallCube" model=3 isStatic=0 isPhysic=1 isVisible=1 >
    <translate>-4.02127,3.01313,1.9183</translate>
    <scale>0.200401,0.200401,0.200401</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
 </Object>
-<Object name="smallCube" model=4 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>-2.86586,3.01313,1.71732</translate>
-   <scale>0.200401,0.200401,0.200401</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
-</Object>
-<Object name="smallCube" model=4 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>-2.86427,3.01396,1.51588</translate>
-   <scale>0.200401,0.200401,0.200401</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
-</Object>
-<Object name="smallCube" model=4 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>-2.86427,3.01396,1.3149</translate>
-   <scale>0.200401,0.200401,0.200401</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
-</Object>
-<Object name="smallCube" model=4 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>-2.86427,3.01396,1.11357</translate>
-   <scale>0.200401,0.200401,0.200401</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
-</Object>
-<Object name="smallCube" model=4 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>-2.86427,3.01396,0.912588</translate>
-   <scale>0.200401,0.200401,0.200401</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
-</Object>
-<Object name="smallCube" model=4 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>-2.86427,3.01396,0.711539</translate>
-   <scale>0.200401,0.200401,0.200401</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
-</Object>
-<Object name="smallCube" model=4 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>-4.01968,3.01396,0.309227</translate>
-   <scale>0.200401,0.200401,0.200401</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
-</Object>
-<Object name="smallCube" model=4 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>-5.30121,3.01396,0.108247</translate>
-   <scale>0.200401,0.200401,0.200401</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
-</Object>
-<Object name="smallCube" model=4 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>-5.30121,3.01396,0.711539</translate>
-   <scale>0.200401,0.200401,0.200401</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
-</Object>
-<Object name="smallCube" model=4 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>-2.86683,3.01313,2.72188</translate>
-   <scale>0.200401,0.200401,0.200401</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
-</Object>
-<Object name="smallCube" model=4 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>-2.86683,3.01313,2.5209</translate>
-   <scale>0.200401,0.200401,0.200401</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
-</Object>
-<Object name="smallCube" model=4 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>-5.30121,3.01396,0.510559</translate>
-   <scale>0.200401,0.200401,0.200401</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
-</Object>
-<Object name="smallCube" model=4 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>-2.86427,3.01396,0.510559</translate>
-   <scale>0.200401,0.200401,0.200401</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
-</Object>
-<Object name="smallCube" model=4 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>-4.02224,3.01313,2.72188</translate>
-   <scale>0.200401,0.200401,0.200401</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
-</Object>
-<Object name="smallCube" model=4 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>-2.86427,3.01396,0.108247</translate>
-   <scale>0.200401,0.200401,0.200401</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
-</Object>
-<Object name="smallCube" model=4 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>-2.86683,3.01313,2.3201</translate>
-   <scale>0.200401,0.200401,0.200401</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
-</Object>
-<Object name="smallCube" model=4 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>-5.30121,3.01396,1.3149</translate>
-   <scale>0.200401,0.200401,0.200401</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
-</Object>
-<Object name="smallCube" model=4 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>-4.01968,3.01396,1.11357</translate>
-   <scale>0.200401,0.200401,0.200401</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
-</Object>
-<Object name="smallCube" model=4 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>-4.01968,3.01396,0.510559</translate>
-   <scale>0.200401,0.200401,0.200401</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
-</Object>
-<Object name="smallCube" model=4 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>-5.30121,3.01396,1.11357</translate>
-   <scale>0.200401,0.200401,0.200401</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
-</Object>
-<Object name="smallCube" model=4 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>-5.30377,3.01313,2.5209</translate>
-   <scale>0.200401,0.200401,0.200401</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
-</Object>
-<Object name="smallCube" model=4 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>-4.01968,3.01396,0.108247</translate>
-   <scale>0.200401,0.200401,0.200401</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
-</Object>
-<Object name="smallCube" model=4 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>-5.30377,3.01313,2.72188</translate>
-   <scale>0.200401,0.200401,0.200401</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
-</Object>
-<Object name="smallCube" model=4 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>-5.30121,3.01396,1.51588</translate>
-   <scale>0.200401,0.200401,0.200401</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
-</Object>
-<Object name="smallCube" model=4 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>-4.02224,3.01313,2.3201</translate>
-   <scale>0.200401,0.200401,0.200401</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
-</Object>
-<Object name="smallCube" model=4 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>-4.02127,3.01313,1.71732</translate>
-   <scale>0.200401,0.200401,0.200401</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
-</Object>
-<Object name="smallCube" model=4 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>-4.01968,3.01396,1.3149</translate>
-   <scale>0.200401,0.200401,0.200401</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
-</Object>
-<Object name="smallCube" model=4 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>-5.30377,3.01313,2.11912</translate>
-   <scale>0.200401,0.200401,0.200401</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
-</Object>
-<Object name="smallCube" model=4 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>-4.01968,3.01396,0.912588</translate>
-   <scale>0.200401,0.200401,0.200401</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
-</Object>
-<Object name="smallCube" model=4 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>-4.01968,3.01396,0.711539</translate>
-   <scale>0.200401,0.200401,0.200401</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
-</Object>
-<Object name="smallCube" model=4 isStatic=0 isPhysic=1 isVisible=1 >
+<Object name="smallCube" model=3 isStatic=0 isPhysic=1 isVisible=1 >
    <translate>-2.86586,3.01313,1.9183</translate>
    <scale>0.200401,0.200401,0.200401</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
 </Object>
-<Object name="smallCube" model=4 isStatic=0 isPhysic=1 isVisible=1 >
+<Object name="smallCube" model=3 isStatic=0 isPhysic=1 isVisible=1 >
    <translate>-5.30377,3.01313,2.3201</translate>
    <scale>0.200401,0.200401,0.200401</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
 </Object>
-<Object name="smallCube" model=4 isStatic=0 isPhysic=1 isVisible=1 >
+<Object name="smallCube" model=3 isStatic=0 isPhysic=1 isVisible=1 >
    <translate>-5.30279,3.01313,1.9183</translate>
    <scale>0.200401,0.200401,0.200401</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
 </Object>
-<Object name="smallCube" model=4 isStatic=0 isPhysic=1 isVisible=1 >
+<Object name="smallCube" model=3 isStatic=0 isPhysic=1 isVisible=1 >
    <translate>-5.30279,3.01313,1.71732</translate>
    <scale>0.200401,0.200401,0.200401</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
 </Object>
-<Object name="smallCube" model=4 isStatic=0 isPhysic=1 isVisible=1 >
+<Object name="smallCube" model=3 isStatic=0 isPhysic=1 isVisible=1 >
    <translate>-4.02224,3.01313,2.11912</translate>
    <scale>0.200401,0.200401,0.200401</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
 </Object>
-<Object name="smallCube" model=4 isStatic=0 isPhysic=1 isVisible=1 >
+<Object name="smallCube" model=3 isStatic=0 isPhysic=1 isVisible=1 >
    <translate>-4.01968,3.01396,1.51588</translate>
    <scale>0.200401,0.200401,0.200401</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
 </Object>
-<Object name="spaceCube" model=11 isStatic=0 isPhysic=1 isVisible=1 >
+<Object name="smallCube" model=3 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>-2.86427,3.01396,0.510559</translate>
+   <scale>0.200401,0.200401,0.200401</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
+</Object>
+<Object name="smallCube" model=3 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>-4.01968,3.01396,0.711539</translate>
+   <scale>0.200401,0.200401,0.200401</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
+</Object>
+<Object name="smallCube" model=3 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>-5.30121,3.01396,0.510559</translate>
+   <scale>0.200401,0.200401,0.200401</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
+</Object>
+<Object name="smallCube" model=3 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>-2.86683,3.01313,2.5209</translate>
+   <scale>0.200401,0.200401,0.200401</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
+</Object>
+<Object name="smallCube" model=3 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>-2.86683,3.01313,2.72188</translate>
+   <scale>0.200401,0.200401,0.200401</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
+</Object>
+<Object name="smallCube" model=3 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>-5.30121,3.01396,0.711539</translate>
+   <scale>0.200401,0.200401,0.200401</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
+</Object>
+<Object name="smallCube" model=3 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>-5.30121,3.01396,0.108247</translate>
+   <scale>0.200401,0.200401,0.200401</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
+</Object>
+<Object name="smallCube" model=3 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>-4.01968,3.01396,0.309227</translate>
+   <scale>0.200401,0.200401,0.200401</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
+</Object>
+<Object name="smallCube" model=3 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>-4.01968,3.01396,0.912588</translate>
+   <scale>0.200401,0.200401,0.200401</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
+</Object>
+<Object name="smallCube" model=3 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>-2.86427,3.01396,0.711539</translate>
+   <scale>0.200401,0.200401,0.200401</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
+</Object>
+<Object name="smallCube" model=3 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>-2.86427,3.01396,0.912588</translate>
+   <scale>0.200401,0.200401,0.200401</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
+</Object>
+<Object name="smallCube" model=3 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>-2.86427,3.01396,1.11357</translate>
+   <scale>0.200401,0.200401,0.200401</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
+</Object>
+<Object name="smallCube" model=3 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>-2.86427,3.01396,1.3149</translate>
+   <scale>0.200401,0.200401,0.200401</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
+</Object>
+<Object name="smallCube" model=3 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>-2.86427,3.01396,1.51588</translate>
+   <scale>0.200401,0.200401,0.200401</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
+</Object>
+<Object name="smallCube" model=3 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>-2.86586,3.01313,1.71732</translate>
+   <scale>0.200401,0.200401,0.200401</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
+</Object>
+<Object name="smallCube" model=3 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>-4.01968,3.01396,0.108247</translate>
+   <scale>0.200401,0.200401,0.200401</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
+</Object>
+<Object name="smallCube" model=3 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>-5.30377,3.01313,2.11912</translate>
+   <scale>0.200401,0.200401,0.200401</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
+</Object>
+<Object name="smallCube" model=3 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>-4.01968,3.01396,1.3149</translate>
+   <scale>0.200401,0.200401,0.200401</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
+</Object>
+<Object name="smallCube" model=3 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>-4.02127,3.01313,1.71732</translate>
+   <scale>0.200401,0.200401,0.200401</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
+</Object>
+<Object name="smallCube" model=3 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>-4.02224,3.01313,2.3201</translate>
+   <scale>0.200401,0.200401,0.200401</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
+</Object>
+<Object name="smallCube" model=3 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>-5.30121,3.01396,1.51588</translate>
+   <scale>0.200401,0.200401,0.200401</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
+</Object>
+<Object name="smallCube" model=3 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>-5.30377,3.01313,2.72188</translate>
+   <scale>0.200401,0.200401,0.200401</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
+</Object>
+<Object name="smallCube" model=3 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>-5.30377,3.01313,2.5209</translate>
+   <scale>0.200401,0.200401,0.200401</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
+</Object>
+<Object name="smallCube" model=3 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>-5.30121,3.01396,1.11357</translate>
+   <scale>0.200401,0.200401,0.200401</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
+</Object>
+<Object name="smallCube" model=3 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>-4.01968,3.01396,0.510559</translate>
+   <scale>0.200401,0.200401,0.200401</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
+</Object>
+<Object name="smallCube" model=3 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>-4.01968,3.01396,1.11357</translate>
+   <scale>0.200401,0.200401,0.200401</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
+</Object>
+<Object name="smallCube" model=3 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>-5.30121,3.01396,1.3149</translate>
+   <scale>0.200401,0.200401,0.200401</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
+</Object>
+<Object name="smallCube" model=3 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>-2.86683,3.01313,2.3201</translate>
+   <scale>0.200401,0.200401,0.200401</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
+</Object>
+<Object name="smallCube" model=3 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>-2.86427,3.01396,0.108247</translate>
+   <scale>0.200401,0.200401,0.200401</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
+</Object>
+<Object name="smallCube" model=3 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>-4.02224,3.01313,2.72188</translate>
+   <scale>0.200401,0.200401,0.200401</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.15 restitution=0.75 friction=0.5 rollingFriction=0.01/>
+</Object>
+<Object name="spaceCube" model=10 isStatic=0 isPhysic=1 isVisible=1 >
    <translate>-0.331162,-0.341823,0.15773</translate>
    <scale>0.300265,0.300265,0.300265</scale>
    <rotate>0.971531,0.236915,0,-0.236915,0.971531,0,0,0,1</rotate>
    <collider type=1 mass=0.3 restitution=0.3 friction=1.25 rollingFriction=0.1/>
 </Object>
-<Object name="tCube" model=10 isStatic=0 isPhysic=1 isVisible=1 >
+<Object name="tCube" model=11 isStatic=0 isPhysic=1 isVisible=1 >
    <translate>-4.03596,-1.92175,1.01091</translate>
    <scale>0.399885,0.399885,0.399885</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=1 mass=0.3 restitution=0.7 friction=0.5 rollingFriction=0.01/>
 </Object>
-<Object name="tCube" model=10 isStatic=0 isPhysic=1 isVisible=1 >
+<Object name="tCube" model=11 isStatic=0 isPhysic=1 isVisible=1 >
    <translate>-4.03596,-1.92175,1.41222</translate>
    <scale>0.399885,0.399885,0.399885</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=1 mass=0.3 restitution=0.7 friction=0.5 rollingFriction=0.01/>
 </Object>
-<Object name="tCube" model=10 isStatic=0 isPhysic=1 isVisible=1 >
+<Object name="tCube" model=11 isStatic=0 isPhysic=1 isVisible=1 >
    <translate>-4.9933,-1.92175,0.208841</translate>
    <scale>0.399885,0.399885,0.399885</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=1 mass=0.3 restitution=0.7 friction=0.5 rollingFriction=0.01/>
 </Object>
-<Object name="tCube" model=10 isStatic=0 isPhysic=1 isVisible=1 >
+<Object name="tCube" model=11 isStatic=0 isPhysic=1 isVisible=1 >
    <translate>-4.9933,-1.92175,0.610147</translate>
    <scale>0.399885,0.399885,0.399885</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=1 mass=0.3 restitution=0.7 friction=0.5 rollingFriction=0.01/>
 </Object>
-<Object name="tCube" model=10 isStatic=0 isPhysic=1 isVisible=1 >
+<Object name="tCube" model=11 isStatic=0 isPhysic=1 isVisible=1 >
    <translate>-4.9933,-1.92175,1.01091</translate>
    <scale>0.399885,0.399885,0.399885</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=1 mass=0.3 restitution=0.7 friction=0.5 rollingFriction=0.01/>
 </Object>
-<Object name="tCube" model=10 isStatic=0 isPhysic=1 isVisible=1 >
+<Object name="tCube" model=11 isStatic=0 isPhysic=1 isVisible=1 >
    <translate>-4.9933,-1.92175,1.41222</translate>
    <scale>0.399885,0.399885,0.399885</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=1 mass=0.3 restitution=0.7 friction=0.5 rollingFriction=0.01/>
 </Object>
-<Object name="tCube" model=10 isStatic=0 isPhysic=1 isVisible=1 >
+<Object name="tCube" model=11 isStatic=0 isPhysic=1 isVisible=1 >
    <translate>-2.70617,-1.92175,0.208841</translate>
    <scale>0.399885,0.399885,0.399885</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=1 mass=0.3 restitution=0.7 friction=0.5 rollingFriction=0.01/>
 </Object>
-<Object name="tCube" model=10 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>-2.70617,-1.92175,0.610147</translate>
-   <scale>0.399885,0.399885,0.399885</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.3 restitution=0.7 friction=0.5 rollingFriction=0.01/>
-</Object>
-<Object name="tCube" model=10 isStatic=0 isPhysic=1 isVisible=1 >
+<Object name="tCube" model=11 isStatic=0 isPhysic=1 isVisible=1 >
    <translate>-2.70617,-1.92175,1.01091</translate>
    <scale>0.399885,0.399885,0.399885</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=1 mass=0.3 restitution=0.7 friction=0.5 rollingFriction=0.01/>
 </Object>
-<Object name="tCube" model=10 isStatic=0 isPhysic=1 isVisible=1 >
+<Object name="tCube" model=11 isStatic=0 isPhysic=1 isVisible=1 >
    <translate>-2.70617,-1.92175,1.41222</translate>
    <scale>0.399885,0.399885,0.399885</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=1 mass=0.3 restitution=0.7 friction=0.5 rollingFriction=0.01/>
 </Object>
-<Object name="tCube" model=10 isStatic=0 isPhysic=1 isVisible=1 >
+<Object name="tCube" model=11 isStatic=0 isPhysic=1 isVisible=1 >
    <translate>-5.03993,0.301198,0.208841</translate>
    <scale>0.399885,0.399885,0.399885</scale>
    <rotate>0.865491,0.500923,0,-0.500923,0.865491,0,0,0,1</rotate>
    <collider type=1 mass=0.3 restitution=0.7 friction=0.5 rollingFriction=0.01/>
 </Object>
-<Object name="tCube" model=10 isStatic=0 isPhysic=1 isVisible=1 >
+<Object name="tCube" model=11 isStatic=0 isPhysic=1 isVisible=1 >
    <translate>-3.75207,0.212238,0.208841</translate>
    <scale>0.399885,0.399885,0.399885</scale>
    <rotate>0.948253,-0.317512,0,0.317512,0.948253,0,0,0,1</rotate>
    <collider type=1 mass=0.3 restitution=0.7 friction=0.5 rollingFriction=0.01/>
 </Object>
-<Object name="tCube" model=10 isStatic=0 isPhysic=1 isVisible=1 >
+<Object name="tCube" model=11 isStatic=0 isPhysic=1 isVisible=1 >
    <translate>-4.03596,-1.92175,0.208841</translate>
    <scale>0.399885,0.399885,0.399885</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=1 mass=0.3 restitution=0.7 friction=0.5 rollingFriction=0.01/>
 </Object>
-<Object name="tCube" model=10 isStatic=0 isPhysic=1 isVisible=1 >
+<Object name="tCube" model=11 isStatic=0 isPhysic=1 isVisible=1 >
    <translate>-4.03596,-1.92175,0.610147</translate>
+   <scale>0.399885,0.399885,0.399885</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.3 restitution=0.7 friction=0.5 rollingFriction=0.01/>
+</Object>
+<Object name="tCube" model=11 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>-2.70617,-1.92175,0.610147</translate>
    <scale>0.399885,0.399885,0.399885</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=1 mass=0.3 restitution=0.7 friction=0.5 rollingFriction=0.01/>

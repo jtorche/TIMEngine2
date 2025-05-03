@@ -9,18 +9,45 @@
 
 <DirLight shadows=1 color="1,1,1" direction="0.709405,0.071558,-0.701159" />
 
-<MeshAsset name="groundForest" index=0 >
+<MeshAsset name="arbre1" index=0 >
 	<Element type=0>
 		<color>255,255,255</color>
-		<geometry>meshBank/groundForest.obj</geometry>
-		<roughness>0.76</roughness>
+		<geometry>meshBank/arbre1.obj</geometry>
+		<roughness>0.75</roughness>
 		<metallic>0</metallic>
-		<specular>0.08</specular>
+		<specular>0.1</specular>
 		<emissive>0</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<diffuseTex>meshBank/groundForest.png</diffuseTex>
-		<normalTex>meshBank/groundForest_NORM.png</normalTex>
+		<cmAffected>1</cmAffected>
+		<diffuseTex>textureBank/bark.png</diffuseTex>
+		<normalTex>textureBank/bark_NORM.png</normalTex>
+	</Element>
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/arbre1Leaf.obj</geometry>
+		<roughness>0.4</roughness>
+		<metallic>0</metallic>
+		<specular>0.05</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+		<diffuseTex>textureBank/leaf.png</diffuseTex>
+		<normalTex>textureBank/leaf_NORM.png</normalTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
 	</Element>
 </MeshAsset>
 <MeshAsset name="fence4" index=1 >
@@ -33,6 +60,7 @@
 		<emissive>0</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/fenceTex.png</diffuseTex>
 		<normalTex>meshBank/fenceTex_NORM.png</normalTex>
 	</Element>
@@ -47,6 +75,7 @@
 		<emissive>0</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/fenceTex.png</diffuseTex>
 		<normalTex>meshBank/fenceTex_NORM.png</normalTex>
 	</Element>
@@ -61,50 +90,12 @@
 		<emissive>0</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/fenceTex.png</diffuseTex>
 		<normalTex>meshBank/fenceTex_NORM.png</normalTex>
 	</Element>
 </MeshAsset>
-<MeshAsset name="arbre1" index=4 >
-	<Element type=0>
-		<color>255,255,255</color>
-		<geometry>meshBank/arbre1.obj</geometry>
-		<roughness>0.75</roughness>
-		<metallic>0</metallic>
-		<specular>0.1</specular>
-		<emissive>0</emissive>
-		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
-		<diffuseTex>textureBank/bark.png</diffuseTex>
-		<normalTex>textureBank/bark_NORM.png</normalTex>
-	</Element>
-	<Element type=0>
-		<color>255,255,255</color>
-		<geometry>meshBank/arbre1Leaf.obj</geometry>
-		<roughness>0.4</roughness>
-		<metallic>0</metallic>
-		<specular>0.05</specular>
-		<emissive>0</emissive>
-		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
-		<diffuseTex>textureBank/leaf.png</diffuseTex>
-		<normalTex>textureBank/leaf_NORM.png</normalTex>
-		<Advanced>
-			<shader>gPass</shader>
-			<blend>0</blend>
-			<cullBackFace>1</cullBackFace>
-			<cullFace>0</cullFace>
-			<depthTest>1</depthTest>
-			<writeDepth>1</writeDepth>
-			<priority>128</priority>
-			<blendEquation>ADD</blendEquation>
-			<primitive>TRIANGLES</primitive>
-			<depthFunc>LESS</depthFunc>
-			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
-		</Advanced>
-	</Element>
-</MeshAsset>
-<MeshAsset name="arbre2" index=5 >
+<MeshAsset name="arbre2" index=4 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/arbre2.obj</geometry>
@@ -114,6 +105,7 @@
 		<emissive>0</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
 		<diffuseTex>textureBank/bark.png</diffuseTex>
 		<normalTex>textureBank/bark_NORM.png</normalTex>
 	</Element>
@@ -126,6 +118,7 @@
 		<emissive>0</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
 		<diffuseTex>textureBank/leaf.png</diffuseTex>
 		<normalTex>textureBank/leaf_NORM.png</normalTex>
 		<Advanced>
@@ -143,7 +136,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="arbre3" index=6 >
+<MeshAsset name="arbre3" index=5 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/arbre3.obj</geometry>
@@ -153,6 +146,7 @@
 		<emissive>0</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
 		<diffuseTex>textureBank/bark.png</diffuseTex>
 		<normalTex>textureBank/bark_NORM.png</normalTex>
 	</Element>
@@ -165,6 +159,7 @@
 		<emissive>0</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
 		<diffuseTex>textureBank/leaf2.png</diffuseTex>
 		<normalTex>textureBank/leaf_NORM.png</normalTex>
 		<Advanced>
@@ -182,59 +177,35 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="portal3" index=7 >
+<MeshAsset name="plant1" index=6 >
 	<Element type=0>
-		<color>255,255,255</color>
-		<geometry>meshBank/portal3.obj</geometry>
-		<roughness>0.5</roughness>
+		<color>201,255,181</color>
+		<geometry>meshBank/plant1.obj</geometry>
+		<roughness>0.3</roughness>
 		<metallic>0</metallic>
-		<specular>0.1</specular>
+		<specular>0.07</specular>
 		<emissive>0</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-	</Element>
-	<Element type=0>
-		<color>255,255,255</color>
-		<geometry>meshBank/portal3Frame.obj</geometry>
-		<roughness>0.4</roughness>
-		<metallic>0</metallic>
-		<specular>0.08</specular>
-		<emissive>0</emissive>
-		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
-		<diffuseTex>textureBank/rock3.png</diffuseTex>
-		<normalTex>textureBank/rock3_NORM.png</normalTex>
-	</Element>
-</MeshAsset>
-<MeshAsset name="rock6_st" index=8 >
-	<Element type=0>
-		<color>255,255,255</color>
-		<geometry>meshBank/rock6_st.obj</geometry>
-		<roughness>0.7</roughness>
-		<metallic>0</metallic>
-		<specular>0.08</specular>
-		<emissive>0</emissive>
-		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
-		<diffuseTex>meshBank/rock6_st1.png</diffuseTex>
-		<normalTex>meshBank/rock6_st_NRM.png</normalTex>
+		<cmAffected>1</cmAffected>
+		<diffuseTex>textureBank/leaf3.png</diffuseTex>
+		<normalTex>textureBank/leaf3_NORM.png</normalTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="rock6_st" index=9 >
-	<Element type=0>
-		<color>255,255,255</color>
-		<geometry>meshBank/rock6_st.obj</geometry>
-		<roughness>0.7</roughness>
-		<metallic>0</metallic>
-		<specular>0.08</specular>
-		<emissive>0</emissive>
-		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
-		<diffuseTex>meshBank/rock6_st2.png</diffuseTex>
-		<normalTex>meshBank/rock6_st_NRM.png</normalTex>
-	</Element>
-</MeshAsset>
-<MeshAsset name="kapla1" index=10 >
+<MeshAsset name="kapla1" index=7 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/kapla1.obj</geometry>
@@ -244,11 +215,12 @@
 		<emissive>0</emissive>
 		<textureScale>1.565</textureScale>
 		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
 		<diffuseTex>textureBank/wood2.png</diffuseTex>
 		<normalTex>textureBank/wood2_NORM.png</normalTex>
 	</Element>
 </MeshAsset>
-<MeshAsset name="caisse" index=11 >
+<MeshAsset name="caisse" index=8 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/box.obj</geometry>
@@ -258,8 +230,54 @@
 		<emissive>0</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
 		<diffuseTex>textureBank/box.png</diffuseTex>
 		<normalTex>textureBank/box_NORM.png</normalTex>
+	</Element>
+</MeshAsset>
+<MeshAsset name="panel" index=9 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/panel.obj</geometry>
+		<roughness>0.45</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+		<diffuseTex>meshBank/forest2Panel.png</diffuseTex>
+		<normalTex>meshBank/forest2Panel_NRM.png</normalTex>
+	</Element>
+</MeshAsset>
+<MeshAsset name="plant_ground" index=10 >
+	<Element type=0>
+		<color>255,255,127</color>
+		<geometry>meshBank/forest2_plant.tim</geometry>
+		<roughness>0.3</roughness>
+		<metallic>0</metallic>
+		<specular>0.06</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+		<diffuseTex>textureBank/leaf3.png</diffuseTex>
+		<normalTex>textureBank/leaf3_NORM.png</normalTex>
+	</Element>
+</MeshAsset>
+<MeshAsset name="groundForest" index=11 >
+	<Element type=0>
+		<color>255,247,0</color>
+		<geometry>meshBank/groundForest.obj</geometry>
+		<roughness>0.76</roughness>
+		<metallic>0</metallic>
+		<specular>0.08</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+		<diffuseTex>meshBank/groundForest.png</diffuseTex>
+		<normalTex>meshBank/groundForest_NORM.png</normalTex>
 	</Element>
 </MeshAsset>
 <MeshAsset name="portal4" index=12 >
@@ -272,6 +290,7 @@
 		<emissive>0</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
 	</Element>
 	<Element type=0>
 		<color>255,255,255</color>
@@ -282,25 +301,430 @@
 		<emissive>0</emissive>
 		<textureScale>1.6</textureScale>
 		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
 		<diffuseTex>textureBank/rock3.png</diffuseTex>
 		<normalTex>textureBank/rock3_NORM.png</normalTex>
 	</Element>
 </MeshAsset>
-<MeshAsset name="panel" index=13 >
+<MeshAsset name="portal3" index=13 >
 	<Element type=0>
 		<color>255,255,255</color>
-		<geometry>meshBank/panel.obj</geometry>
-		<roughness>0.45</roughness>
+		<geometry>meshBank/portal3.obj</geometry>
+		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.1</specular>
 		<emissive>0</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<diffuseTex>meshBank/forest2Panel.png</diffuseTex>
-		<normalTex>meshBank/forest2Panel_NRM.png</normalTex>
+		<cmAffected>1</cmAffected>
+	</Element>
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/portal3Frame.obj</geometry>
+		<roughness>0.4</roughness>
+		<metallic>0</metallic>
+		<specular>0.08</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+		<diffuseTex>textureBank/rock3.png</diffuseTex>
+		<normalTex>textureBank/rock3_NORM.png</normalTex>
 	</Element>
 </MeshAsset>
-<MeshAsset name="sunStone" index=14 >
+<MeshAsset name="plant1" index=14 >
+	<Element type=0>
+		<color>255,88,224</color>
+		<geometry>meshBank/plant1.obj</geometry>
+		<roughness>0.3</roughness>
+		<metallic>0</metallic>
+		<specular>0.07</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+		<diffuseTex>textureBank/leaf3.png</diffuseTex>
+		<normalTex>textureBank/leaf3_NORM.png</normalTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="plant1" index=15 >
+	<Element type=0>
+		<color>255,204,0</color>
+		<geometry>meshBank/plant1.obj</geometry>
+		<roughness>0.3</roughness>
+		<metallic>0</metallic>
+		<specular>0.07</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+		<diffuseTex>textureBank/leaf3.png</diffuseTex>
+		<normalTex>textureBank/leaf3_NORM.png</normalTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="plant1" index=16 >
+	<Element type=0>
+		<color>255,255,127</color>
+		<geometry>meshBank/plant1.obj</geometry>
+		<roughness>0.3</roughness>
+		<metallic>0</metallic>
+		<specular>0.07</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+		<diffuseTex>textureBank/leaf3.png</diffuseTex>
+		<normalTex>textureBank/leaf3_NORM.png</normalTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="plant1" index=17 >
+	<Element type=0>
+		<color>255,255,0</color>
+		<geometry>meshBank/plant1.obj</geometry>
+		<roughness>0.3</roughness>
+		<metallic>0</metallic>
+		<specular>0.07</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+		<diffuseTex>textureBank/leaf3.png</diffuseTex>
+		<normalTex>textureBank/leaf3_NORM.png</normalTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="plant1" index=18 >
+	<Element type=0>
+		<color>255,157,157</color>
+		<geometry>meshBank/plant1.obj</geometry>
+		<roughness>0.3</roughness>
+		<metallic>0</metallic>
+		<specular>0.07</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+		<diffuseTex>textureBank/leaf3.png</diffuseTex>
+		<normalTex>textureBank/leaf3_NORM.png</normalTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="plant1" index=19 >
+	<Element type=0>
+		<color>255,245,131</color>
+		<geometry>meshBank/plant1.obj</geometry>
+		<roughness>0.3</roughness>
+		<metallic>0</metallic>
+		<specular>0.07</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+		<diffuseTex>textureBank/leaf3.png</diffuseTex>
+		<normalTex>textureBank/leaf3_NORM.png</normalTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="plant1" index=20 >
+	<Element type=0>
+		<color>255,179,0</color>
+		<geometry>meshBank/plant1.obj</geometry>
+		<roughness>0.3</roughness>
+		<metallic>0</metallic>
+		<specular>0.07</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+		<diffuseTex>textureBank/leaf3.png</diffuseTex>
+		<normalTex>textureBank/leaf3_NORM.png</normalTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="plant1" index=21 >
+	<Element type=0>
+		<color>254,255,167</color>
+		<geometry>meshBank/plant1.obj</geometry>
+		<roughness>0.3</roughness>
+		<metallic>0</metallic>
+		<specular>0.07</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+		<diffuseTex>textureBank/leaf3.png</diffuseTex>
+		<normalTex>textureBank/leaf3_NORM.png</normalTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="plant1" index=22 >
+	<Element type=0>
+		<color>255,209,183</color>
+		<geometry>meshBank/plant1.obj</geometry>
+		<roughness>0.3</roughness>
+		<metallic>0</metallic>
+		<specular>0.07</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+		<diffuseTex>textureBank/leaf3.png</diffuseTex>
+		<normalTex>textureBank/leaf3_NORM.png</normalTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="plant1" index=23 >
+	<Element type=0>
+		<color>255,170,0</color>
+		<geometry>meshBank/plant1.obj</geometry>
+		<roughness>0.3</roughness>
+		<metallic>0</metallic>
+		<specular>0.07</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+		<diffuseTex>textureBank/leaf3.png</diffuseTex>
+		<normalTex>textureBank/leaf3_NORM.png</normalTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="plant1" index=24 >
+	<Element type=0>
+		<color>255,160,253</color>
+		<geometry>meshBank/plant1.obj</geometry>
+		<roughness>0.3</roughness>
+		<metallic>0</metallic>
+		<specular>0.07</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+		<diffuseTex>textureBank/leaf3.png</diffuseTex>
+		<normalTex>textureBank/leaf3_NORM.png</normalTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="plant1" index=25 >
+	<Element type=0>
+		<color>251,147,255</color>
+		<geometry>meshBank/plant1.obj</geometry>
+		<roughness>0.3</roughness>
+		<metallic>0</metallic>
+		<specular>0.07</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+		<diffuseTex>textureBank/leaf3.png</diffuseTex>
+		<normalTex>textureBank/leaf3_NORM.png</normalTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="plant1" index=26 >
+	<Element type=0>
+		<color>250,93,255</color>
+		<geometry>meshBank/plant1.obj</geometry>
+		<roughness>0.3</roughness>
+		<metallic>0</metallic>
+		<specular>0.07</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+		<diffuseTex>textureBank/leaf3.png</diffuseTex>
+		<normalTex>textureBank/leaf3_NORM.png</normalTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="plant1" index=27 >
+	<Element type=0>
+		<color>255,162,0</color>
+		<geometry>meshBank/plant1.obj</geometry>
+		<roughness>0.3</roughness>
+		<metallic>0</metallic>
+		<specular>0.07</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+		<diffuseTex>textureBank/leaf3.png</diffuseTex>
+		<normalTex>textureBank/leaf3_NORM.png</normalTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="sunStone" index=28 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/sunStone.obj</geometry>
@@ -310,27 +734,44 @@
 		<emissive>0</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
 		<diffuseTex>textureBank/sun2.png</diffuseTex>
 		<normalTex>textureBank/sun_NORM.png</normalTex>
 	</Element>
 </MeshAsset>
-<MeshAsset name="plant_ground" index=15 >
+<MeshAsset name="rock6_st" index=29 >
 	<Element type=0>
-		<color>201,255,181</color>
-		<geometry>meshBank/forest2_plant.tim</geometry>
-		<roughness>0.3</roughness>
+		<color>255,255,255</color>
+		<geometry>meshBank/rock6_st.obj</geometry>
+		<roughness>0.7</roughness>
 		<metallic>0</metallic>
-		<specular>0.06</specular>
+		<specular>0.08</specular>
 		<emissive>0</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<diffuseTex>textureBank/leaf3.png</diffuseTex>
-		<normalTex>textureBank/leaf3_NORM.png</normalTex>
+		<cmAffected>1</cmAffected>
+		<diffuseTex>meshBank/rock6_st1.png</diffuseTex>
+		<normalTex>meshBank/rock6_st_NRM.png</normalTex>
 	</Element>
 </MeshAsset>
-<MeshAsset name="plant1" index=16 >
+<MeshAsset name="rock6_st" index=30 >
 	<Element type=0>
-		<color>201,255,181</color>
+		<color>255,255,255</color>
+		<geometry>meshBank/rock6_st.obj</geometry>
+		<roughness>0.7</roughness>
+		<metallic>0</metallic>
+		<specular>0.08</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+		<diffuseTex>meshBank/rock6_st2.png</diffuseTex>
+		<normalTex>meshBank/rock6_st_NRM.png</normalTex>
+	</Element>
+</MeshAsset>
+<MeshAsset name="plant1" index=31 >
+	<Element type=0>
+		<color>0,255,217</color>
 		<geometry>meshBank/plant1.obj</geometry>
 		<roughness>0.3</roughness>
 		<metallic>0</metallic>
@@ -338,6 +779,7 @@
 		<emissive>0</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
 		<diffuseTex>textureBank/leaf3.png</diffuseTex>
 		<normalTex>textureBank/leaf3_NORM.png</normalTex>
 		<Advanced>
@@ -356,10 +798,10 @@
 	</Element>
 </MeshAsset>
 
-<Object name="ground" model=0 isStatic=1 isPhysic=1 isVisible=1 >
-   <translate>0,2,0</translate>
-   <scale>1,1,1.5</scale>
-   <rotate>-7.27913e-05,0.999996,0,-0.999996,-7.27913e-05,0,0,0,1</rotate>
+<Object name="" model=0 isStatic=1 isPhysic=1 isVisible=1 >
+   <translate>4.76201,-12.7763,4.08506</translate>
+   <scale>1,1,1</scale>
+   <rotate>0.808295,0.580794,-0.0966132,-0.53694,0.794466,0.283759,0.241562,-0.177486,0.954014</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
 <Object name="" model=1 isStatic=1 isPhysic=1 isVisible=1 >
@@ -392,431 +834,617 @@
    <rotate>0.995064,0,-0.0992385,0,1,0,0.0992385,0,0.995064</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=0 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>12.4084,-12.0242,5.67342</translate>
    <scale>1,1,1</scale>
    <rotate>0.232809,0.972523,0,-0.972523,0.232809,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=5 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>17.2771,-1.46984,5.55827</translate>
    <scale>1,1,1</scale>
    <rotate>0.322037,0.946728,0,-0.946728,0.322037,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=6 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=5 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>14.1453,9.94573,5.52764</translate>
    <scale>0.903529,0.903529,0.903529</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=0 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>3.2832,19.1352,5.61586</translate>
    <scale>0.887141,0.887141,0.887141</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=5 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>-13.7602,16.3924,5.73351</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=5 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>-17.3113,4.38654,5.42317</translate>
    <scale>1,1,1</scale>
    <rotate>-0.133828,0.991005,0,-0.991005,-0.133828,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=0 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>-13.2128,-11.5631,5.7545</translate>
    <scale>1,1,1</scale>
    <rotate>0.772379,0.635163,0,-0.635163,0.772379,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=6 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=5 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>-1.42332,-17.3785,5.22421</translate>
    <scale>0.854397,0.854397,0.854397</scale>
    <rotate>-0.0278454,-0.999613,0,0.999613,-0.0278454,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=6 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=5 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>-13.5093,8.46286,2.77685</translate>
    <scale>0.724226,0.724226,0.724226</scale>
    <rotate>0.985767,0.0478463,0.161166,-0.0381648,0.997306,-0.0626425,-0.163729,0.0556001,0.984937</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=5 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>12.7508,7.54362,3.06588</translate>
    <scale>1,1,1</scale>
    <rotate>0.978231,-0.0140795,-0.207046,0.0144784,0.999896,0.000412567,0.207018,-0.0034013,0.978331</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=5 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>-0.00532316,13.8568,2.36874</translate>
    <scale>1,1,1</scale>
    <rotate>0.322037,0.946728,0,-0.946728,0.322037,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=5 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>-14.3837,-2.43623,3.73789</translate>
    <scale>0.905341,0.905341,0.905341</scale>
    <rotate>0.393531,0.880034,0.265846,-0.916871,0.396776,0.0437855,-0.0669483,-0.260977,0.96302</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
-   <translate>4.76201,-12.7763,4.08506</translate>
-   <scale>1,1,1</scale>
-   <rotate>0.808295,0.580794,-0.0966132,-0.53694,0.794466,0.283759,0.241562,-0.177486,0.954014</rotate>
-   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
-</Object>
-<Object name="" model=5 isStatic=1 isPhysic=1 isVisible=1 >
-   <translate>-6.76864,-8.3074,2.45124</translate>
-   <scale>1,1,1</scale>
-   <rotate>0.322037,0.946728,0,-0.946728,0.322037,0,0,0,1</rotate>
-   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
-</Object>
-<Object name="" model=5 isStatic=1 isPhysic=1 isVisible=1 >
-   <translate>5.67986,12.9551,2.26964</translate>
-   <scale>1,1,1</scale>
-   <rotate>0.322037,0.946728,0,-0.946728,0.322037,0,0,0,1</rotate>
-   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
-</Object>
-<Object name="" model=6 isStatic=1 isPhysic=1 isVisible=1 >
-   <translate>-21.4389,-9.24657,5.5556</translate>
-   <scale>0.903529,0.903529,0.903529</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
-</Object>
-<Object name="" model=6 isStatic=1 isPhysic=1 isVisible=1 >
-   <translate>20.0907,-11.0692,5.56508</translate>
-   <scale>0.903529,0.903529,0.903529</scale>
-   <rotate>0.709277,-0.704931,0,0.704931,0.709277,0,0,0,1</rotate>
-   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
-</Object>
-<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
-   <translate>8.6269,-20.2113,6.18902</translate>
-   <scale>1,1,1</scale>
-   <rotate>0.772379,0.635163,0,-0.635163,0.772379,0,0,0,1</rotate>
-   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
-</Object>
-<Object name="" model=6 isStatic=1 isPhysic=1 isVisible=1 >
-   <translate>-8.56374,19.32,5.50789</translate>
-   <scale>0.903529,0.903529,0.903529</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
-</Object>
-<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
-   <translate>11.5337,19.9763,5.61565</translate>
-   <scale>0.887141,0.887141,0.887141</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
-</Object>
-<Object name="" model=5 isStatic=1 isPhysic=1 isVisible=1 >
-   <translate>24.6204,0.976559,6.24722</translate>
-   <scale>1.26825,1.26825,1.26825</scale>
-   <rotate>0.322037,0.946728,0,-0.946728,0.322037,0,0,0,1</rotate>
-   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
-</Object>
-<Object name="" model=5 isStatic=1 isPhysic=1 isVisible=1 >
-   <translate>-25.6586,4.99019,7.44441</translate>
-   <scale>1.18532,1.18532,1.18532</scale>
-   <rotate>0.322037,0.946728,0,-0.946728,0.322037,0,0,0,1</rotate>
-   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
-</Object>
-<Object name="" model=5 isStatic=1 isPhysic=1 isVisible=1 >
-   <translate>-22.1471,16.8848,6.38366</translate>
-   <scale>1.29575,1.29575,1.29575</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
-</Object>
-<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
-   <translate>17.1816,-18.974,7.72594</translate>
-   <scale>1.23765,1.23765,1.23765</scale>
-   <rotate>0.772379,0.635163,0,-0.635163,0.772379,0,0,0,1</rotate>
-   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
-</Object>
-<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
-   <translate>-14.2357,-21.7108,5.77198</translate>
-   <scale>1.09632,1.09632,1.09632</scale>
-   <rotate>0.772379,0.635163,0,-0.635163,0.772379,0,0,0,1</rotate>
-   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
-</Object>
-<Object name="" model=5 isStatic=1 isPhysic=1 isVisible=1 >
-   <translate>-21.6989,10.7629,6.14645</translate>
-   <scale>1.25477,1.25477,1.25477</scale>
-   <rotate>0.322037,0.946728,0,-0.946728,0.322037,0,0,0,1</rotate>
-   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
-</Object>
-<Object name="" model=5 isStatic=1 isPhysic=1 isVisible=1 >
-   <translate>32.365,-0.364825,8.52698</translate>
-   <scale>1.21463,1.21463,1.21463</scale>
-   <rotate>0.322037,0.946728,0,-0.946728,0.322037,0,0,0,1</rotate>
-   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
-</Object>
-<Object name="" model=6 isStatic=1 isPhysic=1 isVisible=1 >
-   <translate>26.8231,11.3907,5.52706</translate>
-   <scale>1.13264,1.13264,1.13264</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
-</Object>
-<Object name="" model=5 isStatic=1 isPhysic=1 isVisible=1 >
-   <translate>22.0803,22.6337,7.12366</translate>
-   <scale>1.26549,1.26549,1.26549</scale>
-   <rotate>0.322037,0.946728,0,-0.946728,0.322037,0,0,0,1</rotate>
-   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
-</Object>
-<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
-   <translate>7.11065,25.3202,7.00561</translate>
-   <scale>0.887141,0.887141,0.887141</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
-</Object>
-<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=0 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>1.22388,-25.3875,7.08575</translate>
    <scale>1.15374,1.15374,1.15374</scale>
    <rotate>0.772379,0.635163,0,-0.635163,0.772379,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
+<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
+   <translate>-6.76864,-8.3074,2.45124</translate>
+   <scale>1,1,1</scale>
+   <rotate>0.322037,0.946728,0,-0.946728,0.322037,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
+   <translate>5.67986,12.9551,2.26964</translate>
+   <scale>1,1,1</scale>
+   <rotate>0.322037,0.946728,0,-0.946728,0.322037,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
 <Object name="" model=5 isStatic=1 isPhysic=1 isVisible=1 >
+   <translate>-21.4389,-9.24657,5.5556</translate>
+   <scale>0.903529,0.903529,0.903529</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=5 isStatic=1 isPhysic=1 isVisible=1 >
+   <translate>20.0907,-11.0692,5.56508</translate>
+   <scale>0.903529,0.903529,0.903529</scale>
+   <rotate>0.709277,-0.704931,0,0.704931,0.709277,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=0 isStatic=1 isPhysic=1 isVisible=1 >
+   <translate>8.6269,-20.2113,6.18902</translate>
+   <scale>1,1,1</scale>
+   <rotate>0.772379,0.635163,0,-0.635163,0.772379,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=5 isStatic=1 isPhysic=1 isVisible=1 >
+   <translate>-8.56374,19.32,5.50789</translate>
+   <scale>0.903529,0.903529,0.903529</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=0 isStatic=1 isPhysic=1 isVisible=1 >
+   <translate>11.5337,19.9763,5.61565</translate>
+   <scale>0.887141,0.887141,0.887141</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
+   <translate>24.6204,0.976559,6.24722</translate>
+   <scale>1.26825,1.26825,1.26825</scale>
+   <rotate>0.322037,0.946728,0,-0.946728,0.322037,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
+   <translate>-25.6586,4.99019,7.44441</translate>
+   <scale>1.18532,1.18532,1.18532</scale>
+   <rotate>0.322037,0.946728,0,-0.946728,0.322037,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
+   <translate>-22.1471,16.8848,6.38366</translate>
+   <scale>1.29575,1.29575,1.29575</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=0 isStatic=1 isPhysic=1 isVisible=1 >
+   <translate>17.1816,-18.974,7.72594</translate>
+   <scale>1.23765,1.23765,1.23765</scale>
+   <rotate>0.772379,0.635163,0,-0.635163,0.772379,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=0 isStatic=1 isPhysic=1 isVisible=1 >
+   <translate>-14.2357,-21.7108,5.77198</translate>
+   <scale>1.09632,1.09632,1.09632</scale>
+   <rotate>0.772379,0.635163,0,-0.635163,0.772379,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
+   <translate>-21.6989,10.7629,6.14645</translate>
+   <scale>1.25477,1.25477,1.25477</scale>
+   <rotate>0.322037,0.946728,0,-0.946728,0.322037,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
+   <translate>32.365,-0.364825,8.52698</translate>
+   <scale>1.21463,1.21463,1.21463</scale>
+   <rotate>0.322037,0.946728,0,-0.946728,0.322037,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=5 isStatic=1 isPhysic=1 isVisible=1 >
+   <translate>26.8231,11.3907,5.52706</translate>
+   <scale>1.13264,1.13264,1.13264</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
+   <translate>22.0803,22.6337,7.12366</translate>
+   <scale>1.26549,1.26549,1.26549</scale>
+   <rotate>0.322037,0.946728,0,-0.946728,0.322037,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=0 isStatic=1 isPhysic=1 isVisible=1 >
+   <translate>7.11065,25.3202,7.00561</translate>
+   <scale>0.887141,0.887141,0.887141</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=6 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>-2.39212,5.29321,-0.0484045</translate>
+   <scale>0.865739,0.865739,0.865739</scale>
+   <rotate>0.889988,-0.455396,-0.0231429,0.455534,0.890218,0.000743122,0.0202638,-0.0112037,0.999732</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>-30.5722,-1.46069,7.91582</translate>
    <scale>1.3126,1.3126,1.3126</scale>
    <rotate>0.322037,0.946728,0,-0.946728,0.322037,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=5 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>-23.0464,-17.9371,5.46111</translate>
    <scale>1.20929,1.20929,1.20929</scale>
    <rotate>-0.133828,0.991005,0,-0.991005,-0.133828,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=0 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>-7.31607,-26.1782,7.80297</translate>
    <scale>1.15758,1.15758,1.15758</scale>
    <rotate>0.772379,0.635163,0,-0.635163,0.772379,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=0 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>12.3211,-27.1712,7.22761</translate>
    <scale>1.21645,1.21645,1.21645</scale>
    <rotate>0.232809,0.972523,0,-0.972523,0.232809,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=5 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>23.5403,-18.2199,5.78876</translate>
    <scale>1.20674,1.20674,1.20674</scale>
    <rotate>0.322037,0.946728,0,-0.946728,0.322037,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=5 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>18.0155,-25.8827,7.34571</translate>
    <scale>1.15366,1.15366,1.15366</scale>
    <rotate>0.322037,0.946728,0,-0.946728,0.322037,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=5 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>15.5677,27.9327,4.52838</translate>
    <scale>1.24774,1.24774,1.24774</scale>
    <rotate>0.322037,0.946728,0,-0.946728,0.322037,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=5 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>0.735675,25.7715,3.17578</translate>
    <scale>1,1,1</scale>
    <rotate>0.322037,0.946728,0,-0.946728,0.322037,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=5 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>-16.5251,21.7177,5.42246</translate>
    <scale>1.28844,1.28844,1.28844</scale>
    <rotate>-0.133828,0.991005,0,-0.991005,-0.133828,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=5 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>-19.1317,-16.0672,2.2863</translate>
    <scale>1.22653,1.22653,1.22653</scale>
    <rotate>0.322037,0.946728,0,-0.946728,0.322037,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=0 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>1.76575,-18.4928,5.7281</translate>
    <scale>1,1,1</scale>
    <rotate>0.772379,0.635163,0,-0.635163,0.772379,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=0 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>6.7164,-31.7144,5.58991</translate>
    <scale>1.18501,1.18501,1.18501</scale>
    <rotate>0.808295,0.580794,-0.0966132,-0.53694,0.794466,0.283759,0.241562,-0.177486,0.954014</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=0 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>1.85885,31.7157,7.08266</translate>
    <scale>1.10823,1.10823,1.10823</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=5 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>25.0132,7.19562,6.66199</translate>
    <scale>1.1616,1.1616,1.1616</scale>
    <rotate>0.322037,0.946728,0,-0.946728,0.322037,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="portalForest2_Forest1" model=7 isStatic=1 isPhysic=1 isVisible=1 >
-   <translate>0.999996,1.95874,0</translate>
-   <scale>0.82,1,0.8</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+<Object name="" model=6 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>-3.9447,3.57501,0.201883</translate>
+   <scale>0.865739,0.865739,0.865739</scale>
+   <rotate>-0.997541,0.0700866,0,-0.0700866,-0.997541,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="sunStone3" model=8 isStatic=1 isPhysic=1 isVisible=1 >
-   <translate>2.38182,3.4642,-0.0766937</translate>
-   <scale>0.738974,0.738974,0.738974</scale>
-   <rotate>-0.767679,0.640836,0,-0.640836,-0.767678,0,0,0,1</rotate>
+<Object name="" model=6 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>-2.65796,-1.12079,-0.0289119</translate>
+   <scale>0.865739,0.865739,0.865739</scale>
+   <rotate>0.985247,0.166309,0.040366,-0.167468,0.985501,0.0272458,-0.0352494,-0.0336041,0.998813</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="sunStone2" model=8 isStatic=1 isPhysic=1 isVisible=1 >
-   <translate>-2.37281,3.4642,-0.0695325</translate>
-   <scale>0.73911,0.73911,0.73911</scale>
-   <rotate>0.987063,-0.160092,-0.00899363,0.160047,0.987096,-0.00540837,0.00974338,0.00389897,0.999945</rotate>
+<Object name="" model=6 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>-1.95679,-3.47103,0.640189</translate>
+   <scale>0.865739,0.865739,0.865739</scale>
+   <rotate>0.0673027,0.987274,0.144092,-0.959558,0.0244818,0.280448,0.273351,-0.157139,0.948993</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="sunStone3" model=8 isStatic=1 isPhysic=1 isVisible=1 >
-   <translate>2.38182,1.25184,-0.0766937</translate>
-   <scale>0.738974,0.738974,0.738974</scale>
-   <rotate>-0.893782,-0.448503,0,0.448503,-0.893782,0,0,0,1</rotate>
+<Object name="" model=6 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>-1.4049,6.81372,0.466837</translate>
+   <scale>0.865739,0.865739,0.865739</scale>
+   <rotate>0.164951,-0.986301,0,0.986301,0.164951,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="sunStone2" model=8 isStatic=1 isPhysic=1 isVisible=1 >
-   <translate>-2.37281,1.25184,-0.0695325</translate>
-   <scale>0.73911,0.73911,0.73911</scale>
-   <rotate>0.987063,-0.160092,-0.00899363,0.160047,0.987096,-0.00540837,0.00974338,0.00389897,0.999945</rotate>
+<Object name="" model=6 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0.666677,-0.250008,-0.0483763</translate>
+   <scale>0.865739,0.865739,0.865739</scale>
+   <rotate>0.378085,0.92577,0,-0.92577,0.378085,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=5 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>12.5078,-6.13303,3.7981</translate>
    <scale>1,1,1</scale>
    <rotate>0.219219,-0.921796,-0.31974,0.975362,0.215368,0.0478289,0.024773,-0.322347,0.946298</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="sunStone2" model=9 isStatic=1 isPhysic=1 isVisible=1 >
-   <translate>1.44769,5.60431,-0.0695325</translate>
-   <scale>0.73911,0.73911,0.73911</scale>
-   <rotate>-0.747303,0.664479,-0.00280264,-0.664469,-0.747249,0.0101134,0.00462587,0.00942002,0.999945</rotate>
+<Object name="" model=6 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>-3.53703,0.55,0.131767</translate>
+   <scale>0.865739,0.865739,0.865739</scale>
+   <rotate>0.504382,0.761833,0.406461,-0.840294,0.541408,0.0279663,-0.198755,-0.355652,0.913241</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="sunStone2" model=9 isStatic=1 isPhysic=1 isVisible=1 >
-   <translate>1.44547,-1.11971,-0.0695325</translate>
-   <scale>0.73911,0.73911,0.73911</scale>
-   <rotate>-0.561486,-0.827485,-0.00280264,0.827429,-0.561484,0.0101134,-0.00994229,0.00335954,0.999945</rotate>
+<Object name="" model=6 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0.345538,5.60923,0.113332</translate>
+   <scale>0.694938,0.694938,0.694938</scale>
+   <rotate>-0.996403,-0.0845332,-0.00598453,0.084536,-0.996421,-0.000267148,-0.00594052,-0.000772097,0.999982</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=6 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=5 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>6.34787,-8.66051,2.32702</translate>
    <scale>0.724226,0.724226,0.724226</scale>
    <rotate>0.9157,-0.310042,-0.255675,0.372295,0.894019,0.249249,0.151301,-0.323424,0.93408</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=5 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>8.73172,1.17778,1.29476</translate>
    <scale>1,1,1</scale>
    <rotate>-0.295483,0.932643,-0.207046,-0.953326,-0.301944,0.000412567,-0.0621314,0.197504,0.978331</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=5 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>5.17478,7.48544,0.442294</translate>
    <scale>1,1,1</scale>
    <rotate>0.0241286,-0.999709,0,0.999709,0.0241286,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=5 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>13.6027,1.05194,3.16982</translate>
    <scale>1,1,1</scale>
    <rotate>0.319752,0.924604,-0.207046,-0.945054,0.326917,0.000412567,0.0680681,0.195537,0.978331</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=10 isStatic=0 isPhysic=1 isVisible=1 >
+<Object name="" model=7 isStatic=0 isPhysic=1 isVisible=1 >
    <translate>-0.637095,5.54624,1.1558</translate>
    <scale>0.869189,0.869189,0.869189</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=1 mass=0.2 restitution=0.5 friction=0.5 rollingFriction=0.2/>
 </Object>
-<Object name="" model=11 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=8 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>-0.914393,5.56042,-0.0749659</translate>
    <scale>1.44561,1.44561,1.44561</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=10 isStatic=0 isPhysic=1 isVisible=1 >
+<Object name="" model=7 isStatic=0 isPhysic=1 isVisible=1 >
    <translate>-1.1902,5.54624,1.1558</translate>
    <scale>0.869189,0.869189,0.869189</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=1 mass=0.2 restitution=0.5 friction=0.5 rollingFriction=0.2/>
 </Object>
-<Object name="" model=10 isStatic=0 isPhysic=1 isVisible=1 >
+<Object name="" model=7 isStatic=0 isPhysic=1 isVisible=1 >
    <translate>-0.940254,5.54624,2.10397</translate>
    <scale>0.869189,0.869189,0.869</scale>
    <rotate>-0.00033562,0,-0.999998,0,1,0,0.999998,0,-0.00033562</rotate>
    <collider type=1 mass=0.2 restitution=0.5 friction=0.5 rollingFriction=0.2/>
 </Object>
-<Object name="" model=10 isStatic=0 isPhysic=1 isVisible=1 >
+<Object name="" model=7 isStatic=0 isPhysic=1 isVisible=1 >
    <translate>-0.637095,5.54624,3.05184</translate>
    <scale>0.869189,0.869189,0.869189</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=1 mass=0.2 restitution=0.5 friction=0.5 rollingFriction=0.2/>
 </Object>
-<Object name="" model=10 isStatic=0 isPhysic=1 isVisible=1 >
+<Object name="" model=7 isStatic=0 isPhysic=1 isVisible=1 >
    <translate>-1.1902,5.54624,3.05184</translate>
    <scale>0.869189,0.869189,0.869189</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=1 mass=0.2 restitution=0.5 friction=0.5 rollingFriction=0.2/>
 </Object>
-<Object name="" model=10 isStatic=0 isPhysic=1 isVisible=1 >
+<Object name="" model=7 isStatic=0 isPhysic=1 isVisible=1 >
    <translate>-0.940254,5.54624,3.99985</translate>
    <scale>0.869189,0.869189,0.869</scale>
    <rotate>-0.00033562,0,-0.999998,0,1,0,0.999998,0,-0.00033562</rotate>
    <collider type=1 mass=0.2 restitution=0.5 friction=0.5 rollingFriction=0.2/>
 </Object>
-<Object name="" model=11 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=8 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>-0.868777,-1.31624,-0.0749659</translate>
    <scale>1.44561,1.44561,1.44561</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=10 isStatic=0 isPhysic=1 isVisible=1 >
+<Object name="" model=7 isStatic=0 isPhysic=1 isVisible=1 >
    <translate>-0.59148,-1.33042,1.1558</translate>
    <scale>0.869189,0.869189,0.869189</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=1 mass=0.2 restitution=0.5 friction=0.5 rollingFriction=0.2/>
 </Object>
-<Object name="" model=10 isStatic=0 isPhysic=1 isVisible=1 >
+<Object name="" model=7 isStatic=0 isPhysic=1 isVisible=1 >
    <translate>-0.894638,-1.33042,2.10397</translate>
    <scale>0.869189,0.869189,0.869</scale>
    <rotate>-0.00033562,0,-0.999998,0,1,0,0.999998,0,-0.00033562</rotate>
    <collider type=1 mass=0.2 restitution=0.5 friction=0.5 rollingFriction=0.2/>
 </Object>
-<Object name="" model=10 isStatic=0 isPhysic=1 isVisible=1 >
+<Object name="" model=7 isStatic=0 isPhysic=1 isVisible=1 >
    <translate>-1.14459,-1.33042,1.1558</translate>
    <scale>0.869189,0.869189,0.869189</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=1 mass=0.2 restitution=0.5 friction=0.5 rollingFriction=0.2/>
 </Object>
-<Object name="" model=10 isStatic=0 isPhysic=1 isVisible=1 >
+<Object name="" model=7 isStatic=0 isPhysic=1 isVisible=1 >
    <translate>-1.14459,-1.33042,3.05184</translate>
    <scale>0.869189,0.869189,0.869189</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=1 mass=0.2 restitution=0.5 friction=0.5 rollingFriction=0.2/>
 </Object>
-<Object name="" model=10 isStatic=0 isPhysic=1 isVisible=1 >
+<Object name="" model=7 isStatic=0 isPhysic=1 isVisible=1 >
    <translate>-0.59148,-1.33042,3.05184</translate>
    <scale>0.869189,0.869189,0.869189</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=1 mass=0.2 restitution=0.5 friction=0.5 rollingFriction=0.2/>
 </Object>
-<Object name="" model=10 isStatic=0 isPhysic=1 isVisible=1 >
+<Object name="" model=7 isStatic=0 isPhysic=1 isVisible=1 >
    <translate>-0.894638,-1.33042,3.99985</translate>
    <scale>0.869189,0.869189,0.869</scale>
    <rotate>-0.00033562,0,-0.999998,0,1,0,0.999998,0,-0.00033562</rotate>
    <collider type=1 mass=0.2 restitution=0.5 friction=0.5 rollingFriction=0.2/>
+</Object>
+<Object name="" model=9 isStatic=1 isPhysic=1 isVisible=1 >
+   <translate>0.0123663,4.17846,0.863077</translate>
+   <scale>0.207136,0.192415,0.146881</scale>
+   <rotate>-1.82376e-06,0.000602802,0.999998,-0.999994,-0.00302397,0,0.00302397,-0.999993,0.000602944</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=8 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>-0.263177,3.8554,0.267965</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.5 restitution=0.7 friction=0.7 rollingFriction=0/>
+</Object>
+<Object name="" model=8 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>0.23848,3.8554,0.267965</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.5 restitution=0.7 friction=0.7 rollingFriction=0/>
+</Object>
+<Object name="" model=8 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>0.23848,3.8554,0.768593</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.5 restitution=0.7 friction=0.7 rollingFriction=0/>
+</Object>
+<Object name="" model=8 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>-0.263177,3.8554,0.768593</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.5 restitution=0.7 friction=0.7 rollingFriction=0/>
+</Object>
+<Object name="" model=8 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>-0.0177031,3.8554,1.26934</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.5 restitution=0.7 friction=0.7 rollingFriction=0/>
+</Object>
+<Object name="" model=8 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>1.46604,3.08141,0.267965</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.5 restitution=0.7 friction=0.7 rollingFriction=0/>
+</Object>
+<Object name="" model=8 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>-0.625493,1.9829,0.267965</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.5 restitution=0.7 friction=0.7 rollingFriction=0/>
+</Object>
+<Object name="" model=8 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>-0.802621,3.8554,0.267965</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.5 restitution=0.7 friction=0.7 rollingFriction=0/>
+</Object>
+<Object name="" model=8 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>0.759207,3.8554,0.267965</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.5 restitution=0.7 friction=0.7 rollingFriction=0/>
+</Object>
+<Object name="" model=8 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>-0.263177,3.3487,0.267965</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.5 restitution=0.7 friction=0.7 rollingFriction=0/>
+</Object>
+<Object name="" model=8 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>0.23848,3.3487,0.267965</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.5 restitution=0.7 friction=0.7 rollingFriction=0/>
+</Object>
+<Object name="" model=8 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>-0.0238143,3.3487,0.770916</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.5 restitution=0.7 friction=0.7 rollingFriction=0/>
+</Object>
+<Object name="" model=8 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>-0.217168,1.01338,0.267965</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.5 restitution=0.7 friction=0.7 rollingFriction=0/>
+</Object>
+<Object name="" model=8 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>-0.726183,1.01338,0.267965</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.5 restitution=0.7 friction=0.7 rollingFriction=0/>
+</Object>
+<Object name="" model=8 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>-1.23265,1.01338,0.267965</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.5 restitution=0.7 friction=0.7 rollingFriction=0/>
+</Object>
+<Object name="" model=8 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>-0.944333,1.01338,0.77065</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.5 restitution=0.7 friction=0.7 rollingFriction=0/>
+</Object>
+<Object name="" model=8 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>-0.44062,1.01338,0.77065</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=1 mass=0.5 restitution=0.7 friction=0.7 rollingFriction=0/>
+</Object>
+<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
+   <translate>-5.78723,11.4127,2.2915</translate>
+   <scale>0.954955,0.954955,0.954955</scale>
+   <rotate>0.120172,-0.982265,0.143924,0.960293,0.0782456,-0.267799,0.251788,0.170391,0.952664</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
+   <translate>-12.1778,3.49511,2.73711</translate>
+   <scale>0.778875,0.778875,0.778875</scale>
+   <rotate>0.275184,0.955094,0.10986,-0.961208,0.275569,0.0119609,-0.0188501,-0.108889,0.993875</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
+   <translate>-2.1369,-6.58954,1.32357</translate>
+   <scale>0.846778,0.846778,0.846778</scale>
+   <rotate>0.994044,-0.0623054,-0.089412,0.076645,0.982948,0.167153,0.0774728,-0.173011,0.981869</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
+   <translate>4.6529,4.57134,0.259517</translate>
+   <scale>0.719103,0.719103,0.719103</scale>
+   <rotate>0.985798,-0.0564669,-0.158158,0.0557948,0.998404,-0.00869028,0.158396,-0.000257516,0.987376</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
+   <translate>0.215473,10.0045,1.08427</translate>
+   <scale>0.767613,0.767613,0.767613</scale>
+   <rotate>0.996427,-0.0838887,0.0097355,0.0844026,0.98528,-0.148663,0.00287895,0.148954,0.98884</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=5 isStatic=1 isPhysic=1 isVisible=1 >
+   <translate>-11.2138,-4.91028,2.77603</translate>
+   <scale>0.547273,0.547273,0.547273</scale>
+   <rotate>0.7323,0.596666,0.32822,-0.680963,0.645431,0.345993,-0.00540072,-0.476876,0.878954</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=0 isStatic=1 isPhysic=1 isVisible=1 >
+   <translate>-0.0970715,-11.2445,2.93149</translate>
+   <scale>0.889753,0.889753,0.889753</scale>
+   <rotate>-0.393969,0.91403,-0.0966132,-0.891119,-0.354101,0.283759,0.225154,0.197887,0.954014</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=10 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,2,1.07858</translate>
+   <scale>1,1,1</scale>
+   <rotate>-7.27913e-05,0.999996,0,-0.999996,-7.27913e-05,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=6 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>3.28706,-1.28762,0.0944478</translate>
+   <scale>0.865739,0.865739,0.865739</scale>
+   <rotate>-0.630782,0.77596,0,-0.77596,-0.630782,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=6 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>3.37665,2.54551,0.0424968</translate>
+   <scale>0.865739,0.865739,0.865739</scale>
+   <rotate>-0.313493,-0.949591,0,0.949591,-0.313493,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=6 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>3.26706,4.99138,0.0377629</translate>
+   <scale>0.865739,0.865739,0.865739</scale>
+   <rotate>0.680195,-0.732908,0.0134128,0.73299,0.680236,-0.00193284,-0.0077073,0.0111462,0.999908</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=6 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0.418588,7.58799,0.648239</translate>
+   <scale>0.865739,0.865739,0.865739</scale>
+   <rotate>0.999129,-0.0410183,-0.00753708,0.0370958,0.956661,-0.288831,0.0190577,0.288301,0.95735</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="ground" model=11 isStatic=1 isPhysic=1 isVisible=1 >
+   <translate>0,2,0</translate>
+   <scale>1,1,1.5</scale>
+   <rotate>-7.27913e-05,0.999996,0,-0.999996,-7.27913e-05,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
 <Object name="portalForest2Out_Forest3In" model=12 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>0.131042,1.96072,0</translate>
@@ -824,237 +1452,243 @@
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=13 isStatic=1 isPhysic=1 isVisible=1 >
-   <translate>0.0123663,4.17846,0.863077</translate>
-   <scale>0.207136,0.192415,0.146881</scale>
-   <rotate>-1.82376e-06,0.000602802,0.999998,-0.999994,-0.00302397,0,0.00302397,-0.999993,0.000602944</rotate>
+<Object name="portalForest2_Forest1" model=13 isStatic=1 isPhysic=1 isVisible=1 >
+   <translate>0.999996,1.95874,0</translate>
+   <scale>0.82,1,0.8</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="sunStone1" model=14 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="smallPlant_0" model=14 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>1.04004,1.78679,0.00832057</translate>
+   <scale>0.0574713,0.0574713,0.0574713</scale>
+   <rotate>-0.401656,0.91579,0,-0.91579,-0.401656,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="smallPlant_1" model=15 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0.610141,2.28682,0.00832057</translate>
+   <scale>0.0796906,0.0796906,0.0796906</scale>
+   <rotate>-0.38603,-0.922486,0,0.922486,-0.38603,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="smallPlant_10" model=16 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0.823291,2.33246,0.0104817</translate>
+   <scale>0.0592262,0.0592262,0.0592262</scale>
+   <rotate>0.59872,0.800958,0,-0.800958,0.59872,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="smallPlant_11" model=17 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0.584015,1.74985,0.00832057</translate>
+   <scale>0.0628645,0.0628645,0.0628645</scale>
+   <rotate>-0.999295,-0.0375327,0,0.0375327,-0.999295,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="smallPlant_12" model=6 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0.694907,1.98751,0.00832057</translate>
+   <scale>0.0570485,0.0570485,0.0570485</scale>
+   <rotate>-0.112858,-0.993611,0,0.993611,-0.112858,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="smallPlant_13" model=6 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0.786381,2.49218,0.00832057</translate>
+   <scale>0.0630027,0.0630027,0.0630027</scale>
+   <rotate>-0.747304,0.664482,0,-0.664482,-0.747304,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="smallPlant_14" model=6 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>1.07321,2.39473,0.00832057</translate>
+   <scale>0.0544697,0.0544697,0.0544697</scale>
+   <rotate>-0.855801,-0.517305,0,0.517305,-0.855801,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="smallPlant_15" model=6 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0.940729,2.20132,0.00832057</translate>
+   <scale>0.0763602,0.0763602,0.0763602</scale>
+   <rotate>0.991301,0.131614,0,-0.131614,0.991301,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="smallPlant_16" model=18 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0.716321,1.62192,0.00832057</translate>
+   <scale>0.0517415,0.0517415,0.0517415</scale>
+   <rotate>-0.0655414,0.99785,0,-0.99785,-0.0655414,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="smallPlant_17" model=6 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>1.12266,2.28441,0.00832057</translate>
+   <scale>0.0655843,0.0655843,0.0655843</scale>
+   <rotate>0.918743,-0.394857,0,0.394857,0.918743,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="smallPlant_18" model=16 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0.574815,1.64596,0.00832057</translate>
+   <scale>0.0558538,0.0558538,0.0558538</scale>
+   <rotate>0.296078,0.955164,0,-0.955164,0.296078,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="smallPlant_19" model=19 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0.861382,1.6353,0.00546297</translate>
+   <scale>0.0779066,0.0779066,0.0779066</scale>
+   <rotate>-0.991481,0.130254,0,-0.130254,-0.991481,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="smallPlant_2" model=6 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>1.12437,2.49855,0.00156424</translate>
+   <scale>0.063226,0.063226,0.063226</scale>
+   <rotate>0.852502,-0.522725,0,0.522725,0.852502,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="smallPlant_20" model=16 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0.726123,1.50237,0.00832057</translate>
+   <scale>0.0541613,0.0541613,0.0541613</scale>
+   <rotate>0.246331,0.969186,0,-0.969186,0.246331,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="smallPlant_20" model=20 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0.847255,1.40161,-0.00123778</translate>
+   <scale>0.0779066,0.0779066,0.0779066</scale>
+   <rotate>0.994722,-0.102615,0,0.102615,0.994722,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="smallPlant_21" model=6 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>1.06416,1.63589,0.00832057</translate>
+   <scale>0.0537466,0.0537466,0.0537466</scale>
+   <rotate>-0.903757,-0.428045,0,0.428045,-0.903757,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="smallPlant_22" model=6 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>1.24106,1.62369,0.00832057</translate>
+   <scale>0.0501762,0.0501762,0.0501762</scale>
+   <rotate>0.992339,-0.123546,0,0.123546,0.992339,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="smallPlant_23" model=21 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0.964475,1.45875,0.00832057</translate>
+   <scale>0.0772547,0.0772547,0.0772547</scale>
+   <rotate>-0.318896,0.94779,0,-0.94779,-0.318896,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="smallPlant_23" model=31 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>1.19859,1.74371,0.0235009</translate>
+   <scale>0.0501762,0.0501762,0.0501762</scale>
+   <rotate>0.0296411,0.989733,0.139849,-0.995733,0.0414677,-0.0824387,-0.0873906,-0.136809,0.986736</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="smallPlant_24" model=22 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>1.12207,1.55907,0.0126282</translate>
+   <scale>0.0654196,0.0654196,0.0654196</scale>
+   <rotate>0.985441,-0.17002,0,0.17002,0.985441,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="smallPlant_25" model=6 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0.650071,1.95355,0.00832057</translate>
+   <scale>0.0690724,0.0690724,0.0690724</scale>
+   <rotate>0.992906,-0.1189,0,0.1189,0.992906,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="smallPlant_26" model=6 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>1.35183,2.22772,0.00832057</translate>
+   <scale>0.0603741,0.0603741,0.0603741</scale>
+   <rotate>0.563411,0.826177,0,-0.826177,0.563411,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="smallPlant_27" model=23 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>1.18142,2.16285,0.00832057</translate>
+   <scale>0.0566533,0.0566533,0.0566533</scale>
+   <rotate>0.475832,0.879536,0,-0.879536,0.475832,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="smallPlant_28" model=16 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0.830434,1.78221,0.00522762</translate>
+   <scale>0.0569823,0.0569823,0.0569823</scale>
+   <rotate>-0.571843,0.820363,0,-0.820363,-0.571843,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="smallPlant_29" model=16 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>1.28466,2.48804,0.00288013</translate>
+   <scale>0.0732602,0.0732602,0.0732602</scale>
+   <rotate>-0.880347,0.474329,0,-0.474329,-0.880347,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="smallPlant_3" model=24 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0.947412,2.41399,0.0139247</translate>
+   <scale>0.0568835,0.0568835,0.0568835</scale>
+   <rotate>-0.960301,-0.278968,0,0.278968,-0.960301,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="smallPlant_4" model=25 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>1.09703,1.42073,0.0119766</translate>
+   <scale>0.0627905,0.0627905,0.0627905</scale>
+   <rotate>0.197686,0.980265,0,-0.980265,0.197686,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="smallPlant_5" model=26 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>1.2044,2.34251,0.00662243</translate>
+   <scale>0.0772985,0.0772985,0.0772985</scale>
+   <rotate>0.671065,0.741399,0,-0.741399,0.671065,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="smallPlant_6" model=27 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0.951056,2.61301,0.0025676</translate>
+   <scale>0.0740632,0.0740632,0.0740632</scale>
+   <rotate>0.58596,-0.81034,0,0.81034,0.58596,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="smallPlant_7" model=6 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0.565974,1.92358,0.00832057</translate>
+   <scale>0.0654109,0.0654109,0.0654109</scale>
+   <rotate>-0.694702,0.719298,0,-0.719298,-0.694702,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="smallPlant_8" model=6 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0.724611,2.17372,0.0126909</translate>
+   <scale>0.0514296,0.0514296,0.0514296</scale>
+   <rotate>0.06746,-0.997722,0,0.997722,0.06746,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="smallPlant_9" model=6 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0.604777,1.90096,0.00832057</translate>
+   <scale>0.063718,0.063718,0.063718</scale>
+   <rotate>-0.0779279,-0.996959,0,0.996959,-0.0779279,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="sunStone1" model=28 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>-0.362455,1.96036,0.9</translate>
    <scale>0.780685,0.780685,0.780685</scale>
    <rotate>-0.000127049,0,1,1,0.000351974,0.000127053,-0.000352098,1,-4.47196e-08</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=11 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>-0.263177,3.8554,0.267965</translate>
-   <scale>1,1,1</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.5 restitution=0.7 friction=0.7 rollingFriction=0/>
-</Object>
-<Object name="" model=11 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>0.23848,3.8554,0.267965</translate>
-   <scale>1,1,1</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.5 restitution=0.7 friction=0.7 rollingFriction=0/>
-</Object>
-<Object name="" model=11 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>0.23848,3.8554,0.768593</translate>
-   <scale>1,1,1</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.5 restitution=0.7 friction=0.7 rollingFriction=0/>
-</Object>
-<Object name="" model=11 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>-0.263177,3.8554,0.768593</translate>
-   <scale>1,1,1</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.5 restitution=0.7 friction=0.7 rollingFriction=0/>
-</Object>
-<Object name="" model=11 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>-0.0177031,3.8554,1.26934</translate>
-   <scale>1,1,1</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.5 restitution=0.7 friction=0.7 rollingFriction=0/>
-</Object>
-<Object name="" model=11 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>1.46604,3.08141,0.267965</translate>
-   <scale>1,1,1</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.5 restitution=0.7 friction=0.7 rollingFriction=0/>
-</Object>
-<Object name="" model=11 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>-0.625493,1.9829,0.267965</translate>
-   <scale>1,1,1</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.5 restitution=0.7 friction=0.7 rollingFriction=0/>
-</Object>
-<Object name="" model=11 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>-0.802621,3.8554,0.267965</translate>
-   <scale>1,1,1</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.5 restitution=0.7 friction=0.7 rollingFriction=0/>
-</Object>
-<Object name="" model=11 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>0.759207,3.8554,0.267965</translate>
-   <scale>1,1,1</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.5 restitution=0.7 friction=0.7 rollingFriction=0/>
-</Object>
-<Object name="" model=11 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>-0.263177,3.3487,0.267965</translate>
-   <scale>1,1,1</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.5 restitution=0.7 friction=0.7 rollingFriction=0/>
-</Object>
-<Object name="" model=11 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>0.23848,3.3487,0.267965</translate>
-   <scale>1,1,1</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.5 restitution=0.7 friction=0.7 rollingFriction=0/>
-</Object>
-<Object name="" model=11 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>-0.0238143,3.3487,0.770916</translate>
-   <scale>1,1,1</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.5 restitution=0.7 friction=0.7 rollingFriction=0/>
-</Object>
-<Object name="" model=11 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>-0.217168,1.01338,0.267965</translate>
-   <scale>1,1,1</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.5 restitution=0.7 friction=0.7 rollingFriction=0/>
-</Object>
-<Object name="" model=11 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>-0.726183,1.01338,0.267965</translate>
-   <scale>1,1,1</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.5 restitution=0.7 friction=0.7 rollingFriction=0/>
-</Object>
-<Object name="" model=11 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>-1.23265,1.01338,0.267965</translate>
-   <scale>1,1,1</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.5 restitution=0.7 friction=0.7 rollingFriction=0/>
-</Object>
-<Object name="" model=11 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>-0.944333,1.01338,0.77065</translate>
-   <scale>1,1,1</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.5 restitution=0.7 friction=0.7 rollingFriction=0/>
-</Object>
-<Object name="" model=11 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>-0.44062,1.01338,0.77065</translate>
-   <scale>1,1,1</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=1 mass=0.5 restitution=0.7 friction=0.7 rollingFriction=0/>
-</Object>
-<Object name="" model=5 isStatic=1 isPhysic=1 isVisible=1 >
-   <translate>-5.78723,11.4127,2.2915</translate>
-   <scale>0.954955,0.954955,0.954955</scale>
-   <rotate>0.120172,-0.982265,0.143924,0.960293,0.0782456,-0.267799,0.251788,0.170391,0.952664</rotate>
+<Object name="sunStone2" model=29 isStatic=1 isPhysic=1 isVisible=1 >
+   <translate>-2.37281,3.4642,-0.0695325</translate>
+   <scale>0.73911,0.73911,0.73911</scale>
+   <rotate>0.987063,-0.160092,-0.00899363,0.160047,0.987096,-0.00540837,0.00974338,0.00389897,0.999945</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=5 isStatic=1 isPhysic=1 isVisible=1 >
-   <translate>-12.1778,3.49511,2.73711</translate>
-   <scale>0.778875,0.778875,0.778875</scale>
-   <rotate>0.275184,0.955094,0.10986,-0.961208,0.275569,0.0119609,-0.0188501,-0.108889,0.993875</rotate>
+<Object name="sunStone2" model=30 isStatic=1 isPhysic=1 isVisible=1 >
+   <translate>1.44769,5.60431,-0.0695325</translate>
+   <scale>0.73911,0.73911,0.73911</scale>
+   <rotate>-0.747303,0.664479,-0.00280264,-0.664469,-0.747249,0.0101134,0.00462587,0.00942002,0.999945</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=5 isStatic=1 isPhysic=1 isVisible=1 >
-   <translate>-2.1369,-6.58954,1.32357</translate>
-   <scale>0.846778,0.846778,0.846778</scale>
-   <rotate>0.994044,-0.0623054,-0.089412,0.076645,0.982948,0.167153,0.0774728,-0.173011,0.981869</rotate>
+<Object name="sunStone2" model=30 isStatic=1 isPhysic=1 isVisible=1 >
+   <translate>1.44547,-1.11971,-0.0695325</translate>
+   <scale>0.73911,0.73911,0.73911</scale>
+   <rotate>-0.561486,-0.827485,-0.00280264,0.827429,-0.561484,0.0101134,-0.00994229,0.00335954,0.999945</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=5 isStatic=1 isPhysic=1 isVisible=1 >
-   <translate>4.6529,4.57134,0.259517</translate>
-   <scale>0.719103,0.719103,0.719103</scale>
-   <rotate>0.985798,-0.0564669,-0.158158,0.0557948,0.998404,-0.00869028,0.158396,-0.000257516,0.987376</rotate>
+<Object name="sunStone2" model=29 isStatic=1 isPhysic=1 isVisible=1 >
+   <translate>-2.37281,1.25184,-0.0695325</translate>
+   <scale>0.73911,0.73911,0.73911</scale>
+   <rotate>0.987063,-0.160092,-0.00899363,0.160047,0.987096,-0.00540837,0.00974338,0.00389897,0.999945</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=5 isStatic=1 isPhysic=1 isVisible=1 >
-   <translate>0.215473,10.0045,1.08427</translate>
-   <scale>0.767613,0.767613,0.767613</scale>
-   <rotate>0.996427,-0.0838887,0.0097355,0.0844026,0.98528,-0.148663,0.00287895,0.148954,0.98884</rotate>
+<Object name="sunStone3" model=29 isStatic=1 isPhysic=1 isVisible=1 >
+   <translate>2.38182,1.25184,-0.0766937</translate>
+   <scale>0.738974,0.738974,0.738974</scale>
+   <rotate>-0.893782,-0.448503,0,0.448503,-0.893782,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=6 isStatic=1 isPhysic=1 isVisible=1 >
-   <translate>-11.2138,-4.91028,2.77603</translate>
-   <scale>0.547273,0.547273,0.547273</scale>
-   <rotate>0.7323,0.596666,0.32822,-0.680963,0.645431,0.345993,-0.00540072,-0.476876,0.878954</rotate>
-   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
-</Object>
-<Object name="" model=4 isStatic=1 isPhysic=1 isVisible=1 >
-   <translate>-0.0970715,-11.2445,2.93149</translate>
-   <scale>0.889753,0.889753,0.889753</scale>
-   <rotate>-0.393969,0.91403,-0.0966132,-0.891119,-0.354101,0.283759,0.225154,0.197887,0.954014</rotate>
-   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
-</Object>
-<Object name="" model=15 isStatic=1 isPhysic=0 isVisible=1 >
-   <translate>0,2,1.07858</translate>
-   <scale>1,1,1</scale>
-   <rotate>-7.27913e-05,0.999996,0,-0.999996,-7.27913e-05,0,0,0,1</rotate>
-   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
-</Object>
-<Object name="" model=16 isStatic=1 isPhysic=0 isVisible=1 >
-   <translate>3.28706,-1.28762,0.0944478</translate>
-   <scale>0.865739,0.865739,0.865739</scale>
-   <rotate>-0.630782,0.77596,0,-0.77596,-0.630782,0,0,0,1</rotate>
-   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
-</Object>
-<Object name="" model=16 isStatic=1 isPhysic=0 isVisible=1 >
-   <translate>3.37665,2.54551,0.0424968</translate>
-   <scale>0.865739,0.865739,0.865739</scale>
-   <rotate>-0.313493,-0.949591,0,0.949591,-0.313493,0,0,0,1</rotate>
-   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
-</Object>
-<Object name="" model=16 isStatic=1 isPhysic=0 isVisible=1 >
-   <translate>3.26706,4.99138,0.0377629</translate>
-   <scale>0.865739,0.865739,0.865739</scale>
-   <rotate>0.680195,-0.732908,0.0134128,0.73299,0.680236,-0.00193284,-0.0077073,0.0111462,0.999908</rotate>
-   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
-</Object>
-<Object name="" model=16 isStatic=1 isPhysic=0 isVisible=1 >
-   <translate>0.418588,7.58799,0.648239</translate>
-   <scale>0.865739,0.865739,0.865739</scale>
-   <rotate>0.999129,-0.0410183,-0.00753708,0.0370958,0.956661,-0.288831,0.0190577,0.288301,0.95735</rotate>
-   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
-</Object>
-<Object name="" model=16 isStatic=1 isPhysic=0 isVisible=1 >
-   <translate>-2.39212,5.29321,-0.0484045</translate>
-   <scale>0.865739,0.865739,0.865739</scale>
-   <rotate>0.889988,-0.455396,-0.0231429,0.455534,0.890218,0.000743122,0.0202638,-0.0112037,0.999732</rotate>
-   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
-</Object>
-<Object name="" model=16 isStatic=1 isPhysic=0 isVisible=1 >
-   <translate>-3.9447,3.57501,0.201883</translate>
-   <scale>0.865739,0.865739,0.865739</scale>
-   <rotate>-0.997541,0.0700866,0,-0.0700866,-0.997541,0,0,0,1</rotate>
-   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
-</Object>
-<Object name="" model=16 isStatic=1 isPhysic=0 isVisible=1 >
-   <translate>-2.65796,-1.12079,-0.0289119</translate>
-   <scale>0.865739,0.865739,0.865739</scale>
-   <rotate>0.985247,0.166309,0.040366,-0.167468,0.985501,0.0272458,-0.0352494,-0.0336041,0.998813</rotate>
-   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
-</Object>
-<Object name="" model=16 isStatic=1 isPhysic=0 isVisible=1 >
-   <translate>-1.95679,-3.47103,0.640189</translate>
-   <scale>0.865739,0.865739,0.865739</scale>
-   <rotate>0.0673027,0.987274,0.144092,-0.959558,0.0244818,0.280448,0.273351,-0.157139,0.948993</rotate>
-   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
-</Object>
-<Object name="" model=16 isStatic=1 isPhysic=0 isVisible=1 >
-   <translate>-1.4049,6.81372,0.466837</translate>
-   <scale>0.865739,0.865739,0.865739</scale>
-   <rotate>0.164951,-0.986301,0,0.986301,0.164951,0,0,0,1</rotate>
-   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
-</Object>
-<Object name="" model=16 isStatic=1 isPhysic=0 isVisible=1 >
-   <translate>0.666677,-0.250008,-0.0483763</translate>
-   <scale>0.865739,0.865739,0.865739</scale>
-   <rotate>0.378085,0.92577,0,-0.92577,0.378085,0,0,0,1</rotate>
-   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
-</Object>
-<Object name="" model=16 isStatic=1 isPhysic=0 isVisible=1 >
-   <translate>-3.53703,0.55,0.131767</translate>
-   <scale>0.865739,0.865739,0.865739</scale>
-   <rotate>0.504382,0.761833,0.406461,-0.840294,0.541408,0.0279663,-0.198755,-0.355652,0.913241</rotate>
-   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
-</Object>
-<Object name="" model=16 isStatic=1 isPhysic=0 isVisible=1 >
-   <translate>0.345538,5.60923,0.113332</translate>
-   <scale>0.694938,0.694938,0.694938</scale>
-   <rotate>-0.996403,-0.0845332,-0.00598453,0.084536,-0.996421,-0.000267148,-0.00594052,-0.000772097,0.999982</rotate>
+<Object name="sunStone3" model=29 isStatic=1 isPhysic=1 isVisible=1 >
+   <translate>2.38182,3.4642,-0.0766937</translate>
+   <scale>0.738974,0.738974,0.738974</scale>
+   <rotate>-0.767679,0.640836,0,-0.640836,-0.767678,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
