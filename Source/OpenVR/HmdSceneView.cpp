@@ -22,13 +22,22 @@ void HmdSceneView::addOffset(const mat4& o)
     _offset = o * _offset;
 }
 
-mat4 HmdSceneView::scaleTransform(const mat4& v) const
+mat4 HmdSceneView::applyTransformOnHmdMatrix(const mat4& v) const
 {
     mat4 res = v.inverted();
     vec3 tr = res.translation();
-    res.setTranslation(vec3(0,0,0));
+    res.setTranslation(vec3(0,0, -_zShift));
     res.invert();
     return res * mat4::Translation(-tr*_scaleRoom);
+}
+
+mat4 HmdSceneView::applyTransformOnControllerMatrix(const mat4& v) const
+{
+    mat4 res = v.inverted();
+    vec3 tr = res.translation();
+    res.setTranslation(vec3(0, 0, 0));
+    res.invert();
+    return mat4::Translation(vec3(0.f, 0.f, -_zShift)) * res * mat4::Translation(-tr * _scaleRoom);
 }
 
 void HmdSceneView::update(const VR_DeviceInterface& hmdDevice)
@@ -40,12 +49,12 @@ void HmdSceneView::update(const VR_DeviceInterface& hmdDevice)
     _eyeView[VR_DeviceInterface::RIGHT].camera.useRawMat = true;
 
     mat4 inv_o = _offset.inverted();
-    _transform = scaleTransform(hmdDevice.camera().hmdView()) * inv_o;
+    _transform = applyTransformOnHmdMatrix(hmdDevice.camera().hmdView()) * inv_o;
 
     _eyeView[VR_DeviceInterface::LEFT].camera.raw_proj = hmdDevice.camera().eyeProjection(VR_DeviceInterface::LEFT);
-    _eyeView[VR_DeviceInterface::LEFT].camera.raw_view = scaleTransform(hmdDevice.camera().eyeView(VR_DeviceInterface::LEFT)) * inv_o;
+    _eyeView[VR_DeviceInterface::LEFT].camera.raw_view = applyTransformOnHmdMatrix(hmdDevice.camera().eyeView(VR_DeviceInterface::LEFT)) * inv_o;
     _eyeView[VR_DeviceInterface::RIGHT].camera.raw_proj = hmdDevice.camera().eyeProjection(VR_DeviceInterface::RIGHT);
-    _eyeView[VR_DeviceInterface::RIGHT].camera.raw_view = scaleTransform(hmdDevice.camera().eyeView(VR_DeviceInterface::RIGHT)) * inv_o;
+    _eyeView[VR_DeviceInterface::RIGHT].camera.raw_view = applyTransformOnHmdMatrix(hmdDevice.camera().eyeView(VR_DeviceInterface::RIGHT)) * inv_o;
 
     mat4 inv_l = _eyeView[VR_DeviceInterface::LEFT].camera.raw_view.inverted();
     mat4 inv_r = _eyeView[VR_DeviceInterface::RIGHT].camera.raw_view.inverted();
@@ -70,12 +79,12 @@ void HmdSceneView::update(const VRDebugCamera& cam, float ratio)
     _eyeView[VR_DeviceInterface::RIGHT].camera.useRawMat = true;
 
     mat4 inv_o = _offset.inverted();
-    _transform = scaleTransform(cam.viewMat()) * inv_o;
+    _transform = applyTransformOnHmdMatrix(cam.viewMat()) * inv_o;
 
     _eyeView[VR_DeviceInterface::LEFT].camera.raw_proj = mat4::Projection(110, ratio, 0.02, 300);
-    _eyeView[VR_DeviceInterface::LEFT].camera.raw_view = scaleTransform(cam.eyeView(VR_DeviceInterface::LEFT)) * inv_o;
+    _eyeView[VR_DeviceInterface::LEFT].camera.raw_view = applyTransformOnHmdMatrix(cam.eyeView(VR_DeviceInterface::LEFT)) * inv_o;
     _eyeView[VR_DeviceInterface::RIGHT].camera.raw_proj = _eyeView[VR_DeviceInterface::LEFT].camera.raw_proj;
-    _eyeView[VR_DeviceInterface::RIGHT].camera.raw_view = scaleTransform(cam.eyeView(VR_DeviceInterface::RIGHT)) * inv_o;
+    _eyeView[VR_DeviceInterface::RIGHT].camera.raw_view = applyTransformOnHmdMatrix(cam.eyeView(VR_DeviceInterface::RIGHT)) * inv_o;
 
     mat4 inv_l = _eyeView[VR_DeviceInterface::LEFT].camera.raw_view.inverted();
     mat4 inv_r = _eyeView[VR_DeviceInterface::RIGHT].camera.raw_view.inverted();

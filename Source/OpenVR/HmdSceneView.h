@@ -11,7 +11,7 @@ namespace tim {
     public:
         HmdSceneView(float fov, float ratio, float far=500);
 
-        void setScaleRoom(float s) { _scaleRoom = s; }
+        void setScaleAndShiftRoom(float scale, float zShift) { _scaleRoom = scale; _zShift = zShift; }
 
         interface::View& cullingView() { return _cullingView; }
         const interface::View& cullingView() const { return _cullingView; }
@@ -21,7 +21,8 @@ namespace tim {
 
         void addOffset(const mat4& o);
         const mat4& offset() const { return _offset; }
-        mat4 scaleTransform(const mat4&) const;
+        mat4 applyTransformOnHmdMatrix(const mat4&) const;
+        mat4 applyTransformOnControllerMatrix(const mat4&) const;
 
         void update(const VR_DeviceInterface& hmdDevice);
         void update(const VRDebugCamera& cam, float ratio);
@@ -38,6 +39,7 @@ namespace tim {
         interface::View _eyeView[2];
         float _renderFov = 110;
         float _scaleRoom = 1;
+        float _zShift = 0;
 
         mat4 _offset = mat4::IDENTITY();
         mat4 _offsetScale = mat4::IDENTITY();

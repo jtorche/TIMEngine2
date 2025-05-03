@@ -27,6 +27,10 @@ int main(int argc, char* argv[])
     float meters=3; std::cin >> meters; std::cin.clear();
     meters = std::min(std::max(2.f,meters), 3.f);
 
+    std::cout << "Enter the height shift (in meters) you want to apply :";
+    float zShift = 0; std::cin >> zShift; std::cin.clear();
+    zShift = std::min(std::max(0.f, zShift), 1.f);
+
     std::cout << "1. Tutorial\n2. Forest\n3. Maze\n4. Sacred Groove\n5. Ocean" << std::endl;
     std::cout <<std::endl<< "Enter the ID of the level you want to start in :";
     int indexLevel=1;
@@ -90,7 +94,7 @@ int main(int argc, char* argv[])
             hmdNode->setVRDevice(&hmdDevice);
 
             HmdSceneView hmdCamera(110, ratio, 500);
-            hmdCamera.setScaleRoom(3 / meters);
+            hmdCamera.setScaleAndShiftRoom(3 / meters, zShift);
 
             pipeline.setStereoView(hmdCamera.cullingView(), hmdCamera.eyeView(0), hmdCamera.eyeView(1), 0);
 
@@ -136,13 +140,13 @@ int main(int argc, char* argv[])
                 if(input.keyState(SDLK_x).firstPress)
                 {
                     scaleRoom -= 0.05;
-                    hmdCamera.setScaleRoom(scaleRoom);
+                    hmdCamera.setScaleAndShiftRoom(scaleRoom, zShift);
                     std::cout << "Scale room:" << scaleRoom << std::endl;
                 }
                 if(input.keyState(SDLK_y).firstPress)
                 {
                     scaleRoom += 0.05;
-                    hmdCamera.setScaleRoom(scaleRoom);
+                    hmdCamera.setScaleAndShiftRoom(scaleRoom, zShift);
                     std::cout << "Scale room:" << scaleRoom << std::endl;
                 }
 
@@ -190,16 +194,16 @@ int main(int argc, char* argv[])
 //                    std::cout << "STRENGTH_R:" << portalGame.controllers().STRENGTH_R << std::endl;
 //                }
 
-//                if(input.keyState(SDLK_p).firstPress)
-//                {
-//                    freqphys += 10;
-//                    std::cout << "PHYSIQUE_FREQ:" << freqphys << std::endl;
-//                }
-//                if(input.keyState(SDLK_o).firstPress)
-//                {
-//                    freqphys -= 10;
-//                    std::cout << "PHYSIQUE_FREQ:" << freqphys << std::endl;
-//                }
+                if(input.keyState(SDLK_p).firstPress)
+                {
+                    freqphys += 10;
+                    std::cout << "PHYSIQUE_FREQ:" << freqphys << std::endl;
+                }
+                if(input.keyState(SDLK_o).firstPress)
+                {
+                    freqphys -= 10;
+                    std::cout << "PHYSIQUE_FREQ:" << freqphys << std::endl;
+                }
 
                 if(input.keyState(SDLK_b).firstPress)
                 {
@@ -230,7 +234,7 @@ int main(int argc, char* argv[])
 
                 for (int i = 0; i < nbLevel; ++i)
                     if (physEngine.dynamicsWorld[i])
-                        physEngine.dynamicsWorld[i]->stepSimulation(std::min(timeElapsed, 1.f / 60), 20, 1 / freqphys);
+                        physEngine.dynamicsWorld[i]->stepSimulation(std::min(timeElapsed, 1.f / 60), 20, 1.0 / freqphys);
 
                 pipeline.pipeline()->prepare();
 #else

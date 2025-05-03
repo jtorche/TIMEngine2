@@ -96,8 +96,8 @@ void PortalGame::update(float time)
     {
         mat4 l = _vrDevice.isControllerConnected(VR_DeviceInterface::LEFT) ? _vrDevice.controllerPose(VR_DeviceInterface::LEFT) : _lastL;
         mat4 r = _vrDevice.isControllerConnected(VR_DeviceInterface::RIGHT) ? _vrDevice.controllerPose(VR_DeviceInterface::RIGHT) : _lastR;
-        l = _hmdCamera.scaleTransform(l);
-        r = _hmdCamera.scaleTransform(r);
+        l = _hmdCamera.applyTransformOnControllerMatrix(l);
+        r = _hmdCamera.applyTransformOnControllerMatrix(r);
 
         _vrControllers.update(_hmdCamera.offset(), l,r, time);
         _lastL = _hmdCamera.offset()*l;
@@ -111,8 +111,8 @@ void PortalGame::update(float time)
         mat4 r = l;
         r.translate({0,0,0.3});
 
-        l = _hmdCamera.scaleTransform(l);
-        r = _hmdCamera.scaleTransform(r);
+        l = _hmdCamera.applyTransformOnControllerMatrix(l);
+        r = _hmdCamera.applyTransformOnControllerMatrix(r);
 
         _vrControllers.update(_hmdCamera.offset(), l,r, time);
         _lastL = _hmdCamera.offset()*l;
