@@ -19,7 +19,6 @@
 		<emissive>0</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/groundForest.png</diffuseTex>
 	</Element>
 </MeshAsset>
@@ -33,7 +32,6 @@
 		<emissive>0</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>textureBank/bark.png</diffuseTex>
 		<normalTex>textureBank/bark_NORM.png</normalTex>
 	</Element>
@@ -46,7 +44,6 @@
 		<emissive>0</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>textureBank/leaf.png</diffuseTex>
 		<normalTex>textureBank/leaf_NORM.png</normalTex>
 		<Advanced>
@@ -74,7 +71,6 @@
 		<emissive>0</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>textureBank/bark.png</diffuseTex>
 		<normalTex>textureBank/bark_NORM.png</normalTex>
 	</Element>
@@ -87,7 +83,6 @@
 		<emissive>0</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>textureBank/leaf.png</diffuseTex>
 		<normalTex>textureBank/leaf_NORM.png</normalTex>
 		<Advanced>
@@ -115,7 +110,6 @@
 		<emissive>0</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>textureBank/bark.png</diffuseTex>
 		<normalTex>textureBank/bark_NORM.png</normalTex>
 	</Element>
@@ -128,7 +122,6 @@
 		<emissive>0</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>textureBank/leaf2.png</diffuseTex>
 		<normalTex>textureBank/leaf_NORM.png</normalTex>
 		<Advanced>
@@ -156,7 +149,6 @@
 		<emissive>0</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 	</Element>
 	<Element type=0>
 		<color>255,255,255</color>
@@ -167,7 +159,6 @@
 		<emissive>0</emissive>
 		<textureScale>1.6</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>textureBank/rock3.png</diffuseTex>
 		<normalTex>textureBank/rock3_NORM.png</normalTex>
 	</Element>
@@ -182,7 +173,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -211,7 +201,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -240,7 +229,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -269,7 +257,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -298,7 +285,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -327,7 +313,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -356,7 +341,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -385,7 +369,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -414,7 +397,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -443,7 +425,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -472,7 +453,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -501,7 +481,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -530,7 +509,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -559,7 +537,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -588,7 +565,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -607,7 +583,91 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove1_9" index=20 >
+<MeshAsset name="flower_grove2_11" index=20 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove2_11.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove2_10" index=21 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove2_10.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove2_1" index=22 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove2_1.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove1_9" index=23 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove1_9.tim</geometry>
@@ -617,7 +677,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -636,7 +695,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove1_8" index=21 >
+<MeshAsset name="flower_grove1_8" index=24 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove1_8.tim</geometry>
@@ -646,7 +705,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -665,7 +723,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove1_7" index=22 >
+<MeshAsset name="flower_grove1_7" index=25 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove1_7.tim</geometry>
@@ -675,7 +733,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -694,7 +751,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove1_6" index=23 >
+<MeshAsset name="flower_grove1_6" index=26 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove1_6.tim</geometry>
@@ -704,7 +761,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -723,7 +779,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove1_5" index=24 >
+<MeshAsset name="flower_grove1_5" index=27 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove1_5.tim</geometry>
@@ -733,7 +789,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -752,7 +807,595 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove3_1" index=25 >
+<MeshAsset name="flower_grove2_12" index=28 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove2_12.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove2_13" index=29 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove2_13.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove2_14" index=30 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove2_14.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove2_15" index=31 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove2_15.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove2_16" index=32 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove2_16.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove2_17" index=33 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove2_17.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove2_18" index=34 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove2_18.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove2_19" index=35 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove2_19.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove2_2" index=36 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove2_2.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove2_6" index=37 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove2_6.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove2_5" index=38 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove2_5.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove2_4" index=39 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove2_4.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove2_3" index=40 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove2_3.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove2_24" index=41 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove2_24.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove2_23" index=42 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove2_23.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove2_22" index=43 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove2_22.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove2_21" index=44 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove2_21.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove2_20" index=45 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove2_20.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove2_7" index=46 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove2_7.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove2_8" index=47 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove2_8.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove2_9" index=48 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove2_9.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove3_1" index=49 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove3_1.tim</geometry>
@@ -762,7 +1405,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -781,7 +1423,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove3_10" index=26 >
+<MeshAsset name="flower_grove3_10" index=50 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove3_10.tim</geometry>
@@ -791,7 +1433,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -810,7 +1451,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove3_11" index=27 >
+<MeshAsset name="flower_grove3_11" index=51 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove3_11.tim</geometry>
@@ -820,7 +1461,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -839,7 +1479,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove3_12" index=28 >
+<MeshAsset name="flower_grove3_12" index=52 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove3_12.tim</geometry>
@@ -849,7 +1489,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -868,7 +1507,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove3_13" index=29 >
+<MeshAsset name="flower_grove3_13" index=53 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove3_13.tim</geometry>
@@ -878,7 +1517,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -897,7 +1535,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove3_14" index=30 >
+<MeshAsset name="flower_grove3_14" index=54 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove3_14.tim</geometry>
@@ -907,7 +1545,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -926,7 +1563,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove3_15" index=31 >
+<MeshAsset name="flower_grove3_15" index=55 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove3_15.tim</geometry>
@@ -936,7 +1573,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -955,7 +1591,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove3_16" index=32 >
+<MeshAsset name="flower_grove3_16" index=56 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove3_16.tim</geometry>
@@ -965,7 +1601,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -984,7 +1619,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove3_17" index=33 >
+<MeshAsset name="flower_grove3_17" index=57 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove3_17.tim</geometry>
@@ -994,7 +1629,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -1013,7 +1647,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove3_18" index=34 >
+<MeshAsset name="flower_grove3_18" index=58 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove3_18.tim</geometry>
@@ -1023,7 +1657,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -1042,7 +1675,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove3_19" index=35 >
+<MeshAsset name="flower_grove3_19" index=59 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove3_19.tim</geometry>
@@ -1052,7 +1685,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -1071,7 +1703,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove3_2" index=36 >
+<MeshAsset name="flower_grove3_2" index=60 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove3_2.tim</geometry>
@@ -1081,7 +1713,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -1100,7 +1731,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove3_20" index=37 >
+<MeshAsset name="flower_grove3_20" index=61 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove3_20.tim</geometry>
@@ -1110,7 +1741,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -1129,7 +1759,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove3_21" index=38 >
+<MeshAsset name="flower_grove3_21" index=62 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove3_21.tim</geometry>
@@ -1139,7 +1769,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -1158,7 +1787,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove3_3" index=39 >
+<MeshAsset name="flower_grove3_3" index=63 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove3_3.tim</geometry>
@@ -1168,7 +1797,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -1187,7 +1815,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove3_29" index=40 >
+<MeshAsset name="flower_grove3_29" index=64 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove3_29.tim</geometry>
@@ -1197,7 +1825,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -1216,7 +1843,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove3_28" index=41 >
+<MeshAsset name="flower_grove3_28" index=65 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove3_28.tim</geometry>
@@ -1226,7 +1853,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -1245,7 +1871,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove3_27" index=42 >
+<MeshAsset name="flower_grove3_27" index=66 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove3_27.tim</geometry>
@@ -1255,7 +1881,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -1274,7 +1899,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove3_26" index=43 >
+<MeshAsset name="flower_grove3_26" index=67 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove3_26.tim</geometry>
@@ -1284,7 +1909,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -1303,7 +1927,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove3_25" index=44 >
+<MeshAsset name="flower_grove3_25" index=68 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove3_25.tim</geometry>
@@ -1313,7 +1937,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -1332,7 +1955,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove3_24" index=45 >
+<MeshAsset name="flower_grove3_24" index=69 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove3_24.tim</geometry>
@@ -1342,7 +1965,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -1361,7 +1983,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove3_23" index=46 >
+<MeshAsset name="flower_grove3_23" index=70 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove3_23.tim</geometry>
@@ -1371,7 +1993,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -1390,7 +2011,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove3_22" index=47 >
+<MeshAsset name="flower_grove3_22" index=71 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove3_22.tim</geometry>
@@ -1400,7 +2021,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -1419,7 +2039,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove3_30" index=48 >
+<MeshAsset name="flower_grove3_30" index=72 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove3_30.tim</geometry>
@@ -1429,7 +2049,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -1448,7 +2067,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove3_4" index=49 >
+<MeshAsset name="flower_grove3_4" index=73 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove3_4.tim</geometry>
@@ -1458,7 +2077,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -1477,7 +2095,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove3_5" index=50 >
+<MeshAsset name="flower_grove3_5" index=74 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove3_5.tim</geometry>
@@ -1487,7 +2105,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -1506,7 +2123,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove3_6" index=51 >
+<MeshAsset name="flower_grove3_6" index=75 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove3_6.tim</geometry>
@@ -1516,7 +2133,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -1535,7 +2151,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove3_7" index=52 >
+<MeshAsset name="flower_grove3_7" index=76 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove3_7.tim</geometry>
@@ -1545,7 +2161,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -1564,7 +2179,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove3_8" index=53 >
+<MeshAsset name="flower_grove3_8" index=77 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove3_8.tim</geometry>
@@ -1574,7 +2189,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -1593,7 +2207,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove3_9" index=54 >
+<MeshAsset name="flower_grove3_9" index=78 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove3_9.tim</geometry>
@@ -1603,7 +2217,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -1622,7 +2235,847 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove5_1" index=55 >
+<MeshAsset name="flower_grove4_1" index=79 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove4_1.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove4_10" index=80 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove4_10.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove4_11" index=81 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove4_11.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove4_12" index=82 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove4_12.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove4_13" index=83 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove4_13.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove4_14" index=84 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove4_14.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove4_15" index=85 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove4_15.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove4_16" index=86 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove4_16.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove4_17" index=87 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove4_17.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove4_18" index=88 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove4_18.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove4_19" index=89 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove4_19.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove4_2" index=90 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove4_2.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove4_20" index=91 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove4_20.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove4_21" index=92 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove4_21.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove4_22" index=93 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove4_22.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove4_23" index=94 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove4_23.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove4_24" index=95 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove4_24.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove4_25" index=96 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove4_25.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove4_26" index=97 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove4_26.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove4_27" index=98 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove4_27.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove4_28" index=99 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove4_28.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove4_29" index=100 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove4_29.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove4_3" index=101 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove4_3.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove4_30" index=102 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove4_30.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove4_4" index=103 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove4_4.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove4_5" index=104 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove4_5.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove4_6" index=105 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove4_6.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove4_7" index=106 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove4_7.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove4_8" index=107 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove4_8.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove4_9" index=108 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove4_9.tim</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="flower_grove5_1" index=109 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove5_1.tim</geometry>
@@ -1632,7 +3085,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -1651,7 +3103,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove5_10" index=56 >
+<MeshAsset name="flower_grove5_10" index=110 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove5_10.tim</geometry>
@@ -1661,7 +3113,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -1680,7 +3131,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove5_11" index=57 >
+<MeshAsset name="flower_grove5_11" index=111 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove5_11.tim</geometry>
@@ -1690,7 +3141,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -1709,7 +3159,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove5_12" index=58 >
+<MeshAsset name="flower_grove5_12" index=112 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove5_12.tim</geometry>
@@ -1719,7 +3169,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -1738,7 +3187,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove5_13" index=59 >
+<MeshAsset name="flower_grove5_13" index=113 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove5_13.tim</geometry>
@@ -1748,7 +3197,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -1767,7 +3215,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove5_14" index=60 >
+<MeshAsset name="flower_grove5_14" index=114 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove5_14.tim</geometry>
@@ -1777,7 +3225,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -1796,7 +3243,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove5_16" index=61 >
+<MeshAsset name="flower_grove5_16" index=115 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove5_16.tim</geometry>
@@ -1806,7 +3253,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -1825,7 +3271,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove5_17" index=62 >
+<MeshAsset name="flower_grove5_17" index=116 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove5_17.tim</geometry>
@@ -1835,7 +3281,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -1854,7 +3299,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove5_18" index=63 >
+<MeshAsset name="flower_grove5_18" index=117 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove5_18.tim</geometry>
@@ -1864,7 +3309,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -1883,7 +3327,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove5_19" index=64 >
+<MeshAsset name="flower_grove5_19" index=118 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove5_19.tim</geometry>
@@ -1893,7 +3337,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -1912,7 +3355,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove5_2" index=65 >
+<MeshAsset name="flower_grove5_2" index=119 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove5_2.tim</geometry>
@@ -1922,7 +3365,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -1941,7 +3383,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove5_20" index=66 >
+<MeshAsset name="flower_grove5_20" index=120 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove5_20.tim</geometry>
@@ -1951,7 +3393,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -1970,7 +3411,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove5_21" index=67 >
+<MeshAsset name="flower_grove5_21" index=121 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove5_21.tim</geometry>
@@ -1980,7 +3421,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -1999,7 +3439,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove5_22" index=68 >
+<MeshAsset name="flower_grove5_22" index=122 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove5_22.tim</geometry>
@@ -2009,7 +3449,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -2028,7 +3467,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove5_23" index=69 >
+<MeshAsset name="flower_grove5_23" index=123 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove5_23.tim</geometry>
@@ -2038,7 +3477,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -2057,7 +3495,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove5_24" index=70 >
+<MeshAsset name="flower_grove5_24" index=124 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove5_24.tim</geometry>
@@ -2067,7 +3505,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -2086,7 +3523,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove5_25" index=71 >
+<MeshAsset name="flower_grove5_25" index=125 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove5_25.tim</geometry>
@@ -2096,7 +3533,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -2115,7 +3551,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove5_26" index=72 >
+<MeshAsset name="flower_grove5_26" index=126 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove5_26.tim</geometry>
@@ -2125,7 +3561,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -2144,7 +3579,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove5_27" index=73 >
+<MeshAsset name="flower_grove5_27" index=127 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove5_27.tim</geometry>
@@ -2154,7 +3589,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -2173,7 +3607,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove5_28" index=74 >
+<MeshAsset name="flower_grove5_28" index=128 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove5_28.tim</geometry>
@@ -2183,7 +3617,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -2202,7 +3635,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove5_3" index=75 >
+<MeshAsset name="flower_grove5_3" index=129 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove5_3.tim</geometry>
@@ -2212,7 +3645,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -2231,7 +3663,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove5_4" index=76 >
+<MeshAsset name="flower_grove5_4" index=130 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove5_4.tim</geometry>
@@ -2241,7 +3673,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -2260,7 +3691,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove5_5" index=77 >
+<MeshAsset name="flower_grove5_5" index=131 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove5_5.tim</geometry>
@@ -2270,7 +3701,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -2289,7 +3719,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove5_6" index=78 >
+<MeshAsset name="flower_grove5_6" index=132 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove5_6.tim</geometry>
@@ -2299,7 +3729,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -2318,7 +3747,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove5_7" index=79 >
+<MeshAsset name="flower_grove5_7" index=133 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove5_7.tim</geometry>
@@ -2328,7 +3757,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -2347,7 +3775,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove5_8" index=80 >
+<MeshAsset name="flower_grove5_8" index=134 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove5_8.tim</geometry>
@@ -2357,7 +3785,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -2376,7 +3803,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove5_9" index=81 >
+<MeshAsset name="flower_grove5_9" index=135 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/flowersGrove/flower_grove5_9.tim</geometry>
@@ -2386,7 +3813,6 @@
 		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/flower1.png</diffuseTex>
 		<normalTex>textureBank/neutralNormal.png</normalTex>
 		<materialTex>meshBank/flower1_material.png</materialTex>
@@ -2405,7 +3831,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="artifact_white_bright" index=82 >
+<MeshAsset name="artifact_white_bright" index=136 >
 	<Element type=0>
 		<color>240,240,240</color>
 		<geometry>meshBank/artifact_p1.obj</geometry>
@@ -2415,7 +3841,6 @@
 		<emissive>0</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 	</Element>
 	<Element type=0>
 		<color>63,63,63</color>
@@ -2426,7 +3851,6 @@
 		<emissive>0</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 	</Element>
 	<Element type=0>
 		<color>255,255,255</color>
@@ -2437,10 +3861,9 @@
 		<emissive>0.2</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 	</Element>
 </MeshAsset>
-<MeshAsset name="column1_white" index=83 >
+<MeshAsset name="column1_white" index=137 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/column1.obj</geometry>
@@ -2450,7 +3873,6 @@
 		<emissive>0</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/column1_AO.png</diffuseTex>
 	</Element>
 	<Element type=0>
@@ -2462,11 +3884,10 @@
 		<emissive>0</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/column1_baseAO.png</diffuseTex>
 	</Element>
 </MeshAsset>
-<MeshAsset name="roomPattern" index=84 >
+<MeshAsset name="roomPattern" index=138 >
 	<Element type=0>
 		<color>198,198,198</color>
 		<geometry>meshBank/room.obj</geometry>
@@ -2476,7 +3897,6 @@
 		<emissive>0</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
 	</Element>
 </MeshAsset>
 
@@ -2750,9 +4170,9 @@
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=81 isStatic=1 isPhysic=0 isVisible=1 >
-   <translate>0,0,0</translate>
-   <scale>1,1,1</scale>
+<Object name="portalGroveWhite_GroveToWhite" model=4 isStatic=1 isPhysic=1 isVisible=1 >
+   <translate>-0.860403,0.445031,0</translate>
+   <scale>1.4,1,1.25039</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
@@ -3212,27 +4632,351 @@
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="column" model=83 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=81 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=82 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=83 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=84 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=85 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=86 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=87 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=88 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=89 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=90 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=91 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=92 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=93 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=94 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=95 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=96 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=97 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=98 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=99 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=100 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=101 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=102 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=103 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=104 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=105 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=106 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=107 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=108 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=109 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=110 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=111 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=112 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=113 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=114 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=115 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=116 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=117 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=118 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=119 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=120 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=121 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=122 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=123 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=124 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=125 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=126 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=127 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=128 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=129 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=130 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=131 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=132 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=133 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=134 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=135 isStatic=1 isPhysic=0 isVisible=1 >
+   <translate>0,0,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="sg_artifact_white" model=136 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>1.10396,0.493261,1.37174</translate>
+   <scale>0.499992,0.499992,0.499992</scale>
+   <rotate>0.682492,0.730893,0,-0.730893,0.682492,0,0,0,1</rotate>
+   <collider type=1 mass=0.3 restitution=0.4 friction=0.75 rollingFriction=0.05/>
+</Object>
+<Object name="column" model=137 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>1.10001,0.496536,0</translate>
    <scale>1,1,1</scale>
    <rotate>0.0359529,0.999354,0,-0.999354,0.0359528,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="portalGroveWhite_GroveToWhite" model=4 isStatic=1 isPhysic=1 isVisible=1 >
-   <translate>-0.860403,0.445031,0</translate>
-   <scale>1.4,1,1.25039</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
-</Object>
-<Object name="roomPattern" model=84 isStatic=1 isPhysic=1 isVisible=0 >
+<Object name="roomPattern" model=138 isStatic=1 isPhysic=1 isVisible=0 >
    <translate>0.0734782,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
-</Object>
-<Object name="sg_artifact_white" model=82 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>1.10396,0.493261,1.37174</translate>
-   <scale>0.499992,0.499992,0.499992</scale>
-   <rotate>0.682492,0.730893,0,-0.730893,0.682492,0,0,0,1</rotate>
-   <collider type=1 mass=0.3 restitution=0.4 friction=0.75 rollingFriction=0.05/>
 </Object>
