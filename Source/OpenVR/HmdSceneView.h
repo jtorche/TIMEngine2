@@ -25,7 +25,6 @@ namespace tim {
         mat4 applyTransformOnControllerMatrix(const mat4&) const;
 
         void update(const VR_DeviceInterface& hmdDevice);
-        void update(const VRDebugCamera& cam, float ratio);
 
         void update(const Camera&)
         {

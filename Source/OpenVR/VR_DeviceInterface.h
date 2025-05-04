@@ -22,6 +22,7 @@ namespace tim {
 		protected:
 			friend class VR_DeviceInterface;
 			friend class OpenVR_Device;
+			friend class SoftVR_Device;
 			HmdCamera() = default;
 
             mat4 _hmdMatrix = mat4::IDENTITY();

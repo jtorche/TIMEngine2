@@ -78,9 +78,6 @@ namespace tim
             if(_drawOnScreen >= 2)
             {
                 renderer::openGL.bindTextureSampler(renderer::textureSampler[renderer::TextureMode::FilteredNoRepeat], 1);
-                //renderer::openGL.bindTexture(_input[0]->buffer()->id(), GL_TEXTURE_2D, 0);
-                //renderer::openGL.bindTexture(_input[1]->buffer()->id(), GL_TEXTURE_2D, 1);
-
                 renderer::openGL.bindTexture(_textureBuffer[VR_DeviceInterface::LEFT]->id(), GL_TEXTURE_2D, 0);
                 renderer::openGL.bindTexture(_textureBuffer[VR_DeviceInterface::RIGHT]->id(), GL_TEXTURE_2D, 1);
             }

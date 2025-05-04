@@ -26,7 +26,7 @@ int main(int argc, char* argv[])
     cxxopts::Options optionsBase("A portal adventure");
     optionsBase.allow_unrecognised_options();
     optionsBase.add_options()
-        ("noVR", "Run the game wihtout the VR headset", cxxopts::value<bool>()->default_value("false"))
+        ("noVR", "Run the game wihtout the VR headset", cxxopts::value<bool>()->implicit_value("true")->default_value("false"))
         ("roomSize", "Set the room size (between 2-3)", cxxopts::value<float>()->default_value("-1"))
         ("zShift", "Shift the world up", cxxopts::value<float>()->default_value("-1"))
         ("debugRoomSize", "Room size for the debug camera.", cxxopts::value<float>()->default_value("100"));
@@ -77,23 +77,23 @@ int main(int argc, char* argv[])
             ShaderPool::instance().add("feedbackStereo", "shader/combineScene.vert", "shader/combineScene.frag", "", {"STEREO_DISPLAY"}).value();
             ShaderPool::instance().add("processSpecularCubeMap", "shader/processCubemap.vert", "shader/processCubemap.frag").value();
 
+            SDLInputManager input;
             VR_DeviceInterface* pVRDevice = nullptr;
             if (cmdArgParseRresult["noVR"].as<bool>()) {
-                pVRDevice = new SoftVR_Device;
+                pVRDevice = new SoftVR_Device(new VRDebugCamera(&input, vec3(debugCameraRoomSpace, debugCameraRoomSpace, 300)));
             } else {
-                pVRDevice = new OpenVR_Device(true);
+                pVRDevice = new OpenVR_Device(false);
             }
 
-            SDLInputManager input;
-
-			if (pVRDevice->isInit())
-			{
-				RES_X = pVRDevice->hmdResolution().x();
-				RES_Y = pVRDevice->hmdResolution().y();
-				std::cout << "HMD resolution:" << RES_X << "x" << RES_Y << std::endl;
-			} else {
-                std::cout << "HMD not detected !\n";
+            if (!pVRDevice->isInit()) {
+                std::cout << "HMD no detected, use sofware device instead." << std::endl;
+                delete pVRDevice;
+                pVRDevice = new SoftVR_Device(new VRDebugCamera(&input, vec3(debugCameraRoomSpace, debugCameraRoomSpace, 300)));
             }
+
+            RES_X = pVRDevice->hmdResolution().x();
+            RES_Y = pVRDevice->hmdResolution().y();
+            std::cout << "HMD resolution:" << RES_X << "x" << RES_Y << std::endl;
 
 			/* Pipeline entity */
 			FullPipeline pipeline;
@@ -121,8 +121,6 @@ int main(int argc, char* argv[])
 
             pipeline.setStereoView(hmdCamera.cullingView(), hmdCamera.eyeView(0), hmdCamera.eyeView(1), 0);
 
-            VRDebugCamera debugCamera(&input, vec3(debugCameraRoomSpace, debugCameraRoomSpace, 300));
-
             /* physic and setup */
             BulletEngine physEngine;
             ThreadPool threadPool(4);
@@ -145,7 +143,7 @@ int main(int argc, char* argv[])
 
             PortalGame portalGame(physEngine, portalManager, hmdCamera, *pVRDevice, indexLevel);
 
-            if (pVRDevice->isInit()) pVRDevice->sync();
+            pVRDevice->sync();
 
             float freqphys = 500;
             btSphereShape ballShape(0.075);
@@ -158,7 +156,7 @@ int main(int argc, char* argv[])
                 SDLTimer timer;
 
                 input.getEvent();
-                /*PROFILE("Wait thread")*/ threadPool.wait();
+                threadPool.wait();
 
                 if(input.keyState(SDLK_x).firstPress)
                 {
@@ -237,15 +235,6 @@ int main(int argc, char* argv[])
                     portalGame.levelSystem().callDebug();
                 }
 
-//                if(input.keyState(SDLK_y).firstPress)
-//                {
-//                    hmdNode->setInvertEyes(false);
-//                }
-//                else if(input.keyState(SDLK_x).firstPress)
-//                {
-//                    hmdNode->setInvertEyes(true);
-//                }
-
                 /*********************/
                 /******* Flush *******/
                 /*********************/
@@ -285,19 +274,10 @@ int main(int argc, char* argv[])
                });
 #endif
 
-                if (pVRDevice->isInit())
-                    pVRDevice->update(timeElapsed);
-                else
-                    debugCamera.update(timeElapsed);
-
-                if (pVRDevice->isInit())
-                    hmdCamera.update(*pVRDevice);
-                else
-                    hmdCamera.update(debugCamera, ratio);
+                pVRDevice->update(timeElapsed);
+                hmdCamera.update(*pVRDevice);
 
                 portalManager.updateCameras();
-
-                portalGame.setDebugControllerPose(debugCamera.pos() + debugCamera.dir()*0.5);
 
                 /********************/
                 /******* Draw *******/
@@ -305,6 +285,7 @@ int main(int argc, char* argv[])
 
                 pipeline.pipeline()->render();
                 swapBuffer();
+                pVRDevice->sync();
                 GL_ASSERT();
 
                 if(input.keyState(SDLK_p).firstPress)
@@ -317,12 +298,9 @@ int main(int argc, char* argv[])
                 {
                     float fps = countTime<0>(timeElapsed);
                    
-                    if (fps > 0)
-                    {
+                    if (fps > 0) {
                         std::cout << "Fps:" << 1.f / fps << "  Ms:" << 1000 * fps << std::endl;
-                        std::cout << debugCamera.pos() << std::endl << std::endl;
                     }
-                   
                 }
 			}
 

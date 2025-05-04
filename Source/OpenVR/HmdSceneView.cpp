@@ -72,33 +72,3 @@ void HmdSceneView::update(const VR_DeviceInterface& hmdDevice)
     _cullingView.camera.dir = -_transform[2].to<3>() + _cullingView.camera.pos;
     _cullingView.camera.up = _transform[1].to<3>();
 }
-
-void HmdSceneView::update(const VRDebugCamera& cam, float ratio)
-{
-    _eyeView[VR_DeviceInterface::LEFT].camera.useRawMat = true;
-    _eyeView[VR_DeviceInterface::RIGHT].camera.useRawMat = true;
-
-    mat4 inv_o = _offset.inverted();
-    _transform = applyTransformOnHmdMatrix(cam.viewMat()) * inv_o;
-
-    _eyeView[VR_DeviceInterface::LEFT].camera.raw_proj = mat4::Projection(110, ratio, 0.02, 300);
-    _eyeView[VR_DeviceInterface::LEFT].camera.raw_view = applyTransformOnHmdMatrix(cam.eyeView(VR_DeviceInterface::LEFT)) * inv_o;
-    _eyeView[VR_DeviceInterface::RIGHT].camera.raw_proj = _eyeView[VR_DeviceInterface::LEFT].camera.raw_proj;
-    _eyeView[VR_DeviceInterface::RIGHT].camera.raw_view = applyTransformOnHmdMatrix(cam.eyeView(VR_DeviceInterface::RIGHT)) * inv_o;
-
-    mat4 inv_l = _eyeView[VR_DeviceInterface::LEFT].camera.raw_view.inverted();
-    mat4 inv_r = _eyeView[VR_DeviceInterface::RIGHT].camera.raw_view.inverted();
-
-    _eyeView[VR_DeviceInterface::RIGHT].camera.pos = inv_r.translation();
-    _eyeView[VR_DeviceInterface::LEFT].camera.pos = inv_l.translation();
-
-    _eyeView[VR_DeviceInterface::LEFT].camera.dir =  -_eyeView[VR_DeviceInterface::LEFT].camera.raw_view[2].to<3>();
-    _eyeView[VR_DeviceInterface::RIGHT].camera.dir = -_eyeView[VR_DeviceInterface::RIGHT].camera.raw_view[2].to<3>();
-    _eyeView[VR_DeviceInterface::LEFT].camera.dir +=  _eyeView[VR_DeviceInterface::LEFT].camera.pos;
-    _eyeView[VR_DeviceInterface::RIGHT].camera.dir += _eyeView[VR_DeviceInterface::RIGHT].camera.pos;
-
-    mat4 inv_t = _transform.inverted();
-    _cullingView.camera.pos = inv_t.translation();
-    _cullingView.camera.dir = -_transform[2].to<3>() + _cullingView.camera.pos;
-    _cullingView.camera.up = _transform[1].to<3>();
-}

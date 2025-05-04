@@ -103,21 +103,6 @@ void PortalGame::update(float time)
         _lastL = _hmdCamera.offset()*l;
         _lastR = _hmdCamera.offset()*r;
     }
-    else
-    {
-        mat4 l = mat4::RotationY(45);
-        l.setTranslation(_debugControllerPos);
-
-        mat4 r = l;
-        r.translate({0,0,0.3});
-
-        l = _hmdCamera.applyTransformOnControllerMatrix(l);
-        r = _hmdCamera.applyTransformOnControllerMatrix(r);
-
-        _vrControllers.update(_hmdCamera.offset(), l,r, time);
-        _lastL = _hmdCamera.offset()*l;
-        _lastR = _hmdCamera.offset()*r;
-    }
 
     /* instance controllers through portals if needed */
 

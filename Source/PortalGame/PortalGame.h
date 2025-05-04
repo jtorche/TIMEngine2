@@ -31,7 +31,6 @@ public:
     MultiSceneManager& multiSceneManager();
     LevelSystem& levelSystem();
 
-    void setDebugControllerPose(vec3 v) { _debugControllerPos = v; }
     void popBoxDebug();
 
     enum SoundEffects
@@ -63,7 +62,6 @@ protected:
     int _nbTotalSound = 0;
     int _clearSoundPairTimer=0;
 
-    vec3 _debugControllerPos;
     int _frameId=0;
 
     void registerSoundCallBack();
