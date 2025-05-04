@@ -140,7 +140,7 @@ namespace dp {
         template <typename Function, typename... Args,
                   typename ReturnType = std::invoke_result_t<Function &&, Args &&...>>
             requires std::invocable<Function, Args...>
-        [[nodiscard]] std::future<ReturnType> enqueue(Function f, Args... args) {
+         std::future<ReturnType> enqueue(Function f, Args... args) {
 #ifdef __cpp_lib_move_only_function
             // we can do this in C++23 because we now have support for move only functions
             std::promise<ReturnType> promise;
