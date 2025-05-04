@@ -569,6 +569,7 @@ void MeshEditorWidget::setUi(const MeshElement& mat)
 
     ui->advancedMaterial->setChecked(mat.useAdvanced);
     ui->cmAffected->setChecked(mat.cmAffected);
+    ui->castShadow->setChecked(mat.castShadow);
     ui->cullBackFace->setChecked(mat.advanced.cullBackFace());
     ui->cullFace->setChecked(mat.advanced.cullFace());
     if(mat.advancedShader.isEmpty())
