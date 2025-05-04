@@ -5,6 +5,7 @@ project(PortalGame DESCRIPTION "A Portal Adventure" LANGUAGES CXX)
 file(GLOB_RECURSE portalGame_sources *.cpp *.h)
 
 add_executable(${PROJECT_NAME} ${portalGame_sources} ${CMAKE_CURRENT_SOURCE_DIR}/../MainHelper.h ${CMAKE_CURRENT_SOURCE_DIR}/../MainHelper.cpp)
+set_target_properties(${PROJECT_NAME} PROPERTIES VS_GLOBAL_VcpkgEnabled false)
 set_property(TARGET ${PROJECT_NAME} PROPERTY VS_DEBUGGER_WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}/../Data/")
 
 # Linked libraries
