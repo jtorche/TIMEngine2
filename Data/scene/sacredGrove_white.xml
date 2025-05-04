@@ -146,30 +146,33 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="portal4" index=4 >
+<MeshAsset name="flower_grove5_9" index=4 >
 	<Element type=0>
-		<color>15,251,255</color>
-		<geometry>meshBank/portal4.obj</geometry>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove5_9.tim</geometry>
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
-		<specular>0.1</specular>
-		<emissive>0</emissive>
+		<specular>0.15</specular>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-	</Element>
-	<Element type=0>
-		<color>255,255,255</color>
-		<geometry>meshBank/portal4Frame.obj</geometry>
-		<roughness>0.4</roughness>
-		<metallic>0</metallic>
-		<specular>0.08</specular>
-		<emissive>0</emissive>
-		<textureScale>1.6</textureScale>
-		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
-		<diffuseTex>textureBank/rock3.png</diffuseTex>
-		<normalTex>textureBank/rock3_NORM.png</normalTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
 	</Element>
 </MeshAsset>
 <MeshAsset name="flower_grove1_1" index=5 >
@@ -2376,36 +2379,72 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove5_9" index=81 >
+<MeshAsset name="column1_white" index=81 >
 	<Element type=0>
 		<color>255,255,255</color>
-		<geometry>meshBank/flowersGrove/flower_grove5_9.tim</geometry>
-		<roughness>0.5</roughness>
+		<geometry>meshBank/column1.obj</geometry>
+		<roughness>0.1</roughness>
 		<metallic>0</metallic>
-		<specular>0.15</specular>
-		<emissive>0.17</emissive>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1.png</diffuseTex>
-		<normalTex>textureBank/neutralNormal.png</normalTex>
-		<materialTex>meshBank/flower1_material.png</materialTex>
-		<Advanced>
-			<shader>gPass</shader>
-			<blend>0</blend>
-			<cullBackFace>1</cullBackFace>
-			<cullFace>0</cullFace>
-			<depthTest>1</depthTest>
-			<writeDepth>1</writeDepth>
-			<priority>128</priority>
-			<blendEquation>ADD</blendEquation>
-			<primitive>TRIANGLES</primitive>
-			<depthFunc>LESS</depthFunc>
-			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
-		</Advanced>
+		<diffuseTex>meshBank/column1_AO.png</diffuseTex>
+	</Element>
+	<Element type=0>
+		<color>236,225,220</color>
+		<geometry>meshBank/column1_base.obj</geometry>
+		<roughness>0.1</roughness>
+		<metallic>0</metallic>
+		<specular>0.08</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+		<diffuseTex>meshBank/column1_baseAO.png</diffuseTex>
 	</Element>
 </MeshAsset>
-<MeshAsset name="artifact_white_bright" index=82 >
+<MeshAsset name="portal4" index=82 >
+	<Element type=0>
+		<color>15,251,255</color>
+		<geometry>meshBank/portal4.obj</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+	</Element>
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/portal4Frame.obj</geometry>
+		<roughness>0.4</roughness>
+		<metallic>0</metallic>
+		<specular>0.08</specular>
+		<emissive>0</emissive>
+		<textureScale>1.6</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+		<diffuseTex>textureBank/rock3.png</diffuseTex>
+		<normalTex>textureBank/rock3_NORM.png</normalTex>
+	</Element>
+</MeshAsset>
+<MeshAsset name="roomPattern" index=83 >
+	<Element type=0>
+		<color>198,198,198</color>
+		<geometry>meshBank/room.obj</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+	</Element>
+</MeshAsset>
+<MeshAsset name="artifact_white_bright" index=84 >
 	<Element type=0>
 		<color>240,240,240</color>
 		<geometry>meshBank/artifact_p1.obj</geometry>
@@ -2435,45 +2474,6 @@
 		<metallic>0.99</metallic>
 		<specular>0.1</specular>
 		<emissive>0.2</emissive>
-		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
-	</Element>
-</MeshAsset>
-<MeshAsset name="column1_white" index=83 >
-	<Element type=0>
-		<color>255,255,255</color>
-		<geometry>meshBank/column1.obj</geometry>
-		<roughness>0.1</roughness>
-		<metallic>0</metallic>
-		<specular>0.1</specular>
-		<emissive>0</emissive>
-		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/column1_AO.png</diffuseTex>
-	</Element>
-	<Element type=0>
-		<color>236,225,220</color>
-		<geometry>meshBank/column1_base.obj</geometry>
-		<roughness>0.1</roughness>
-		<metallic>0</metallic>
-		<specular>0.08</specular>
-		<emissive>0</emissive>
-		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/column1_baseAO.png</diffuseTex>
-	</Element>
-</MeshAsset>
-<MeshAsset name="roomPattern" index=84 >
-	<Element type=0>
-		<color>198,198,198</color>
-		<geometry>meshBank/room.obj</geometry>
-		<roughness>0.5</roughness>
-		<metallic>0</metallic>
-		<specular>0.1</specular>
-		<emissive>0</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
@@ -2750,7 +2750,7 @@
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=81 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=4 isStatic=1 isPhysic=0 isVisible=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
@@ -3212,27 +3212,27 @@
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="column" model=83 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="column" model=81 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>1.10001,0.496536,0</translate>
    <scale>1,1,1</scale>
    <rotate>0.0359529,0.999354,0,-0.999354,0.0359528,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="portalGroveWhite_GroveToWhite" model=4 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="portalGroveWhite_GroveToWhite" model=82 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>-0.860403,0.445031,0</translate>
    <scale>1.4,1,1.25039</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="roomPattern" model=84 isStatic=1 isPhysic=1 isVisible=0 >
+<Object name="roomPattern" model=83 isStatic=1 isPhysic=1 isVisible=0 >
    <translate>0.0734782,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="sg_artifact_white" model=82 isStatic=0 isPhysic=1 isVisible=1 >
+<Object name="sg_artifact_white" model=84 isStatic=0 isPhysic=1 isVisible=1 >
    <translate>1.10396,0.493261,1.37174</translate>
    <scale>0.499992,0.499992,0.499992</scale>
    <rotate>0.682492,0.730893,0,-0.730893,0.682492,0,0,0,1</rotate>
-   <collider type=1 mass=0.3 restitution=0.4 friction=0.75 rollingFriction=0.05/>
+   <collider type=1 mass=0.3 restitution=0.4 friction=0.5 rollingFriction=0/>
 </Object>

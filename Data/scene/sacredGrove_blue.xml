@@ -146,30 +146,31 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="portal4" index=4 >
+<MeshAsset name="flower_grove5_9" index=4 >
 	<Element type=0>
-		<color>15,251,255</color>
-		<geometry>meshBank/portal4.obj</geometry>
+		<color>255,255,255</color>
+		<geometry>meshBank/flowersGrove/flower_grove5_9.tim</geometry>
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
-		<specular>0.1</specular>
+		<specular>0.15</specular>
 		<emissive>0</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-	</Element>
-	<Element type=0>
-		<color>255,255,255</color>
-		<geometry>meshBank/portal4Frame.obj</geometry>
-		<roughness>0.4</roughness>
-		<metallic>0</metallic>
-		<specular>0.08</specular>
-		<emissive>0</emissive>
-		<textureScale>1.6</textureScale>
-		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
-		<diffuseTex>textureBank/rock3.png</diffuseTex>
-		<normalTex>textureBank/rock3_NORM.png</normalTex>
+		<diffuseTex>meshBank/flower1_purple.png</diffuseTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
 	</Element>
 </MeshAsset>
 <MeshAsset name="flower_grove1_1" index=5 >
@@ -2224,47 +2225,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="flower_grove5_9" index=81 >
-	<Element type=0>
-		<color>255,255,255</color>
-		<geometry>meshBank/flowersGrove/flower_grove5_9.tim</geometry>
-		<roughness>0.5</roughness>
-		<metallic>0</metallic>
-		<specular>0.15</specular>
-		<emissive>0</emissive>
-		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_purple.png</diffuseTex>
-		<Advanced>
-			<shader>gPass</shader>
-			<blend>0</blend>
-			<cullBackFace>1</cullBackFace>
-			<cullFace>0</cullFace>
-			<depthTest>1</depthTest>
-			<writeDepth>1</writeDepth>
-			<priority>128</priority>
-			<blendEquation>ADD</blendEquation>
-			<primitive>TRIANGLES</primitive>
-			<depthFunc>LESS</depthFunc>
-			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
-		</Advanced>
-	</Element>
-</MeshAsset>
-<MeshAsset name="cube_uv" index=82 >
-	<Element type=0>
-		<color>198,198,198</color>
-		<geometry>meshBank/room.obj</geometry>
-		<roughness>0.5</roughness>
-		<metallic>0</metallic>
-		<specular>0.1</specular>
-		<emissive>0</emissive>
-		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
-	</Element>
-</MeshAsset>
-<MeshAsset name="column1_blue" index=83 >
+<MeshAsset name="column1_blue" index=81 >
 	<Element type=0>
 		<color>14,110,255</color>
 		<geometry>meshBank/column1.obj</geometry>
@@ -2288,6 +2249,45 @@
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/column1_baseAO.png</diffuseTex>
+	</Element>
+</MeshAsset>
+<MeshAsset name="portal4" index=82 >
+	<Element type=0>
+		<color>15,251,255</color>
+		<geometry>meshBank/portal4.obj</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+	</Element>
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/portal4Frame.obj</geometry>
+		<roughness>0.4</roughness>
+		<metallic>0</metallic>
+		<specular>0.08</specular>
+		<emissive>0</emissive>
+		<textureScale>1.6</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+		<diffuseTex>textureBank/rock3.png</diffuseTex>
+		<normalTex>textureBank/rock3_NORM.png</normalTex>
+	</Element>
+</MeshAsset>
+<MeshAsset name="cube_uv" index=83 >
+	<Element type=0>
+		<color>198,198,198</color>
+		<geometry>meshBank/room.obj</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
 	</Element>
 </MeshAsset>
 <MeshAsset name="artifact_blue" index=84 >
@@ -2596,7 +2596,7 @@
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=81 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=4 isStatic=1 isPhysic=0 isVisible=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
@@ -3058,19 +3058,19 @@
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="column" model=83 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="column" model=81 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>0.991789,0.886427,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="portalGroveBlue_GroveToBlue" model=4 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="portalGroveBlue_GroveToBlue" model=82 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>-0.860403,0.445031,0</translate>
    <scale>1.4,1,1.25039</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="roomPattern" model=82 isStatic=1 isPhysic=1 isVisible=0 >
+<Object name="roomPattern" model=83 isStatic=1 isPhysic=1 isVisible=0 >
    <translate>0.0734782,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
@@ -3080,5 +3080,5 @@
    <translate>0.994902,0.886243,1.37592</translate>
    <scale>0.5,0.5,0.5</scale>
    <rotate>0.813731,-0.581241,0,0.581241,0.813731,0,0,0,1</rotate>
-   <collider type=1 mass=0.3 restitution=0.4 friction=0.75 rollingFriction=0.05/>
+   <collider type=1 mass=0.3 restitution=0.4 friction=0.5 rollingFriction=0/>
 </Object>
