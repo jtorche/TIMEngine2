@@ -9,12 +9,6 @@ StartLevel::StartLevel(int index, LevelSystem* system) : LevelInterface(index, s
 
 void StartLevel::init()
 {
-    auto lpVec = LightProbeUtils::importProbe("start_specprobe.xml");
-    for(auto lp : lpVec)
-    {
-        level().levelScene->scene.add<interface::LightInstance>(LightProbeUtils::genLightProbe(lp));
-    }
-
     for(size_t i=0 ; i < level().objects.size() ; ++i)
     {
         LevelSystem::GraphicGameObject& obj = level().objects[i];

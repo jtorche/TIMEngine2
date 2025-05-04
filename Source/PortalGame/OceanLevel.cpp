@@ -4,7 +4,6 @@
 #include "openAL/Source.hpp"
 #include "PortalGame.h"
 #include "Rand.h"
-#include "SimpleSpecProbeImportExport.h"
 
 #include "MemoryLoggerOn.h"
 
@@ -113,14 +112,6 @@ void OceanLevel::init()
         }
     }
 #include "MemoryLoggerOn.h"
-
-    auto lpVec = LightProbeUtils::importProbe("ocean_specprobe.xml");
-    for(auto lp : lpVec)
-    {
-        auto l = LightProbeUtils::genLightProbe(lp);
-        if(l.tex)
-            level().levelScene->scene.add<interface::LightInstance>(l);
-    }
 
     int indexOut = indexObject("portalOutOcean_InSkyIsl");
     if(indexOut >= 0)

@@ -45,12 +45,6 @@ void Level1::init()
 
         bo->body()->setUserIndex(104);
     }
-
-    auto lpVec = LightProbeUtils::importProbe("sceneInside_specprobe.xml");
-    for(auto lp : lpVec)
-    {
-        level().levelScene->scene.add<interface::LightInstance>(LightProbeUtils::genLightProbe(lp));
-    }
 #endif
 }
 

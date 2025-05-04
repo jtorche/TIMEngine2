@@ -35,14 +35,6 @@ void FlyingIslandLevel::init()
 
     _physEngine.setGravity(level().indexScene, vec3(0,0,0));
 
-    auto lpVec = LightProbeUtils::importProbe("flyingIsland_specprobe.xml");
-    for(auto lp : lpVec)
-    {
-        auto l = LightProbeUtils::genLightProbe(lp);
-        if(l.tex)
-            level().levelScene->scene.add<interface::LightInstance>(l);
-    }
-
     {
         int indexBoat = indexObject("boat");
         if(indexBoat >= 0)

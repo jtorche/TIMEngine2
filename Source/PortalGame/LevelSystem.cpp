@@ -2,6 +2,8 @@
 #include "MultipleSceneHelper.h"
 #include "resource/AssetManager.h"
 #include "openAL/Source.hpp"
+
+#include "SimpleSpecProbeImportExport.h"
 using namespace resource;
 
 #include "MemoryLoggerOn.h"
@@ -660,5 +662,15 @@ LevelInterface::LevelInterface(int index, LevelSystem* system) : _index(index), 
             }
             elem = elem->NextSiblingElement();
         }
+    }
+
+    // Load light probes from *_specprobe.xml file
+    std::string levelLightProbsDescriptor = std::string("scene/") + name + "_specprobe.xml";
+    std::vector<LightProbeUtils> lightProbes = LightProbeUtils::importProbe(levelLightProbsDescriptor);
+    for (const LightProbeUtils& lp : lightProbes)
+    {
+        tim::renderer::LightContextRenderer::Light light = LightProbeUtils::genLightProbe(lp);
+        if (light.tex)
+            level().levelScene->scene.add<interface::LightInstance>(light);
     }
 }
