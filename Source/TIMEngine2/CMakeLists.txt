@@ -48,6 +48,10 @@ target_link_libraries(${PROJECT_NAME} PUBLIC debug ${CMAKE_SOURCE_DIR}/../Libs/b
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/External/tinyxml/)
 target_link_libraries(${PROJECT_NAME} PUBLIC tinyxml)
 
+# Mesh optimizer
+target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/External/meshoptimizer/)
+target_link_libraries(${PROJECT_NAME} PUBLIC meshoptimizer)
+
 # SDL2
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/../Libs/SDL2/include/)
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/../Libs/SDL_image/include/)
