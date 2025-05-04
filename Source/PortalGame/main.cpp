@@ -1,4 +1,5 @@
 #include "MainHelper.h"
+#include "cxxopts.h"
 
 #include "OpenVR/OnHmdRenderer.h"
 #include "OpenVR/HmdSceneView.h"
@@ -6,6 +7,7 @@
 #include "OpenVR/OpenVR_Device.h"
 #include "OpenVR/SoftVR_Device.h"
 #include "resource/AssetManager.h"
+
 #include "MultiPromise.h"
 
 #include "PortalGame/PortalGame.h"
@@ -17,19 +19,40 @@ using namespace tim::resource;
 using namespace tim::interface;
 using namespace tim;
 
+
+
 int main(int argc, char* argv[])
 {
+    cxxopts::Options optionsBase("A portal adventure");
+    optionsBase.allow_unrecognised_options();
+    optionsBase.add_options()
+        ("noVR", "Run the game wihtout the VR headset", cxxopts::value<bool>()->default_value("false"))
+        ("roomSize", "Set the room size (between 2-3)", cxxopts::value<float>()->default_value("-1"))
+        ("zShift", "Shift the world up", cxxopts::value<float>()->default_value("-1"))
+        ("debugRoomSize", "Room size for the debug camera.", cxxopts::value<float>()->default_value("100"));
+
+    auto cmdArgParseRresult = optionsBase.parse(std::min(argc, 2), argv);
+
     uint RES_X = 1000;
     uint RES_Y = 1000;
     const uivec2 WIN_RES = { 2000, 1000 };
 
-    std::cout << "Enter the size of the room in meters (between 2 and 3) :";
-    float meters=3; std::cin >> meters; std::cin.clear();
-    meters = std::min(std::max(2.f,meters), 3.f);
+    float roomSize = cmdArgParseRresult["roomSize"].as<float>();
+    
+    if (roomSize < 0) {
+        std::cout << "Enter the size of the room in meters (between 2 and 3) :";
+        std::cin >> roomSize; std::cin.clear();
+    }
+    roomSize = std::min(std::max(2.f, roomSize), 3.f);
 
-    std::cout << "Enter the height shift (in meters) you want to apply :";
-    float zShift = 0; std::cin >> zShift; std::cin.clear();
+    float zShift = cmdArgParseRresult["zShift"].as<float>();
+    if (zShift < 0) {
+        std::cout << "Enter the height shift (in meters) you want to apply :";
+        std::cin >> zShift; std::cin.clear();
+    }
     zShift = std::min(std::max(0.f, zShift), 1.f);
+
+    float debugCameraRoomSpace = cmdArgParseRresult["debugRoomSize"].as<float>();
 
     std::cout << "1. Tutorial\n2. Forest\n3. Maze\n4. Sacred Groove\n5. Ocean" << std::endl;
     std::cout <<std::endl<< "Enter the ID of the level you want to start in :";
@@ -54,23 +77,22 @@ int main(int argc, char* argv[])
             ShaderPool::instance().add("feedbackStereo", "shader/combineScene.vert", "shader/combineScene.frag", "", {"STEREO_DISPLAY"}).value();
             ShaderPool::instance().add("processSpecularCubeMap", "shader/processCubemap.vert", "shader/processCubemap.frag").value();
 
-            //OpenVR_Device hmdDevice(true);
-            SoftVR_Device hmdDevice;
+            VR_DeviceInterface* pVRDevice = nullptr;
+            if (cmdArgParseRresult["noVR"].as<bool>()) {
+                pVRDevice = new SoftVR_Device;
+            } else {
+                pVRDevice = new OpenVR_Device(true);
+            }
+
             SDLInputManager input;
-            float debugCameraRoomSpace = 3.f;
 
-			if (hmdDevice.isInit())
+			if (pVRDevice->isInit())
 			{
-				RES_X = hmdDevice.hmdResolution().x();
-				RES_Y = hmdDevice.hmdResolution().y();
+				RES_X = pVRDevice->hmdResolution().x();
+				RES_Y = pVRDevice->hmdResolution().y();
 				std::cout << "HMD resolution:" << RES_X << "x" << RES_Y << std::endl;
-			}
-            else
-            {
+			} else {
                 std::cout << "HMD not detected !\n";
-
-                std::cout << std::endl << "Enter Debug camera room space :";
-                std::cin >> debugCameraRoomSpace;
             }
 
 			/* Pipeline entity */
@@ -92,10 +114,10 @@ int main(int argc, char* argv[])
 
             pipeline.createStereoExtensible(*hmdNode, {RES_X,RES_Y}, pipelineParam);
 
-            hmdNode->setVRDevice(&hmdDevice);
+            hmdNode->setVRDevice(pVRDevice);
 
             HmdSceneView hmdCamera(110, ratio, 500);
-            hmdCamera.setScaleAndShiftRoom(3 / meters, zShift);
+            hmdCamera.setScaleAndShiftRoom(3 / roomSize, zShift);
 
             pipeline.setStereoView(hmdCamera.cullingView(), hmdCamera.eyeView(0), hmdCamera.eyeView(1), 0);
 
@@ -121,9 +143,9 @@ int main(int argc, char* argv[])
             default: indexLevel = 0; break;
             }
 
-            PortalGame portalGame(physEngine, portalManager, hmdCamera, hmdDevice, indexLevel);
+            PortalGame portalGame(physEngine, portalManager, hmdCamera, *pVRDevice, indexLevel);
 
-            if (hmdDevice.isInit()) hmdDevice.sync();
+            if (pVRDevice->isInit()) pVRDevice->sync();
 
             float freqphys = 500;
             btSphereShape ballShape(0.075);
@@ -263,13 +285,13 @@ int main(int argc, char* argv[])
                });
 #endif
 
-                if (hmdDevice.isInit())
-                    hmdDevice.update(timeElapsed);
+                if (pVRDevice->isInit())
+                    pVRDevice->update(timeElapsed);
                 else
                     debugCamera.update(timeElapsed);
 
-                if (hmdDevice.isInit())
-                    hmdCamera.update(hmdDevice);
+                if (pVRDevice->isInit())
+                    hmdCamera.update(*pVRDevice);
                 else
                     hmdCamera.update(debugCamera, ratio);
 
