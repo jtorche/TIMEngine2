@@ -30,18 +30,22 @@ namespace resource
                 {
                     renderer::VBuffer* vb = renderer::vertexBufferPool->alloc(data->nbVertex);
                     renderer::IBuffer* ib = renderer::indexBufferPool->alloc(data->nbIndex);
+                    renderer::IBuffer* ib2 = data->secondaryIndexData ? renderer::indexBufferPool->alloc(data->nbSecondaryIndex) : nullptr;
                     vb->flush(reinterpret_cast<float*>(data->vData), 0, data->nbVertex);
                     ib->flush(data->indexData, 0, data->nbIndex);
+                    if (ib2) {
+                        ib2->flush(data->secondaryIndexData, 0, data->nbSecondaryIndex);
+                    }
 
                     renderer::MeshBuffers* mb = nullptr;
                     if(keepData)
                     {
-                        mb = new renderer::MeshBuffers(vb, ib, Sphere::computeSphere(reinterpret_cast<real*>(data->vData), data->nbVertex,
+                        mb = new renderer::MeshBuffers(vb, ib, ib2, Sphere::computeSphere(reinterpret_cast<real*>(data->vData), data->nbVertex,
                                                        sizeof(renderer::MeshData::DataType)/sizeof(float)), data);
                     }
                     else
                     {
-                        mb = new renderer::MeshBuffers(vb, ib, Sphere::computeSphere(reinterpret_cast<real*>(data->vData), data->nbVertex,
+                        mb = new renderer::MeshBuffers(vb, ib, ib2, Sphere::computeSphere(reinterpret_cast<real*>(data->vData), data->nbVertex,
                                                        sizeof(renderer::MeshData::DataType)/sizeof(float)));
 
                         data->clear();
@@ -76,8 +80,9 @@ namespace resource
                         interface::Geometry copyGeom = geom;
                         renderer::VBuffer* vb = renderer::vertexBufferPool->alloc(data->nbVertex);
                         renderer::IBuffer* ib = renderer::indexBufferPool->alloc(data->nbIndex);
+                        renderer::IBuffer* ib2 = data->secondaryIndexData ? renderer::indexBufferPool->alloc(data->nbSecondaryIndex) : nullptr;
 
-                        renderer::MeshBuffers* mb = new renderer::MeshBuffers(vb, ib, Sphere::computeSphere(reinterpret_cast<real*>(data->vData), data->nbVertex,
+                        renderer::MeshBuffers* mb = new renderer::MeshBuffers(vb, ib, ib2, Sphere::computeSphere(reinterpret_cast<real*>(data->vData), data->nbVertex,
                                                                               sizeof(renderer::VNC_Vertex)/sizeof(float)), keepData ? data : nullptr);
                         emptyBuf->swap(*mb);
 
@@ -85,6 +90,9 @@ namespace resource
                             interface::Geometry copyGeom2 = copyGeom;
                             vb->flush(reinterpret_cast<float*>(data->vData), 0, data->nbVertex);
                             ib->flush(data->indexData, 0, data->nbIndex);
+                            if (ib2) {
+                                ib2->flush(data->secondaryIndexData, 0, data->nbSecondaryIndex);
+                            }
 
                             if(!keepData)
                             {

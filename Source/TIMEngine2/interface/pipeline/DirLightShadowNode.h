@@ -36,6 +36,7 @@ namespace pipeline
         vec3 _sizeOrtho[renderer::MAX_SHADOW_MAP_LVL];
         mat4 _orthoMatrix[renderer::MAX_SHADOW_MAP_LVL];
         vector<ElementInstance> _toDraw[renderer::MAX_SHADOW_MAP_LVL];
+        vector<bool> _useShadowLOD[renderer::MAX_SHADOW_MAP_LVL];
 
         bool _needUpdate = true;
         int _counter = 0;

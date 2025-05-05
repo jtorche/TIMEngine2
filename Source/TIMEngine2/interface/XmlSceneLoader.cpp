@@ -77,10 +77,12 @@ bool XmlSceneLoader::loadScene(std::string file, interface::Scene& scene, vector
                 continue;
             }
 
-            bool isStatic = true, isPhysic = true, isVisible = true;
+            bool isStatic = true, isPhysic = true, isVisible = true, useShadowLOD = false, useVisualLOD = false;
             elem->QueryBoolAttribute("isStatic", &isStatic);
             elem->QueryBoolAttribute("isPhysic", &isPhysic);
             elem->QueryBoolAttribute("isVisible", &isVisible);
+            elem->QueryBoolAttribute("useShadowLOD", &useShadowLOD);
+            elem->QueryBoolAttribute("useVisualLOD", &useVisualLOD);
 
             vec3 tr, sc;
             mat3 rot;
@@ -94,13 +96,18 @@ bool XmlSceneLoader::loadScene(std::string file, interface::Scene& scene, vector
             obj.isPhysic = isPhysic;
             obj.isStatic = isStatic;
             obj.isVisible = isVisible;
+            obj.useShadowLOD = useShadowLOD;
+            obj.useVisualLOD = useVisualLOD;
             obj.scale = sc;
             obj.translation = tr;
             obj.rotation = rot;
 
-            if(isVisible)
-                obj.meshInstance = &scene.scene.add<MeshInstance>(XmlMeshAssetLoader::constructMesh(meshAssets[index], Texture::genParam(true,true,true, 0), false),
+            if (isVisible) {
+                obj.meshInstance = &scene.scene.add<MeshInstance>(XmlMeshAssetLoader::constructMesh(meshAssets[index], Texture::genParam(true, true, true, 0), false),
                                                                   mat4::constructTransformation(rot, tr, sc));
+                obj.meshInstance->setUseShadowLOD(useShadowLOD);
+                obj.meshInstance->setUseVisualLOD(useVisualLOD);
+            }
             else
                 obj.meshInstance = nullptr;
 

@@ -22,7 +22,7 @@ namespace renderer
 
         void bind() const;
         int draw(const vector<MeshBuffers*>&, const vector<mat4>&, const vector<DummyMaterial>& mat = {},
-                 const vector<vector<uint>>& extraUbo={}, bool useCameraUbo = true);
+                 const vector<vector<uint>>& extraUbo = {}, const vector<bool>& useLOD = {}, bool useCameraUbo = true);
 
         void setDrawState(const DrawState&);
 

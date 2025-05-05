@@ -2,6 +2,7 @@
 #include "core/core.h"
 #include "Sphere.h"
 #include <fstream>
+#include <meshoptimizer.h>
 
 #include "MemoryLoggerOn.h"
 namespace tim
@@ -52,6 +53,7 @@ renderer::MeshData MeshLoader::importObj(const std::string& file, bool tangent)
     }
 
     buf.free();
+    optimizeMesh(meshData);
     return meshData;
 }
 
@@ -61,10 +63,13 @@ renderer::MeshBuffers* MeshLoader::createMeshBuffers(renderer::MeshData& data, r
     {
         renderer::VBuffer* vb = vpool->alloc(data.nbVertex);
         renderer::IBuffer* ib = ipool->alloc(data.nbIndex);
+        renderer::IBuffer* ib2 = data.secondaryIndexData ? ipool->alloc(data.nbSecondaryIndex) : nullptr;
         vb->flush(reinterpret_cast<float*>(data.vData), 0, data.nbVertex);
-        ib->flush(data.indexData, 0, data.nbIndex);
-        return new renderer::MeshBuffers(vb, ib, Sphere::computeSphere(reinterpret_cast<real*>(data.vData), data.nbVertex,
-                                                                       sizeof(renderer::MeshData::DataType)/sizeof(float)));
+        if (ib2) {
+            ib2->flush(data.secondaryIndexData, 0, data.nbSecondaryIndex);
+        }
+        return new renderer::MeshBuffers(vb, ib, ib2, Sphere::computeSphere(reinterpret_cast<real*>(data.vData), data.nbVertex,
+                                                                            sizeof(renderer::MeshData::DataType)/sizeof(float)));
     }
     else return nullptr;
 
@@ -439,6 +444,8 @@ renderer::MeshData MeshLoader::importTim(const std::string& file)
     fs.read(reinterpret_cast<char*>(data.vData), sizeof(renderer::MeshData::DataType)*data.nbVertex);
     fs.read(reinterpret_cast<char*>(data.indexData), sizeof(uint)*data.nbIndex);
 
+    // TODO each mesh may use a different threshold, can be saved in .itim directly
+    optimizeMesh(data, 0.4f);
     return data;
 }
 
@@ -480,6 +487,45 @@ void MeshLoader::read(std::istream& os, std::string& str)
         delete[] dat;
     }
     else str = "";
+}
+
+void MeshLoader::optimizeMesh(renderer::MeshData& mesh, float secondaryIbSimplificationThreshold)
+{
+    size_t index_count = mesh.nbIndex;
+    size_t orig_vertex_count = mesh.nbVertex;
+    std::vector<unsigned int> remap(orig_vertex_count); // temporary remap table
+    size_t vertex_count = meshopt_generateVertexRemap(&remap[0], mesh.indexData, index_count, &mesh.vData[0], orig_vertex_count, sizeof(renderer::MeshData::DataType));
+
+    unsigned int* indices = new unsigned int[index_count];
+    renderer::MeshData::DataType* vertices = new renderer::MeshData::DataType[vertex_count];
+    meshopt_remapIndexBuffer(indices, mesh.indexData, index_count, &remap[0]);
+    meshopt_remapVertexBuffer(vertices, &mesh.vData[0], vertex_count, sizeof(renderer::MeshData::DataType), &remap[0]);
+
+    meshopt_optimizeVertexCache(indices, indices, index_count, vertex_count);
+    meshopt_optimizeVertexFetch(vertices, indices, index_count, vertices, vertex_count, sizeof(renderer::MeshData::DataType));
+
+    mesh.clear();
+
+    if (secondaryIbSimplificationThreshold < 1.f) {
+        float threshold = 0.2f;
+        size_t target_index_count = size_t(index_count * threshold);
+        float target_error = 1e-2f;
+
+        std::vector<unsigned int> lod(index_count);
+        float lod_error = 0.f;
+        unsigned int new_index_count = meshopt_simplify(&lod[0], indices, index_count, &vertices[0].v[0], vertex_count, sizeof(renderer::MeshData::DataType), target_index_count, target_error, /* options= */ 0, &lod_error);
+
+        std::cout << mesh.name << " simplify from " << index_count << " to " << new_index_count << std::endl;
+
+        mesh.secondaryIndexData = new unsigned int[new_index_count];
+        mesh.nbSecondaryIndex = new_index_count;
+        memcpy(mesh.secondaryIndexData, lod.data(), new_index_count * sizeof(unsigned int));
+    }
+
+    mesh.nbIndex = index_count;
+    mesh.nbVertex = vertex_count;
+    mesh.indexData = indices;
+    mesh.vData = vertices;
 }
 
 }

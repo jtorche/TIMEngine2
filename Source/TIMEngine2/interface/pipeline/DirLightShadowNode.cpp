@@ -91,8 +91,10 @@ void DirLightShadowNode::prepare()
         return;
 
 
-    for(uint i=0 ; i<renderer::MAX_SHADOW_MAP_LVL ; ++i)
+    for (uint i = 0; i < renderer::MAX_SHADOW_MAP_LVL; ++i) {
         _toDraw[i].clear();
+        _useShadowLOD[i].clear();
+    }
 
     for(size_t i=0 ; i<_meshInstanceSource.size() ; ++i)
     {
@@ -105,9 +107,12 @@ void DirLightShadowNode::prepare()
 
             for(const MeshInstance& m : culledMesh)
             {
-                for(uint i=0 ; i<m.mesh().nbElements() ; ++i)
-                    if(m.mesh().element(i).isEnable() && m.mesh().element(i).castShadow())
-                        _toDraw[j].push_back({&(m.mesh().element(i)), &(m.matrix())});
+                for (uint i = 0; i < m.mesh().nbElements(); ++i) {
+                    if (m.mesh().element(i).isEnable() && m.mesh().element(i).castShadow()) {
+                        _toDraw[j].push_back({ &(m.mesh().element(i)), &(m.matrix()) });
+                        _useShadowLOD[j].push_back(m.useShadowLOD());
+                    }
+                }
             }
         }
     }
@@ -134,13 +139,23 @@ void DirLightShadowNode::render()
         {
             vector<mat4> accMatr;
             vector<renderer::MeshBuffers*> accMesh;
+            vector<bool> accUseIndexBufferLOD;
 
             for(uint index=0 ; index < _toDraw[i].size() ; ++index)
             {
                 if(_toDraw[i][index].first->geometry().buffers() && !_toDraw[i][index].first->geometry().buffers()->isNull())
                 {
-                    accMatr.push_back(_toDraw[i][index].second->transposed());
-                    accMesh.push_back(_toDraw[i][index].first->geometry().buffers());
+                    renderer::MeshBuffers* pMeshBuffers = _toDraw[i][index].first->geometry().buffers();
+
+                    if (pMeshBuffers->hasSecondaryIndexBuffer()) {
+                        // Slightly shift the LOD to avoid self shadowing issue, this value should be mesh dependent
+                        accMatr.push_back(_toDraw[i][index].second->translated(_sceneView->dirLightView.lightDir * 0.02f).transposed());
+                    } else {
+                        accMatr.push_back(_toDraw[i][index].second->transposed());
+                    }
+
+                    accMesh.push_back(pMeshBuffers);
+                    accUseIndexBufferLOD.push_back(_useShadowLOD[i][index]);
                 }
             }
             if(!accMesh.empty())
@@ -156,7 +171,7 @@ void DirLightShadowNode::render()
                 _defaultDrawState.shader()->setUniform(projView,
                                                        _defaultDrawState.shader()->engineUniformId(renderer::Shader::PROJVIEW));
 
-                _meshDrawer.draw(accMesh, accMatr, {}, {}, false);
+                _meshDrawer.draw(accMesh, accMatr, {}, {}, accUseIndexBufferLOD, false);
             }
         }
 

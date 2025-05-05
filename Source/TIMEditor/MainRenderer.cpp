@@ -92,21 +92,21 @@ void MainRenderer::initRendering()
         tmpVB->flush(reinterpret_cast<float*>(vDataX), 0, 3);
         tmpIB->flush(iData, 0, 3);
 
-        _lineMesh[0] = Mesh(Mesh::Element(Geometry(new MeshBuffers(tmpVB, tmpIB, Sphere(vec3(), lineLength)))));
+        _lineMesh[0] = Mesh(Mesh::Element(Geometry(new MeshBuffers(tmpVB, tmpIB, nullptr, Sphere(vec3(), lineLength)))));
 
         tmpVB = renderer::vertexBufferPool->alloc(3);
         tmpIB = renderer::indexBufferPool->alloc(3);
         tmpVB->flush(reinterpret_cast<float*>(vDataY), 0, 3);
         tmpIB->flush(iData, 0, 3);
 
-        _lineMesh[1] = Mesh(Mesh::Element(Geometry(new MeshBuffers(tmpVB, tmpIB, Sphere(vec3(), lineLength)))));
+        _lineMesh[1] = Mesh(Mesh::Element(Geometry(new MeshBuffers(tmpVB, tmpIB, nullptr, Sphere(vec3(), lineLength)))));
 
         tmpVB = renderer::vertexBufferPool->alloc(3);
         tmpIB = renderer::indexBufferPool->alloc(3);
         tmpVB->flush(reinterpret_cast<float*>(vDataZ), 0, 3);
         tmpIB->flush(iData, 0, 3);
 
-        _lineMesh[2] = Mesh(Mesh::Element(Geometry(new MeshBuffers(tmpVB, tmpIB, Sphere(vec3(), lineLength)))));
+        _lineMesh[2] = Mesh(Mesh::Element(Geometry(new MeshBuffers(tmpVB, tmpIB, nullptr, Sphere(vec3(), lineLength)))));
 
         auto optSpecProbeMesh = resource::AssetManager<Geometry>::instance().load<false>("specProbe.obj", false);
         _specProbeMesh = optSpecProbeMesh.hasValue() ? Mesh(optSpecProbeMesh.value()) : Mesh();

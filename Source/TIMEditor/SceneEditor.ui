@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>272</width>
-    <height>643</height>
+    <width>260</width>
+    <height>675</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -507,6 +507,24 @@
              </property>
              <property name="checked">
               <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_11">
+           <item>
+            <widget class="QCheckBox" name="meshc_useShadowLOD">
+             <property name="text">
+              <string>use shadow LOD</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="meshc_useVisualLOD">
+             <property name="text">
+              <string>use visual LOD</string>
              </property>
             </widget>
            </item>

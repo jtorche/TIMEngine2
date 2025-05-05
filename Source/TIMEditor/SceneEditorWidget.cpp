@@ -217,6 +217,8 @@ void SceneEditorWidget::flushItemUi(int index)
         ui->meshc_isPhysic->setChecked(true);
         ui->meshc_isStatic->setChecked(true);
         ui->meshc_isVisible->setChecked(true);
+        ui->meshc_useShadowLOD->setChecked(false);
+        ui->meshc_useVisualLOD->setChecked(false);
         ui->colliderList->clear();
 
         ui->mc_friction->setValue(0.75);
@@ -239,6 +241,8 @@ void SceneEditorWidget::flushItemUi(int index)
         ui->meshc_isPhysic->setChecked(_objects[_curSceneIndex][index].isPhysic);
         ui->meshc_isStatic->setChecked(_objects[_curSceneIndex][index].isStatic);
         ui->meshc_isVisible->setChecked(_objects[_curSceneIndex][index].isVisible);
+        ui->meshc_useShadowLOD->setChecked(_objects[_curSceneIndex][index].useShadowLOD);
+        ui->meshc_useVisualLOD->setChecked(_objects[_curSceneIndex][index].useVisualLOD);
 
         ui->colliderList->clear();
         ui->colliderList->addItem("None");
@@ -574,6 +578,32 @@ void SceneEditorWidget::on_meshc_isVisible_clicked(bool b)
 {
     for(int i=0 ; i<_selections.size() ; ++i)
         _objects[_curSceneIndex][_selections[i].index].isVisible = b;
+}
+
+void SceneEditorWidget::on_meshc_useShadowLOD_clicked(bool b)
+{
+    for (int i = 0; i < _selections.size(); ++i)
+        _objects[_curSceneIndex][_selections[i].index].useShadowLOD = b;
+
+    _renderer->addEvent([=] {
+        for (int i = 0; i < _selections.size(); ++i) {
+            _objects[_curSceneIndex][_selections[i].index].node->setUseShadowLOD(b);
+            _selections[i].highlightedMeshInstance->setUseShadowLOD(b);
+        }
+    });
+}
+
+void SceneEditorWidget::on_meshc_useVisualLOD_clicked(bool b)
+{
+    for (int i = 0; i < _selections.size(); ++i)
+        _objects[_curSceneIndex][_selections[i].index].useVisualLOD = b;
+
+    _renderer->addEvent([=] {
+        for (int i = 0; i < _selections.size(); ++i) {
+            _objects[_curSceneIndex][_selections[i].index].node->setUseVisualLOD(b);
+            _selections[i].highlightedMeshInstance->setUseVisualLOD(b);
+        }
+    });
 }
 
 void SceneEditorWidget::on_mc_mass_editingFinished()
@@ -1178,10 +1208,18 @@ void SceneEditorWidget::exportScene(QString filePath, int sceneIndex)
         std::sort(cpyObj.begin(), cpyObj.end(), [](const SceneObject& o1, const SceneObject& o2) { return o1.name < o2.name; });
         for(int i=0 ; i<cpyObj.size() ; ++i)
         {
-            stream << "<Object name=\"" << cpyObj[i].name << "\" model=" <<  cpyObj[i].exportHelper <<
+            stream << "<Object name=\"" << cpyObj[i].name << "\" model=" << cpyObj[i].exportHelper <<
                       " isStatic=" << cpyObj[i].isStatic <<
                       " isPhysic=" << cpyObj[i].isPhysic <<
-                      " isVisible=" << cpyObj[i].isVisible << " >\n";
+                      " isVisible=" << cpyObj[i].isVisible;
+
+            if (cpyObj[i].useShadowLOD) {
+                stream << " useShadowLOD=" << cpyObj[i].useShadowLOD;
+            }
+            if (cpyObj[i].useVisualLOD) {
+                stream << " useVisualLOD=" << cpyObj[i].useVisualLOD;
+            }
+            stream << " >\n";
 
             stream << "   <translate>" << cpyObj[i].translate[0] << "," << cpyObj[i].translate[1] << "," << cpyObj[i].translate[2] << "</translate>\n";
             stream << "   <scale>" << cpyObj[i].scale[0] << "," << cpyObj[i].scale[1] << "," << cpyObj[i].scale[2] << "</scale>\n";
@@ -1337,10 +1375,12 @@ void SceneEditorWidget::importScene(QString file, int sceneIndex)
             if(index < 0 || !meshAssets.contains(index))
                 continue;
 
-            bool isStatic = true, isPhysic = true, isVisible = true;
+            bool isStatic = true, isPhysic = true, isVisible = true, useShadowLOD = false, useVisualLOD = false;
             elem->QueryBoolAttribute("isStatic", &isStatic);
             elem->QueryBoolAttribute("isPhysic", &isPhysic);
             elem->QueryBoolAttribute("isVisible", &isVisible);
+            elem->QueryBoolAttribute("useShadowLOD", &useShadowLOD);
+            elem->QueryBoolAttribute("useVisualLOD", &useVisualLOD);
 
             vec3 tr, sc;
             mat3 rot;
@@ -1355,6 +1395,8 @@ void SceneEditorWidget::importScene(QString file, int sceneIndex)
             obj.isPhysic = isPhysic;
             obj.isStatic = isStatic;
             obj.isVisible = isVisible;
+            obj.useShadowLOD = useShadowLOD;
+            obj.useVisualLOD = useVisualLOD;
             addSceneObject(sceneIndex, false, obj);
         }
         else if(elem->ValueStr() == std::string("Skybox"))

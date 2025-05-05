@@ -12,7 +12,7 @@ ParticleMesh::ParticleMesh(uint maxParticles, const std::function<TypeFunc>& fCr
         : _particles(new Particle[maxParticles]), _size(maxParticles),
           _rand(seed), _funCreate(fCreate), _funUpdate(fUpdate)
 {
-    _mesh = new renderer::MeshBuffers(vertexBufferPool->alloc(maxParticles), indexBufferPool->alloc(maxParticles), Sphere(vec3(0,0,0), 1));
+    _mesh = new renderer::MeshBuffers(vertexBufferPool->alloc(maxParticles), indexBufferPool->alloc(maxParticles), nullptr, Sphere(vec3(0,0,0), 1));
     _geometry = new interface::Geometry(_mesh);
     _gpuData = new renderer::VNCT_Vertex[maxParticles];
 

@@ -88,6 +88,7 @@ protected:
         interface::MeshInstance* node;
         QList<MeshElement> materials;
         bool isStatic = true, isPhysic = true, isVisible = true;
+        bool useShadowLOD = false, useVisualLOD = false;
 
         int exportHelper;
     };
@@ -161,6 +162,8 @@ public slots:
     void on_meshc_isStatic_clicked(bool);
     void on_meshc_isPhysic_clicked(bool);
     void on_meshc_isVisible_clicked(bool);
+    void on_meshc_useShadowLOD_clicked(bool);
+    void on_meshc_useVisualLOD_clicked(bool);
 
     void on_mc_mass_editingFinished();
     void on_mc_restitution_editingFinished();

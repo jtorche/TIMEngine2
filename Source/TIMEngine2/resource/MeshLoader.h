@@ -22,6 +22,8 @@ namespace resource
         static renderer::MeshData importTim(const std::string&);
         static void exportTim(const renderer::MeshData&, const std::string&);
 
+        static void optimizeMesh(renderer::MeshData&, float secondaryIbSimplificationThreshold = 1.0f);
+
 ////        static void exportSkeleton(Skeleton*, const vector<SkeletonAnimation*>&, const std::string&);
 ////        static Skeleton* importSkeleton(const std::string&, vector<SkeletonAnimation*>&);
 

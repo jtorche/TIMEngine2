@@ -47,7 +47,7 @@ void MeshRenderer::setDrawState(const DrawState& s)
 }
 
 int MeshRenderer::draw(const vector<MeshBuffers*>& meshs, const vector<mat4>& models, const vector<DummyMaterial>& materials,
-                       const vector<vector<uint>>& extraUbo, bool useCameraUbo)
+                       const vector<vector<uint>>& extraUbo, const vector<bool>& useIndexBufferLOD, bool useCameraUbo)
 {
     if(meshs.empty() || models.size() != meshs.size() || (!materials.empty() && materials.size() < meshs.size())
        || (!extraUbo.empty() && extraUbo.size() < meshs.size()))
@@ -84,11 +84,12 @@ int MeshRenderer::draw(const vector<MeshBuffers*>& meshs, const vector<mat4>& mo
 
         for(uint j=0 ; j<innerLoop ; ++j)
         {
-            drawParam[j].count = meshs[_maxUboMat4*i+j]->ib()->size();
+            bool useLOD = useIndexBufferLOD.empty() ? false : useIndexBufferLOD[_maxUboMat4 * i + j];
+            drawParam[j].count = meshs[_maxUboMat4*i+j]->ib(useLOD)->size();
             drawParam[j].baseInstance = j;
             drawParam[j].baseVertex = meshs[_maxUboMat4*i+j]->vb()->offset();
             drawParam[j].instanceCount = 1;
-            drawParam[j].firstIndex = meshs[_maxUboMat4*i+j]->ib()->offset();
+            drawParam[j].firstIndex = meshs[_maxUboMat4*i+j]->ib(useLOD)->offset();
         }
 
         if(useCameraUbo)
@@ -105,9 +106,22 @@ int MeshRenderer::draw(const vector<MeshBuffers*>& meshs, const vector<mat4>& mo
         if(!materials.empty())
             openGL.bindUniformBuffer(_materialBuffer.id(), 2);
 
+#if 1
+        for (uint j = 0; j < innerLoop; ++j)
+        {
+            glDrawElementsInstancedBaseVertexBaseInstance(DrawState::toGLPrimitive(_states.primitive()), 
+                                                          drawParam[j].count,
+                                                          GL_UNSIGNED_INT, 
+                                                          BUFFER_OFFSET(drawParam[j].firstIndex * 4),
+                                                          1,
+                                                          drawParam[j].baseVertex,
+                                                          j);
+        }
+#else
         _drawIndirectBuffer.flush(drawParam, 0, innerLoop);
         openGL.bindDrawIndirectBuffer(_drawIndirectBuffer.id());
         glMultiDrawElementsIndirect(DrawState::toGLPrimitive(_states.primitive()), GL_UNSIGNED_INT, nullptr, innerLoop, 0);
+#endif
     }
 #else
     openGL.bindUniformBuffer(_uboParameter.id(), 0);

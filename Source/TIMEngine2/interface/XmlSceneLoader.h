@@ -37,6 +37,7 @@ namespace interface
 
             MeshInstance* meshInstance;
             bool isStatic, isPhysic, isVisible;
+            bool useShadowLOD, useVisualLOD;
             Collider collider;
 
             vector<XmlMeshAssetLoader::MeshElementModel> asset;

@@ -26,10 +26,16 @@ namespace interface
         const vector<uint>& attachedUBO() const;
         void clearAttachedUBO();
 
+        void setUseShadowLOD(bool use) { _useShadowLOD = use; }
+        void setUseVisualLOD(bool use) { _useVisualLOD = use; }
+        bool useShadowLOD() const { return _useShadowLOD; }
+        bool useVisualLOD() const { return _useVisualLOD; }
+          
     protected:
         mat4 _model;
         Mesh _mesh;
         vector<uint> _extraUbo;
+        bool _useShadowLOD = false, _useVisualLOD = false;
 
         MeshInstance() = default;
         ~MeshInstance() = default;

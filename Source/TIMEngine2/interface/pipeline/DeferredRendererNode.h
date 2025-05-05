@@ -46,9 +46,10 @@ namespace pipeline
             const Mesh::Element* elem;
             const mat4* matrix;
             const vector<uint>* extraUbo;
+            bool useLOD;
         };
 
-        using ElementInstance = EInst;//std::pair<const Mesh::Element*, const mat4*>;
+        using ElementInstance = EInst;
         vector<ElementInstance> _toDraw;
 
         Pipeline::DeferredRendererEntity* _rendererEntity = nullptr;

@@ -46,7 +46,7 @@ void DeferredRendererNode::prepare()
         {
             for(uint i=0 ; i<m.mesh().nbElements() ; ++i)
                 if(m.mesh().element(i).isEnable() == 2 || (!_isAux && m.mesh().element(i).isEnable() == 1))
-                    _toDraw.push_back({&(m.mesh().element(i)), &(m.matrix()), &(m.attachedUBO())});
+                    _toDraw.push_back({&(m.mesh().element(i)), &(m.matrix()), &(m.attachedUBO()), m.useVisualLOD()});
         }
     }
 
@@ -114,6 +114,7 @@ void DeferredRendererNode::render()
         vector<renderer::MeshBuffers*> accMesh;
         vector<renderer::DummyMaterial> accMate;
         vector<vector<uint>> accExtraUbo;
+        vector<bool> accUseIndexBufferLOD;
         renderer::DrawState curDrawState = _toDraw[0].elem->drawState();
         uint curIndex=0;
 
@@ -138,10 +139,11 @@ void DeferredRendererNode::render()
                     }
                 }
 
-                _meshDrawer.draw(accMesh, accMatr, accMate);
+                _meshDrawer.draw(accMesh, accMatr, accMate, accExtraUbo, accUseIndexBufferLOD);
                 accMesh.resize(0);
                 accMatr.resize(0);
                 accMate.resize(0);
+                accUseIndexBufferLOD.resize(0);
                 accExtraUbo.resize(0);
                 curDrawState = _toDraw[curIndex].elem->drawState();
             }
@@ -152,6 +154,7 @@ void DeferredRendererNode::render()
                 accMesh.push_back(_toDraw[curIndex].elem->geometry().buffers());
                 accMate.push_back(_toDraw[curIndex].elem->dummyMaterial());
                 accExtraUbo.push_back(*(_toDraw[curIndex].extraUbo));
+                accUseIndexBufferLOD.push_back(_toDraw[curIndex].useLOD);
             }
         }
         if(!accMesh.empty())
@@ -173,7 +176,7 @@ void DeferredRendererNode::render()
                 }
             }
 
-            _meshDrawer.draw(accMesh, accMatr, accMate, accExtraUbo);
+            _meshDrawer.draw(accMesh, accMatr, accMate, accExtraUbo, accUseIndexBufferLOD);
         }
     }
 
