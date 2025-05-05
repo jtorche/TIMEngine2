@@ -2596,31 +2596,31 @@
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=4 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=4 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=5 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=5 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=6 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=6 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=7 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=7 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=8 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=8 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
@@ -2638,55 +2638,55 @@
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=11 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=11 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=12 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=12 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=13 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=13 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=14 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=14 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=15 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=15 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=16 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=16 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=17 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=17 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=18 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=18 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=19 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=19 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
@@ -2704,31 +2704,31 @@
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=22 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=22 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=23 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=23 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=24 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=24 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=25 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=25 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=26 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=26 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
@@ -2740,139 +2740,139 @@
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=28 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=28 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=29 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=29 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=30 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=30 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=31 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=31 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=32 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=32 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=33 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=33 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=34 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=34 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=35 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=35 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=36 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=36 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=37 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=37 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=38 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=38 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=39 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=39 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=40 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=40 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=41 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=41 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=42 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=42 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=43 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=43 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=44 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=44 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=45 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=45 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=46 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=46 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=47 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=47 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=48 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=48 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=49 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=49 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=50 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=50 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
@@ -2884,25 +2884,25 @@
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=52 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=52 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=53 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=53 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=54 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=54 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=55 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=55 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
@@ -2914,25 +2914,25 @@
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=57 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=57 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=58 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=58 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=59 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=59 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=60 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=60 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
@@ -2944,115 +2944,115 @@
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=62 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=62 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=63 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=63 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=64 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=64 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=65 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=65 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=66 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=66 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=67 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=67 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=68 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=68 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=69 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=69 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=70 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=70 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=71 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=71 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=72 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=72 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=73 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=73 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=74 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=74 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=75 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=75 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=76 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=76 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=77 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=77 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=78 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=78 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=79 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=79 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=80 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="" model=80 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
