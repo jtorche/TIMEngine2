@@ -293,7 +293,7 @@ int main(int argc, char* argv[])
 
 				timeElapsed = timer.elapsed()*0.001;
 				totalTime += timeElapsed;
-                pipeline.pipeline()->meshRenderer().frameState().setTime(totalTime, timeElapsed);
+                pipeline.pipeline()->meshRenderer().frameParameter().setTime(totalTime, timeElapsed);
 
                 {
                     float fps = countTime<0>(timeElapsed);
