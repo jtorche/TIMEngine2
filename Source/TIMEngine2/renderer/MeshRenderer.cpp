@@ -109,6 +109,9 @@ int MeshRenderer::draw(const vector<MeshBuffers*>& meshs, const vector<mat4>& mo
 #if 1
         for (uint j = 0; j < innerLoop; ++j)
         {
+            _stats._numDrawCalls++;
+            _stats._numTriangles += (drawParam[j].count / 3);
+
             glDrawElementsInstancedBaseVertexBaseInstance(DrawState::toGLPrimitive(_states.primitive()), 
                                                           drawParam[j].count,
                                                           GL_UNSIGNED_INT, 

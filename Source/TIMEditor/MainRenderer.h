@@ -27,6 +27,8 @@ public:
     void close();
 
     float elapsedTime() const { return _time; }
+    unsigned int getNumTriangleRendered() const { return _numTrianglesRendered; }
+    unsigned int getNumDrawcalls() const { return _numDrawcalls; }
 
     interface::FullPipeline& pipeline() { return _pipeline; }
     void lock() const { if (m_useRenderThread) _mutex.lock(); }
@@ -89,6 +91,9 @@ private:
     mutable QMutex _eventMutex;
     QQueue<std::function<void()>> _events;
     QWaitCondition _waitNoEvent;
+
+    unsigned int _numTrianglesRendered = 0;
+    unsigned int _numDrawcalls = 0;
 
     /* gui elements */
     tim::interface::Mesh _lineMesh[3];

@@ -71,6 +71,7 @@ private slots:
     void addGeometryToScene(QString, QString);
 
     void flushFeedbackTrans(QString);
+    void flushStatsLabel();
 
 };
 

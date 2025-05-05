@@ -14,7 +14,7 @@ Pipeline::DeferredRendererEntity& Pipeline::genDeferredRendererEntity(const uive
         return *(it->second.get());
     else
     {
-        DeferredRendererEntity* entity = new DeferredRendererEntity(res, _meshRenderer.frameState(), !useLightRenderer, useReflexionRenderer);
+        DeferredRendererEntity* entity = new DeferredRendererEntity(res, _meshRenderer.frameParameter(), !useLightRenderer, useReflexionRenderer);
         _deferredRendererEntity[std::make_tuple(res, useLightRenderer, useReflexionRenderer, entityId)]
                 = std::unique_ptr<DeferredRendererEntity>(entity);
 

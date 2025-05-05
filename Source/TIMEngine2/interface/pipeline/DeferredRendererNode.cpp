@@ -79,7 +79,7 @@ void DeferredRendererNode::render()
         return;
 
     if(_sceneView)
-        _meshDrawer.frameState().setCamera(_sceneView->camera);
+        _meshDrawer.frameParameter().setCamera(_sceneView->camera);
 
     _rendererEntity->deferredRenderer().acquire();
     _rendererEntity->deferredRenderer().frameBuffer()->bind();

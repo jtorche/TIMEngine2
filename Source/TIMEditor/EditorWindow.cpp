@@ -54,6 +54,10 @@ EditorWindow::EditorWindow(QWidget *parent) :
     connect(ui->glViewContainer, SIGNAL(escapePressed()), ui->sceneEditorWidget, SLOT(cancelSelection()));
     connect(ui->glViewContainer, SIGNAL(deleteCurrent()), ui->sceneEditorWidget, SLOT(deleteCurrentObjects()));
 
+    QTimer* timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()), this, SLOT(flushStatsLabel()));
+    timer->start(300);
+
     connect(ui->meshEditorWidget, SIGNAL(saveMeshClicked()), this, SLOT(addMeshToAsset()));
     connect(ui->meshEditorWidget, SIGNAL(changeCurBaseModelName(QString)), ui->sceneEditorWidget, SLOT(changeBaseModelName(QString)));
 
@@ -125,6 +129,17 @@ QString EditorWindow::genTitle() const
 }
 
 /** SLOTS **/
+
+void EditorWindow::flushStatsLabel()
+{
+    QString stats;
+    if (_mainRenderer) {
+        stats += QString::number(_mainRenderer->getNumTriangleRendered()) + " triangles - " + QString::number(_mainRenderer->getNumDrawcalls()) + " drawcalls";
+        ui->renderStats->setText(stats);
+    } else {
+        ui->renderStats->setText("No stats");
+    }
+}
 
 void EditorWindow::EditorWindow::flushFeedbackTrans(QString str)
 {

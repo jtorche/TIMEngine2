@@ -149,8 +149,8 @@
    </property>
    <property name="minimumSize">
     <size>
-     <width>166</width>
-     <height>126</height>
+     <width>219</width>
+     <height>129</height>
     </size>
    </property>
    <property name="features">
@@ -185,6 +185,12 @@
      <item>
       <layout class="QVBoxLayout" name="verticalLayout_6">
        <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
         <number>0</number>
        </property>
        <item>
@@ -288,6 +294,16 @@
           </widget>
          </item>
         </layout>
+       </item>
+       <item>
+        <widget class="QLabel" name="renderStats">
+         <property name="text">
+          <string notr="true">No stats</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>

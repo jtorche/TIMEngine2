@@ -17,8 +17,17 @@ namespace renderer
     class MeshRenderer
     {
     public:
+        struct Stats {
+            unsigned int _numTriangles = 0;
+            unsigned int _numInstances = 0;
+            unsigned int _numDrawCalls = 0;
+        };
+
         MeshRenderer();
         ~MeshRenderer();
+
+        void resetStats();
+        const Stats& getStats() const { return _stats; }
 
         void bind() const;
         int draw(const vector<MeshBuffers*>&, const vector<mat4>&, const vector<DummyMaterial>& mat = {},
@@ -26,8 +35,8 @@ namespace renderer
 
         void setDrawState(const DrawState&);
 
-        FrameParameter& frameState();
-        const FrameParameter& frameState() const;
+        FrameParameter& frameParameter();
+        const FrameParameter& frameParameter() const;
 
     private:
 
@@ -39,6 +48,7 @@ namespace renderer
 
         DrawState _states;
         FrameParameter _parameter;
+        Stats _stats;
 
         GenericVertexBuffer<int> _drawIdBuffer;
         VAO* _vao = nullptr;
@@ -53,8 +63,15 @@ namespace renderer
 #endif
     };
 
-    inline FrameParameter& MeshRenderer::frameState() { return _parameter; }
-    inline const FrameParameter& MeshRenderer::frameState() const  { return _parameter; }
+    inline FrameParameter& MeshRenderer::frameParameter() { return _parameter; }
+    inline const FrameParameter& MeshRenderer::frameParameter() const  { return _parameter; }
+
+    inline void MeshRenderer::resetStats()
+    {
+        _stats._numTriangles = 0;
+        _stats._numInstances = 0;
+        _stats._numDrawCalls = 0;
+    }
 
 }
 }

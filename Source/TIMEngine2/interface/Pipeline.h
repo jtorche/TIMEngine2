@@ -332,7 +332,7 @@ namespace interface
         template <class T>
         typename std::enable_if<std::is_constructible<T, const renderer::FrameParameter&>::value, T>::type& createNode()
         {
-            T* node = new T(_meshRenderer.frameState());
+            T* node = new T(_meshRenderer.frameParameter());
             _allProcessNodes.push_back(node);
             return *node;
         }

@@ -103,6 +103,8 @@ void SceneEditorWidget::addSceneObject(int sceneIndex, bool lock, SceneObject ob
 
     if(lock) _renderer->lock();
     obj.node = &_renderer->getScene(sceneIndex+1).scene.add<MeshInstance>(trans);
+    obj.node->setUseVisualLOD(obj.useVisualLOD);
+    obj.node->setUseShadowLOD(obj.useShadowLOD);
     if(lock) _renderer->unlock();
 
     QString n;

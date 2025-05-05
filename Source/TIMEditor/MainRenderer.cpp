@@ -178,7 +178,10 @@ void MainRenderer::update(uint targetFbo)
     _time = std::max(realTime, idealFPS);
     _totalTime += _time;
 
-    _pipeline.pipeline()->meshRenderer().frameState().setTime(_totalTime, _time);
+    _pipeline.pipeline()->meshRenderer().frameParameter().setTime(_totalTime, _time);
+    _numTrianglesRendered = _pipeline.pipeline()->meshRenderer().getStats()._numTriangles;
+    _numDrawcalls = _pipeline.pipeline()->meshRenderer().getStats()._numDrawCalls;
+    _pipeline.pipeline()->meshRenderer().resetStats();
     unlock();
 
     if (realTime < idealFPS)
