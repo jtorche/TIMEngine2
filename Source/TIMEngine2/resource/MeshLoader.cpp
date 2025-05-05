@@ -445,7 +445,7 @@ renderer::MeshData MeshLoader::importTim(const std::string& file)
     fs.read(reinterpret_cast<char*>(data.indexData), sizeof(uint)*data.nbIndex);
 
     // TODO each mesh may use a different threshold, can be saved in .itim directly
-    optimizeMesh(data, 0.4f);
+    optimizeMesh(data, 0.33f);
     return data;
 }
 
@@ -507,8 +507,7 @@ void MeshLoader::optimizeMesh(renderer::MeshData& mesh, float secondaryIbSimplif
     mesh.clear();
 
     if (secondaryIbSimplificationThreshold < 1.f) {
-        float threshold = 0.2f;
-        size_t target_index_count = size_t(index_count * threshold);
+        size_t target_index_count = size_t(index_count * secondaryIbSimplificationThreshold);
         float target_error = 1e-2f;
 
         std::vector<unsigned int> lod(index_count);
