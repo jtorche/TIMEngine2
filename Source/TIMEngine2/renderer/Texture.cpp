@@ -19,11 +19,13 @@ Texture::~Texture()
 
 void Texture::makeBindless() const
 {
+#if 1
     if(_isBindless) return;
 
     _isBindless = true;
     _handle = glGetTextureHandleARB(_id);
     glMakeTextureHandleResidentARB(_handle);
+#endif
 }
 
 void Texture::bind(uint index) const

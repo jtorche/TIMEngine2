@@ -49,9 +49,12 @@ smooth in vec3 v_tangent;
 layout(location=0) out vec4 outColor; 
 layout(location=1) out vec4 outNormal;
 layout(location=2) out vec4 outMaterial;
-  
+
+// #define DISABLE_BINDLESS_TEXTURE
+
 void main()  
 {  	
+
 	vec4 texColor = vec4(1);
 	vec3 n = v_normal;
 	vec4 material_tex = vec4(1,1,1,1);
@@ -59,7 +62,9 @@ void main()
 	if(materials[v_drawId].header.y > 0)
 	{
 		float texScale = materials[v_drawId].color_scale_ca_unsused.y / 1000.f;
+		#ifndef DISABLE_BINDLESS_TEXTURE
 		texColor = texture(sampler2D(materials[v_drawId].tex0), tCoord * texScale);
+		#endif
 		
 	#ifdef ALPHA_TEST
 		if(texColor.a < 0.5) discard;
@@ -80,11 +85,18 @@ void main()
 		#else
 			vec3 t = normalize(v_tangent);
 			mat3 tbn = mat3(t, cross(t,n), n);
+			
+			#ifndef DISABLE_BINDLESS_TEXTURE
 			n = tbn*(texture(sampler2D(materials[v_drawId].tex1), tCoord * texScale).xyz*2-1);
+			#endif
+			
+			#ifndef DISABLE_BINDLESS_TEXTURE
 			if(materials[v_drawId].header.y > 2)
 			{
 				material_tex = texture(sampler2D(materials[v_drawId].tex2), tCoord * texScale);
 			}
+			#endif
+			
 		#endif
 		}
 	}

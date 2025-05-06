@@ -52,6 +52,7 @@ void main()
 	
 #ifdef PORTAL_SHADER
 	vec4 worldVert = models[drawId] * vec4(vertex,1);
+	// When used for portal shader, material parameters encode a plan equation
 	float dist = dot(worldVert, materials[drawId].parameter);
 	
 	if(dist < 0)
