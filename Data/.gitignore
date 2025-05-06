@@ -5,7 +5,6 @@
 *.itim
 *.mtl
 *.dll
-*.txt
 *.pdn
 *.exe
 *.db
@@ -14,3 +13,6 @@
 *.wav
 *.mp3
 *.bat
+err.txt
+Log.txt
+todo.txt

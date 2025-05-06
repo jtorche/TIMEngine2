@@ -1,17 +1,17 @@
 <Skybox>
-   <x>skybox/bluesky/xy_red.png</x>
-   <nx>skybox/bluesky/xy_red.png</nx>
-   <y>skybox/bluesky/xy_red.png</y>
-   <ny>skybox/bluesky/xy_red.png</ny>
-   <z>skybox/bluesky/z_red.png</z>
-   <nz>skybox/bluesky/nz_red.png</nz>
+   <x>skybox/bluesky/xy.png</x>
+   <nx>skybox/bluesky/xy.png</nx>
+   <y>skybox/bluesky/xy.png</y>
+   <ny>skybox/bluesky/xy.png</ny>
+   <z>skybox/bluesky/z.png</z>
+   <nz>skybox/bluesky/nz.png</nz>
 </Skybox>
 
-<DirLight shadows=1 color="1,0.6666,0.1" direction="0.00118732,0.00127906,-0.999998" />
+<DirLight shadows=1 color="0.23,0.75,1" direction="0.00118732,0.00127906,-0.999998" />
 
 <MeshAsset name="groundForest" index=0 >
 	<Element type=0>
-		<color>255,255,255</color>
+		<color>1,213,255</color>
 		<geometry>meshBank/groundForest.obj</geometry>
 		<roughness>0.59</roughness>
 		<metallic>0</metallic>
@@ -25,7 +25,7 @@
 </MeshAsset>
 <MeshAsset name="arbre1" index=1 >
 	<Element type=0>
-		<color>255,85,0</color>
+		<color>155,255,234</color>
 		<geometry>meshBank/arbre1.obj</geometry>
 		<roughness>0.75</roughness>
 		<metallic>0</metallic>
@@ -38,7 +38,7 @@
 		<normalTex>textureBank/bark_NORM.png</normalTex>
 	</Element>
 	<Element type=0>
-		<color>255,85,0</color>
+		<color>0,166,255</color>
 		<geometry>meshBank/arbre1Leaf.obj</geometry>
 		<roughness>0.4</roughness>
 		<metallic>0</metallic>
@@ -66,7 +66,7 @@
 </MeshAsset>
 <MeshAsset name="arbre2" index=2 >
 	<Element type=0>
-		<color>255,85,0</color>
+		<color>155,255,234</color>
 		<geometry>meshBank/arbre2.obj</geometry>
 		<roughness>0.75</roughness>
 		<metallic>0</metallic>
@@ -79,7 +79,7 @@
 		<normalTex>textureBank/bark_NORM.png</normalTex>
 	</Element>
 	<Element type=0>
-		<color>255,85,0</color>
+		<color>0,166,255</color>
 		<geometry>meshBank/arbre2Leaf.obj</geometry>
 		<roughness>0.4</roughness>
 		<metallic>0</metallic>
@@ -107,7 +107,7 @@
 </MeshAsset>
 <MeshAsset name="arbre3" index=3 >
 	<Element type=0>
-		<color>255,85,0</color>
+		<color>160,209,255</color>
 		<geometry>meshBank/arbre3.obj</geometry>
 		<roughness>0.75</roughness>
 		<metallic>0</metallic>
@@ -120,7 +120,7 @@
 		<normalTex>textureBank/bark_NORM.png</normalTex>
 	</Element>
 	<Element type=0>
-		<color>255,85,0</color>
+		<color>105,133,255</color>
 		<geometry>meshBank/arbre3Leaf.obj</geometry>
 		<roughness>0.4</roughness>
 		<metallic>0</metallic>
@@ -157,7 +157,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_purple.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -184,7 +184,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blue2.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -211,7 +211,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blue2.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -238,7 +238,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blue2.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -265,7 +265,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blue2.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -292,7 +292,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blue2.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -319,7 +319,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blue2.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -346,7 +346,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blue2.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -373,7 +373,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blue2.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -400,7 +400,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blue2.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -427,7 +427,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blue2.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -454,7 +454,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blue2.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -481,7 +481,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blue2.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -508,7 +508,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blue2.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -535,7 +535,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blue2.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -562,7 +562,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blue2.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -589,7 +589,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blue2.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -616,7 +616,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blue2.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -643,7 +643,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blue2.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -670,7 +670,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blue2.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -697,7 +697,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blue2.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -724,7 +724,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blued.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -751,7 +751,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blued.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -778,7 +778,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blued.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -805,7 +805,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blued.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -832,7 +832,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blued.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -859,7 +859,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blued.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -886,7 +886,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blued.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -913,7 +913,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blued.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -940,7 +940,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blued.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -967,7 +967,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blued.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -994,7 +994,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blued.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1021,7 +1021,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blued.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1048,7 +1048,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blued.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1075,7 +1075,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blued.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1102,7 +1102,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blued.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1129,7 +1129,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blued.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1156,7 +1156,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blued.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1183,7 +1183,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blued.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1210,7 +1210,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blued.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1237,7 +1237,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blued.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1264,7 +1264,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blued.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1291,7 +1291,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blued.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1318,7 +1318,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blued.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1345,7 +1345,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blued.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1372,7 +1372,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blued.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1399,7 +1399,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blued.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1426,7 +1426,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blued.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1453,7 +1453,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blued.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1480,7 +1480,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blued.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1507,7 +1507,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_blued.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1534,7 +1534,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_purple.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1561,7 +1561,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_purple.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1588,7 +1588,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_purple.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1615,7 +1615,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_purple.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1642,7 +1642,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_purple.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1669,7 +1669,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_purple.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1696,7 +1696,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_purple.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1723,7 +1723,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_purple.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1750,7 +1750,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_purple.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1777,7 +1777,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_purple.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1804,7 +1804,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_purple.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1831,7 +1831,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_purple.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1858,7 +1858,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_purple.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1885,7 +1885,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_purple.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1912,7 +1912,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_purple.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1939,7 +1939,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_purple.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1966,7 +1966,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_purple.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1993,7 +1993,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_purple.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -2020,7 +2020,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_purple.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -2047,7 +2047,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_purple.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -2074,7 +2074,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_purple.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -2101,7 +2101,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_purple.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -2128,7 +2128,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_purple.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -2155,7 +2155,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_purple.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -2182,7 +2182,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_purple.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -2209,7 +2209,7 @@
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1_purple.png</diffuseTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -2225,9 +2225,9 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="column1_red" index=81 >
+<MeshAsset name="column1_blue" index=81 >
 	<Element type=0>
-		<color>236,59,0</color>
+		<color>14,110,255</color>
 		<geometry>meshBank/column1.obj</geometry>
 		<roughness>0.1</roughness>
 		<metallic>0</metallic>
@@ -2239,11 +2239,11 @@
 		<diffuseTex>meshBank/column1_AO.png</diffuseTex>
 	</Element>
 	<Element type=0>
-		<color>255,140,0</color>
+		<color>37,204,255</color>
 		<geometry>meshBank/column1_base.obj</geometry>
 		<roughness>0.1</roughness>
 		<metallic>0</metallic>
-		<specular>0.13</specular>
+		<specular>0.08</specular>
 		<emissive>0</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
@@ -2277,7 +2277,7 @@
 		<normalTex>textureBank/rock3_NORM.png</normalTex>
 	</Element>
 </MeshAsset>
-<MeshAsset name="roomPattern" index=83 >
+<MeshAsset name="cube_uv" index=83 >
 	<Element type=0>
 		<color>198,198,198</color>
 		<geometry>meshBank/room.obj</geometry>
@@ -2290,9 +2290,9 @@
 		<cmAffected>1</cmAffected>
 	</Element>
 </MeshAsset>
-<MeshAsset name="artifact_red_bright" index=84 >
+<MeshAsset name="artifact_blue" index=84 >
 	<Element type=0>
-		<color>255,162,0</color>
+		<color>0,187,255</color>
 		<geometry>meshBank/artifact_p1.obj</geometry>
 		<roughness>0.11</roughness>
 		<metallic>0.32</metallic>
@@ -2303,7 +2303,7 @@
 		<cmAffected>1</cmAffected>
 	</Element>
 	<Element type=0>
-		<color>255,0,0</color>
+		<color>0,59,255</color>
 		<geometry>meshBank/artifact_p2.obj</geometry>
 		<roughness>0.05</roughness>
 		<metallic>0</metallic>
@@ -2314,12 +2314,12 @@
 		<cmAffected>1</cmAffected>
 	</Element>
 	<Element type=0>
-		<color>255,162,0</color>
+		<color>0,251,255</color>
 		<geometry>meshBank/artifact_p3.obj</geometry>
-		<roughness>0.99</roughness>
-		<metallic>1</metallic>
-		<specular>0.05</specular>
-		<emissive>0.25</emissive>
+		<roughness>1</roughness>
+		<metallic>0.99</metallic>
+		<specular>0.1</specular>
+		<emissive>0.2</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
@@ -2626,13 +2626,13 @@
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=9 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
+<Object name="" model=9 isStatic=1 isPhysic=0 isVisible=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=10 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
+<Object name="" model=10 isStatic=1 isPhysic=0 isVisible=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
@@ -2692,13 +2692,13 @@
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=20 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
+<Object name="" model=20 isStatic=1 isPhysic=0 isVisible=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=21 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
+<Object name="" model=21 isStatic=1 isPhysic=0 isVisible=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
@@ -2734,7 +2734,7 @@
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=27 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
+<Object name="" model=27 isStatic=1 isPhysic=0 isVisible=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
@@ -2758,7 +2758,7 @@
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=31 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
+<Object name="" model=31 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
@@ -2878,7 +2878,7 @@
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=51 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
+<Object name="" model=51 isStatic=1 isPhysic=0 isVisible=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
@@ -2908,7 +2908,7 @@
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=56 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
+<Object name="" model=56 isStatic=1 isPhysic=0 isVisible=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
@@ -2926,7 +2926,7 @@
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=59 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
+<Object name="" model=59 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
@@ -2938,7 +2938,7 @@
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=61 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
+<Object name="" model=61 isStatic=1 isPhysic=0 isVisible=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
@@ -3016,7 +3016,7 @@
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=74 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
+<Object name="" model=74 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
@@ -3059,12 +3059,12 @@
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
 <Object name="column" model=81 isStatic=1 isPhysic=1 isVisible=1 >
-   <translate>0.92411,-0.951137,0</translate>
+   <translate>0.991789,0.886427,0</translate>
    <scale>1,1,1</scale>
-   <rotate>0.754958,0.655773,0,-0.655773,0.754958,0,0,0,1</rotate>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="portalGroveRed_GroveToRed" model=82 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="portalGroveBlue_GroveToBlue" model=82 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>-0.860403,0.445031,0</translate>
    <scale>1.4,1,1.25039</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
@@ -3076,9 +3076,9 @@
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="sg_artifact_red" model=84 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>0.927947,-0.954412,1.37174</translate>
-   <scale>0.499992,0.499992,0.499992</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+<Object name="sg_artifact_blue" model=84 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>0.994902,0.886243,1.37592</translate>
+   <scale>0.5,0.5,0.5</scale>
+   <rotate>0.813731,-0.581241,0,0.581241,0.813731,0,0,0,1</rotate>
    <collider type=1 mass=0.3 restitution=0.4 friction=0.5 rollingFriction=0/>
 </Object>

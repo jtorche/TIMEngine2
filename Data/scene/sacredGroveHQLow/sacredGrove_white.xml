@@ -1,17 +1,17 @@
 <Skybox>
-   <x>skybox/bluesky/xy_red.png</x>
-   <nx>skybox/bluesky/xy_red.png</nx>
-   <y>skybox/bluesky/xy_red.png</y>
-   <ny>skybox/bluesky/xy_red.png</ny>
-   <z>skybox/bluesky/z_red.png</z>
-   <nz>skybox/bluesky/nz_red.png</nz>
+   <x>skybox/bluesky/xy_dark.png</x>
+   <nx>skybox/bluesky/xy_dark.png</nx>
+   <y>skybox/bluesky/xy_dark.png</y>
+   <ny>skybox/bluesky/xy_dark.png</ny>
+   <z>skybox/bluesky/z_dark.png</z>
+   <nz>skybox/bluesky/nz_dark.png</nz>
 </Skybox>
 
-<DirLight shadows=1 color="1,0.6666,0.1" direction="0.00118732,0.00127906,-0.999998" />
+<DirLight shadows=1 color="0.2,0.2,0.2" direction="-0.477547,-0.536497,-0.695787" />
 
 <MeshAsset name="groundForest" index=0 >
 	<Element type=0>
-		<color>255,255,255</color>
+		<color>1,213,255</color>
 		<geometry>meshBank/groundForest.obj</geometry>
 		<roughness>0.59</roughness>
 		<metallic>0</metallic>
@@ -25,7 +25,7 @@
 </MeshAsset>
 <MeshAsset name="arbre1" index=1 >
 	<Element type=0>
-		<color>255,85,0</color>
+		<color>155,255,234</color>
 		<geometry>meshBank/arbre1.obj</geometry>
 		<roughness>0.75</roughness>
 		<metallic>0</metallic>
@@ -38,7 +38,7 @@
 		<normalTex>textureBank/bark_NORM.png</normalTex>
 	</Element>
 	<Element type=0>
-		<color>255,85,0</color>
+		<color>0,166,255</color>
 		<geometry>meshBank/arbre1Leaf.obj</geometry>
 		<roughness>0.4</roughness>
 		<metallic>0</metallic>
@@ -66,7 +66,7 @@
 </MeshAsset>
 <MeshAsset name="arbre2" index=2 >
 	<Element type=0>
-		<color>255,85,0</color>
+		<color>155,255,234</color>
 		<geometry>meshBank/arbre2.obj</geometry>
 		<roughness>0.75</roughness>
 		<metallic>0</metallic>
@@ -79,7 +79,7 @@
 		<normalTex>textureBank/bark_NORM.png</normalTex>
 	</Element>
 	<Element type=0>
-		<color>255,85,0</color>
+		<color>0,166,255</color>
 		<geometry>meshBank/arbre2Leaf.obj</geometry>
 		<roughness>0.4</roughness>
 		<metallic>0</metallic>
@@ -107,7 +107,7 @@
 </MeshAsset>
 <MeshAsset name="arbre3" index=3 >
 	<Element type=0>
-		<color>255,85,0</color>
+		<color>160,209,255</color>
 		<geometry>meshBank/arbre3.obj</geometry>
 		<roughness>0.75</roughness>
 		<metallic>0</metallic>
@@ -120,7 +120,7 @@
 		<normalTex>textureBank/bark_NORM.png</normalTex>
 	</Element>
 	<Element type=0>
-		<color>255,85,0</color>
+		<color>105,133,255</color>
 		<geometry>meshBank/arbre3Leaf.obj</geometry>
 		<roughness>0.4</roughness>
 		<metallic>0</metallic>
@@ -153,11 +153,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -180,11 +182,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -207,11 +211,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -234,11 +240,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -261,11 +269,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -288,11 +298,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -315,11 +327,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -342,11 +356,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -369,11 +385,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -396,11 +414,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -423,11 +443,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -450,11 +472,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -477,11 +501,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -504,11 +530,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -531,11 +559,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -558,11 +588,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -585,11 +617,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -612,11 +646,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -639,11 +675,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -666,11 +704,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -693,11 +733,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -720,11 +762,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -747,11 +791,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -774,11 +820,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -801,11 +849,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -828,11 +878,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -855,11 +907,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -882,11 +936,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -909,11 +965,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -936,11 +994,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -963,11 +1023,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -990,11 +1052,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1017,11 +1081,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1044,11 +1110,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1071,11 +1139,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1098,11 +1168,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1125,11 +1197,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1152,11 +1226,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1179,11 +1255,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1206,11 +1284,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1233,11 +1313,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1260,11 +1342,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1287,11 +1371,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1314,11 +1400,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1341,11 +1429,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1368,11 +1458,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1395,11 +1487,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1422,11 +1516,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1449,11 +1545,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1476,11 +1574,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1503,11 +1603,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1530,11 +1632,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1557,11 +1661,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1584,11 +1690,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1611,11 +1719,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1638,11 +1748,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1665,11 +1777,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1692,11 +1806,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1719,11 +1835,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1746,11 +1864,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1773,11 +1893,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1800,11 +1922,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1827,11 +1951,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1854,11 +1980,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1881,11 +2009,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1908,11 +2038,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1935,11 +2067,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1962,11 +2096,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -1989,11 +2125,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -2016,11 +2154,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -2043,11 +2183,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -2070,11 +2212,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -2097,11 +2241,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -2124,11 +2270,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -2151,11 +2299,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -2178,11 +2328,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -2205,11 +2357,13 @@
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
 		<specular>0.15</specular>
-		<emissive>0</emissive>
+		<emissive>0.17</emissive>
 		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
+		<castShadow>0</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
+		<diffuseTex>meshBank/flower1.png</diffuseTex>
+		<normalTex>textureBank/neutralNormal.png</normalTex>
+		<materialTex>meshBank/flower1_material.png</materialTex>
 		<Advanced>
 			<shader>gPass</shader>
 			<blend>0</blend>
@@ -2225,9 +2379,9 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="column1_red" index=81 >
+<MeshAsset name="column1_white" index=81 >
 	<Element type=0>
-		<color>236,59,0</color>
+		<color>255,255,255</color>
 		<geometry>meshBank/column1.obj</geometry>
 		<roughness>0.1</roughness>
 		<metallic>0</metallic>
@@ -2239,11 +2393,11 @@
 		<diffuseTex>meshBank/column1_AO.png</diffuseTex>
 	</Element>
 	<Element type=0>
-		<color>255,140,0</color>
+		<color>236,225,220</color>
 		<geometry>meshBank/column1_base.obj</geometry>
 		<roughness>0.1</roughness>
 		<metallic>0</metallic>
-		<specular>0.13</specular>
+		<specular>0.08</specular>
 		<emissive>0</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
@@ -2290,9 +2444,9 @@
 		<cmAffected>1</cmAffected>
 	</Element>
 </MeshAsset>
-<MeshAsset name="artifact_red_bright" index=84 >
+<MeshAsset name="artifact_white_bright" index=84 >
 	<Element type=0>
-		<color>255,162,0</color>
+		<color>240,240,240</color>
 		<geometry>meshBank/artifact_p1.obj</geometry>
 		<roughness>0.11</roughness>
 		<metallic>0.32</metallic>
@@ -2303,7 +2457,7 @@
 		<cmAffected>1</cmAffected>
 	</Element>
 	<Element type=0>
-		<color>255,0,0</color>
+		<color>63,63,63</color>
 		<geometry>meshBank/artifact_p2.obj</geometry>
 		<roughness>0.05</roughness>
 		<metallic>0</metallic>
@@ -2314,12 +2468,12 @@
 		<cmAffected>1</cmAffected>
 	</Element>
 	<Element type=0>
-		<color>255,162,0</color>
+		<color>255,255,255</color>
 		<geometry>meshBank/artifact_p3.obj</geometry>
-		<roughness>0.99</roughness>
-		<metallic>1</metallic>
-		<specular>0.05</specular>
-		<emissive>0.25</emissive>
+		<roughness>1</roughness>
+		<metallic>0.99</metallic>
+		<specular>0.1</specular>
+		<emissive>0.2</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
@@ -2602,7 +2756,7 @@
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=5 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
+<Object name="" model=5 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
@@ -2620,7 +2774,7 @@
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=8 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
+<Object name="" model=8 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
@@ -2638,13 +2792,13 @@
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=11 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
+<Object name="" model=11 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=12 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
+<Object name="" model=12 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
@@ -2668,19 +2822,19 @@
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=16 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
+<Object name="" model=16 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=17 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
+<Object name="" model=17 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=18 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
+<Object name="" model=18 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
@@ -2704,7 +2858,7 @@
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=22 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
+<Object name="" model=22 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
@@ -2722,7 +2876,7 @@
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=25 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
+<Object name="" model=25 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
@@ -2746,13 +2900,13 @@
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=29 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
+<Object name="" model=29 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=30 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
+<Object name="" model=30 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
@@ -2782,31 +2936,31 @@
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=35 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
+<Object name="" model=35 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=36 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
+<Object name="" model=36 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=37 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
+<Object name="" model=37 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=38 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
+<Object name="" model=38 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=39 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
+<Object name="" model=39 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
@@ -2818,19 +2972,19 @@
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=41 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
+<Object name="" model=41 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=42 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
+<Object name="" model=42 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=43 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
+<Object name="" model=43 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
@@ -2842,7 +2996,7 @@
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=45 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
+<Object name="" model=45 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
@@ -2854,7 +3008,7 @@
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=47 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
+<Object name="" model=47 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
@@ -2866,7 +3020,7 @@
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=49 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
+<Object name="" model=49 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
@@ -2890,19 +3044,19 @@
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=53 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
+<Object name="" model=53 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=54 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
+<Object name="" model=54 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=55 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
+<Object name="" model=55 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
@@ -2920,7 +3074,7 @@
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=58 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
+<Object name="" model=58 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
@@ -2950,19 +3104,19 @@
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=63 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
+<Object name="" model=63 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=64 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
+<Object name="" model=64 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=65 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
+<Object name="" model=65 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
@@ -2974,7 +3128,7 @@
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=67 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
+<Object name="" model=67 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
@@ -2986,7 +3140,7 @@
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=69 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
+<Object name="" model=69 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
@@ -2998,49 +3152,49 @@
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=71 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
+<Object name="" model=71 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=72 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
+<Object name="" model=72 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=73 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
+<Object name="" model=73 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=74 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
+<Object name="" model=74 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=75 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
+<Object name="" model=75 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=76 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
+<Object name="" model=76 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=77 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
+<Object name="" model=77 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="" model=78 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
+<Object name="" model=78 isStatic=1 isPhysic=0 isVisible=1 useShadowLOD=1 >
    <translate>0,0,0</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
@@ -3059,12 +3213,12 @@
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
 <Object name="column" model=81 isStatic=1 isPhysic=1 isVisible=1 >
-   <translate>0.92411,-0.951137,0</translate>
+   <translate>1.10001,0.496536,0</translate>
    <scale>1,1,1</scale>
-   <rotate>0.754958,0.655773,0,-0.655773,0.754958,0,0,0,1</rotate>
+   <rotate>0.0359529,0.999354,0,-0.999354,0.0359528,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="portalGroveRed_GroveToRed" model=82 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="portalGroveWhite_GroveToWhite" model=82 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>-0.860403,0.445031,0</translate>
    <scale>1.4,1,1.25039</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
@@ -3076,9 +3230,9 @@
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="sg_artifact_red" model=84 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>0.927947,-0.954412,1.37174</translate>
+<Object name="sg_artifact_white" model=84 isStatic=0 isPhysic=1 isVisible=1 >
+   <translate>1.10396,0.493261,1.37174</translate>
    <scale>0.499992,0.499992,0.499992</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <rotate>0.682492,0.730893,0,-0.730893,0.682492,0,0,0,1</rotate>
    <collider type=1 mass=0.3 restitution=0.4 friction=0.5 rollingFriction=0/>
 </Object>
