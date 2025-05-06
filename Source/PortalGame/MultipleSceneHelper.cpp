@@ -166,7 +166,7 @@ void MultipleSceneHelper::extendPipeline(int size)
     TIM_ASSERT(NB_MAX_PIPELINE >= _nbExtraPipeline);
 }
 
-bool MultipleSceneHelper::update(interface::Scene*& sceneCrossed, mat4* offset_in)
+bool MultipleSceneHelper::update(interface::Scene*& sceneCrossed, mat4* offset_in, bool useLastShadowCascadeOptimization)
 {
     if(!_curCamera)
         return false;
@@ -230,8 +230,9 @@ bool MultipleSceneHelper::update(interface::Scene*& sceneCrossed, mat4* offset_i
     _lastCameraPos = _curCamera->camera.pos;
 
     vector<InternalEdge>& curEdges = _graph[_currentScene];
-    for(auto& e : curEdges)
+    for (InternalEdge& e : curEdges) {
         e.finalDrawDecision = false;
+    }
 
     TIM_ASSERT((int)curEdges.size() == _curNbEdge);
 
@@ -258,8 +259,14 @@ bool MultipleSceneHelper::update(interface::Scene*& sceneCrossed, mat4* offset_i
         optimizePortalLimit.resize(_portalLimit);
     }
 
-    for(auto d_index : optimizePortalLimit)
+    for (auto d_index : optimizePortalLimit) {
         curEdges[std::get<1>(d_index)].finalDrawDecision = true;
+    }
+    bool hasEdgeChangedFromPreviousFrame = false;
+    for (InternalEdge& e : curEdges) {
+        hasEdgeChangedFromPreviousFrame |= (e.previousDrawDecision != e.finalDrawDecision);
+        e.previousDrawDecision = e.finalDrawDecision;
+    }
 
     setupDecidedPortals(curEdges);
 
@@ -268,6 +275,18 @@ bool MultipleSceneHelper::update(interface::Scene*& sceneCrossed, mat4* offset_i
         _pipeline.combineNode(0)->setEnableInput(i+2, false);
         if(_pipeline.isStereo())
             _pipeline.combineNode(1)->setEnableInput(i+2, false);
+    }
+
+    if (useLastShadowCascadeOptimization) {
+        // Optimize shadow maps by not drawing all cascade1 all the time, alternate between current scene and scene view through the portals.
+        bool mustRenderAllShadowMapCascades = enterNewScene || hasEdgeChangedFromPreviousFrame; // any new portals or scene change invalidate the content of the shadow maps
+        _alternateShadowMapRendering = (_alternateShadowMapRendering + 1) % 2;
+        for (int i = 0; i < _curNbEdge + 1; ++i) {
+            for (unsigned int j = 0; j < _pipeline.dirLightShadowNode(i).size(); ++j) {
+                interface::pipeline::DirLightShadowNode* pShadowMapNode = _pipeline.dirLightShadowNode(i)[j];
+                pShadowMapNode->setSkipRenderLastCascadeIfPersistent(mustRenderAllShadowMapCascades || (i == 0 && _alternateShadowMapRendering == 0) || (i > 0 && _alternateShadowMapRendering == 1) ? false : true);
+            }
+        }
     }
 
     return enterNewScene;
@@ -481,6 +500,7 @@ void MultipleSceneHelper::setupDecidedPortals(vector<InternalEdge>& edges)
 
     for(size_t i=0 ; i<edges.size() ; ++i)
     {
+        // i+2 because the 2 first inputs of the combined node are the "portal stencil" and the main scene result.
         _pipeline.combineNode(0)->setEnableInput(i+2, edges[i].finalDrawDecision);
         if(_pipeline.isStereo())
             _pipeline.combineNode(1)->setEnableInput(i+2, edges[i].finalDrawDecision);
@@ -498,9 +518,11 @@ void MultipleSceneHelper::setupDecidedPortals(vector<InternalEdge>& edges)
             if(transformedPlan.distance(_curCamera->camera.pos) > 0)
                 transformedPlan = Plan(transformedPlan.plan() * -1);
 
+            // A special variation of the gbuffer shader is used to use the material parameters as a plan equation.
             mesh.element(0).setMaterial(transformedPlan.plan());
             mesh.element(0).drawState().setCullFace(false);
             mesh.element(0).drawState().setShader(interface::ShaderPool::instance().get("portalShader"));
+            // Same here, shader interpet as the index of the scene view through the portal
             mesh.element(0).setTextureScale(0.1 * pipIndex);
 
             ++pipIndex;
@@ -592,12 +614,12 @@ bool MultipleSceneHelper::getScreenBoundingBox(const Box& box, const mat4& boxMa
 
         return true;
    }
-    else
-    {
-        minV = {0,0};
-        maxV = {1,1};
-        return false;
-    }
+   else
+   {
+       minV = {0,0};
+       maxV = {1,1};
+       return false;
+   }
 }
 
 void MultipleSceneHelper::freeCamera()

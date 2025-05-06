@@ -44,6 +44,7 @@ void DirLightShadowNode::acquire(int)
 
 void DirLightShadowNode::release(int)
 {
+    _previousShadowMapRendered = _buffer.buffer(0);
     _buffer.release();
 }
 
@@ -72,6 +73,11 @@ void DirLightShadowNode::setDepthMapResolution(uint res)
         _needUpdate = true;
     }
 }
+void DirLightShadowNode::setSkipRenderLastCascadeIfPersistent(bool skip)
+{
+    _skipRenderLastCascadeIfPersistent = skip;
+}
+
 
 DirLightShadowNode::~DirLightShadowNode()
 {
@@ -131,6 +137,9 @@ void DirLightShadowNode::render()
 
     for(size_t i=0 ; i<_resolution.z() ; ++i)
     {
+        if (_skipRenderLastCascadeIfPersistent && i == (_resolution.z() - 1) && _previousShadowMapRendered == _buffer.buffer(0))
+            continue; // skip rendering, the content of the last cascade can be used this frame
+
         _buffer.fbo()->attachDepthTexture(_buffer.buffer(0), i);
         _buffer.fbo()->bind();
         renderer::openGL.clearDepth();

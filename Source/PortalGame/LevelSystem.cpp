@@ -118,22 +118,22 @@ void LevelSystem::changeLevel(int index)
 
     }
 
+    if (_curAmbientMusicId != _levels[index].first.ambientMusicId)
+    {
+        if (_curAmbientSound)
+            _curAmbientSound->stop();
+
+        if (_levels[index].first.ambientMusic)
+            _levels[index].first.ambientMusic->play();
+        _curAmbientMusicId = _levels[index].first.ambientMusicId;
+        _curAmbientSound = _levels[index].first.ambientMusic;
+    }
+
     _curLevel = index;
 
     if(_levelStrategy[index])
     {
         _levelStrategy[index]->prepareEnter();
-
-        if(_curAmbientMusicId != _levelStrategy[index]->_ambientMusicId)
-        {
-            if(_curAmbientSound)
-                _curAmbientSound->stop();
-
-            if(_levelStrategy[index]->_ambientMusic)
-                _levelStrategy[index]->_ambientMusic->play();
-            _curAmbientMusicId = _levelStrategy[index]->_ambientMusicId;
-            _curAmbientSound = _levelStrategy[index]->_ambientMusic;
-        }
     }
 }
 
@@ -637,32 +637,6 @@ bool LevelInterface::collidePaddles(BulletObject* obj)
 LevelInterface::LevelInterface(int index, LevelSystem* system) : _index(index), _system(system)
 {
     std::string name = system->getLevel(index).name;
-    std::string levelFileDescriptor = std::string("scene/") + name + "_parameters.xml";
-
-    TiXmlDocument doc(levelFileDescriptor);
-
-    if (doc.LoadFile()) {
-        TiXmlElement* elem = doc.FirstChildElement();
-        while (elem) {
-            if (elem->ValueStr() == std::string("AmbientMusic")) {
-
-                Option<resource::SoundAsset> ambientSound = resource::AssetManager<resource::SoundAsset>::instance().load<false>(elem->Attribute("file"), true, Sampler::NONE);
-                const char* musicId = elem->Attribute("name");
-                if (musicId && ambientSound.hasValue()) {
-                    const char* gainStr = elem->Attribute("gain");
-                    float gain = gainStr ? std::stof(gainStr) : 0.1f;
-
-                    Source* src = system->listener().addSource(ambientSound.value());
-                    src->setLooping(true);
-                    src->setGain(gain);
-
-                    _ambientMusic = src;
-                    _ambientMusicId = musicId;
-                }
-            }
-            elem = elem->NextSiblingElement();
-        }
-    }
 
     // Load light probes from *_specprobe.xml file
     std::string levelLightProbsDescriptor = std::string("scene/") + name + "_specprobe.xml";

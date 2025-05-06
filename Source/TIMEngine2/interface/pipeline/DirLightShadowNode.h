@@ -27,6 +27,7 @@ namespace pipeline
 
         void setShadowLightRange(const vector<float>&);
         void setDepthMapResolution(uint);
+        void setSkipRenderLastCascadeIfPersistent(bool skip);
 
     private:
         renderer::MeshRenderer& _meshDrawer;
@@ -44,6 +45,9 @@ namespace pipeline
         renderer::DrawState _defaultDrawState;
 
         renderer::PooledBuffer _buffer;
+
+        bool _skipRenderLastCascadeIfPersistent = false;
+        renderer::Texture* _previousShadowMapRendered = nullptr;
     };
 }
 

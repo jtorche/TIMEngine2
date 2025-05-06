@@ -32,8 +32,6 @@
 
         std::map<vec3, btBoxShape*> _boxShapes;
         std::map<float, btSphereShape*> _sphereShapes;
-
-        //vector<std::pair<interface::MeshInstance*,interface::MeshInstance*>> _edges;
     };
 
 #endif // MULTISCENEMANAGER_H

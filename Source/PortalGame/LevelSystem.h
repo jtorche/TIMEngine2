@@ -28,6 +28,10 @@ public:
 
         vector<GraphicGameObject> objects;
         vector<BulletObject*> physObjects;
+
+        std::string ambientMusicId;
+        Source* ambientMusic = nullptr;
+        bool useLastShadowCascadeOptimization = false;
     };
 
     static renderer::Texture::GenTexParam defaultTexParam;
@@ -158,8 +162,6 @@ public:
 private:
     int _index;
     LevelSystem* _system;
-    std::string _ambientMusicId;
-    Source* _ambientMusic = nullptr;
 };
 
 #endif // LEVELSYSTEM_H

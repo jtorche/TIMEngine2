@@ -79,7 +79,8 @@ void PortalGame::update(float time)
     /* First check if we have switched between 2 scenes */
     interface::Scene* switchScene = nullptr;
     mat4 o;
-    if(_multiSceneHelper.update(switchScene, &o))
+    bool useLastShadowCascadeOptimization = _levels.getLevel(_levels.getCurLevelIndex()).useLastShadowCascadeOptimization;
+    if(_multiSceneHelper.update(switchScene, &o, useLastShadowCascadeOptimization))
     {
         _hmdCamera.addOffset(o);
         //std::cout << "Offset:" << _hmdCamera.offset().translation() << std::endl;

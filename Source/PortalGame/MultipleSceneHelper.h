@@ -37,7 +37,7 @@ public:
     void addEdge(interface::Scene *sceneFrom, interface::Scene *sceneTo,
                  interface::MeshInstance*, interface::Geometry, interface::MeshInstance* dest = nullptr);
 
-    bool update(interface::Scene*&, mat4* offset);
+    bool update(interface::Scene*&, mat4* offset, bool useLastShadowCascadeOptimization);
     void rebuild(interface::Scene&);
     void extendPipeline(int);
     void updateCameras();
@@ -62,6 +62,7 @@ private:
         bool crossable = true;
         float drawDistance = 20;
         bool finalDrawDecision;
+        bool previousDrawDecision = false;
     };
 
     uivec2 _resolution;
@@ -71,6 +72,7 @@ private:
     int _portalLimit = 2;
     int _nbExtraPipeline = 0;
     int _curNbEdge = 0;
+    int _alternateShadowMapRendering = 0;
 
     renderer::Shader* _combineSceneShader;
     int _nbSceneUniformId = -1;

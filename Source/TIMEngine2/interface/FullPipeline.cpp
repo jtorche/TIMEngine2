@@ -22,6 +22,11 @@ const vector<pipeline::DeferredRendererNode*>& FullPipeline::deferredRendererNod
     return _deferredRendererNodes[eye][chanel];
 }
 
+const vector<pipeline::DirLightShadowNode*>& FullPipeline::dirLightShadowNode(int index) const
+{
+    return _dirLightShadowNodes[index];
+}
+
 void FullPipeline::setScene(Scene& scene, int sceneId)
 {
     for(size_t i=0 ; i<_deferredRendererNodes[0][sceneId].size() ; ++i)
@@ -113,10 +118,10 @@ void FullPipeline::setDirLightView(interface::View& dirLightView, int sceneId)
             _dirLightCullingNodes[sceneId][i]->setSceneView(dirLightView);
     }
 
-    for(size_t i=0 ; i<_shadowMapNodes[sceneId].size() ; ++i)
+    for(size_t i=0 ; i< _dirLightShadowNodes[sceneId].size() ; ++i)
     {
-        if(_shadowMapNodes[sceneId][i])
-            _shadowMapNodes[sceneId][i]->setSceneView(dirLightView);
+        if(_dirLightShadowNodes[sceneId][i])
+            _dirLightShadowNodes[sceneId][i]->setSceneView(dirLightView);
     }
 }
 
@@ -250,21 +255,10 @@ void FullPipeline::createStereoExtensible(Pipeline::TerminalNode& hmdNode, uivec
 
     for(int i=0 ; i<2 ; ++i)
     {
-        //copyNode[i] = &_pipeline->createNode<pipeline::SimpleFilter>();
-        //copyMaterial[i] = &_pipeline->createNode<pipeline::SimpleFilter>();
         combineNode[i] = &_pipeline->createNode<pipeline::SimpleFilter>();
-
-//        copyNode[i]->setShader(renderer::drawQuadShader);
-//        copyNode[i]->setBufferOutputNode(stereo[i]->outputNode(0),0);
-
-//        copyMaterial[i]->setShader(renderer::drawQuadShader);
-//        copyMaterial[i]->setBufferOutputNode(stereo[i]->outputNode(3),0);
-
-//        combineNode[i]->setShader(ShaderPool::instance().get("combineScene"));
-//        combineNode[i]->setBufferOutputNode(copyMaterial[i], 0);
-//        combineNode[i]->setBufferOutputNode(copyNode[i], 1);
-
         combineNode[i]->setShader(ShaderPool::instance().get("combineScene"));
+
+        // outputNode(3) is the material property gbuffer, its used as a kind of stencil for portals compositing
         combineNode[i]->setBufferOutputNode(stereo[i]->outputNode(3), 0);
         combineNode[i]->setBufferOutputNode(stereo[i]->outputNode(0), 1);
         combineNode[i]->setInvertRenderingOrder(true);
@@ -338,7 +332,7 @@ Pipeline::OutBuffersNode* FullPipeline::createSubDeferredPipeline(uivec2 res, co
 
     if(lightCuller) _lightCullingNodes[chanel].push_back(lightCuller);
     if(dirLightCuller) _dirLightCullingNodes[chanel].push_back(dirLightCuller);
-    if(shadowRenderer) _shadowMapNodes[chanel].push_back(shadowRenderer);
+    if(shadowRenderer) _dirLightShadowNodes[chanel].push_back(shadowRenderer);
 
     return &rendererNode;
 }
@@ -405,7 +399,7 @@ std::pair<Pipeline::OutBuffersNode*,Pipeline::OutBuffersNode*>
 
     if(lightCuller) _lightCullingNodes[chanel].push_back(lightCuller);
     if(dirLightCuller) _dirLightCullingNodes[chanel].push_back(dirLightCuller);
-    if(shadowRenderer) _shadowMapNodes[chanel].push_back(shadowRenderer);
+    if(shadowRenderer) _dirLightShadowNodes[chanel].push_back(shadowRenderer);
 
     return {&rendererNode1,&rendererNode2};
 }
@@ -423,7 +417,7 @@ void FullPipeline::setNull()
         _meshCullingNodes[i].clear();
         _lightCullingNodes[i].clear();
         _dirLightCullingNodes[i].clear();
-        _shadowMapNodes[i].clear();
+        _dirLightShadowNodes[i].clear();
     }
 }
 

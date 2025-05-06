@@ -33,7 +33,7 @@ namespace interface
 
         Pipeline::InOutBufferNode* combineNode(int index=0) const;
         const vector<pipeline::DeferredRendererNode*>& deferredRendererNode(int chanel, int eye=0) const;
-
+        const vector<pipeline::DirLightShadowNode*>& dirLightShadowNode(int index=0) const;
 
         const std::set<Pipeline::DeferredRendererEntity*>& rendererEntities() const { return _deferredEntities; }
 
@@ -69,7 +69,7 @@ namespace interface
         vector<pipeline::SimpleSceneLightCullingNode*> _lightCullingNodes[NB_CHANEL];
 
         vector< pipeline::DirLightCullingNode<SimpleScene>* > _dirLightCullingNodes[NB_CHANEL];
-        vector< Pipeline::DepthMapRendererNode* > _shadowMapNodes[NB_CHANEL];
+        vector<pipeline::DirLightShadowNode*> _dirLightShadowNodes[NB_CHANEL];
 
         Pipeline::InOutBufferNode* _combineMultipleScene[2] = {nullptr, nullptr};
     };

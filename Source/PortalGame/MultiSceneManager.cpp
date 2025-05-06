@@ -328,6 +328,37 @@ void MultiSceneManager::buildLevels(LevelSystem& syst)
         lvl.objects = _objects[i];
         lvl.physObjects = _physObjects[i];
 
+        std::string name = lvl.name;
+        std::string levelFileDescriptor = std::string("scene/") + name + "_parameters.xml";
+
+        TiXmlDocument doc(levelFileDescriptor);
+
+        if (doc.LoadFile()) {
+            TiXmlElement* elem = doc.FirstChildElement();
+            while (elem) {
+                if (elem->ValueStr() == std::string("AmbientMusic")) {
+
+                    Option<resource::SoundAsset> ambientSound = resource::AssetManager<resource::SoundAsset>::instance().load<false>(elem->Attribute("file"), true, Sampler::NONE);
+                    const char* musicId = elem->Attribute("name");
+                    if (musicId && ambientSound.hasValue()) {
+                        const char* gainStr = elem->Attribute("gain");
+                        float gain = gainStr ? std::stof(gainStr) : 0.1f;
+
+                        Source* src = syst.listener().addSource(ambientSound.value());
+                        src->setLooping(true);
+                        src->setGain(gain);
+
+                        lvl.ambientMusic = src;
+                        lvl.ambientMusicId = musicId;
+                    }
+                }
+                if (elem->ValueStr() == std::string("UseLastShadowCascadeOptimization")) {
+                    lvl.useLastShadowCascadeOptimization = std::stoi(elem->GetText()) > 0;
+                }
+                elem = elem->NextSiblingElement();
+            }
+        }
+
         syst.addLevel(lvl);
     }
 }
