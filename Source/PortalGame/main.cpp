@@ -299,9 +299,12 @@ int main(int argc, char* argv[])
                     float fps = countTime<0>(timeElapsed);
                    
                     if (fps > 0) {
-                        std::cout << "Fps:" << 1.f / fps << "  Ms:" << 1000 * fps << std::endl;
+                        std::cout << "Fps:" << 1.f / fps << "  Ms:" << 1000 * fps << " : " << pipeline.pipeline()->meshRenderer().getStats()._numTriangles << " Triangles" << std::endl;
+                        pipeline.pipeline()->meshRenderer().resetStats();
                     }
                 }
+
+                pipeline.pipeline()->meshRenderer().resetStats();
 			}
 
 			/** Close context **/
