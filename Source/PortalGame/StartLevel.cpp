@@ -1,6 +1,7 @@
 #include "StartLevel.h"
 #include "SimpleSpecProbeImportExport.h"
 #include "PortalGame.h"
+#include "CollisionMask.h"
 
 StartLevel::StartLevel(int index, LevelSystem* system) : LevelInterface(index, system)
 {
@@ -16,17 +17,20 @@ void StartLevel::init()
         {
             bindSound(level().physObjects[i], PortalGame::SoundEffects::PLASTIC2);
             registerPortableTraversable(-1, obj.meshInstance, level().physObjects[i], {"portalBegin_ForestIn"});
+            level().physObjects[i]->setMask(CollisionTypes::COL_IOBJ, IOBJECT_COLLISION);
         }
         if(obj.model == "box" && !obj.isStatic && level().physObjects[i] && obj.scale.x() < 0.15)
         {
             bindSound(level().physObjects[i], PortalGame::SoundEffects::PLASTIC1);
             registerPortableTraversable(-1, obj.meshInstance, level().physObjects[i], {"portalBegin_ForestIn"});
+            level().physObjects[i]->setMask(CollisionTypes::COL_IOBJ, IOBJECT_COLLISION);
         }
 
         else if(obj.name == "goldSphere" && !obj.isStatic && level().physObjects[i])
         {
             bindSound(level().physObjects[i], PortalGame::SoundEffects::METAL1);
             registerPortableTraversable(-1, obj.meshInstance, level().physObjects[i], {"portalBegin_ForestIn"});
+            level().physObjects[i]->setMask(CollisionTypes::COL_IOBJ, IOBJECT_COLLISION);
         }
     }
 

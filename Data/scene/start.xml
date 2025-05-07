@@ -177,6 +177,19 @@
 		<cmAffected>1</cmAffected>
 	</Element>
 </MeshAsset>
+<MeshAsset name="cube_uv" index=11 >
+	<Element type=0>
+		<color>0,198,182</color>
+		<geometry>meshBank/room.obj</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+	</Element>
+</MeshAsset>
 
 <Object name="" model=0 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>-0.000216903,-1.41033e-05,-0.000439313</translate>
@@ -257,7 +270,6 @@
    <collider type=2 mass=0.2 restitution=0.3 friction=0.4 rollingFriction=0.01/>
 </Object>
 <Object name="goldSphere" model=7 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>0.850423,-1.59344,0.0922884</translate>
    <scale>0.0929569,0.0929569,0.0929569</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=2 mass=0.2 restitution=0.7 friction=0.5 rollingFriction=0.01/>
@@ -269,7 +281,6 @@
    <collider type=2 mass=0.2 restitution=0.7 friction=0.5 rollingFriction=0.01/>
 </Object>
 <Object name="goldSphere" model=7 isStatic=0 isPhysic=1 isVisible=1 >
-   <translate>-1.39007,0.536827,0.0922884</translate>
    <scale>0.0929569,0.0929569,0.0929569</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=2 mass=0.2 restitution=0.7 friction=0.5 rollingFriction=0.01/>
@@ -294,7 +305,6 @@
 </Object>
 <Object name="pillar" model=9 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>0,0,0</translate>
-   <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
@@ -303,6 +313,12 @@
    <scale>0.859922,0.859922,0.859922</scale>
    <rotate>-0.999998,-0.000777975,0,0.000777975,-0.999998,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=8.5 rollingFriction=1/>
+</Object>
+<Object name="roomPattern" model=11 isStatic=1 isPhysic=1 isVisible=0 >
+   <translate>0,0,0.0335582</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
 <Object name="static" model=2 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>-0.0816579,1.72679,0.2</translate>
