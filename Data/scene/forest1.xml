@@ -986,7 +986,7 @@
    <collider type=0 mass=1 restitution=0.8 friction=1 rollingFriction=1/>
 </Object>
 <Object name="portalForestIn_Begin" model=16 isStatic=1 isPhysic=1 isVisible=1 >
-   <translate>-0.8,1,0</translate>
+   <translate>-0.7,1,0</translate>
    <scale>0.859922,0.859922,0.859922</scale>
    <rotate>-0.000278875,1,0,-1,-0.000278875,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=1 rollingFriction=1/>
