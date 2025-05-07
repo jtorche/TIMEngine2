@@ -83,6 +83,10 @@ OpenVR_Device::OpenVR_Device(bool useWaitGetPoseOnUpdate, vec2 zdist) : _useWait
 
 	_hmdCamera._hmdToEye[RIGHT] = convertToMat4(_hmd->GetEyeToHeadTransform(vr::Eye_Left));
 	_hmdCamera._hmdToEye[LEFT] = convertToMat4(_hmd->GetEyeToHeadTransform(vr::Eye_Right));
+
+	for (mat4& m : _devicePose) {
+		m = mat4::IDENTITY();
+	}
 }
 
 OpenVR_Device::~OpenVR_Device()

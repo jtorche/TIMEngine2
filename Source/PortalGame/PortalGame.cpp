@@ -10,6 +10,9 @@ PortalGame::PortalGame(BulletEngine& phys, MultipleSceneHelper& multiscene, HmdS
     : _physEngine(phys), _multiSceneHelper(multiscene), _hmdCamera(hmdCam), _vrDevice(vrdevice),
       _multiScene("scene/configScene.txt", _multiSceneHelper, startLevel), _vrControllers(phys), _levels(phys, _listener, _vrControllers, _hmdCamera, _gameAssets)
 {
+    _lastL = mat4::IDENTITY();
+    _lastR = mat4::IDENTITY();
+
     _multiScene.instancePhysic(_physEngine);
 
     _listener.initialize();
