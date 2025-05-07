@@ -54,12 +54,6 @@ int main(int argc, char* argv[])
 
     float debugCameraRoomSpace = cmdArgParseRresult["debugRoomSize"].as<float>();
 
-    std::cout << "1. Tutorial\n2. Forest\n3. Maze\n4. Sacred Groove\n5. Ocean" << std::endl;
-    std::cout <<std::endl<< "Enter the ID of the level you want to start in :";
-    int indexLevel=1;
-    std::cin >> indexLevel;
-    indexLevel = std::min(std::max(1, indexLevel), 5);
-
 	tim::core::init();
 	{
 		initContextSDL(WIN_RES.x(), WIN_RES.y());
@@ -131,17 +125,9 @@ int main(int argc, char* argv[])
             portalManager.setStereoView(hmdCamera.eyeView(0), hmdCamera.eyeView(1));
             portalManager.extendPipeline(NB_MAX_PIPELINE);
 
-            switch(indexLevel)
-            {
-            case 1: indexLevel = 0; break;
-            case 2: indexLevel = 2; break;
-            case 3: indexLevel = 4; break;
-            case 4: indexLevel = 5; break;
-            case 5: indexLevel = 9; break;
-            default: indexLevel = 0; break;
-            }
+            PortalGame portalGame(physEngine, portalManager, hmdCamera, *pVRDevice);
 
-            PortalGame portalGame(physEngine, portalManager, hmdCamera, *pVRDevice, indexLevel);
+            portalGame.init(portalGame.performLevelSelectionInConsole());
 
             pVRDevice->sync();
 
@@ -157,6 +143,11 @@ int main(int argc, char* argv[])
 
                 input.getEvent();
                 threadPool.wait();
+
+                if (input.keyState(SDLK_m).firstPress)
+                {
+                    hmdCamera.printViewOffset();
+                }
 
                 if(input.keyState(SDLK_x).firstPress)
                 {

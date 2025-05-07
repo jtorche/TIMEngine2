@@ -6,9 +6,9 @@ using namespace resource;
 
 #include "MemoryLoggerOn.h"
 
-PortalGame::PortalGame(BulletEngine& phys, MultipleSceneHelper& multiscene, HmdSceneView& hmdCam, VR_DeviceInterface& vrdevice, int startLevel)
+PortalGame::PortalGame(BulletEngine& phys, MultipleSceneHelper& multiscene, HmdSceneView& hmdCam, VR_DeviceInterface& vrdevice)
     : _physEngine(phys), _multiSceneHelper(multiscene), _hmdCamera(hmdCam), _vrDevice(vrdevice),
-      _multiScene("scene/configScene.txt", _multiSceneHelper, startLevel), _vrControllers(phys), _levels(phys, _listener, _vrControllers, _hmdCamera, _gameAssets)
+      _multiScene("scene/configScene.txt", _multiSceneHelper), _vrControllers(phys), _levels(phys, _listener, _vrControllers, _hmdCamera, _gameAssets)
 {
     _lastL = mat4::IDENTITY();
     _lastR = mat4::IDENTITY();
@@ -32,7 +32,6 @@ PortalGame::PortalGame(BulletEngine& phys, MultipleSceneHelper& multiscene, HmdS
     _gameAssets.load("scene/gameAssets.xml");
     _vrControllers.setControllerMesh(_gameAssets.getMesh("controller", TEXTURE_CONFIG));
     _vrControllers.setControllerOffset(mat4::RotationX(toRad(-86.1672))*mat4::Translation({0, 0.121448f*0.6f, -0.020856f*0.6f}));
-    _vrControllers.buildForScene(*_multiSceneHelper.curScene(), _multiScene.getSceneIndex(_multiSceneHelper.curScene()));
 
     _levels.setPortalHelper(&_multiSceneHelper);
     _multiScene.buildLevels(_levels);
@@ -71,10 +70,34 @@ PortalGame::PortalGame(BulletEngine& phys, MultipleSceneHelper& multiscene, HmdS
         }
     }
 
+    registerSoundCallBack();
+}
+
+int PortalGame::performLevelSelectionInConsole()
+{
+    std::cout << "\n Level to spawn in:\n";
+    for (int i = 0; i < _levels.nbLevels(); ++i) {
+        std::cout << i + 1 << " - " << _levels.getLevel(i).name << std::endl;
+    }
+    int levelIndex = 0;
+    std::cout << "\n    Choose a level : ";
+    std::cin >> levelIndex;
+
+    levelIndex = std::max(1, std::min(_levels.nbLevels(), levelIndex));
+    return levelIndex-1;
+}
+
+void PortalGame::init(int startLevel)
+{
     _levels.changeLevel(startLevel);
     _levels.initAll();
 
-    registerSoundCallBack();
+    _multiSceneHelper.pipeline().setScene(*_levels.getLevel(startLevel).levelScene, 0);
+    _multiSceneHelper.pipeline().setDirLightView(_multiScene.dirLightView(startLevel), 0);
+    _multiSceneHelper.setCurScene(*_levels.getLevel(startLevel).levelScene);
+    _vrControllers.buildForScene(*_multiSceneHelper.curScene(), _multiScene.getSceneIndex(_multiSceneHelper.curScene()));
+
+    _hmdCamera.addOffset(_levels.getLevel(startLevel).spawnOffset);
 }
 
 void PortalGame::update(float time)

@@ -21,7 +21,9 @@ class PortalGame
 public:
     static bool contactCallBack(btManifoldPoint& cp, void* body0,void* body1);
 
-    PortalGame(BulletEngine&, MultipleSceneHelper&, HmdSceneView&, VR_DeviceInterface&, int startLevel = 0);
+    PortalGame(BulletEngine&, MultipleSceneHelper&, HmdSceneView&, VR_DeviceInterface&);
+    int performLevelSelectionInConsole();
+    void init(int startLevel);
 
     void update(float time);
 

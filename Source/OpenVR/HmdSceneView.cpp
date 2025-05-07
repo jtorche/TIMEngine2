@@ -72,3 +72,14 @@ void HmdSceneView::update(const VR_DeviceInterface& hmdDevice)
     _cullingView.camera.dir = -_transform[2].to<3>() + _cullingView.camera.pos;
     _cullingView.camera.up = _transform[1].to<3>();
 }
+
+void HmdSceneView::printViewOffset() const
+{
+    LOG("View offset : \n");
+    LOG("<Spawn ");
+    for (int i = 0; i < 16; ++i) {
+        LOG("_", i, "=\"", _offset.data()[i], "\" ");
+    }
+
+    LOG("/>\n");
+}

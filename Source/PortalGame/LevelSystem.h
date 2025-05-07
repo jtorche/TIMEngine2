@@ -32,6 +32,8 @@ public:
         std::string ambientMusicId;
         Source* ambientMusic = nullptr;
         bool useLastShadowCascadeOptimization = false;
+
+        mat4 spawnOffset = mat4::IDENTITY();
     };
 
     static renderer::Texture::GenTexParam defaultTexParam;

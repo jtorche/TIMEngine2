@@ -33,6 +33,8 @@ namespace tim {
 
         const mat4& transform() const { return _transform; }
 
+        void printViewOffset() const;
+
     private:
         interface::View _cullingView;
         interface::View _eyeView[2];

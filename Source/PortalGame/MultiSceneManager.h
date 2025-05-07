@@ -10,7 +10,7 @@
     class MultiSceneManager
     {
     public:
-        MultiSceneManager(std::string, MultipleSceneHelper&, int);
+        MultiSceneManager(std::string, MultipleSceneHelper&);
         virtual ~MultiSceneManager();
 
         void instancePhysic(BulletEngine&);

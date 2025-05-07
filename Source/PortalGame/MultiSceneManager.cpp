@@ -17,7 +17,7 @@ std::string mapVisualMeshToCollisionGeometry(std::string str)
         return it->second;
 }
 
-MultiSceneManager::MultiSceneManager(std::string file, MultipleSceneHelper& multipleScene, int startScene)
+MultiSceneManager::MultiSceneManager(std::string file, MultipleSceneHelper& multipleScene)
 {
     std::ifstream fs(file);
     if(!fs.is_open())
@@ -61,14 +61,6 @@ MultiSceneManager::MultiSceneManager(std::string file, MultipleSceneHelper& mult
             _scenes.push_back({ levelName, scene });
             _objects.push_back(objInScene);
             _dirLightView.push_back(new interface::View());
-
-            if(index == startScene)
-            {
-                multipleScene.pipeline().setScene(*scene, 0);
-                multipleScene.pipeline().setDirLightView(*_dirLightView.back(), 0);
-
-                multipleScene.setCurScene(*scene);
-            }
 
             if(scene->globalLight.dirLights.size() > 0)
                 _dirLightView.back()->dirLightView.lightDir = scene->globalLight.dirLights[0].direction;
@@ -354,6 +346,19 @@ void MultiSceneManager::buildLevels(LevelSystem& syst)
                 }
                 if (elem->ValueStr() == std::string("UseLastShadowCascadeOptimization")) {
                     lvl.useLastShadowCascadeOptimization = std::stoi(elem->GetText()) > 0;
+                }
+                if (elem->ValueStr() == std::string("Spawn")) {
+                    float offset[16] = { 1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,1 };
+
+                    for (int i = 0; i < 16; ++i) {
+                        char format[4];
+                        sprintf(format, "_%d", i);
+                        const char* fval = elem->Attribute(format);
+                        if (fval) {
+                            offset[i] = std::stof(fval);
+                        }
+                    }
+                    lvl.spawnOffset = mat4(offset);
                 }
                 elem = elem->NextSiblingElement();
             }
