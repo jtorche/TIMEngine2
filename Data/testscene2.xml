@@ -1,35 +1,44 @@
 <DirLight shadows=1 color="1,1,1" direction="-0.86,-0.26,-0.43" />
 
-<MeshAsset name="flower_grove1_3" index=0 >
+<MeshAsset name="kapla2" index=0 >
 	<Element type=0>
 		<color>255,255,255</color>
-		<geometry>meshBank/flowersGrove/flower_grove1_3.tim</geometry>
+		<geometry>meshBank/kapla2.obj</geometry>
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
-		<specular>0.15</specular>
+		<specular>0.1</specular>
 		<emissive>0</emissive>
-		<textureScale>1</textureScale>
+		<textureScale>1.46</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
-		<diffuseTex>meshBank/flower1_red.png</diffuseTex>
-		<Advanced>
-			<shader>gPass</shader>
-			<blend>0</blend>
-			<cullBackFace>1</cullBackFace>
-			<cullFace>0</cullFace>
-			<depthTest>1</depthTest>
-			<writeDepth>1</writeDepth>
-			<priority>128</priority>
-			<blendEquation>ADD</blendEquation>
-			<primitive>TRIANGLES</primitive>
-			<depthFunc>LESS</depthFunc>
-			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
-		</Advanced>
+		<diffuseTex>textureBank/wood2.png</diffuseTex>
+		<normalTex>textureBank/wood2_NORM.png</normalTex>
+	</Element>
+</MeshAsset>
+<MeshAsset name="kapla1" index=1 >
+	<Element type=0>
+		<color>255,255,255</color>
+		<geometry>meshBank/kapla1.obj</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.1</specular>
+		<emissive>0</emissive>
+		<textureScale>1.565</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+		<diffuseTex>textureBank/wood2.png</diffuseTex>
+		<normalTex>textureBank/wood2_NORM.png</normalTex>
 	</Element>
 </MeshAsset>
 
-<Object name="" model=0 isStatic=1 isPhysic=1 isVisible=1 useShadowLOD=1 useVisualLOD=1 >
+<Object name="" model=0 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>0,2,0</translate>
+   <scale>1,1,1</scale>
+   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="" model=1 isStatic=1 isPhysic=1 isVisible=1 >
+   <translate>1.7767,-0.918334,-0.533333</translate>
    <scale>1,1,1</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
