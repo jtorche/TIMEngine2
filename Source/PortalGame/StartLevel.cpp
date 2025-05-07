@@ -82,6 +82,7 @@ void StartLevel::update(float time)
     bool ballsInPlace[4] = {false};
     for(int index : _indexBalls)
     {
+        if((level().objects[index].meshInstance->matrix().translation() - vec3(1.15,1.2,1.2)).length2() < 0.2*0.2)
             ballsInPlace[0] = true;
         else if((level().objects[index].meshInstance->matrix().translation() - vec3(-1.2 ,1.2, 1.2)).length2() < 0.2*0.2)
             ballsInPlace[1] = true;
