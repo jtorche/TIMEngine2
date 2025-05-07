@@ -1,14 +1,14 @@
 scene/start.xml
-scene/sceneInside.xml
-scene/forest1.xml
-scene/forest2.xml
-scene/forest3.xml
-scene/sacredGrove_final.xml
-scene/sacredGrove_red.xml
-scene/sacredGrove_blue.xml
-scene/sacredGrove_white.xml
-scene/ocean.xml
-scene/flyingIsland.xml
-scene/forest4.xml
+--scene/sceneInside.xml
+--scene/forest1.xml
+--scene/forest2.xml
+--scene/forest3.xml
+--scene/sacredGrove_final.xml
+--scene/sacredGrove_red.xml
+--scene/sacredGrove_blue.xml
+--scene/sacredGrove_white.xml
+--scene/ocean.xml
+--scene/flyingIsland.xml
+--scene/forest4.xml
 
 

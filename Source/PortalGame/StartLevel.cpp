@@ -2,6 +2,7 @@
 #include "SimpleSpecProbeImportExport.h"
 #include "PortalGame.h"
 #include "CollisionMask.h"
+#include "resource/AssetManager.h"
 
 StartLevel::StartLevel(int index, LevelSystem* system) : LevelInterface(index, system)
 {
@@ -42,6 +43,7 @@ void StartLevel::init()
     _indexStack[4] = indexObject("5s");
 
     _indexBalls = indexObjects("goldSphere");
+    _warp = resource::AssetManager<resource::SoundAsset>::instance().load<false>("soundBank/warp.wav", false, Sampler::NONE).value();
 
     if(_indexPortal >= 0)
         setEnablePortal(false, level().objects[_indexPortal].meshInstance);
@@ -80,7 +82,6 @@ void StartLevel::update(float time)
     bool ballsInPlace[4] = {false};
     for(int index : _indexBalls)
     {
-        if((level().objects[index].meshInstance->matrix().translation() - vec3(1.2,1.2,1.2)).length2() < 0.2*0.2)
             ballsInPlace[0] = true;
         else if((level().objects[index].meshInstance->matrix().translation() - vec3(-1.2 ,1.2, 1.2)).length2() < 0.2*0.2)
             ballsInPlace[1] = true;
@@ -96,9 +97,12 @@ void StartLevel::update(float time)
         _timeSinceOk = 0;
 
 #ifndef AUTO_SOLVE
-    if(_timeSinceOk > 1)
+    if (_timeSinceOk > 1)
 #endif
+    {
         setEnablePortal(true, level().objects[_indexPortal].meshInstance);
+        emitSound(level().objects[_indexPortal].translation + vec3(0, 0, 1), _warp);
+    }
 }
 
 

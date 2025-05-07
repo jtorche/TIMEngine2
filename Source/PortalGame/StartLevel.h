@@ -17,6 +17,7 @@ private:
     int _indexStack[5];
     vector<int> _indexBalls;
     float _timeSinceOk = 0;
+    resource::SoundAsset _warp;
 };
 
 class Start2Level : public LevelInterface
