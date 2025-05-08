@@ -10,6 +10,7 @@ using namespace tim;
 class Controller
 {
     public:
+        static const uint8_t cSecondaryControllerRenderMask = 1;
         struct InScene
         {
             interface::Scene* scene = nullptr;

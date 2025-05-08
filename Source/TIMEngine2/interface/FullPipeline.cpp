@@ -128,7 +128,7 @@ void FullPipeline::setDirLightView(interface::View& dirLightView, int sceneId)
 void FullPipeline::createTwoScene(uivec2 res, const Parameter& param1, const Parameter& param2)
 {
     createExtensible(res, param1);
-    extendPipeline(res, param2, 1);
+    extendPipeline(res, param2, 1, 0xFF);
 }
 
 void FullPipeline::createExtensible(uivec2 res, const Parameter& param)
@@ -173,7 +173,7 @@ void FullPipeline::createExtensible(uivec2 res, const Parameter& param)
     _pipeline->setOutputNode(onScreen);
 }
 
-void FullPipeline::extendPipeline(uivec2 res, const Parameter& param, int index)
+void FullPipeline::extendPipeline(uivec2 res, const Parameter& param, int index, uint8_t renderMask)
 {
     if(_combineMultipleScene[0] == nullptr || (_stereoscopy && _combineMultipleScene[1] == nullptr))
         return;
@@ -181,14 +181,8 @@ void FullPipeline::extendPipeline(uivec2 res, const Parameter& param, int index)
     if(_stereoscopy)
     {
         auto stereoPipeline = createSubStereoDeferredPipeline(res, param, index);
-//        pipeline::SimpleFilter& copyNode1 = _pipeline->createNode<pipeline::SimpleFilter>();
-//        pipeline::SimpleFilter& copyNode2 = _pipeline->createNode<pipeline::SimpleFilter>();
-
-//        copyNode1.setShader(renderer::drawQuadShader);
-//        copyNode1.setBufferOutputNode(stereoPipeline.first->outputNode(0), 0);
-
-//        copyNode2.setShader(renderer::drawQuadShader);
-//        copyNode2.setBufferOutputNode(stereoPipeline.second->outputNode(0), 0);
+        _deferredRendererNodes[0][index].back()->setRenderMask(renderMask);
+        _deferredRendererNodes[1][index].back()->setRenderMask(renderMask);
 
         _combineMultipleScene[0]->setBufferOutputNode(stereoPipeline.first->outputNode(0), index+1);
         _combineMultipleScene[1]->setBufferOutputNode(stereoPipeline.second->outputNode(0), index+1);
@@ -198,6 +192,7 @@ void FullPipeline::extendPipeline(uivec2 res, const Parameter& param, int index)
         pipeline::SimpleFilter& copyNode = _pipeline->createNode<pipeline::SimpleFilter>();
         copyNode.setShader(renderer::drawQuadShader);
         copyNode.setBufferOutputNode(createSubDeferredPipeline(res, param, index)->outputNode(0), 0);
+        _deferredRendererNodes[0][index].back()->setRenderMask(renderMask);
 
         _combineMultipleScene[0]->setBufferOutputNode(&copyNode, index+1);
     }

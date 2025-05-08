@@ -50,7 +50,7 @@ namespace interface
         void setStereoView(View&, View& eye1, View& eye2, int sceneId);
 
         /* for both */
-        void extendPipeline(uivec2, const Parameter&, int index);
+        void extendPipeline(uivec2, const Parameter&, int index, uint8_t renderMask);
         void setDirLightView(View&, int sceneId);
         void setScene(Scene&, int sceneId);
 

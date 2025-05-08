@@ -27,6 +27,7 @@ namespace pipeline
 
         void setRendererEntity(Pipeline::DeferredRendererEntity&);
         void setScissorTest(bool b, vec2 coord = {0,0}, vec2 size = {1,1});
+        void setRenderMask(uint8_t mask) { _renderMask = mask; }
 
         bool isAuxiliar() const { return _isAux; }
         void setAuxiliar(bool b) { _isAux = b; }
@@ -40,6 +41,7 @@ namespace pipeline
         vec2 _coordScissor = {0,0};
         vec2 _sizeScissor = {1,1};
         bool _isAux = false;
+        uint8_t _renderMask = 0xFF;
 
         struct EInst
         {

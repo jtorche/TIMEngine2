@@ -44,9 +44,11 @@ void DeferredRendererNode::prepare()
 
         for(const MeshInstance& m : culledMesh)
         {
-            for(uint i=0 ; i<m.mesh().nbElements() ; ++i)
-                if(m.mesh().element(i).isEnable() == 2 || (!_isAux && m.mesh().element(i).isEnable() == 1))
-                    _toDraw.push_back({&(m.mesh().element(i)), &(m.matrix()), &(m.attachedUBO()), m.useVisualLOD()});
+            if ((m.mask() & _renderMask) > 0) {
+                for (uint i = 0; i < m.mesh().nbElements(); ++i)
+                    if (m.mesh().element(i).isEnable() == 2 || (!_isAux && m.mesh().element(i).isEnable() == 1))
+                        _toDraw.push_back({ &(m.mesh().element(i)), &(m.matrix()), &(m.attachedUBO()), m.useVisualLOD() });
+            }
         }
     }
 

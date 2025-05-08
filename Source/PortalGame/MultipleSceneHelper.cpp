@@ -148,11 +148,11 @@ void MultipleSceneHelper::rebuild(interface::Scene& scene)
     }
 }
 
-void MultipleSceneHelper::extendPipeline(int size)
+void MultipleSceneHelper::extendPipeline(int size, uint8_t renderMask)
 {
     for(int i=_nbExtraPipeline ; i<size ; ++i)
     {
-        _pipeline.extendPipeline(_resolution, _param, i+1);
+        _pipeline.extendPipeline(_resolution, _param, i+1, renderMask);
         _nbExtraPipeline = i+1;
     }
 
@@ -399,7 +399,7 @@ int MultipleSceneHelper::hasCrossedPortal(vec3 p1, vec3 p2, interface::MeshInsta
 
 void MultipleSceneHelper::constructEdge(const InternalEdge& edge)
 {
-    extendPipeline(_curNbEdge+1);
+    extendPipeline(_curNbEdge+1, 0xFF);
 
     _extraCameras[_curNbEdge] = new interface::View;
 

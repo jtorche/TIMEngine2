@@ -25,6 +25,7 @@ namespace pipeline
         void acquire(int) override;
         void release(int) override;
 
+        void setRenderMask(uint8_t mask) { _renderMask = mask; }
         void setShadowLightRange(const vector<float>&);
         void setDepthMapResolution(uint);
         void setSkipRenderLastCascadeIfPersistent(bool skip);
@@ -40,6 +41,7 @@ namespace pipeline
         vector<bool> _useShadowLOD[renderer::MAX_SHADOW_MAP_LVL];
 
         bool _needUpdate = true;
+        uint8_t _renderMask;
         int _counter = 0;
         uivec3 _resolution = {1024,1024,3};
         renderer::DrawState _defaultDrawState;

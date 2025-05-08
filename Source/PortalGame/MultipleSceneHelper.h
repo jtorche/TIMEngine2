@@ -39,7 +39,7 @@ public:
 
     bool update(interface::Scene*&, mat4* offset, bool useLastShadowCascadeOptimization);
     void rebuild(interface::Scene&);
-    void extendPipeline(int);
+    void extendPipeline(int numPipelines, uint8_t renderMask);
     void updateCameras();
 
     std::pair<interface::Scene*, interface::MeshInstance*> closestPortal(const Sphere&, mat4&);

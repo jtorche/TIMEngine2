@@ -30,12 +30,15 @@ namespace interface
         void setUseVisualLOD(bool use) { _useVisualLOD = use; }
         bool useShadowLOD() const { return _useShadowLOD; }
         bool useVisualLOD() const { return _useVisualLOD; }
+        uint8_t mask() const { return _mask; }
+        void setMask(uint8_t mask) { _mask = mask; }
           
     protected:
         mat4 _model;
         Mesh _mesh;
         vector<uint> _extraUbo;
         bool _useShadowLOD = false, _useVisualLOD = false;
+        uint8_t _mask = 0xFF;
 
         MeshInstance() = default;
         ~MeshInstance() = default;

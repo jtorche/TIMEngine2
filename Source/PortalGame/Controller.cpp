@@ -1,6 +1,7 @@
 #include "Controller.h"
 #include "resource/AssetManager.h"
 #include "PortalGame/CollisionMask.h"
+#include "MultipleSceneHelper.h"
 
 #include "MemoryLoggerOn.h"
 Controller::Controller(interface::Mesh controllerMesh, BulletEngine& bulletEngine)
@@ -77,18 +78,6 @@ void Controller::buildForScene(interface::Scene& scene, int worldIndex)
     _curScene.rightHand = &scene.scene.add<interface::MeshInstance>(_controllerMesh, mat4::Translation(vec3(0,0,2)));
     _curScene.scene = &scene;
 
-    #include "MemoryLoggerOff.h"
-//    interface::Geometry dg = resource::AssetManager<interface::Geometry>::instance().load<false>("raquette_shape_simple.obj").value();
-//    debugController[0] = &scene.scene.add<interface::MeshInstance>(interface::Mesh(interface::Mesh::Element(dg)), mat4::Translation(vec3(0,0,2)));
-//    debugController[1] = &scene.scene.add<interface::MeshInstance>(interface::Mesh(interface::Mesh::Element(dg)), mat4::Translation(vec3(0,0,2)));
-
-//    _curScene.leftHandPhys = new BulletObject(new SceneMotionState<interface::MeshInstance>(*debugController[0]), _controllerShape, _mass);
-//    _curScene.rightHandPhys = new BulletObject(new SceneMotionState<interface::MeshInstance>(*debugController[1]), _controllerShape, _mass);
-
-//    _curScene.leftHandPhys = new BulletObject(new SceneMotionState<interface::MeshInstance>(*_curScene.leftHand), _controllerShape, _mass);
-//    _curScene.rightHandPhys = new BulletObject(new SceneMotionState<interface::MeshInstance>(*_curScene.rightHand), _controllerShape, _mass);
-
-
      _curScene.leftHandPhys = new BulletObject(new btDefaultMotionState(), _controllerShape, _mass);
      _curScene.rightHandPhys = new BulletObject(new btDefaultMotionState(), _controllerShape, _mass);
     #include "MemoryLoggerOn.h"
@@ -114,13 +103,14 @@ void Controller::buildSecondary(interface::Scene& scene, int worldIndex, const m
 
     _lastScene.leftHand = &scene.scene.add<interface::MeshInstance>(_controllerMesh, mat4::Translation(vec3(0,0,2)));
     _lastScene.rightHand = &scene.scene.add<interface::MeshInstance>(_controllerMesh, mat4::Translation(vec3(0,0,2)));
+    _lastScene.leftHand->setMask(~cSecondaryControllerRenderMask);
+    _lastScene.rightHand->setMask(~cSecondaryControllerRenderMask);
+
     _lastScene.scene = &scene;
     _lastScene.absoluteOffset = offset;
 
-    #include "MemoryLoggerOff.h"
     _lastScene.leftHandPhys = new BulletObject(new btDefaultMotionState(), _controllerShape, _mass);
     _lastScene.rightHandPhys = new BulletObject(new btDefaultMotionState(), _controllerShape, _mass);
-    #include "MemoryLoggerOn.h"
 
    _bullet.addObject(_lastScene.leftHandPhys, worldIndex, CollisionTypes::COL_PADDLE, PADDLE_COLLISION);
    _bullet.addObject(_lastScene.rightHandPhys, worldIndex, CollisionTypes::COL_PADDLE, PADDLE_COLLISION);

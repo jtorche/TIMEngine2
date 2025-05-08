@@ -108,6 +108,16 @@ int main(int argc, char* argv[])
 
             pipeline.createStereoExtensible(*hmdNode, {RES_X,RES_Y}, pipelineParam);
 
+            // Assign a mask to filter out some objects from the main pipeline (the secondary controllers)
+            for (int eye = 0; eye < 2; ++eye) {
+                for (pipeline::DeferredRendererNode* pNode : pipeline.deferredRendererNode(0, eye)) {
+                    pNode->setRenderMask(Controller::cSecondaryControllerRenderMask);
+                }
+            }
+            for (pipeline::DirLightShadowNode* pNode : pipeline.dirLightShadowNode(0)) {
+                pNode->setRenderMask(Controller::cSecondaryControllerRenderMask);
+            }
+
             hmdNode->setVRDevice(pVRDevice);
 
             HmdSceneView hmdCamera(110, ratio, 500);
@@ -123,7 +133,7 @@ int main(int argc, char* argv[])
             portalManager.setResolution({RES_X,RES_Y});
             portalManager.setView(hmdCamera.cullingView());
             portalManager.setStereoView(hmdCamera.eyeView(0), hmdCamera.eyeView(1));
-            portalManager.extendPipeline(NB_MAX_PIPELINE);
+            portalManager.extendPipeline(NB_MAX_PIPELINE, 0xFF);
 
             PortalGame portalGame(physEngine, portalManager, hmdCamera, *pVRDevice);
 
