@@ -8,6 +8,7 @@ using namespace tim;
 
 struct Sync_Ocean_FlyingIsland
 {
+    Source* sailSound = nullptr;
     interface::MeshInstance* boatOcean = nullptr;
     interface::MeshInstance* boatFI = nullptr;
     vec3 arrival;

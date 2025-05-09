@@ -106,13 +106,6 @@ void FlyingIslandLevel::init()
 
     }
 
-
-//    level().levelScene->scene.add<interface::MeshInstance>(level().objects[indexObject("yellowCoin")].meshInstance->mesh(),
-//            _4game.getTransFromCoord({0,1}));
-
-//    level().levelScene->scene.add<interface::MeshInstance>(level().objects[indexObject("redCoin")].meshInstance->mesh(),
-//            _4game.getTransFromCoord({0,2}));
-
     for(int i=0 ; i<7 ; ++i)
         _indexButtons[i] = indexObject("cfButton" + StringUtils(i+1).str());
 }
@@ -126,6 +119,7 @@ void FlyingIslandLevel::update(float time)
         {
             step = _syncBoat->remainingDist;
             _enterWithBoat = false;
+            _syncBoat->sailSound->stop();
         }
 
         mat4 m = _syncBoat->boatOcean->matrix();
@@ -134,6 +128,7 @@ void FlyingIslandLevel::update(float time)
 
         _syncBoat->boatOcean->setMatrix(m);
         _syncBoat->boatFI->setMatrix(m);
+        _syncBoat->sailSound->setPosition(m.translation());
         _syncBoat->remainingDist -= time;
     }
 
@@ -198,9 +193,6 @@ void FlyingIslandLevel::update(float time)
     btVector3 gravityCenter = btVector3(41, -45, 17.75);
     vector<int> newCubes;
     newCubes.reserve(_cubes.size());
-
-//    if((levelSystem().headPosition() - vec3(41, -45, 17.75)).length2() > 8*8)
-//        return;
 
     for(int index : _cubes)
     {

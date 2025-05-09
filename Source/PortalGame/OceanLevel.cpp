@@ -12,8 +12,6 @@ OceanLevel::OceanLevel(int index, LevelSystem* system, BulletEngine& phys, Sync_
     _buttonSound = resource::AssetManager<resource::SoundAsset>::instance().load<false>("soundBank/pheub.wav", false, Sampler::NONE).value();
     _warpSound = resource::AssetManager<resource::SoundAsset>::instance().load<false>("soundBank/warp.wav", false, Sampler::NONE).value();
 
-    //_ambientOcean = resource::AssetManager<resource::SoundAsset>::instance().load<false>("soundBank/ocean.ogg", true, Sampler::NONE).value();
-
     auto opt = resource::AssetManager<resource::SoundAsset>::instance().load<false>("soundBank/ocean.ogg", true, Sampler::NONE);
     if (opt.hasValue()) {
         _ambientOceanSource = system->listener().addSource(opt.value());
@@ -21,6 +19,11 @@ OceanLevel::OceanLevel(int index, LevelSystem* system, BulletEngine& phys, Sync_
         _ambientOceanSource->setGain(0.05);
     }
 
+    opt = resource::AssetManager<resource::SoundAsset>::instance().load<false>("soundBank/boatSail.ogg", true, Sampler::NONE);
+    if (opt.hasValue()) {
+        syncObj->sailSound = system->listener().addSource(opt.value());
+        syncObj->sailSound->setGain(0.5);
+    }
 }
 
 OceanLevel::~OceanLevel()
@@ -98,7 +101,6 @@ void OceanLevel::init()
         }
     }
 
-#include "MemoryLoggerOff.h"
     vector<int> physToy = indexObjects("physToy1");
     for(int i : physToy)
     {
@@ -111,7 +113,6 @@ void OceanLevel::init()
             level().physObjects[i]->addConstraintToWorld(c);
         }
     }
-#include "MemoryLoggerOn.h"
 
     int indexOut = indexObject("portalOutOcean_InSkyIsl");
     if(indexOut >= 0)
@@ -201,6 +202,7 @@ void OceanLevel::update(float time)
                 _timeOnBoat += time;
                 if(_timeOnBoat > 2)
                 {
+                    _syncBoat->sailSound->play();
                     _levelState = 1;
                     _distanceBoat = 0;
                     levelSystem().portalManager().setPortalLimit(0);
@@ -249,6 +251,7 @@ void OceanLevel::manageBoat(float time)
             {
                 _levelState = 4;
                 _distanceBoat = 0;
+                _syncBoat->sailSound->play();
             }
         }
     }
@@ -274,8 +277,9 @@ void OceanLevel::moveBoat(float time, int startBoatId, int arrivalBoatId, bool s
         {
             step = l_path - _distanceBoat;
             _levelState++;
+            _syncBoat->sailSound->stop();
         }
-        else
+        else 
            _distanceBoat += time;
 
         if(!secondBoat && _distanceBoat > l_path - 5)
@@ -286,6 +290,7 @@ void OceanLevel::moveBoat(float time, int startBoatId, int arrivalBoatId, bool s
         mat4 m = boat->matrix();
         m.translate(dir * step);
         boat->setMatrix(m);
+        _syncBoat->sailSound->setPosition(boat->matrix().translation());
 
         if(secondBoat && _syncBoat->boatFI)
         {
