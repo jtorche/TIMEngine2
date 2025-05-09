@@ -108,7 +108,7 @@ void MainRenderer::initRendering()
 
         _lineMesh[2] = Mesh(Mesh::Element(Geometry(new MeshBuffers(tmpVB, tmpIB, nullptr, Sphere(vec3(), lineLength)))));
 
-        auto optSpecProbeMesh = resource::AssetManager<Geometry>::instance().load<false>("specProbe.obj", false);
+        auto optSpecProbeMesh = resource::AssetManager<Geometry>::instance().load<false>("shape/sphere.obj", false);
         _specProbeMesh = optSpecProbeMesh.hasValue() ? Mesh(optSpecProbeMesh.value()) : Mesh();
         _specProbeMesh.element(0).setColor(vec4(1, 1 ,0.1, 1));
         _specProbeMesh.element(0).setSpecular(0);

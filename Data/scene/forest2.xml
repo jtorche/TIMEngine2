@@ -242,12 +242,13 @@
 		<roughness>0.45</roughness>
 		<metallic>0</metallic>
 		<specular>0.1</specular>
-		<emissive>0</emissive>
+		<emissive>0.15</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
 		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/forest2Panel.png</diffuseTex>
 		<normalTex>meshBank/forest2Panel_NRM.png</normalTex>
+		<materialTex>meshBank/forest2Panel_MAT.png</materialTex>
 	</Element>
 </MeshAsset>
 <MeshAsset name="plant_ground" index=10 >
@@ -558,7 +559,7 @@
 </MeshAsset>
 <MeshAsset name="plant1" index=22 >
 	<Element type=0>
-		<color>255,209,183</color>
+		<color>0,255,217</color>
 		<geometry>meshBank/plant1.obj</geometry>
 		<roughness>0.3</roughness>
 		<metallic>0</metallic>
@@ -586,7 +587,7 @@
 </MeshAsset>
 <MeshAsset name="plant1" index=23 >
 	<Element type=0>
-		<color>255,170,0</color>
+		<color>255,209,183</color>
 		<geometry>meshBank/plant1.obj</geometry>
 		<roughness>0.3</roughness>
 		<metallic>0</metallic>
@@ -614,7 +615,7 @@
 </MeshAsset>
 <MeshAsset name="plant1" index=24 >
 	<Element type=0>
-		<color>255,160,253</color>
+		<color>255,170,0</color>
 		<geometry>meshBank/plant1.obj</geometry>
 		<roughness>0.3</roughness>
 		<metallic>0</metallic>
@@ -642,7 +643,7 @@
 </MeshAsset>
 <MeshAsset name="plant1" index=25 >
 	<Element type=0>
-		<color>251,147,255</color>
+		<color>255,160,253</color>
 		<geometry>meshBank/plant1.obj</geometry>
 		<roughness>0.3</roughness>
 		<metallic>0</metallic>
@@ -670,7 +671,7 @@
 </MeshAsset>
 <MeshAsset name="plant1" index=26 >
 	<Element type=0>
-		<color>250,93,255</color>
+		<color>251,147,255</color>
 		<geometry>meshBank/plant1.obj</geometry>
 		<roughness>0.3</roughness>
 		<metallic>0</metallic>
@@ -698,6 +699,34 @@
 </MeshAsset>
 <MeshAsset name="plant1" index=27 >
 	<Element type=0>
+		<color>250,93,255</color>
+		<geometry>meshBank/plant1.obj</geometry>
+		<roughness>0.3</roughness>
+		<metallic>0</metallic>
+		<specular>0.07</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+		<diffuseTex>textureBank/leaf3.png</diffuseTex>
+		<normalTex>textureBank/leaf3_NORM.png</normalTex>
+		<Advanced>
+			<shader>gPass</shader>
+			<blend>0</blend>
+			<cullBackFace>1</cullBackFace>
+			<cullFace>0</cullFace>
+			<depthTest>1</depthTest>
+			<writeDepth>1</writeDepth>
+			<priority>128</priority>
+			<blendEquation>ADD</blendEquation>
+			<primitive>TRIANGLES</primitive>
+			<depthFunc>LESS</depthFunc>
+			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
+		</Advanced>
+	</Element>
+</MeshAsset>
+<MeshAsset name="plant1" index=28 >
+	<Element type=0>
 		<color>255,162,0</color>
 		<geometry>meshBank/plant1.obj</geometry>
 		<roughness>0.3</roughness>
@@ -724,7 +753,7 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="sunStone" index=28 >
+<MeshAsset name="sunStone" index=29 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/sunStone.obj</geometry>
@@ -739,7 +768,7 @@
 		<normalTex>textureBank/sun_NORM.png</normalTex>
 	</Element>
 </MeshAsset>
-<MeshAsset name="rock6_st" index=29 >
+<MeshAsset name="rock6_st" index=30 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/rock6_st.obj</geometry>
@@ -754,7 +783,7 @@
 		<normalTex>meshBank/rock6_st_NRM.png</normalTex>
 	</Element>
 </MeshAsset>
-<MeshAsset name="rock6_st" index=30 >
+<MeshAsset name="rock6_st" index=31 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/rock6_st.obj</geometry>
@@ -767,34 +796,6 @@
 		<cmAffected>1</cmAffected>
 		<diffuseTex>meshBank/rock6_st2.png</diffuseTex>
 		<normalTex>meshBank/rock6_st_NRM.png</normalTex>
-	</Element>
-</MeshAsset>
-<MeshAsset name="plant1" index=31 >
-	<Element type=0>
-		<color>0,255,217</color>
-		<geometry>meshBank/plant1.obj</geometry>
-		<roughness>0.3</roughness>
-		<metallic>0</metallic>
-		<specular>0.07</specular>
-		<emissive>0</emissive>
-		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
-		<diffuseTex>textureBank/leaf3.png</diffuseTex>
-		<normalTex>textureBank/leaf3_NORM.png</normalTex>
-		<Advanced>
-			<shader>gPass</shader>
-			<blend>0</blend>
-			<cullBackFace>1</cullBackFace>
-			<cullFace>0</cullFace>
-			<depthTest>1</depthTest>
-			<writeDepth>1</writeDepth>
-			<priority>128</priority>
-			<blendEquation>ADD</blendEquation>
-			<primitive>TRIANGLES</primitive>
-			<depthFunc>LESS</depthFunc>
-			<blendFunc f1="SRC_ALPHA" f2="ONE_MINUS_SRC_ALPHA" />
-		</Advanced>
 	</Element>
 </MeshAsset>
 
@@ -1566,13 +1567,13 @@
    <rotate>-0.318896,0.94779,0,-0.94779,-0.318896,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="smallPlant_23" model=31 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="smallPlant_23" model=22 isStatic=1 isPhysic=0 isVisible=1 >
    <translate>1.19859,1.74371,0.0235009</translate>
    <scale>0.0501762,0.0501762,0.0501762</scale>
    <rotate>0.0296411,0.989733,0.139849,-0.995733,0.0414677,-0.0824387,-0.0873906,-0.136809,0.986736</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="smallPlant_24" model=22 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="smallPlant_24" model=23 isStatic=1 isPhysic=0 isVisible=1 >
    <translate>1.12207,1.55907,0.0126282</translate>
    <scale>0.0654196,0.0654196,0.0654196</scale>
    <rotate>0.985441,-0.17002,0,0.17002,0.985441,0,0,0,1</rotate>
@@ -1590,7 +1591,7 @@
    <rotate>0.563411,0.826177,0,-0.826177,0.563411,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="smallPlant_27" model=23 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="smallPlant_27" model=24 isStatic=1 isPhysic=0 isVisible=1 >
    <translate>1.18142,2.16285,0.00832057</translate>
    <scale>0.0566533,0.0566533,0.0566533</scale>
    <rotate>0.475832,0.879536,0,-0.879536,0.475832,0,0,0,1</rotate>
@@ -1608,25 +1609,25 @@
    <rotate>-0.880347,0.474329,0,-0.474329,-0.880347,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="smallPlant_3" model=24 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="smallPlant_3" model=25 isStatic=1 isPhysic=0 isVisible=1 >
    <translate>0.947412,2.41399,0.0139247</translate>
    <scale>0.0568835,0.0568835,0.0568835</scale>
    <rotate>-0.960301,-0.278968,0,0.278968,-0.960301,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="smallPlant_4" model=25 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="smallPlant_4" model=26 isStatic=1 isPhysic=0 isVisible=1 >
    <translate>1.09703,1.42073,0.0119766</translate>
    <scale>0.0627905,0.0627905,0.0627905</scale>
    <rotate>0.197686,0.980265,0,-0.980265,0.197686,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="smallPlant_5" model=26 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="smallPlant_5" model=27 isStatic=1 isPhysic=0 isVisible=1 >
    <translate>1.2044,2.34251,0.00662243</translate>
    <scale>0.0772985,0.0772985,0.0772985</scale>
    <rotate>0.671065,0.741399,0,-0.741399,0.671065,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="smallPlant_6" model=27 isStatic=1 isPhysic=0 isVisible=1 >
+<Object name="smallPlant_6" model=28 isStatic=1 isPhysic=0 isVisible=1 >
    <translate>0.951056,2.61301,0.0025676</translate>
    <scale>0.0740632,0.0740632,0.0740632</scale>
    <rotate>0.58596,-0.81034,0,0.81034,0.58596,0,0,0,1</rotate>
@@ -1650,43 +1651,43 @@
    <rotate>-0.0779279,-0.996959,0,0.996959,-0.0779279,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="sunStone1" model=28 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="sunStone1" model=29 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>-0.362455,1.96036,0.9</translate>
    <scale>0.780685,0.780685,0.780685</scale>
    <rotate>-0.000127049,0,1,1,0.000351974,0.000127053,-0.000352098,1,-4.47196e-08</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="sunStone2" model=29 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="sunStone2" model=30 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>-2.37281,3.4642,-0.0695325</translate>
    <scale>0.73911,0.73911,0.73911</scale>
    <rotate>0.987063,-0.160092,-0.00899363,0.160047,0.987096,-0.00540837,0.00974338,0.00389897,0.999945</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="sunStone2" model=30 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="sunStone2" model=31 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>1.44769,5.60431,-0.0695325</translate>
    <scale>0.73911,0.73911,0.73911</scale>
    <rotate>-0.747303,0.664479,-0.00280264,-0.664469,-0.747249,0.0101134,0.00462587,0.00942002,0.999945</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="sunStone2" model=30 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="sunStone2" model=31 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>1.44547,-1.11971,-0.0695325</translate>
    <scale>0.73911,0.73911,0.73911</scale>
    <rotate>-0.561486,-0.827485,-0.00280264,0.827429,-0.561484,0.0101134,-0.00994229,0.00335954,0.999945</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="sunStone2" model=29 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="sunStone2" model=30 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>-2.37281,1.25184,-0.0695325</translate>
    <scale>0.73911,0.73911,0.73911</scale>
    <rotate>0.987063,-0.160092,-0.00899363,0.160047,0.987096,-0.00540837,0.00974338,0.00389897,0.999945</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="sunStone3" model=29 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="sunStone3" model=30 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>2.38182,1.25184,-0.0766937</translate>
    <scale>0.738974,0.738974,0.738974</scale>
    <rotate>-0.893782,-0.448503,0,0.448503,-0.893782,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="sunStone3" model=29 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="sunStone3" model=30 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>2.38182,3.4642,-0.0766937</translate>
    <scale>0.738974,0.738974,0.738974</scale>
    <rotate>-0.767679,0.640836,0,-0.640836,-0.767678,0,0,0,1</rotate>
