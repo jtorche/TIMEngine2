@@ -6,6 +6,7 @@
 #include "OpenVR/HmdSceneView.h"
 #include "OpenVR/VR_DeviceInterface.h"
 
+#include "PortalGame/MusicManager.h"
 #include "PortalGame/BetweenSceneStruct.h"
 #include "PortalGame/ForestLevel.h"
 #include "PortalGame/Level1.h"
@@ -51,6 +52,7 @@ protected:
     HmdSceneView& _hmdCamera;
     VR_DeviceInterface& _vrDevice;
     Listener _listener;
+    MusicManager _musicManager;
 
     MultiSceneManager _multiScene;
     Controller _vrControllers;

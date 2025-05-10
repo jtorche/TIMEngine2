@@ -1,5 +1,6 @@
 #include "LevelSystem.h"
 #include "MultipleSceneHelper.h"
+#include "MusicManager.h"
 #include "resource/AssetManager.h"
 #include "openAL/Source.hpp"
 
@@ -10,8 +11,8 @@ using namespace resource;
 
 renderer::Texture::GenTexParam LevelSystem::defaultTexParam;
 
-LevelSystem::LevelSystem(BulletEngine& ph, Listener& listener, Controller& controller, HmdSceneView& hmdView, interface::XmlMeshAssetLoader& gameAssets)
-    : _physEngine(ph), _listener(listener), _controller(controller), _hmdView(hmdView), _gameAssets(gameAssets)
+LevelSystem::LevelSystem(BulletEngine& ph, Listener& listener, MusicManager& musicManager, Controller& controller, HmdSceneView& hmdView, interface::XmlMeshAssetLoader& gameAssets)
+    : _physEngine(ph), _listener(listener), _musicManager(musicManager), _controller(controller), _hmdView(hmdView), _gameAssets(gameAssets)
 {
     defaultTexParam = interface::Texture::genParam(true,true,true, 4);
 }
@@ -120,13 +121,13 @@ void LevelSystem::changeLevel(int index)
 
     if (_curAmbientMusicId != _levels[index].first.ambientMusicId)
     {
-        if (_curAmbientSound)
-            _curAmbientSound->stop();
-
-        if (_levels[index].first.ambientMusic)
-            _levels[index].first.ambientMusic->play();
         _curAmbientMusicId = _levels[index].first.ambientMusicId;
-        _curAmbientSound = _levels[index].first.ambientMusic;
+        if (_levels[index].first.ambientMusic.isNull()) {
+            _musicManager.stopChannel(0);
+        }
+        else {
+            _musicManager.playMusic(0, _levels[index].first.ambientMusic, _levels[index].first.ambientMusicGain, 1.0f);
+        }
     }
 
     _curLevel = index;

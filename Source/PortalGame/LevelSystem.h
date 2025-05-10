@@ -15,6 +15,7 @@ using namespace tim;
 
 class LevelInterface;
 class MultipleSceneHelper;
+class MusicManager;
 
 class LevelSystem
 {
@@ -30,7 +31,8 @@ public:
         vector<BulletObject*> physObjects;
 
         std::string ambientMusicId;
-        Source* ambientMusic = nullptr;
+        resource::SoundAsset ambientMusic;
+        float ambientMusicGain = 1.0f;
         bool useLastShadowCascadeOptimization = false;
 
         mat4 spawnOffset = mat4::IDENTITY();
@@ -38,7 +40,7 @@ public:
 
     static renderer::Texture::GenTexParam defaultTexParam;
 
-    LevelSystem(BulletEngine&, Listener&, Controller&, HmdSceneView&, interface::XmlMeshAssetLoader&);
+    LevelSystem(BulletEngine&, Listener&, MusicManager&, Controller&, HmdSceneView&, interface::XmlMeshAssetLoader&);
     ~LevelSystem();
 
     Listener& listener() { return _listener; }
@@ -83,6 +85,7 @@ public:
 protected:
     BulletEngine& _physEngine;
     Listener& _listener;
+    MusicManager& _musicManager;
     Controller& _controller;
     HmdSceneView& _hmdView;
     interface::XmlMeshAssetLoader& _gameAssets;
@@ -90,8 +93,6 @@ protected:
     vector<LevelInterface*> _levelStrategy;
 
     const renderer::Texture::GenTexParam TEXTURE_CONFIG = interface::Texture::genParam(true,true,true, 4);
-
-    Source* _curAmbientSound = nullptr;
     std::string _curAmbientMusicId;
 
     int _curLevel = -1;

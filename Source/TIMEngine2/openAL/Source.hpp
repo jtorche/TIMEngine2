@@ -36,6 +36,7 @@ public:
     /** added from timengine */
     const core::vec3& position() const { return _position; }
     const core::vec3& velocity() const { return _velocity; }
+    float gain() const { return _gain; }
 
     void setPosition(const core::vec3& p) { _position = p; }
     void setVelocity(const core::vec3& v) { _velocity = v; }

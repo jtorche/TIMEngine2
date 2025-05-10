@@ -336,11 +336,8 @@ void MultiSceneManager::buildLevels(LevelSystem& syst)
                         const char* gainStr = elem->Attribute("gain");
                         float gain = gainStr ? std::stof(gainStr) : 0.1f;
 
-                        Source* src = syst.listener().addSource(ambientSound.value());
-                        src->setLooping(true);
-                        src->setGain(gain);
-
-                        lvl.ambientMusic = src;
+                        lvl.ambientMusic = ambientSound.value();
+                        lvl.ambientMusicGain = gain;
                         lvl.ambientMusicId = musicId;
                     }
                 }

@@ -8,7 +8,7 @@ using namespace resource;
 
 PortalGame::PortalGame(BulletEngine& phys, MultipleSceneHelper& multiscene, HmdSceneView& hmdCam, VR_DeviceInterface& vrdevice)
     : _physEngine(phys), _multiSceneHelper(multiscene), _hmdCamera(hmdCam), _vrDevice(vrdevice),
-      _multiScene("scene/configScene.txt", _multiSceneHelper), _vrControllers(phys), _levels(phys, _listener, _vrControllers, _hmdCamera, _gameAssets)
+      _multiScene("scene/configScene.txt", _multiSceneHelper), _vrControllers(phys), _levels(phys, _listener, _musicManager, _vrControllers, _hmdCamera, _gameAssets), _musicManager(_listener)
 {
     _lastL = mat4::IDENTITY();
     _lastR = mat4::IDENTITY();
@@ -102,6 +102,8 @@ void PortalGame::init(int startLevel)
 
 void PortalGame::update(float time)
 {
+    _musicManager.update(time);
+
     /* First check if we have switched between 2 scenes */
     interface::Scene* switchScene = nullptr;
     mat4 o;
