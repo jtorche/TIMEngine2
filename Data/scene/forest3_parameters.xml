@@ -1,1 +1,3 @@
 <AmbientMusic file="soundBank/addressing_stars.ogg" name="addressing_stars" gain=0.12 />
+
+<Spawn _0 = "1" _1 = "0" _2 = "0" _3 = "-9.73943" _4 = "0" _5 = "1" _6 = "0" _7 = "-31.0105" _8 = "0" _9 = "0" _10 = "1" _11 = "0.031667" _12 = "0" _13 = "0" _14 = "0" _15 = "1" />
