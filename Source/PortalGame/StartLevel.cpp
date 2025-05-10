@@ -102,7 +102,10 @@ void StartLevel::update(float time)
 #endif
     {
         setEnablePortal(true, level().objects[_indexPortal].meshInstance);
-        emitSound(level().objects[_indexPortal].translation + vec3(0, 0, 1), _warp);
+        if (!tutoFinished) {
+            emitSound(level().objects[_indexPortal].translation + vec3(0, 0, 1), _warp);
+        }
+        tutoFinished = true;
     }
 }
 
