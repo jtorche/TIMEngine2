@@ -41,7 +41,7 @@ namespace pipeline
         vector<bool> _useShadowLOD[renderer::MAX_SHADOW_MAP_LVL];
 
         bool _needUpdate = true;
-        uint8_t _renderMask;
+        uint8_t _renderMask = 0xFF;
         int _counter = 0;
         uivec3 _resolution = {1024,1024,3};
         renderer::DrawState _defaultDrawState;
