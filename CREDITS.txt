@@ -1,0 +1,91 @@
+================================================================================
+CREDITS AND THIRD-PARTY NOTICES
+================================================================================
+
+This game includes third-party assets and software, listed below with their
+licences. The full licence texts for the software libraries are in the
+"licenses" folder next to this file.
+
+
+--------------------------------------------------------------------------------
+3D MODELS
+--------------------------------------------------------------------------------
+
+"Tropical palm trees" by Smuggly Systems Intergalactic
+https://superhivemarket.com/products/tropical-palm-trees
+Licensed under CC BY 4.0 - https://creativecommons.org/licenses/by/4.0/
+Modified: trees split into trunk and leaf meshes, trunk removed from one tree,
+triangulated and exported to OBJ; leaf, coconut and bark textures combined into
+a single texture sheet; bark texture cropped and a normal map derived.
+
+
+--------------------------------------------------------------------------------
+TEXTURES
+--------------------------------------------------------------------------------
+
+"Well, That's Just Crate" by Filter Forge (filter by jitspoe)
+https://www.flickr.com/photos/filterforge/8514731789
+Licensed under CC BY 2.0 - https://creativecommons.org/licenses/by/2.0/
+Modified: resized, and a normal map derived from it.
+
+Rock texture made from a public domain photograph from BurningWell.org
+https://www.burningwell.org/gallery/index.php/textures/ground/rocks/dscf4315
+
+
+--------------------------------------------------------------------------------
+SOFTWARE LIBRARIES
+--------------------------------------------------------------------------------
+
+SDL 2.30.11
+https://www.libsdl.org/
+Copyright (C) 1997-2025 Sam Lantinga
+zlib License - licenses/SDL2-2.30.11.txt
+
+SDL_image 2.8.8
+https://github.com/libsdl-org/SDL_image
+Copyright (C) 1997-2025 Sam Lantinga
+zlib License - licenses/SDL2_image-2.8.8.txt
+
+OpenAL Soft 1.24.3
+https://openal-soft.org/
+GNU Library General Public License, version 2 - licenses/OpenAL-Soft-1.24.3.txt
+Includes a modified PFFFT - licenses/OpenAL-Soft-1.24.3-PFFFT.txt
+OpenAL Soft is included unmodified as a separate library (OpenAL32.dll) and
+can be replaced with another compatible build.
+Source code: https://github.com/kcat/openal-soft/tree/1.24.3
+
+Bullet Physics 3.25
+https://github.com/bulletphysics/bullet3
+zlib License - licenses/Bullet-3.25.txt
+
+GLEW 2.1.0
+https://github.com/nigels-com/glew
+Modified BSD License, Mesa 3-D License and Khronos License (MIT)
+Copyright holders listed in licenses/GLEW-2.1.0.txt
+
+OpenVR SDK 2.5.1
+https://github.com/ValveSoftware/openvr
+Copyright (c) 2015, Valve Corporation
+BSD 3-Clause License - licenses/OpenVR-2.5.1.txt
+
+libogg 1.3.5
+https://xiph.org/ogg/
+Copyright (c) 2002, Xiph.org Foundation
+BSD 3-Clause License - licenses/libogg-1.3.5.txt
+
+libvorbis 1.3.7
+https://xiph.org/vorbis/
+Copyright (c) 2002-2020 Xiph.org Foundation
+BSD 3-Clause License - licenses/libvorbis-1.3.7.txt
+
+meshoptimizer 0.23
+https://github.com/zeux/meshoptimizer
+Copyright (c) 2016-2025 Arseny Kapoulkine
+MIT License - licenses/meshoptimizer-0.23.txt
+
+TinyXML
+https://sourceforge.net/projects/tinyxml/
+Original code by Lee Thomason
+zlib License - licenses/TinyXML.txt
+
+================================================================================
