@@ -4,8 +4,8 @@
 #define PI 3.14159265359
 
 #define LIGHT_BIAS 0.1f
-#define LS_X 32
-#define LS_Y 30
+#define LS_X 16 // tile size, must match TiledLightRenderer::TILE_SIZE
+#define LS_Y 16
 
 layout(local_size_x=LS_X, local_size_y=LS_Y, local_size_z=1) in;
 
@@ -108,12 +108,14 @@ vec3 parallaxCorrection(vec3 position, vec3 dir, vec3 center, float radius);
 
 void main()
 {
-	lightsTileSize = 0;
+	if(gl_LocalInvocationIndex == 0)
+		lightsTileSize = 0;
 	barrier();
 	
 	ivec2 texSize = textureSize(texture0,0);
-	if(gl_GlobalInvocationID.x >= texSize.x || gl_GlobalInvocationID.y >= texSize.y)
-		return;
+	// Edge tiles can overhang the target, but those invocations can't return yet: they own part of the
+	// light range culled below, and every invocation of the group has to reach the barrier() calls
+	bool insideTarget = gl_GlobalInvocationID.x < texSize.x && gl_GlobalInvocationID.y < texSize.y;
 	
  	// vec3 color = texelFetch(texture0, ivec2(gl_GlobalInvocationID.xy),0).xyz;
 	// vec2 minMaxDepth = texelFetch(texture4, ivec2(gl_WorkGroupID.x, gl_WorkGroupID.y), 0).xy;
@@ -141,13 +143,18 @@ void main()
 	unprojVec = worldOriginInvProjView*vec4(1,1,DEPTH_F,1);
 	vec3 tr = unprojVec.xyz/unprojVec.w;
 	
-	vec3 step_x = (br-bl) / gl_NumWorkGroups.x;
-	vec3 step_y = (tl-bl) / gl_NumWorkGroups.y;
+	// Tile bounds in [0,1] screen space, taken from its pixels: the tile count is rounded up, so
+	// splitting the screen by gl_NumWorkGroups drifts away from the pixels on non-multiple resolutions
+	vec2 tileMin = vec2(gl_WorkGroupID.xy * uvec2(LS_X, LS_Y)) / vec2(texSize);
+	vec2 tileMax = min(vec2((gl_WorkGroupID.xy + 1u) * uvec2(LS_X, LS_Y)) / vec2(texSize), vec2(1));
 	
-	vec3 tile_bl = bl + step_x*gl_WorkGroupID.x + step_y*gl_WorkGroupID.y;
-	vec3 tile_br = bl + step_x*(gl_WorkGroupID.x+1) + step_y*gl_WorkGroupID.y;
-	vec3 tile_tl = bl + step_x*gl_WorkGroupID.x + step_y*(gl_WorkGroupID.y+1);
-	vec3 tile_tr = bl + step_x*(gl_WorkGroupID.x+1) + step_y*(gl_WorkGroupID.y+1);
+	vec3 step_x = br-bl;
+	vec3 step_y = tl-bl;
+	
+	vec3 tile_bl = bl + step_x*tileMin.x + step_y*tileMin.y;
+	vec3 tile_br = bl + step_x*tileMax.x + step_y*tileMin.y;
+	vec3 tile_tl = bl + step_x*tileMin.x + step_y*tileMax.y;
+	vec3 tile_tr = bl + step_x*tileMax.x + step_y*tileMax.y;
 	
 	plans[0] = computePlan(vec3(cameraPos)-vec3(worldOrigin),tile_tl,tile_bl);
 	plans[1] = computePlan(vec3(cameraPos)-vec3(worldOrigin),tile_br,tile_tr);
@@ -164,18 +171,22 @@ void main()
 	uint start = gl_LocalInvocationIndex * localRange;
 	uint end = min(start+localRange, nbLight);
 	
-	uint safe_l=0;
-
-	for(uint i=start ; i<end && safe_l < MAX_LIGHT_TILE ; ++i)
+	for(uint i=start ; i<end ; ++i)
 	{
 		if(collide(i) == 1)
 		{
-		    safe_l = atomicAdd(lightsTileSize, 1);
-			lightsTile[safe_l] = i;
+			// atomicAdd returns the count before the add, i.e. the slot reserved for this light.
+			// The count keeps growing past MAX_LIGHT_TILE, so the store and the reader are both clamped
+			uint slot = atomicAdd(lightsTileSize, 1);
+			if(slot < MAX_LIGHT_TILE)
+				lightsTile[slot] = i;
 		}
 	}
 	
 	barrier();
+
+	if(!insideTarget)
+		return;
 
 	/*******************/
 	/** LIGHTING STEP **/
@@ -208,7 +219,8 @@ void main()
 	vec3 accAmbientColor = vec3(0);
 	vec3 accLight = vec3(0);
 	
-	for(int i=0 ; i<lightsTileSize ; ++i)
+	uint nbTileLight = min(lightsTileSize, uint(MAX_LIGHT_TILE));
+	for(uint i=0 ; i<nbTileLight ; ++i)
 	{
 		vec3 L =(lights[lightsTile[i]].position.xyz - worldOrigin.xyz - frag_pos);
 		float dist = length(L);

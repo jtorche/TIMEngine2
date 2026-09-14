@@ -21,7 +21,7 @@ namespace renderer
         void draw(const vector<Light>&, Texture*);
 
     private:
-        const uivec2 TILE_SIZE = {32,30};
+        const uivec2 TILE_SIZE = {16,16}; // must match LS_X/LS_Y in shader/tiledLightShader.cs
         uivec2 _tileCount;
 
         Shader* _computeShader = nullptr;

@@ -63,6 +63,7 @@ void MainRenderer::initRendering()
 
     ShaderPool::instance().add("gPass", "shader/gBufferPass.vert", "shader/gBufferPass.frag").value();
     ShaderPool::instance().add("gPassAlphaTest", "shader/gBufferPass.vert", "shader/gBufferPass.frag", "", { "ALPHA_TEST" }).value();
+    ShaderPool::instance().add("gPassTriplanar", "shader/gBufferPass.vert", "shader/gBufferPass.frag", "", { "TRIPLANAR" }).value();
     ShaderPool::instance().add("water", "shader/gBufferPass.vert", "shader/gBufferPass.frag", "", { "WATER_SHADER" }).value();
     ShaderPool::instance().add("portalShader", "shader/gBufferPass.vert", "shader/gBufferPass.frag", "", { "PORTAL_SHADER" }).value();
     ShaderPool::instance().add("highlighted", "shader/overlayObject.vert", "shader/overlayObject.frag").value();

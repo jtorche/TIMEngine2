@@ -64,6 +64,8 @@ PortalGame::PortalGame(BulletEngine& phys, MultipleSceneHelper& multiscene, HmdS
             _levels.setStrategy(new FlyingIslandLevel(i, &_levels, _physEngine, syncOceanFI), i);
         else if(_levels.getLevel(i).name == "forest4")
             _levels.setStrategy(new ForestLevel1(i, &_levels, _physEngine, "portalForest4_FI4"), i);
+        else if(_levels.getLevel(i).name == "hub")
+            _levels.setStrategy(new Level1(i, &_levels), i);
         else {
             LOG("Level ", _levels.getLevel(i).name, " not recognized\n");
             _levels.setStrategy(new Level1(i, &_levels), i);

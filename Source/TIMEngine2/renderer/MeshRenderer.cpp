@@ -8,6 +8,19 @@ namespace renderer
 {
 
 
+#ifndef USE_BINDLESS
+// gbufferPass.frag samples texture0..2 : bind the material textures (stored by name) for this draw
+static void bindMaterialTextures(const DummyMaterial& dummy)
+{
+    Material mat;
+    std::memcpy(&mat, &dummy, sizeof(Material));
+
+    uint nbTextures = std::min<uint>(mat.header.y(), 3);
+    for(uint unit=0 ; unit<nbTextures ; ++unit)
+        openGL.bindTexture(static_cast<uint>(mat.texures[unit]), GL_TEXTURE_2D, unit);
+}
+#endif
+
 MeshRenderer::MeshRenderer()
 #if !defined(USE_VCPP)
     : _maxUboMat4(openGL.hardward(GLState::Hardward::MAX_UNIFORM_BLOCK_SIZE) / (16*4))
@@ -67,6 +80,15 @@ int MeshRenderer::draw(const vector<MeshBuffers*>& meshs, const vector<mat4>& mo
     _states.bind();
     bind();
 
+#ifndef USE_BINDLESS
+    // Sampler objects left by other passes would override the material textures' own repeat/mipmap parameters
+    if(!materials.empty())
+    {
+        for(uint unit=0 ; unit<3 ; ++unit)
+            openGL.bindTextureSampler(0, unit);
+    }
+#endif
+
 #ifndef USE_SSBO_MODELS
     uint nbLoop = models.size() / _maxUboMat4;
     if(models.size()%_maxUboMat4 > 0) nbLoop++;
@@ -112,6 +134,11 @@ int MeshRenderer::draw(const vector<MeshBuffers*>& meshs, const vector<mat4>& mo
             _stats._numDrawCalls++;
             _stats._numTriangles += (drawParam[j].count / 3);
 
+#ifndef USE_BINDLESS
+            if(!materials.empty())
+                bindMaterialTextures(materials[_maxUboMat4*i+j]);
+#endif
+
             glDrawElementsInstancedBaseVertexBaseInstance(DrawState::toGLPrimitive(_states.primitive()), 
                                                           drawParam[j].count,
                                                           GL_UNSIGNED_INT, 
@@ -121,6 +148,9 @@ int MeshRenderer::draw(const vector<MeshBuffers*>& meshs, const vector<mat4>& mo
                                                           j);
         }
 #else
+#ifndef USE_BINDLESS
+#error "Multi draw indirect requires USE_BINDLESS, material textures are bound for each draw call otherwise"
+#endif
         _drawIndirectBuffer.flush(drawParam, 0, innerLoop);
         openGL.bindDrawIndirectBuffer(_drawIndirectBuffer.id());
         glMultiDrawElementsIndirect(DrawState::toGLPrimitive(_states.primitive()), GL_UNSIGNED_INT, nullptr, innerLoop, 0);

@@ -26,6 +26,7 @@ int main(int argc, char* argv[])
         tim::renderer::init();
         interface::ShaderPool::instance().add("gPass", "shader/gBufferPass.vert", "shader/gBufferPass.frag").value();
         interface::ShaderPool::instance().add("gPassAlphaTest", "shader/gBufferPass.vert", "shader/gBufferPass.frag", "", { "ALPHA_TEST" }).value();
+        interface::ShaderPool::instance().add("gPassTriplanar", "shader/gBufferPass.vert", "shader/gBufferPass.frag", "", { "TRIPLANAR" }).value();
         interface::ShaderPool::instance().add("fxaa", "shader/fxaa.vert", "shader/fxaa.frag").value();
         interface::ShaderPool::instance().add("combineScene", "shader/combineScene.vert", "shader/combineScene.frag").value();
 

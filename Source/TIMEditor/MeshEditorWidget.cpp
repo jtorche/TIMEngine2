@@ -19,6 +19,7 @@ MeshEditorWidget::MeshEditorWidget(QWidget* parent) : QWidget(parent), ui(new Ui
 
     ui->shaderList->addItem("gPass");
     ui->shaderList->addItem("gPassAlphaTest");
+    ui->shaderList->addItem("gPassTriplanar");
     ui->shaderList->addItem("water");
 
     connect(ui->dm_roughnessSlider, SIGNAL(sliderMoved(int)), this, SLOT(dm_roughnessSlider_sliderMoved(int)));

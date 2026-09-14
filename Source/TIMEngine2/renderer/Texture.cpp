@@ -11,15 +11,19 @@ namespace renderer
 Texture::~Texture()
 {
     uint id = _id;
+    GLenum type = toGLType(_type);
     openGL.pushGLTask([=]()
     {
+        // GL unbinds a deleted texture behind GLState's back, a new texture reusing the name would then skip its bind
+        for(uint unit=0 ; unit<MAX_TEXTURE_UNIT ; ++unit)
+            openGL.unbindTexture(id, type, unit);
         glDeleteTextures(1, &id);
     });
 }
 
 void Texture::makeBindless() const
 {
-#if 1
+#ifdef USE_BINDLESS
     if(_isBindless) return;
 
     _isBindless = true;

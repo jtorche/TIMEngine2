@@ -33,6 +33,16 @@ https://www.burningwell.org/gallery/index.php/textures/ground/rocks/dscf4315
 
 
 --------------------------------------------------------------------------------
+SKYBOXES
+--------------------------------------------------------------------------------
+
+"Sky Box - Sunny Day" by KIIRA (Chloe Wolfe)
+https://opengameart.org/content/sky-box-sunny-day
+Licensed under CC BY 3.0 - https://creativecommons.org/licenses/by/3.0/
+Modified: faces recoloured into dark and red variants.
+
+
+--------------------------------------------------------------------------------
 SOFTWARE LIBRARIES
 --------------------------------------------------------------------------------
 

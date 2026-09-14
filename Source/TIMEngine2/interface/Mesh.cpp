@@ -49,7 +49,11 @@ void Mesh::Element::setTexture(const Texture& t, uint index)
     _textures[index] = t;
 
     if(t.isNull()) _mat.texures[index] = 0;
+#ifdef USE_BINDLESS
     else _mat.texures[index] = t.texture()->handle();
+#else
+    else _mat.texures[index] = t.texture()->id(); // bound by MeshRenderer before each draw call
+#endif
 
     flushMat();
 }

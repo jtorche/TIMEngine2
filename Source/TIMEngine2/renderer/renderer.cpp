@@ -56,6 +56,11 @@ bool init()
     LOG("\nSupport of bindless_texture: ",glewGetExtension("GL_ARB_bindless_texture")==GL_TRUE);
     LOG("Support of sparse_texture: ",glewGetExtension("GL_ARB_sparse_texture")==GL_TRUE);
     LOG("Support of gl_spirv:", glewGetExtension("GL_ARB_gl_spirv") == GL_TRUE);
+#ifdef USE_BINDLESS
+    LOG("Material textures: bindless (USE_BINDLESS)");
+#else
+    LOG("Material textures: bound for each draw call (no USE_BINDLESS)");
+#endif
 
     texBufferPool = new TextureBufferPool;
 
@@ -112,11 +117,13 @@ bool init()
     if(openGL.hardward(GLState::Hardward::MAJOR_VERSION) > 4 ||
        (openGL.hardward(GLState::Hardward::MAJOR_VERSION)==4 && openGL.hardward(GLState::Hardward::MINOR_VERSION)>=3))
     {
+#ifdef USE_BINDLESS
         if(glewGetExtension("GL_ARB_bindless_texture")!=GL_TRUE)
         {
             LOG("You don't support GL_ARB_bindless_texture, you can't run TIMEngine sorry.");
             return false;
         }
+#endif
         return true;
     }
     else

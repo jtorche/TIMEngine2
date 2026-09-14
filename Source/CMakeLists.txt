@@ -22,6 +22,11 @@ endif()
 
 option(ENABLE_VR "Check it to add support for VR headset (OpenVR)." OFF)
 option(ENABLE_QT "Check it to build TIMEditor with QT." OFF)
+option(USE_BINDLESS "Check it to sample material textures through GL_ARB_bindless_texture instead of binding them for each draw call." ON)
+
+if(USE_BINDLESS)
+    add_definitions(-DUSE_BINDLESS)
+endif()
 
 # Libraries code
 add_subdirectory(TIMEngine2)

@@ -10,5 +10,6 @@ scene/sacredGrove_white.xml
 scene/ocean.xml
 scene/flyingIsland.xml
 scene/forest4.xml
+scene/hub.xml
 
 

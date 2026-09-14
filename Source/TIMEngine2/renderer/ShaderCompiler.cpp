@@ -101,7 +101,11 @@ std::string ShaderCompiler::getBuiltInDefine()
 {
     static std::string define =
             "#define MAX_UBO_VEC4 " + StringUtils(openGL.hardward(GLState::Hardward::MAX_UNIFORM_BLOCK_SIZE) / 16).str() + "\n" +
-            "#define MAX_TEX_UNIT " + StringUtils(openGL.hardward(GLState::Hardward::COMBINED_TEX_UNITS)).str() + "\n";
+            "#define MAX_TEX_UNIT " + StringUtils(openGL.hardward(GLState::Hardward::COMBINED_TEX_UNITS)).str() + "\n"
+#ifdef USE_BINDLESS
+            "#define USE_BINDLESS\n"
+#endif
+            ;
     return define;
 
 }

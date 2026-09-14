@@ -44,6 +44,9 @@ smooth out vec2 tCoord;
 flat out int v_drawId;
 smooth out vec3 v_normal;
 smooth out vec3 v_tangent;
+#ifdef TRIPLANAR
+smooth out vec3 v_worldPos;
+#endif
   
 void main()  
 {  
@@ -70,6 +73,9 @@ void main()
 	mat3 nMat = mat3(models[drawId]);
 	v_normal = nMat*normal;
 	v_tangent = nMat*tangent;
+	#ifdef TRIPLANAR
+	v_worldPos = worldVert.xyz;
+	#endif
 #endif
 	
 	
