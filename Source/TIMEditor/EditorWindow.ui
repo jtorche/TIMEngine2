@@ -105,6 +105,7 @@
      <property name="title">
       <string>Import</string>
      </property>
+     <addaction name="actionImport_scene"/>
      <addaction name="actionLoad_collada"/>
     </widget>
     <addaction name="actionNew"/>
@@ -136,10 +137,19 @@
     <addaction name="menuSpecularProbe"/>
     <addaction name="separator"/>
    </widget>
+   <widget class="QMenu" name="menuVR_Room">
+    <property name="title">
+     <string>VR Room</string>
+    </property>
+    <addaction name="actionGenerate_VR_Rooms"/>
+    <addaction name="actionAggregate_Exit_Portals"/>
+    <addaction name="actionAggregate_Entrance_Portals"/>
+   </widget>
    <addaction name="menuContext"/>
    <addaction name="menuResource"/>
    <addaction name="menuScene"/>
    <addaction name="menuLighting"/>
+   <addaction name="menuVR_Room"/>
   </widget>
   <widget class="FullScreenDock" name="viewDockWidget">
    <property name="sizePolicy">
@@ -680,6 +690,17 @@
     <string>Ctrl+O</string>
    </property>
   </action>
+  <action name="actionImport_scene">
+   <property name="text">
+    <string>Scene...</string>
+   </property>
+   <property name="toolTip">
+    <string>Add the objects of a scene file to the current scene without clearing it (skybox, lights and specular probes of the current scene are kept)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
+  </action>
   <action name="actionSave">
    <property name="text">
     <string>Save</string>
@@ -755,6 +776,30 @@
   <action name="actionHide_Spec_Probes">
    <property name="text">
     <string>Hide Spec probes</string>
+   </property>
+  </action>
+  <action name="actionGenerate_VR_Rooms">
+   <property name="text">
+    <string>Generate VR rooms...</string>
+   </property>
+   <property name="toolTip">
+    <string>Walk the portal graph of the scenes of configScene.txt and write a vr_room_# object per VR room into the scene files (in the background, no scene is opened)</string>
+   </property>
+  </action>
+  <action name="actionAggregate_Exit_Portals">
+   <property name="text">
+    <string>Aggregate exit portals</string>
+   </property>
+   <property name="toolTip">
+    <string>Add the portals leading to a later scene of configScene.txt into the current (empty) scene, at their position relative to the VR room they are crossed from</string>
+   </property>
+  </action>
+  <action name="actionAggregate_Entrance_Portals">
+   <property name="text">
+    <string>Aggregate entrance portals</string>
+   </property>
+   <property name="toolTip">
+    <string>Add the portals the exits lead to into the current (empty) scene, at their position relative to the VR room they arrive in</string>
    </property>
   </action>
   <zorder>resourceDockWidget</zorder>

@@ -132,19 +132,6 @@
 	</Element>
 </MeshAsset>
 
-<MeshAsset name="roomPattern">
-	<Element type=0>
-		<color>198,198,198</color>
-		<geometry>meshBank/room.obj</geometry>
-		<roughness>0.5</roughness>
-		<metallic>0</metallic>
-		<specular>0.1</specular>
-		<emissive>0</emissive>
-		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
-	</Element>
-</MeshAsset>
-
 <MeshAsset name="sphereArtifact">
 	<Element type=0>
 		<color>255,255,255</color>

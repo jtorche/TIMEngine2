@@ -19,6 +19,7 @@
 #include <QDir>
 #include <QProgressDialog>
 #include <QRegularExpression>
+#include <QSet>
 
 using namespace tim;
 using namespace tim::core;
@@ -81,6 +82,23 @@ void SceneEditorWidget::addSceneObject(QString name, QString modelName, const QL
                                        const mat3& rot, const vec3& tr, const vec3& scale)
 {
     addSceneObject(_curSceneIndex, true, name, modelName, model, rot, tr, scale);
+}
+
+void SceneEditorWidget::addSceneObject(QString name, QString modelName, const QList<MeshElement>& model,
+                                       const mat3& rot, const vec3& tr, const vec3& scale, bool isVisible, bool isPhysic)
+{
+    SceneObject obj;
+    obj.baseModel = modelName;
+    obj.name = name;
+    obj.materials = model;
+
+    obj.rotate = rot;
+    obj.scale = scale;
+    obj.translate = tr;
+    obj.isVisible = isVisible;
+    obj.isPhysic = isPhysic;
+
+    addSceneObject(_curSceneIndex, true, obj);
 }
 
 void SceneEditorWidget::addSceneObject(int sceneIndex, bool lock, QString name, QString modelName, const QList<MeshElement>& model,
@@ -1364,6 +1382,120 @@ QList<QString> SceneEditorWidget::parseSkyboxXmlElement(TiXmlElement* elem)
     return QList<QString>::fromVector(res);
 }
 
+QList<SceneEditorWidget::SceneObject> SceneEditorWidget::parseSceneObjects(TiXmlElement* root) const
+{
+    // first parse meshasset, objects reference them by index
+    QMap<int, QList<MeshElement>> meshAssets;
+    QMap<int, QString> meshAssetsName;
+
+    for(TiXmlElement* elem = root ; elem ; elem = elem->NextSiblingElement())
+    {
+        if(elem->ValueStr() != std::string("MeshAsset"))
+            continue;
+
+        std::string name;
+        auto asset = interface::XmlMeshAssetLoader::parseMeshAssetElement(elem, name);
+
+        int index=-1;
+        elem->QueryIntAttribute("index", &index);
+
+        meshAssets[index] = _meshEditor->convertFromEngine(asset);
+        meshAssetsName[index] = QString::fromStdString(name);
+    }
+
+    QList<SceneObject> objects;
+    for(TiXmlElement* elem = root ; elem ; elem = elem->NextSiblingElement())
+    {
+        if(elem->ValueStr() != std::string("Object"))
+            continue;
+
+        std::string name;
+        elem->QueryStringAttribute("name", &name);
+
+        int index=-1;
+        elem->QueryIntAttribute("model", &index);
+
+        if(index < 0 || !meshAssets.contains(index))
+            continue;
+
+        bool isStatic = true, isPhysic = true, isVisible = true, useShadowLOD = false, useVisualLOD = false;
+        elem->QueryBoolAttribute("isStatic", &isStatic);
+        elem->QueryBoolAttribute("isPhysic", &isPhysic);
+        elem->QueryBoolAttribute("isVisible", &isVisible);
+        elem->QueryBoolAttribute("useShadowLOD", &useShadowLOD);
+        elem->QueryBoolAttribute("useVisualLOD", &useVisualLOD);
+
+        vec3 tr, sc;
+        mat3 rot;
+        SceneObject obj;
+        parseTransformation(elem, tr, sc, rot, &obj.collider);
+        obj.name = QString::fromStdString(name);
+        obj.baseModel = meshAssetsName[index];
+        obj.materials = meshAssets[index];
+        obj.rotate = rot;
+        obj.translate = tr;
+        obj.scale = sc;
+        obj.isPhysic = isPhysic;
+        obj.isStatic = isStatic;
+        obj.isVisible = isVisible;
+        obj.useShadowLOD = useShadowLOD;
+        obj.useVisualLOD = useVisualLOD;
+        objects += obj;
+    }
+
+    return objects;
+}
+
+// Adds the objects of a scene file to a scene without clearing it: its skybox, lights, level parameters and specular probes are kept.
+// Returns the number of objects added, -1 if the file can't be loaded. The added objects are selected so they can be moved together.
+int SceneEditorWidget::mergeScene(QString file, int sceneIndex, int* nbNameConflicts)
+{
+    TiXmlDocument doc(file.toStdString());
+    if(!doc.LoadFile())
+        return -1;
+
+    QList<SceneObject> objects = parseSceneObjects(doc.FirstChildElement());
+
+    if(nbNameConflicts)
+    {
+        QSet<QString> existingNames;
+        for(const SceneObject& obj : _objects[sceneIndex])
+            existingNames += obj.name;
+
+        *nbNameConflicts = 0;
+        for(const SceneObject& obj : objects)
+        {
+            if(!obj.name.isEmpty() && existingNames.contains(obj.name))
+                ++*nbNameConflicts;
+        }
+    }
+
+    if(objects.isEmpty())
+        return 0;
+
+    if(_curSceneIndex == sceneIndex)
+        cancelSelection();
+
+    _renderer->waitNoEvent();
+    _renderer->lock();
+    int firstAdded = _objects[sceneIndex].size();
+    for(const SceneObject& obj : objects)
+        addSceneObject(sceneIndex, false, obj);
+    _renderer->unlock();
+
+    if(_curSceneIndex == sceneIndex)
+    {
+        // the highlight copies the mesh, which is only set once the renderer processed the events
+        _renderer->waitNoEvent();
+        _renderer->lock();
+        for(int i=firstAdded ; i<_objects[sceneIndex].size() ; ++i)
+            activateObject(i, true, false);
+        _renderer->unlock();
+    }
+
+    return objects.size();
+}
+
 void SceneEditorWidget::importScene(QString file, int sceneIndex)
 {
     if (_curSceneIndex == sceneIndex) {
@@ -1380,78 +1512,21 @@ void SceneEditorWidget::importScene(QString file, int sceneIndex)
     TiXmlElement* root=doc.FirstChildElement();
     TiXmlElement* elem = root;
 
-    // first parse meshasset
-    QMap<int, QList<MeshElement>> meshAssets;
-    QMap<int, QString> meshAssetsName;
+    QList<SceneObject> objects = parseSceneObjects(root);
 
-    int nbObject=0;
     _renderer->getScene(sceneIndex+1).globalLight.dirLights.clear();
     _directionalLights[sceneIndex].clear();
 
-    while(elem)
-    {
-        if(elem->ValueStr() == std::string("MeshAsset"))
-        {
-            std::string name;
-            auto asset = interface::XmlMeshAssetLoader::parseMeshAssetElement(elem, name);
-
-            int index=-1;
-            elem->QueryIntAttribute("index", &index);
-
-            meshAssets[index] = _meshEditor->convertFromEngine(asset);
-            meshAssetsName[index] = QString::fromStdString(name);
-        }
-        else if(elem->ValueStr() == std::string("Object"))
-        {
-            nbObject++;
-        }
-
-        elem=elem->NextSiblingElement();
-    }
-
-    elem = root;
     QList<QString> skybox;
 
     _renderer->waitNoEvent();
     _renderer->lock();
+    for(const SceneObject& obj : objects)
+        addSceneObject(sceneIndex, false, obj);
+
     while(elem)
     {
-        if(elem->ValueStr() == std::string("Object"))
-        {
-            std::string name;
-            elem->QueryStringAttribute("name", &name);
-
-            int index=-1;
-            elem->QueryIntAttribute("model", &index);
-
-            if(index < 0 || !meshAssets.contains(index))
-                continue;
-
-            bool isStatic = true, isPhysic = true, isVisible = true, useShadowLOD = false, useVisualLOD = false;
-            elem->QueryBoolAttribute("isStatic", &isStatic);
-            elem->QueryBoolAttribute("isPhysic", &isPhysic);
-            elem->QueryBoolAttribute("isVisible", &isVisible);
-            elem->QueryBoolAttribute("useShadowLOD", &useShadowLOD);
-            elem->QueryBoolAttribute("useVisualLOD", &useVisualLOD);
-
-            vec3 tr, sc;
-            mat3 rot;
-            SceneObject obj;
-            parseTransformation(elem, tr, sc, rot, &obj.collider);
-            obj.name = QString::fromStdString(name);
-            obj.baseModel = meshAssetsName[index];
-            obj.materials = meshAssets[index];
-            obj.rotate = rot;
-            obj.translate = tr;
-            obj.scale = sc;
-            obj.isPhysic = isPhysic;
-            obj.isStatic = isStatic;
-            obj.isVisible = isVisible;
-            obj.useShadowLOD = useShadowLOD;
-            obj.useVisualLOD = useVisualLOD;
-            addSceneObject(sceneIndex, false, obj);
-        }
-        else if(elem->ValueStr() == std::string("Skybox"))
+        if(elem->ValueStr() == std::string("Skybox"))
         {
             skybox = parseSkyboxXmlElement(elem);
         }

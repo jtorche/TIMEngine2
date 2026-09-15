@@ -6,6 +6,7 @@
 #include "interface/XmlMeshAssetLoader.h"
 #include "MeshElement.h"
 #include "SceneEditorWidget.h"
+#include "VRRoomTools.h"
 
 namespace Ui {
 class EditorWindow;
@@ -31,9 +32,18 @@ private:
     QShortcut* _copySC;
     QString _savePath[SceneEditorWidget::NB_SCENE];
 
+    VRRoomGraph _vrRoomGraph;              // last portal graph walk (VR Room menu)
+    VRRoomWriter::Parameters _vrRoomParam; // room size and asset used by the last walk
+    bool _vrRoomGraphBuilt = false;
+
     QString genTitle() const;
+    void selectActiveScene();
 
     void loadParameter(QString);
+    bool checkEditorEmpty();
+    bool checkSceneEmpty(int sceneIndex);
+    void aggregatePortals(const QList<VRRoomGraph::Placement>&, const QString& what);
+    void showTextReport(const QString& title, const QString& text);
 
 public slots:
     void addResourceFolder();
@@ -56,6 +66,7 @@ private slots:
     void on_actionScene_4_triggered();
     void on_actionSave_triggered();
     void on_actionLoad_triggered();
+    void on_actionImport_scene_triggered();
     void on_actionSave_As_triggered();
     void on_actionNew_triggered();
     void on_actionSunDirection_triggered();
@@ -67,6 +78,10 @@ private slots:
     void on_actionRegenerate_Spec_Probe_triggered();
 
     void on_actionShow_Spec_Probes_triggered();
+
+    void on_actionGenerate_VR_Rooms_triggered();
+    void on_actionAggregate_Exit_Portals_triggered();
+    void on_actionAggregate_Entrance_Portals_triggered();
 
     void addAssetToScene(QString);
     void addGeometryToScene(QString, QString);

@@ -1,0 +1,14 @@
+<MeshAsset name="vr_room">
+	<Element type=0>
+		<color>255,0,0</color>
+		<geometry>cube_uv.obj</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+	</Element>
+</MeshAsset>
+

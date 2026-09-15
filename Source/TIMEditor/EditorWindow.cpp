@@ -2,6 +2,7 @@
 #include "ui_EditorWindow.h"
 #include <QDateTime>
 #include <QFile>
+#include <QFileInfo>
 #include <QTextStream>
 #include <QSettings>
 
@@ -9,6 +10,10 @@
 #include <QFileDialog>
 #include "SelectSkyboxDialog.h"
 #include "SceneLightingDialog.h"
+#include "VRRoomDialog.h"
+#include <QPlainTextEdit>
+#include <QDialogButtonBox>
+#include <QVBoxLayout>
 // #include "AssimpLoader.h"
 
 using namespace tim;
@@ -127,6 +132,21 @@ QString EditorWindow::genTitle() const
         title += " - " + _savePath[ui->sceneEditorWidget->activeScene()];
 
     return title;
+}
+
+// Leaves the asset editor for the scene edited last, so objects added to it are visible
+void EditorWindow::selectActiveScene()
+{
+    if(_mainRenderer->getCurSceneIndex() != 0)
+        return;
+
+    switch(ui->sceneEditorWidget->activeScene())
+    {
+        case 0: on_actionScene_1_triggered(); break;
+        case 1: on_actionScene_2_triggered(); break;
+        case 2: on_actionScene_3_triggered(); break;
+        case 3: on_actionScene_4_triggered(); break;
+    }
 }
 
 /** SLOTS **/
@@ -445,22 +465,37 @@ void EditorWindow::on_actionLoad_triggered()
     if(file.isEmpty())
         return;
 
-    if(_mainRenderer->getCurSceneIndex() == 0)
-    {
-        switch(ui->sceneEditorWidget->activeScene())
-        {
-            case 0: on_actionScene_1_triggered(); break;
-            case 1: on_actionScene_2_triggered(); break;
-            case 2: on_actionScene_3_triggered(); break;
-            case 3: on_actionScene_4_triggered(); break;
-        }
-    }
+    selectActiveScene();
 
     ui->sceneEditorWidget->importScene(file, ui->sceneEditorWidget->activeScene());
     _savePath[ui->sceneEditorWidget->activeScene()] = file;
 
     ui->statusBar->showMessage("Scene loaded", 1000 * 60 * 10);
     setWindowTitle(genTitle());
+}
+
+// Unlike Load, the objects of the file are added to the current scene, which keeps its content and its save path
+void EditorWindow::on_actionImport_scene_triggered()
+{
+    QString file = QFileDialog::getOpenFileName(this, "Import scene", ".", "XML files (*.xml)");
+    if(file.isEmpty())
+        return;
+
+    selectActiveScene();
+
+    int sceneIndex = ui->sceneEditorWidget->activeScene();
+    int nbNameConflicts = 0;
+    int added = ui->sceneEditorWidget->mergeScene(file, sceneIndex, &nbNameConflicts);
+    if(added < 0)
+    {
+        QMessageBox::warning(this, "Import scene", "Unable to load " + file);
+        return;
+    }
+
+    QString message = QString::number(added) + " object(s) imported from " + QFileInfo(file).fileName() + " into scene " + QString::number(sceneIndex+1);
+    if(nbNameConflicts > 0)
+        message += " - " + QString::number(nbNameConflicts) + " name(s) already used in the scene";
+    ui->statusBar->showMessage(message, 1000 * 60 * 10);
 }
 
 void EditorWindow::on_actionSave_As_triggered()
@@ -557,4 +592,132 @@ void EditorWindow::on_actionShow_Spec_Probes_triggered()
     } else {
         ui->sceneEditorWidget->removeSpecProbePreview();
     }
+}
+
+/** VR Room tools **/
+
+bool EditorWindow::checkSceneEmpty(int sceneIndex)
+{
+    if(ui->sceneEditorWidget->isSceneEmpty(sceneIndex) && _savePath[sceneIndex].isEmpty())
+        return true;
+
+    QMessageBox::warning(this, "VR Room", "Scene " + QString::number(sceneIndex+1) + " is not empty, clear it first (Scene > New).");
+    return false;
+}
+
+// The generation rewrites the scene files in the background, so no scene must be loaded in the editor
+bool EditorWindow::checkEditorEmpty()
+{
+    for(uint i=0 ; i<SceneEditorWidget::NB_SCENE ; ++i)
+    {
+        if(!checkSceneEmpty(i))
+            return false;
+    }
+    return true;
+}
+
+void EditorWindow::showTextReport(const QString& title, const QString& text)
+{
+    QDialog* dialog = new QDialog(this);
+    dialog->setAttribute(Qt::WA_DeleteOnClose);
+    dialog->setWindowTitle(title);
+    dialog->resize(820, 600);
+
+    QPlainTextEdit* edit = new QPlainTextEdit(dialog);
+    edit->setReadOnly(true);
+    edit->setLineWrapMode(QPlainTextEdit::NoWrap);
+    QFont font("Consolas");
+    font.setStyleHint(QFont::Monospace);
+    edit->setFont(font);
+    edit->setPlainText(text);
+
+    QDialogButtonBox* buttons = new QDialogButtonBox(QDialogButtonBox::Close, dialog);
+    connect(buttons, &QDialogButtonBox::rejected, dialog, &QDialog::close);
+
+    QVBoxLayout* layout = new QVBoxLayout(dialog);
+    layout->addWidget(edit);
+    layout->addWidget(buttons);
+    dialog->show();
+}
+
+void EditorWindow::on_actionGenerate_VR_Rooms_triggered()
+{
+    if(!checkEditorEmpty())
+        return;
+
+    VRRoomDialog dialog(this);
+    if(dialog.exec() != QDialog::Accepted)
+        return;
+
+    VRRoomDialog::Config config = dialog.getConfig();
+
+    QString log;
+    VRRoomGraph graph;
+    if(!graph.build(config.graph, log))
+    {
+        showTextReport("VR rooms - error", log);
+        return;
+    }
+    _vrRoomGraph = graph;
+    _vrRoomParam = config.writer;
+    _vrRoomGraphBuilt = true;
+
+    QStringList written;
+    if(config.writeFiles)
+        VRRoomWriter::writeRooms(graph, config.writer, written, log);   // failures are reported in the log
+    else
+        log += "\nScene files not written (graph walk only).\n";
+
+    showTextReport("VR rooms", log);
+    ui->statusBar->showMessage(QString::number(graph.rooms().size()) + " VR rooms found, " + QString::number(written.size()) + " scene file(s) updated", 1000 * 60 * 10);
+}
+
+// Fills the active (empty) scene with the VR room ground at the origin and the given portals, each at its position relative to its own VR room
+void EditorWindow::aggregatePortals(const QList<VRRoomGraph::Placement>& placements, const QString& what)
+{
+    if(!_vrRoomGraphBuilt)
+    {
+        QMessageBox::information(this, "Aggregate portals", "No portal graph available yet: run \"VR Room > Generate VR rooms...\" first (writing the scene files is optional).");
+        return;
+    }
+    if(!checkSceneEmpty(ui->sceneEditorWidget->activeScene()))
+        return;
+
+    selectActiveScene();
+
+    interface::XmlMeshAssetLoader assetLoader;
+    if(assetLoader.load(_vrRoomParam.assetFile.toStdString()) && !assetLoader.allAssets().empty())
+    {
+        const auto& asset = *assetLoader.allAssets().begin();
+        // Invisible and not physical like in the scene files, so the game ignores it if the scene is saved
+        ui->sceneEditorWidget->addSceneObject("vr_room", QString::fromStdString(asset.first), ui->meshEditorWidget->convertFromEngine(asset.second),
+                                              mat3::IDENTITY(), vec3(0,0,0), vec3(_vrRoomParam.roomSize, _vrRoomParam.roomSize, _vrRoomParam.thickness), false, false);
+    }
+
+    int added = 0;
+    for(const VRRoomGraph::Placement& placement : placements)
+    {
+        const VRRoomGraph::Portal* portal = _vrRoomGraph.portal(placement.portalName);
+        if(!portal)
+            continue;
+
+        mat3 rot;
+        vec3 tr, scale;
+        VRRoomGraph::decompose(placement.localMatrix, rot, tr, scale);
+        ui->sceneEditorWidget->addSceneObject(portal->objectName, portal->assetName, ui->meshEditorWidget->convertFromEngine(portal->asset), rot, tr, scale);
+        ++added;
+    }
+
+    ui->statusBar->showMessage(QString::number(added) + " " + what + " aggregated into scene " + QString::number(ui->sceneEditorWidget->activeScene()+1)
+                               + " (for viewing only, not a game level)", 1000 * 60 * 10);
+}
+
+void EditorWindow::on_actionAggregate_Exit_Portals_triggered()
+{
+    aggregatePortals(_vrRoomGraph.exitPortals(), "exit portals");
+}
+
+void EditorWindow::on_actionAggregate_Entrance_Portals_triggered()
+{
+    aggregatePortals(_vrRoomGraph.entrancePortals(), "entrance portals");
 }

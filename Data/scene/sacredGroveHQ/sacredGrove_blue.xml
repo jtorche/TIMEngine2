@@ -3569,18 +3569,6 @@
 		</Advanced>
 	</Element>
 </MeshAsset>
-<MeshAsset name="cube_uv" index=136 >
-	<Element type=0>
-		<color>198,198,198</color>
-		<geometry>meshBank/room.obj</geometry>
-		<roughness>0.5</roughness>
-		<metallic>0</metallic>
-		<specular>0.1</specular>
-		<emissive>0</emissive>
-		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
-	</Element>
-</MeshAsset>
 <MeshAsset name="column1_blue" index=137 >
 	<Element type=0>
 		<color>14,110,255</color>
@@ -3635,6 +3623,19 @@
 		<emissive>0.2</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
+	</Element>
+</MeshAsset>
+<MeshAsset name="vr_room" index=139 >
+	<Element type=0>
+		<color>255,0,0</color>
+		<geometry>cube_uv.obj</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
 	</Element>
 </MeshAsset>
 
@@ -4700,12 +4701,6 @@
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="roomPattern" model=136 isStatic=1 isPhysic=1 isVisible=0 >
-   <translate>0.0734782,0,0</translate>
-   <scale>1,1,1</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
-   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
-</Object>
 <Object name="column" model=137 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>0.991789,0.886427,0</translate>
    <scale>1,1,1</scale>
@@ -4717,4 +4712,10 @@
    <scale>0.5,0.5,0.5</scale>
    <rotate>0.813731,-0.581241,0,0.581241,0.813731,0,0,0,1</rotate>
    <collider type=1 mass=0.3 restitution=0.4 friction=0.75 rollingFriction=0.05/>
+</Object>
+<Object name="vr_room_18" model=139 isStatic=1 isPhysic=0 isVisible=0 >
+   <translate>0.0446272,0.0576677,-0.0132392</translate>
+   <scale>3,3,0.05</scale>
+   <rotate>1,0.000170127,0.000879822,-0.000170022,1,0.000191377,-0.000879788,-0.000191521,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>

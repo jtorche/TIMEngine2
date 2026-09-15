@@ -14,7 +14,7 @@ enum CollisionTypes {
 static constexpr int PADDLE_COLLISION = COL_PHYS | COL_IOBJ;
 static constexpr int PHYS_COLLISION = COL_PADDLE | COL_PHYS | COL_STATIC | COL_IOBJ;
 static constexpr int STATIC_COLLISION = COL_PHYS | COL_IOBJ;
-static constexpr int ROOMPATTERN_COLLISION = COL_IOBJ;
+static constexpr int ROOM_COLLISION = COL_IOBJ;
 static constexpr int IOBJECT_COLLISION = COL_PADDLE | COL_PHYS | COL_STATIC | COL_ROOM | COL_IOBJ;
 
 #endif // COLLISIONMASK_H

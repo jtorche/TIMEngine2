@@ -798,6 +798,19 @@
 		<normalTex>meshBank/rock6_st_NRM.png</normalTex>
 	</Element>
 </MeshAsset>
+<MeshAsset name="vr_room" index=32 >
+	<Element type=0>
+		<color>255,0,0</color>
+		<geometry>cube_uv.obj</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+	</Element>
+</MeshAsset>
 
 <Object name="" model=0 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>4.76201,-12.7763,4.08506</translate>
@@ -1691,5 +1704,11 @@
    <translate>2.38182,3.4642,-0.0766937</translate>
    <scale>0.738974,0.738974,0.738974</scale>
    <rotate>-0.767679,0.640836,0,-0.640836,-0.767678,0,0,0,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="vr_room_4" model=32 isStatic=1 isPhysic=0 isVisible=0 >
+   <translate>-0.00871468,2.41836,-0.0132392</translate>
+   <scale>3,3,0.05</scale>
+   <rotate>1,0.000170186,0.000879822,-0.000170082,1,0.000191376,-0.000879788,-0.000191521,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>

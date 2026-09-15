@@ -3887,16 +3887,17 @@
 		<diffuseTex>meshBank/column1_baseAO.png</diffuseTex>
 	</Element>
 </MeshAsset>
-<MeshAsset name="roomPattern" index=138 >
+<MeshAsset name="vr_room" index=138 >
 	<Element type=0>
-		<color>198,198,198</color>
-		<geometry>meshBank/room.obj</geometry>
+		<color>255,0,0</color>
+		<geometry>cube_uv.obj</geometry>
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
-		<specular>0.1</specular>
+		<specular>0.15</specular>
 		<emissive>0</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
 	</Element>
 </MeshAsset>
 
@@ -4974,9 +4975,9 @@
    <rotate>0.0359529,0.999354,0,-0.999354,0.0359528,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="roomPattern" model=138 isStatic=1 isPhysic=1 isVisible=0 >
-   <translate>0.0734782,0,0</translate>
-   <scale>1,1,1</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+<Object name="vr_room_20" model=138 isStatic=1 isPhysic=0 isVisible=0 >
+   <translate>0.0446272,0.0576677,-0.0132392</translate>
+   <scale>3,3,0.05</scale>
+   <rotate>1,0.000170127,0.000879822,-0.000170022,1,0.000191377,-0.000879788,-0.000191521,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>

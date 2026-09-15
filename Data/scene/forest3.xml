@@ -1596,26 +1596,13 @@
 		<normalTex>textureBank/rock3_NORM.png</normalTex>
 	</Element>
 </MeshAsset>
-<MeshAsset name="roomPattern" index=48 >
+<MeshAsset name="vr_room" index=48 >
 	<Element type=0>
-		<color>198,198,198</color>
-		<geometry>meshBank/room.obj</geometry>
+		<color>255,0,0</color>
+		<geometry>cube_uv.obj</geometry>
 		<roughness>0.5</roughness>
 		<metallic>0</metallic>
-		<specular>0.1</specular>
-		<emissive>0</emissive>
-		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
-	</Element>
-</MeshAsset>
-<MeshAsset name="roomPattern" index=49 >
-	<Element type=0>
-		<color>255,255,255</color>
-		<geometry>meshBank/roomPattern.obj</geometry>
-		<roughness>0.5</roughness>
-		<metallic>0</metallic>
-		<specular>0.1</specular>
+		<specular>0.15</specular>
 		<emissive>0</emissive>
 		<textureScale>1</textureScale>
 		<castShadow>1</castShadow>
@@ -3537,69 +3524,69 @@
    <rotate>-0.888372,-0.459124,0,0.459124,-0.888372,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="roomPattern" model=48 isStatic=1 isPhysic=1 isVisible=0 >
-   <translate>-15,15,0</translate>
-   <scale>1,1,1</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+<Object name="vr_room_5" model=48 isStatic=1 isPhysic=0 isVisible=0 >
+   <translate>3.87353,-31.8769,-0.0132392</translate>
+   <scale>3,3,0.05</scale>
+   <rotate>1,0.000170186,0.000879822,-0.000170082,1,0.000191376,-0.000879788,-0.000191521,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="roomPattern" model=48 isStatic=1 isPhysic=1 isVisible=0 >
-   <translate>0,0,0</translate>
-   <scale>1,1,1</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+<Object name="vr_room_6" model=48 isStatic=1 isPhysic=0 isVisible=0 >
+   <translate>-9.74846,-31.0016,0.0184278</translate>
+   <scale>3,3,0.05</scale>
+   <rotate>1,0.000170186,0.000879822,-0.000170082,1,0.000191376,-0.000879788,-0.000191521,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="roomPattern" model=49 isStatic=1 isPhysic=1 isVisible=0 >
-   <translate>-15,0,0</translate>
-   <scale>1,1,1</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+<Object name="vr_room_7" model=48 isStatic=1 isPhysic=0 isVisible=0 >
+   <translate>-0.00903225,0.00882149,-0.0132392</translate>
+   <scale>3,3,0.05</scale>
+   <rotate>1,0.000170186,0.000879822,-0.000170082,1,0.000191376,-0.000879788,-0.000191521,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="roomPattern" model=48 isStatic=1 isPhysic=1 isVisible=0 >
-   <translate>-15,-15,0</translate>
-   <scale>1,1,1</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+<Object name="vr_room_8" model=48 isStatic=1 isPhysic=0 isVisible=0 >
+   <translate>14.9903,-15.0005,-0.0132392</translate>
+   <scale>3,3,0.05</scale>
+   <rotate>1,0.000170216,0.000879822,-0.000170112,1,0.000191376,-0.000879788,-0.000191521,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="roomPattern" model=48 isStatic=1 isPhysic=1 isVisible=0 >
-   <translate>0,-15,0</translate>
-   <scale>1,1,1</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+<Object name="vr_room_9" model=48 isStatic=1 isPhysic=0 isVisible=0 >
+   <translate>-15.0164,-15.0005,-0.0132392</translate>
+   <scale>3,3,0.05</scale>
+   <rotate>1,0.000170156,0.000879822,-0.000170052,1,0.000191377,-0.000879788,-0.000191521,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="roomPattern" model=48 isStatic=1 isPhysic=1 isVisible=0 >
-   <translate>0,15,0</translate>
-   <scale>1,1,1</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+<Object name="vr_room_10" model=48 isStatic=1 isPhysic=0 isVisible=0 >
+   <translate>-15.0164,0.00882244,-0.0132392</translate>
+   <scale>3,3,0.05</scale>
+   <rotate>1,0.000170186,0.000879822,-0.000170082,1,0.000191376,-0.000879788,-0.000191521,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="roomPattern" model=48 isStatic=1 isPhysic=1 isVisible=0 >
-   <translate>15,0,0</translate>
-   <scale>1,1,1</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+<Object name="vr_room_11" model=48 isStatic=1 isPhysic=0 isVisible=0 >
+   <translate>-0.00902843,-15.0005,-0.0132392</translate>
+   <scale>3,3,0.05</scale>
+   <rotate>1,0.000170156,0.000879822,-0.000170052,1,0.000191377,-0.000879788,-0.000191521,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="roomPattern" model=48 isStatic=1 isPhysic=1 isVisible=0 >
-   <translate>15,15,0</translate>
-   <scale>1,1,1</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+<Object name="vr_room_12" model=48 isStatic=1 isPhysic=0 isVisible=0 >
+   <translate>14.9902,0.00882238,-0.0132392</translate>
+   <scale>3,3,0.05</scale>
+   <rotate>1,0.000170186,0.000879822,-0.000170082,1,0.000191376,-0.000879788,-0.000191521,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="roomPattern" model=48 isStatic=1 isPhysic=1 isVisible=0 >
-   <translate>-9.73976,-31.0113,0</translate>
-   <scale>1,1,1</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+<Object name="vr_room_13" model=48 isStatic=1 isPhysic=0 isVisible=0 >
+   <translate>-0.00902757,15.0129,-0.0132392</translate>
+   <scale>3,3,0.05</scale>
+   <rotate>1,0.000170127,0.000879822,-0.000170022,1,0.000191377,-0.000879788,-0.000191521,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="roomPattern" model=48 isStatic=1 isPhysic=1 isVisible=0 >
-   <translate>3.88225,-31.8866,0</translate>
-   <scale>1,1,1</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+<Object name="vr_room_14" model=48 isStatic=1 isPhysic=0 isVisible=0 >
+   <translate>-15.0163,15.0129,-0.0132392</translate>
+   <scale>3,3,0.05</scale>
+   <rotate>1,0.000170156,0.000879822,-0.000170052,1,0.000191377,-0.000879788,-0.000191521,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>
-<Object name="roomPattern" model=48 isStatic=1 isPhysic=1 isVisible=0 >
-   <translate>15,-15,0</translate>
-   <scale>1,1,1</scale>
-   <rotate>1,0,0,0,1,0,0,0,1</rotate>
+<Object name="vr_room_15" model=48 isStatic=1 isPhysic=0 isVisible=0 >
+   <translate>14.9902,15.0129,-0.0132392</translate>
+   <scale>3,3,0.05</scale>
+   <rotate>1,0.000170127,0.000879822,-0.000170022,1,0.000191377,-0.000879788,-0.000191521,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>

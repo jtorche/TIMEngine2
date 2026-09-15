@@ -1287,6 +1287,19 @@
 		<normalTex>textureBank/rock4_NORM.png</normalTex>
 	</Element>
 </MeshAsset>
+<MeshAsset name="vr_room" index=67 >
+	<Element type=0>
+		<color>255,0,0</color>
+		<geometry>cube_uv.obj</geometry>
+		<roughness>0.5</roughness>
+		<metallic>0</metallic>
+		<specular>0.15</specular>
+		<emissive>0</emissive>
+		<textureScale>1</textureScale>
+		<castShadow>1</castShadow>
+		<cmAffected>1</cmAffected>
+	</Element>
+</MeshAsset>
 
 <Object name="" model=0 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>-24.4917,-4.94472,4.57376</translate>
@@ -3650,5 +3663,59 @@
    <translate>-25.4728,32.3494,1.23543</translate>
    <scale>1,1,1</scale>
    <rotate>0.378302,-0.925677,0.00294921,0.92568,0.378301,-0.00155717,0.000325744,0.0033191,0.999995</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="vr_room_17" model=67 isStatic=1 isPhysic=0 isVisible=0 >
+   <translate>-0.00745081,0.00964276,-0.0132392</translate>
+   <scale>3,3,0.05</scale>
+   <rotate>1,0.000170127,0.000879822,-0.000170022,1,0.000191377,-0.000879788,-0.000191521,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="vr_room_21" model=67 isStatic=1 isPhysic=0 isVisible=0 >
+   <translate>-12.3585,-0.00913923,-0.0132392</translate>
+   <scale>3,3,0.05</scale>
+   <rotate>1,0.000170097,0.000879822,-0.000169993,1,0.000191377,-0.000879788,-0.000191521,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="vr_room_22" model=67 isStatic=1 isPhysic=0 isVisible=0 >
+   <translate>-24.3877,-5.17249,4.89168</translate>
+   <scale>3,3,0.0500001</scale>
+   <rotate>-0.404297,0.228045,0.885743,0.76969,-0.438314,0.464173,0.494086,0.869411,0.00168407</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="vr_room_23" model=67 isStatic=1 isPhysic=0 isVisible=0 >
+   <translate>-19.668,-10.4822,-0.0131588</translate>
+   <scale>3,3,0.05</scale>
+   <rotate>0.952415,0.304802,0.000895828,-0.304802,0.952416,-8.61265e-05,-0.000880391,-0.00019138,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="vr_room_24" model=67 isStatic=1 isPhysic=0 isVisible=0 >
+   <translate>-26.6683,7.3141,-0.0131588</translate>
+   <scale>3,3,0.05</scale>
+   <rotate>-0.657348,-0.753587,-0.000722057,0.753587,-0.657348,0.000537175,-0.000880392,-0.00019138,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="vr_room_25" model=67 isStatic=1 isPhysic=0 isVisible=0 >
+   <translate>-24.7584,7.62175,3.02984</translate>
+   <scale>3,3,0.05</scale>
+   <rotate>0.996158,0.0875655,0.000892801,-0.0875659,0.996159,0.000113278,-0.000880392,-0.00019138,1</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="vr_room_26" model=67 isStatic=1 isPhysic=0 isVisible=0 >
+   <translate>-28.0406,15.2817,-0.0132017</translate>
+   <scale>3.00001,3.00001,0.05</scale>
+   <rotate>0.275816,0.96121,-0.00132805,-0.961204,0.275808,-0.00414752,-0.00362127,0.00242011,0.999991</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="vr_room_27" model=67 isStatic=1 isPhysic=0 isVisible=0 >
+   <translate>-30.6449,21.3417,-0.0132017</translate>
+   <scale>2.99998,2.99998,0.05</scale>
+   <rotate>0.434256,0.900789,-0.000608185,-0.900782,0.43425,-0.00431224,-0.0036213,0.00242013,0.999991</rotate>
+   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
+</Object>
+<Object name="vr_room_28" model=67 isStatic=1 isPhysic=0 isVisible=0 >
+   <translate>-24.7917,31.7779,0.0282945</translate>
+   <scale>2.99999,2.99999,0.05</scale>
+   <rotate>-0.197072,-0.980388,0.00143451,0.980382,-0.197065,0.00396735,-0.00360781,0.0021879,0.999991</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
 </Object>

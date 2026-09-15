@@ -358,20 +358,7 @@
 		<normalTex>meshBank/groundForest_NORM.png</normalTex>
 	</Element>
 </MeshAsset>
-<MeshAsset name="platau" index=12 >
-	<Element type=0>
-		<color>255,0,0</color>
-		<geometry>cube_uv.obj</geometry>
-		<roughness>0.5</roughness>
-		<metallic>0</metallic>
-		<specular>0.15</specular>
-		<emissive>0</emissive>
-		<textureScale>1</textureScale>
-		<castShadow>1</castShadow>
-		<cmAffected>1</cmAffected>
-	</Element>
-</MeshAsset>
-<MeshAsset name="fence4" index=13 >
+<MeshAsset name="fence4" index=12 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/fence4.obj</geometry>
@@ -386,7 +373,7 @@
 		<normalTex>meshBank/fenceTex_NORM.png</normalTex>
 	</Element>
 </MeshAsset>
-<MeshAsset name="fence2" index=14 >
+<MeshAsset name="fence2" index=13 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/fence2.obj</geometry>
@@ -401,7 +388,7 @@
 		<normalTex>meshBank/fenceTex_NORM.png</normalTex>
 	</Element>
 </MeshAsset>
-<MeshAsset name="fence3" index=15 >
+<MeshAsset name="fence3" index=14 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/fence3.obj</geometry>
@@ -416,7 +403,7 @@
 		<normalTex>meshBank/fenceTex_NORM.png</normalTex>
 	</Element>
 </MeshAsset>
-<MeshAsset name="portal6" index=16 >
+<MeshAsset name="portal6" index=15 >
 	<Element type=0>
 		<color>79,255,235</color>
 		<geometry>meshBank/portal6.obj</geometry>
@@ -442,7 +429,7 @@
 		<normalTex>textureBank/wood1_NORM.png</normalTex>
 	</Element>
 </MeshAsset>
-<MeshAsset name="portal3" index=17 >
+<MeshAsset name="portal3" index=16 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/portal3.obj</geometry>
@@ -468,7 +455,7 @@
 		<normalTex>textureBank/rock3_NORM.png</normalTex>
 	</Element>
 </MeshAsset>
-<MeshAsset name="sunStone" index=18 >
+<MeshAsset name="sunStone" index=17 >
 	<Element type=0>
 		<color>255,255,255</color>
 		<geometry>meshBank/sunStone.obj</geometry>
@@ -784,12 +771,6 @@
    <rotate>-0.413156,0.91066,0,-0.91066,-0.413156,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=1 rollingFriction=1/>
 </Object>
-<Object name="" model=12 isStatic=1 isPhysic=0 isVisible=0 >
-   <translate>0,0,0</translate>
-   <scale>3.0109,3.0109,0.01</scale>
-   <rotate>0.0280274,-0.999607,0,0.999607,0.0280274,0,0,0,1</rotate>
-   <collider type=0 mass=1 restitution=0.8 friction=0.75 rollingFriction=0.1/>
-</Object>
 <Object name="" model=10 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>-1.01315,-2.01088,-0.1</translate>
    <scale>1,1,1</scale>
@@ -820,19 +801,19 @@
    <rotate>0.940831,-0.0470246,0.335599,0.0324039,0.99827,0.0490372,-0.337325,-0.0352609,0.940728</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=1 rollingFriction=1/>
 </Object>
-<Object name="" model=13 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=12 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>-2.03849,0.824522,-0.1</translate>
    <scale>1,1,1</scale>
    <rotate>-7.70622e-06,0.998605,-0.0527474,-0.999799,0.00104104,0.019855,0.0198822,0.0527369,0.998409</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=1 rollingFriction=1/>
 </Object>
-<Object name="" model=13 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=12 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>0.963013,1.89216,-0.0665553</translate>
    <scale>1,1,1</scale>
    <rotate>-0.999997,0.000207128,0,-0.000206719,-0.998022,0.0627986,1.30073e-05,0.0627984,0.998026</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=1 rollingFriction=1/>
 </Object>
-<Object name="" model=14 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=13 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>1.9987,0.820526,-0.1</translate>
    <scale>1.02511,1,1</scale>
    <rotate>-0.000477963,-0.999997,0,0.999997,-0.000477963,0,0,0,1</rotate>
@@ -850,7 +831,7 @@
    <rotate>-0.991333,-0.131356,0.00096725,0.13128,-0.990444,0.0422424,-0.00459079,0.0420033,0.999107</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=1 rollingFriction=1/>
 </Object>
-<Object name="" model=14 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=13 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>-0.984252,1.90228,-0.1</translate>
    <scale>1,1,1</scale>
    <rotate>-0.999997,0.000548743,0,-0.000548743,-0.999997,0,0,0,1</rotate>
@@ -868,7 +849,7 @@
    <rotate>-0.284686,0.958619,0,-0.958619,-0.284686,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=1 rollingFriction=1/>
 </Object>
-<Object name="" model=15 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="" model=14 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>2.00466,-1.14927,-0.1</translate>
    <scale>1,1,1</scale>
    <rotate>-0.0013053,-0.999997,0,0.999997,-0.0013053,0,0,0,1</rotate>
@@ -892,19 +873,19 @@
    <rotate>0.974225,0.167915,0.150636,-0.137739,0.971628,-0.192269,-0.178647,0.166565,0.969713</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=1 rollingFriction=1/>
 </Object>
-<Object name="portalForest4In_FI3" model=16 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="portalForest4In_FI3" model=15 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>-0.798943,1,0</translate>
    <scale>1,1,1</scale>
    <rotate>-0.000278875,1,0,-1,-0.000278875,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=1 rollingFriction=1/>
 </Object>
-<Object name="portalForest4_FI4" model=17 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="portalForest4_FI4" model=16 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>0.999996,-0.45,0.016848</translate>
    <scale>0.82,1,0.8</scale>
    <rotate>1,0,0,0,1,0,0,0,1</rotate>
    <collider type=0 mass=1 restitution=0.8 friction=1 rollingFriction=1/>
 </Object>
-<Object name="sunStone" model=18 isStatic=1 isPhysic=1 isVisible=1 >
+<Object name="sunStone" model=17 isStatic=1 isPhysic=1 isVisible=1 >
    <translate>1.0098,-0.450489,0.77758</translate>
    <scale>1,1,1</scale>
    <rotate>-0.851283,0.52471,0,-0.52471,-0.851283,0,0,0,1</rotate>

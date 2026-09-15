@@ -41,11 +41,13 @@ public:
 
     void addSceneObject(QString name, QString model, const QList<MeshElement>&, mat4);
     void addSceneObject(QString name, QString model, const QList<MeshElement>&, const mat3&, const vec3&, const vec3&);
+    void addSceneObject(QString name, QString model, const QList<MeshElement>&, const mat3&, const vec3&, const vec3&, bool isVisible, bool isPhysic);
 
     void switchScene(int);
     int activeScene() const { return _curSceneIndex; }
 
     void activateLastAdded();
+    bool isSceneEmpty(int sceneIndex) const { return _objects[sceneIndex].isEmpty(); }
 
     static const uint NB_SCENE = 4;
 
@@ -128,6 +130,7 @@ protected:
 
     void addSceneObject(int scene, bool lock, QString name, QString model, const QList<MeshElement>&, const mat3&, const vec3&, const vec3&);
     void addSceneObject(int scene, bool lock, SceneObject);
+    QList<SceneObject> parseSceneObjects(TiXmlElement* root) const;
 
     void activateObject(int, bool, bool lock);
     void flushItemUi(int);
@@ -191,6 +194,7 @@ public slots:
 
     void exportScene(QString, int);
     void importScene(QString, int);
+    int mergeScene(QString, int, int* nbNameConflicts = nullptr);
     void clearScene(int);
 
     void renderSpecularProbe();

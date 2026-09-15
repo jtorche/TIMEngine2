@@ -34,8 +34,9 @@ MultiSceneManager::MultiSceneManager(std::string file, MultipleSceneHelper& mult
     mapStringGeometry["meshBank/portal5Frame.obj"] = "meshBank/portal5Frame_Pass.obj";
     mapStringGeometry["meshBank/portal5FrameR.obj"] = "meshBank/portal5FrameR_Pass.obj";
 
-    // Relplace all "roomPattern" instance with this model that contains physical walls for the physics
-    interface::Geometry roomLimitGeom = resource::AssetManager<Geometry>::instance().load<false>("meshBank/roomPattern.obj", true).value();
+    // Every "vr_room_#" object (written by the editor, VR Room > Generate VR rooms) gets these physical walls, sized for the 3 m room
+    interface::Geometry roomWallsGeom = resource::AssetManager<Geometry>::instance().load<false>("meshBank/vr_room_walls.obj", true).value();
+    const std::string vrRoomPrefix = "vr_room_";
 
     std::map<std::string, EdgeInfo> nameEdge;
     int index=0;
@@ -94,9 +95,10 @@ MultiSceneManager::MultiSceneManager(std::string file, MultipleSceneHelper& mult
                         }
                     }
 
-                    else if(obj.collider.type == XmlSceneLoader::Collider::NONE && obj.name == "roomPattern")
+                    else if(obj.name.compare(0, vrRoomPrefix.size(), vrRoomPrefix) == 0)
                     {
-                        staticRoomGeom.push_back({roomLimitGeom, mat4::constructTransformation(obj.rotation, obj.translation, vec3(1,1,1))});
+                        // The object scale is the room size and ground thickness, the walls model already has the room size
+                        staticRoomGeom.push_back({roomWallsGeom, mat4::constructTransformation(obj.rotation, obj.translation, vec3(1,1,1))});
                     }
                     else if(obj.isPhysic && obj.isStatic && obj.collider.type == XmlSceneLoader::Collider::NONE)
                     {
@@ -191,7 +193,7 @@ void MultiSceneManager::instancePhysic(BulletEngine& bulletEngine)
         if(_staticRoomGeom[i])
         {
             BulletObject* obj = new BulletObject(mat4::IDENTITY(), _staticRoomGeom[i]);
-            bulletEngine.addObject(obj, i, CollisionTypes::COL_ROOM, ROOMPATTERN_COLLISION);
+            bulletEngine.addObject(obj, i, CollisionTypes::COL_ROOM, ROOM_COLLISION);
             obj->body()->setRestitution(0);
             obj->body()->setFriction(0);
 
