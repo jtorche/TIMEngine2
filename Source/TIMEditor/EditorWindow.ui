@@ -132,6 +132,7 @@
     </widget>
     <addaction name="actionSet_skybox"/>
     <addaction name="actionSunDirection"/>
+    <addaction name="actionSunColorAmbient"/>
     <addaction name="menuSpecularProbe"/>
     <addaction name="separator"/>
    </widget>
@@ -706,6 +707,11 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+L</string>
+   </property>
+  </action>
+  <action name="actionSunColorAmbient">
+   <property name="text">
+    <string>Set sun color and ambient light</string>
    </property>
   </action>
   <action name="actionSkybox">

@@ -20,6 +20,8 @@ uniform sampler2DArrayShadow texture8;
 uniform int enableGI;
 uniform vec4 globalAmbient;
 uniform int localReflexion;
+uniform float ambientDiffuseScale; // scene scales of the cubemap ambient
+uniform float ambientSpecularScale;
 
 #define MAX_LIGHTS 8
 #define MAX_SHADOW_LVL 4
@@ -132,10 +134,10 @@ void main()
 	}
 	else if(enableGI == 1)
 	{
-		vec4 diffuseTerm = color * (1-material.y) * textureLod(texture5, normal,NB_MIPMAP-1);
+		vec4 diffuseTerm = color * (1-material.y) * textureLod(texture5, normal,NB_MIPMAP-1) * ambientDiffuseScale;
 		
 		vec3 specularColor = mix(vec3(material.z), vec3(color), metallic);
-		vec3 specTerm = approximateSpecular(specularColor ,roughness, reflect(viewDir, normal), max(dot(normal, -viewDir), 0.01));
+		vec3 specTerm = approximateSpecular(specularColor ,roughness, reflect(viewDir, normal), max(dot(normal, -viewDir), 0.01)) * ambientSpecularScale;
 		
 		outColor.rgb = specTerm + vec3(diffuseTerm);
 	}

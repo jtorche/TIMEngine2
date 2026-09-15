@@ -8,6 +8,7 @@
 #include <QMessageBox>
 #include <QFileDialog>
 #include "SelectSkyboxDialog.h"
+#include "SceneLightingDialog.h"
 // #include "AssimpLoader.h"
 
 using namespace tim;
@@ -192,6 +193,33 @@ void EditorWindow::on_actionSunDirection_triggered()
             ui->sceneEditorWidget->setSunDirection(sceneIndex-1, l.direction);
     }
 
+}
+
+void EditorWindow::on_actionSunColorAmbient_triggered()
+{
+    interface::Pipeline::GlobalLight& globalLight = _mainRenderer->getScene(_mainRenderer->getCurSceneIndex()).globalLight;
+
+    auto apply = [this, &globalLight](const SceneLightingDialog::Parameters& p)
+    {
+        _mainRenderer->lock();
+        if(!globalLight.dirLights.empty())
+            globalLight.dirLights[0].color = vec4(p.sunColor, 1);
+        globalLight.ambientDiffuseScale = p.ambientDiffuseScale;
+        globalLight.ambientSpecularScale = p.ambientSpecularScale;
+        _mainRenderer->unlock();
+    };
+
+    SceneLightingDialog::Parameters initial;
+    if(!globalLight.dirLights.empty())
+        initial.sunColor = globalLight.dirLights[0].color.to<3>();
+    initial.ambientDiffuseScale = globalLight.ambientDiffuseScale;
+    initial.ambientSpecularScale = globalLight.ambientSpecularScale;
+
+    // Edits are previewed live, saving the scene writes them to its level parameter file
+    SceneLightingDialog dialog(initial, !globalLight.dirLights.empty(), this);
+    connect(&dialog, &SceneLightingDialog::parametersChanged, this, apply);
+    if(dialog.exec() != QDialog::Accepted)
+        apply(initial);
 }
 
 void EditorWindow::on_actionSet_skybox_triggered()

@@ -32,6 +32,8 @@ TiledLightRenderer::TiledLightRenderer(DeferredRenderer& deferred, bool) : Light
 
     _computeShader->bind();
     _nbLightUniformId = _computeShader->uniformLocation("nbLight");
+    _ambientDiffuseScaleUniformId = _computeShader->uniformLocation("ambientDiffuseScale");
+    _ambientSpecularScaleUniformId = _computeShader->uniformLocation("ambientSpecularScale");
 
     Texture::GenTexParam param;
     param.format = Texture::RGB16;
@@ -50,13 +52,15 @@ TiledLightRenderer::~TiledLightRenderer()
     delete _computeShader;
 }
 
-void TiledLightRenderer::draw(const vector<Light>& lights, Texture* processedSkybox)
+void TiledLightRenderer::draw(const vector<Light>& lights, Texture* processedSkybox, float ambientDiffuseScale, float ambientSpecularScale)
 {
     createLigthBuffer(lights);
     _lightBuffer.bind(0);
 
     _computeShader->bind();
     _computeShader->setUniform(static_cast<int>(lights.size()), _nbLightUniformId);
+    _computeShader->setUniform(ambientDiffuseScale, _ambientDiffuseScaleUniformId);
+    _computeShader->setUniform(ambientSpecularScale, _ambientSpecularScaleUniformId);
 
     openGL.bindImageTexture(_buffer.buffer(0)->id(), 0, GL_WRITE_ONLY, Texture::toGLFormat(_buffer.buffer(0)->format()));
 

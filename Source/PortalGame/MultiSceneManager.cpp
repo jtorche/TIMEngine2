@@ -328,6 +328,7 @@ void MultiSceneManager::buildLevels(LevelSystem& syst)
         if (doc.LoadFile()) {
             TiXmlElement* elem = doc.FirstChildElement();
             while (elem) {
+                XmlSceneLoader::parseLightingParameter(elem, lvl.levelScene->globalLight); // SunLight, AmbientLightScale
                 if (elem->ValueStr() == std::string("AmbientMusic")) {
 
                     Option<resource::SoundAsset> ambientSound = resource::AssetManager<resource::SoundAsset>::instance().load<false>(elem->Attribute("file"), true, Sampler::NONE);

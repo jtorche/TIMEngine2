@@ -35,6 +35,7 @@ namespace interface
         {
              vector<DirectionalLight> dirLights;
              std::pair<renderer::Texture*, renderer::Texture*> skybox = {nullptr,nullptr};
+             float ambientDiffuseScale = 1, ambientSpecularScale = 1; // cubemap ambient: skybox and specular probes
         };
 
         template<class SceneType>

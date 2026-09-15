@@ -207,6 +207,7 @@ signals:
 
 private:
     void internalRenderLightProb(vec3 pos, float radius, float farDist, int iterations, int res, std::string pathRD, std::string pathSkybox, bool addToScene, bool exportAsRawData, bool exportAsSkybox);
+    void exportLightingParameters(QString filePath, int sceneIndex);
     bool eventFilter(QObject* object, QEvent* event) override;
 };
 

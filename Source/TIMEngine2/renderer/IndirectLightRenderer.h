@@ -39,6 +39,7 @@ namespace renderer
 
        void setEnableGI(bool b) { _enableGI = b; }
        void setGlobalAmbient(const vec4& col) { _globalAmbient = col; }
+       void setAmbientScale(float diffuse, float specular) { _ambientDiffuseScale = diffuse; _ambientSpecularScale = specular; }
        void setEnableSSReflexion(bool b) { _enableSSReflexion = b; }
 
        bool isLocalReflexionEnabled() const { return _enableSSReflexion; }
@@ -52,6 +53,7 @@ namespace renderer
        Shader* _fullScreenPass = nullptr;
        int _uniformEnableGI = -1;
        int _uniformGlobalAmbient = -1;
+       int _uniformAmbientDiffuseScale = -1, _uniformAmbientSpecularScale = -1;
        int _uniformSSReflexion = -1;
 
        int _uniformNbLight, _uniformLightDir, _uniformLightColor, _uniformLightMatrix;
@@ -59,6 +61,7 @@ namespace renderer
        bool _enableGI = false;
        bool _enableSSReflexion = false;
        vec4 _globalAmbient = vec4::construct(0.3); // if enableGI = false
+       float _ambientDiffuseScale = 1, _ambientSpecularScale = 1;
 
        DrawState _stateFullScreenPass;
 

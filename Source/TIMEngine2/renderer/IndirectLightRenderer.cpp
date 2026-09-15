@@ -34,6 +34,8 @@ IndirectLightRenderer::IndirectLightRenderer(LightContextRenderer& context) : _c
             _fullScreenPass->bind();
             _uniformEnableGI = _fullScreenPass->uniformLocation("enableGI");
             _uniformGlobalAmbient = _fullScreenPass->uniformLocation("globalAmbient");
+            _uniformAmbientDiffuseScale = _fullScreenPass->uniformLocation("ambientDiffuseScale");
+            _uniformAmbientSpecularScale = _fullScreenPass->uniformLocation("ambientSpecularScale");
             _uniformSSReflexion = _fullScreenPass->uniformLocation("localReflexion");
 
             _uniformNbLight = _fullScreenPass->uniformLocation("nbLights");
@@ -143,6 +145,8 @@ void IndirectLightRenderer::draw(const vector<Light>& lights) const
     _fullScreenPass->setUniform((_enableGI && _processedSkybox)?1:0, _uniformEnableGI);
     _fullScreenPass->setUniform(_enableSSReflexion?1:0, _uniformSSReflexion);
     _fullScreenPass->setUniform(_globalAmbient, _uniformGlobalAmbient);
+    _fullScreenPass->setUniform(_ambientDiffuseScale, _uniformAmbientDiffuseScale);
+    _fullScreenPass->setUniform(_ambientSpecularScale, _uniformAmbientSpecularScale);
 
     _context.frameState().bind(0);
     quadMeshBuffers->draw(6, VertexMode::TRIANGLES, 1);

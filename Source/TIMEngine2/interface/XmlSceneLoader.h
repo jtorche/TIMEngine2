@@ -51,6 +51,9 @@ namespace interface
         static void parseTransformation(TiXmlElement* elem, vec3& tr, vec3& sc, mat3& rot, Collider* collider);
         static vector<std::string> parseSkyboxXmlElement(TiXmlElement* elem);
 
+        // Lighting elements of a scene parameter file (scene/<name>_parameters.xml), returns false for other elements
+        static bool parseLightingParameter(TiXmlElement* elem, Pipeline::GlobalLight& globalLight);
+
     private:
         #include "MemoryLoggerOff.h"
         XmlSceneLoader() = delete;

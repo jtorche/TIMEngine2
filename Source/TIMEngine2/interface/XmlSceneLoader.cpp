@@ -197,6 +197,30 @@ vector<std::string> XmlSceneLoader::parseSkyboxXmlElement(TiXmlElement* elem)
     return res;
 }
 
+bool XmlSceneLoader::parseLightingParameter(TiXmlElement* elem, Pipeline::GlobalLight& globalLight)
+{
+    if(elem->ValueStr() == std::string("SunLight"))
+    {
+        std::string strColor = StringUtils::str(elem->Attribute("color"));
+        if(!strColor.empty())
+        {
+            if(globalLight.dirLights.empty())
+                LOG("SunLight color ignored, the scene has no DirLight\n");
+            else
+                globalLight.dirLights[0].color = vec4(toVec<3>(strColor), 1);
+        }
+        return true;
+    }
+    else if(elem->ValueStr() == std::string("AmbientLightScale"))
+    {
+        elem->QueryFloatAttribute("diffuse", &globalLight.ambientDiffuseScale);
+        elem->QueryFloatAttribute("specular", &globalLight.ambientSpecularScale);
+        return true;
+    }
+
+    return false;
+}
+
 }
 }
 

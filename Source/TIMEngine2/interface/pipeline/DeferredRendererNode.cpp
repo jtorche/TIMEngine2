@@ -193,15 +193,20 @@ void DeferredRendererNode::render()
     _rendererEntity->lightContext()->acquire();
 
     renderer::Texture* globalPSkybox = nullptr;
+    float ambientDiffuseScale = 1, ambientSpecularScale = 1;
     if(_globalLightInfo)
+    {
         globalPSkybox = _globalLightInfo->skybox.second;
+        ambientDiffuseScale = _globalLightInfo->ambientDiffuseScale;
+        ambientSpecularScale = _globalLightInfo->ambientSpecularScale;
+    }
 
     bool needCompute = true;//!_isAux;
     if(lights.empty())
         needCompute = false;
 
     if (_rendererEntity->lightRenderer() && needCompute)
-        _rendererEntity->lightRenderer()->draw(lights, globalPSkybox);
+        _rendererEntity->lightRenderer()->draw(lights, globalPSkybox, ambientDiffuseScale, ambientSpecularScale);
     else
         _rendererEntity->lightContext()->clear();
 
@@ -255,6 +260,7 @@ void DeferredRendererNode::render()
 
         _rendererEntity->envLightRenderer().setEnableGI(!needCompute);
         _rendererEntity->envLightRenderer().setSkybox(_globalLightInfo->skybox.first, _globalLightInfo->skybox.second);
+        _rendererEntity->envLightRenderer().setAmbientScale(ambientDiffuseScale, ambientSpecularScale);
         _rendererEntity->envLightRenderer().draw(lights);
 
         for(uint i=0 ; i<std::min(_dirLightDepthMapRenderer.size(),_globalLightInfo->dirLights.size()) ; ++i)

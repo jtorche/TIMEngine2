@@ -18,7 +18,7 @@ namespace renderer
         TiledLightRenderer(DeferredRenderer&, bool hdr=false);
         ~TiledLightRenderer();
 
-        void draw(const vector<Light>&, Texture*);
+        void draw(const vector<Light>&, Texture* processedSkybox, float ambientDiffuseScale, float ambientSpecularScale);
 
     private:
         const uivec2 TILE_SIZE = {16,16}; // must match LS_X/LS_Y in shader/tiledLightShader.cs
@@ -35,6 +35,7 @@ namespace renderer
         };
         renderer::ShaderStorageBuffer<Std140LightData> _lightBuffer;
         int _nbLightUniformId = -1;
+        int _ambientDiffuseScaleUniformId = -1, _ambientSpecularScaleUniformId = -1;
 
         Texture* _processedBrdf = nullptr;
 

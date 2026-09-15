@@ -37,6 +37,8 @@ uniform sampler2D texture4; // brdf
 uniform samplerCube textures[24]; // the first is the global cubemap
 
 uniform int nbLight;
+uniform float ambientDiffuseScale; // scene scales of the cubemap ambient (global cubemap and specular probes)
+uniform float ambientSpecularScale;
 
 #define MAX_LIGHT_TILE 128
 shared uint lightsTile[MAX_LIGHT_TILE];
@@ -235,10 +237,10 @@ void main()
 			int indexCubemap = int(lights[lightsTile[i]].head.w)+1;
 			
 			
-			vec3 diffuseTerm = color * (1-material.y) * textureLod(textures[indexCubemap], parallaxCorrection(vec3(0,0,0), normal, L, lights[lightsTile[i]].head.y), NB_MIPMAP-1).xyz;
+			vec3 diffuseTerm = color * (1-material.y) * textureLod(textures[indexCubemap], parallaxCorrection(vec3(0,0,0), normal, L, lights[lightsTile[i]].head.y), NB_MIPMAP-1).xyz * ambientDiffuseScale;
 		
 			vec3 specularColor = mix(vec3(specular), vec3(color), metalic);
-			vec3 specTerm = approximateSpecular(specularColor, roughness, parallaxCorrection(vec3(0,0,0), reflect(-V, normal), L, lights[lightsTile[i]].head.y), dotNV, indexCubemap);
+			vec3 specTerm = approximateSpecular(specularColor, roughness, parallaxCorrection(vec3(0,0,0), reflect(-V, normal), L, lights[lightsTile[i]].head.y), dotNV, indexCubemap) * ambientSpecularScale;
 			
 			float att = dist < radiusLight ? 1 : 1 - (min(dist - radiusLight, distAtt) / distAtt);
 		
@@ -284,10 +286,10 @@ void main()
 		accAmbientColor /= accAmbient;
 	else
 	{
-		vec3 diffuseTerm = color * (1-material.y) * textureLod(textures[0], normal, NB_MIPMAP-1).xyz;
+		vec3 diffuseTerm = color * (1-material.y) * textureLod(textures[0], normal, NB_MIPMAP-1).xyz * ambientDiffuseScale;
 		
 		vec3 specularColor = mix(vec3(specular), vec3(color), metalic);
-		vec3 specTerm = approximateSpecular(specularColor, roughness, reflect(-V, normal), dotNV, 0);
+		vec3 specTerm = approximateSpecular(specularColor, roughness, reflect(-V, normal), dotNV, 0) * ambientSpecularScale;
 		accAmbientColor += (specTerm + diffuseTerm) * (1-accAmbient);
 	}
 	

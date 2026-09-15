@@ -7,6 +7,7 @@
 #include "MeshEditorWidget.h"
 #include "core/Matrix.h"
 #include "core/Rand.h"
+#include "interface/XmlSceneLoader.h"
 #include <iterator>
 
 #include <QQuaternion>
@@ -17,6 +18,7 @@
 #include <QFileInfo>
 #include <QDir>
 #include <QProgressDialog>
+#include <QRegularExpression>
 
 using namespace tim;
 using namespace tim::core;
@@ -1238,12 +1240,60 @@ void SceneEditorWidget::exportScene(QString filePath, int sceneIndex)
 
     }
 
+    if(filePath.size() > 4)
+        exportLightingParameters(filePath.left(filePath.size()-4) + "_parameters.xml", sceneIndex);
+
     if(!_allSpecProbe[sceneIndex].empty() && filePath.size() > 4)
     {
         filePath.resize(filePath.size()-4);
         filePath += "_specprobe.xml";
         LightProbeUtils::exportProbe(filePath.toStdString(), _allSpecProbe[sceneIndex]);
     }
+}
+
+void SceneEditorWidget::exportLightingParameters(QString filePath, int sceneIndex)
+{
+    // Only the lighting elements are rewritten, the rest of the level parameters (music, spawn...) is kept as it is
+    QFile file(filePath);
+    QString original;
+    if(file.open(QIODevice::ReadOnly))
+    {
+        original = QString::fromUtf8(file.readAll());
+        file.close();
+    }
+
+    QString content = original;
+    const QString newLine = original.contains("\r\n") ? "\r\n" : "\n";
+
+    // An existing element is updated, a missing one is only added when its value differs from the scene default
+    auto writeElement = [&](const QString& name, const QString& element, bool isDefault)
+    {
+        QRegularExpression existing("<" + name + "\\b[^>]*/>");
+        if(content.contains(existing))
+            content.replace(existing, element);
+        else if(!isDefault)
+            content += (content.isEmpty() || content.endsWith('\n') ? QString() : newLine) + element;
+    };
+
+    _renderer->lock();
+    const Pipeline::GlobalLight globalLight = _renderer->getScene(sceneIndex+1).globalLight;
+    _renderer->unlock();
+
+    if(!globalLight.dirLights.empty())
+    {
+        vec3 color = globalLight.dirLights[0].color.to<3>();
+        vec3 sceneColor = _directionalLights[sceneIndex].empty() ? vec3::construct(1) : _directionalLights[sceneIndex][0].color.to<3>();
+        writeElement("SunLight", QString("<SunLight color=\"%1,%2,%3\" />")
+                     .arg(QString::number(color.x()), QString::number(color.y()), QString::number(color.z())),
+                     color == sceneColor);
+    }
+
+    writeElement("AmbientLightScale", QString("<AmbientLightScale diffuse=\"%1\" specular=\"%2\" />")
+                 .arg(QString::number(globalLight.ambientDiffuseScale), QString::number(globalLight.ambientSpecularScale)),
+                 globalLight.ambientDiffuseScale == 1 && globalLight.ambientSpecularScale == 1);
+
+    if(content != original && file.open(QIODevice::WriteOnly))
+        file.write(content.toUtf8());
 }
 
 void SceneEditorWidget::parseTransformation(TiXmlElement* elem, vec3& tr, vec3& sc, mat3& rot, Collider* collider)
@@ -1424,6 +1474,14 @@ void SceneEditorWidget::importScene(QString file, int sceneIndex)
         elem=elem->NextSiblingElement();
     }
 
+    // Lighting overrides of the game's level parameter file, so the preview and the baked probes match the game
+    TiXmlDocument paramDoc(file.left(file.size()-4).toStdString() + "_parameters.xml");
+    if(paramDoc.LoadFile())
+    {
+        for(TiXmlElement* paramElem = paramDoc.FirstChildElement() ; paramElem ; paramElem = paramElem->NextSiblingElement())
+            XmlSceneLoader::parseLightingParameter(paramElem, _renderer->getScene(sceneIndex+1).globalLight);
+    }
+
     if(skybox.size() == 6)
     {
         setSkybox(sceneIndex, skybox);
@@ -1464,6 +1522,13 @@ void SceneEditorWidget::clearScene(int index)
             delete _objects[index][i].listItem;
         _renderer->getScene(index+1).scene.remove(*_objects[index][i].node);
     }
+
+    // Drop the lighting overrides of the previous level parameter file
+    Pipeline::GlobalLight& globalLight = _renderer->getScene(index+1).globalLight;
+    globalLight.ambientDiffuseScale = 1;
+    globalLight.ambientSpecularScale = 1;
+    for(int i=0 ; i<_directionalLights[index].size() && i<int(globalLight.dirLights.size()) ; ++i)
+        globalLight.dirLights[i].color = _directionalLights[index][i].color;
     _renderer->unlock();
 
     setSkybox(uint(index), QList<QString>());

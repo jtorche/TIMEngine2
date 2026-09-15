@@ -59,6 +59,7 @@ private slots:
     void on_actionSave_As_triggered();
     void on_actionNew_triggered();
     void on_actionSunDirection_triggered();
+    void on_actionSunColorAmbient_triggered();
 
     void on_actionRaw_Data_triggered();
     void on_actionRemove_Spec_Probe_triggered();
